@@ -15,7 +15,7 @@ import Skills from "../components/Skills";
 export default function Home() {
   return (
     <>
-      <div className="h-screen ">
+      <div className="h-screen gradient-initial ">
         <div className="h-full z-[1] flex flex-col items-center justify-center relative">
           <div className="absolute w-full h-full border z-[-1] ">
             <Stars></Stars>
@@ -23,8 +23,8 @@ export default function Home() {
           <H1 span size={"8rem"}>
             Luis Ortega
           </H1>
-          <H1 size={"3rem"}>Web Developer</H1>
-          <H1 size={"1.5rem"}>Portafolio</H1>
+          <h1 className="text-[#0000006e]">Web Developer</h1>
+          <h2 className="text-[#0000006e] mt-[-26px]">Portafolio</h2>
           <div id="social-media" className="">
             <SocialMedia></SocialMedia>
           </div>

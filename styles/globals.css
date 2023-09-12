@@ -26,6 +26,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+.gradient-initial {
+  background: radial-gradient(circle, #193893, #0f2d51);
+}
+
 /* starts  */
 
 .star-container {
