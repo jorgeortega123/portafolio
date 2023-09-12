@@ -1,3 +1,5 @@
+import SocialMedia from "@/components/SocialMedia";
+import Stars from "@/components/stars/Stars";
 import {
   Container,
   DropSettingTheme,
@@ -9,24 +11,34 @@ import {
 } from "cllk";
 import { EffectCards, EffectCoverflow, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Skills from "../components/Skills";
 export default function Home() {
   return (
     <>
       <div className="h-screen ">
-        <div className="h-full flex flex-col items-center justify-center">
+        <div className="h-full z-[1] flex flex-col items-center justify-center relative">
+          <div className="absolute w-full h-full border z-[-1] ">
+            <Stars></Stars>
+          </div>
           <H1 span size={"8rem"}>
             Luis Ortega
           </H1>
           <H1 size={"3rem"}>Web Developer</H1>
           <H1 size={"1.5rem"}>Portafolio</H1>
+          <div id="social-media" className="">
+            <SocialMedia></SocialMedia>
+          </div>
         </div>
       </div>
-      <div className="h-screen bg-gradient-to-b from-sky-400 to-sky-200 rounded-full ">
+      <div className="h-screen  ">
         <div className="rounded-full w-11/12">
           <H1>about Me</H1>
           <P>Siii</P>
         </div>
+      </div>
+      <div>
+        <H1>Knowledge</H1>
+        <Skills></Skills>
       </div>
       <div className="h-screen g">
         <H1>My recent work</H1>
