@@ -8,7 +8,7 @@ export default function Document() {
         <HEAD title="Luis" />
       </Head>
       <body>
-        <div className="bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-900 to-gray-600  w-full">
+        <div className="bg-zinc-900">
           <Main />
           <NextScript />
         </div>

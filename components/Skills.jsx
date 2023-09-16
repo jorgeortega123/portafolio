@@ -127,7 +127,6 @@ export default function Skills() {
       id="knowledge"
       className=" min-h-[400px] overflow-hidden relative max-w-[550px] w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
     >
-  
       <div className="absolute w-full rounded-[6px] left-0 h-[2px] top-0 useBackgroundMove "></div>
       <div className="absolute w-full rounded-[6px]  left-0 h-[2px] bottom-0 useBackgroundMove rotate-180 "></div>
       {images.map((e) => (

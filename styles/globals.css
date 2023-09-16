@@ -26,9 +26,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
 .gradient-initial {
-  background: radial-gradient(circle, #193893, #0f2d51);
+  background: linear-gradient(180deg, rgba(25, 56, 147, 0.9), rgb(24, 24, 27));
 }
 
 /* starts  */
