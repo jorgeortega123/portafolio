@@ -5,15 +5,15 @@ import { H1, Icons } from "cllk";
 function Hero() {
   return (
     <div className="h-screen gradient-initial ">
-      <div className="h-full z-[1] flex flex-col items-center justify-center relative">
+      <div className="h-full z-[1] flex flex-col items-center justify-center relative ">
         <div className="absolute w-full h-full z-[-1] ">
           <Stars></Stars>
         </div>
-        <H1 className="" span size={"3rem"}>
+        <H1 span size={"4rem"}>
           Luis Ortega
         </H1>
-        <h1 className="text-[#0000006e]">Web Developer</h1>
-        <h2 className="text-[#0000006e] mt-[-26px]">Portafolio</h2>
+        <H1 size={"3rem"}>Web Developer</H1>
+        <H1 size={"2rem"}>Portafolio</H1>
         <div className="flex space-x-5">
           <Icons size={70} icon="IconBrandLinkedin" />
           <Icons size={70} icon="IconBrandGithub" />

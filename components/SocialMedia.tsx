@@ -1,6 +1,6 @@
 import React from "react";
-import useScrollTo from "../functions/useScroll.jsx";
-import { goToUrl } from "../functions/functions";
+import useScrollTo from "../services/useScroll.jsx";
+import { goToUrl } from "../services/functions.jsx";
 import Icons from "./Icons";
 export default function SocialMedia() {
   const scrollToElement = useScrollTo();
