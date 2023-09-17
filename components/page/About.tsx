@@ -1,10 +1,14 @@
 import { H1, Img } from "cllk";
 import React from "react";
+import { Parallax } from "react-scroll-parallax";
 
 function About() {
   return (
     <div className="my-6">
-      <div className=" rounded-3xl w-10/12 mx-auto p-5 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500">
+      <Parallax
+        opacity={[0, 2]}
+        className=" rounded-3xl w-10/12 mx-auto p-5 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500"
+      >
         <Img
           className="w-80 h-80 object-cover rounded-3xl mx-auto"
           src={
@@ -17,7 +21,7 @@ function About() {
           I like to try new technologies in development. I also like video
           games, motorcycles.
         </p>
-      </div>
+      </Parallax>
     </div>
   );
 }

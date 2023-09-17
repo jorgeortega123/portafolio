@@ -1,5 +1,6 @@
 import { H1, Icons, useCss } from "cllk";
 import React from "react";
+import { Parallax } from "react-scroll-parallax";
 
 function Knowledge() {
   useCss(`.gallery {
@@ -7,23 +8,26 @@ function Knowledge() {
           grid-template-columns: repeat(auto-fit, minmax(var(--gw, 200px), 1fr));
         }`);
   const frontend = [
-    "IconBrandReact",
-    "IconBrandHtml5",
-    "IconBrandJavascript",
-    "IconBrandTypescript",
-    "IconBrandSass",
-    "IconBrandTailwind",
-    "IconBrandCss3",
-    "IconBrandFramerMotion",
+    { icons: "IconBrandReact", name: "React" },
+    { icons: "IconBrandHtml5", name: "Html" },
+    { icons: "IconBrandJavascript", name: "Javascript" },
+    { icons: "IconBrandTypescript", name: "Typescript" },
+    { icons: "IconBrandSass", name: "Sass" },
+    { icons: "IconBrandTailwind", name: "Tailwind" },
+    { icons: "IconBrandCss3", name: "Css3" },
+    { icons: "IconBrandFramerMotion", name: "Motion" },
   ];
-  const backend = ["IconBrandDeno", "IconBrandMongodb"];
+  const backend = [
+    { icons: "IconBrandDeno", name: "Deno" },
+    { icons: "IconBrandMongodb", name: "Mongodb" },
+  ];
   const tools = [
-    "IconBrandNpm",
-    "IconBrandGit",
-    "IconBrandGithub",
-    "IconBrandDocker",
-    "IconBrandFigma",
-    "IconBrandCloudflare",
+    { icons: "IconBrandNpm", name: "Npm" },
+    { icons: "IconBrandGit", name: "Git " },
+    { icons: "IconBrandGithub", name: "Github" },
+    { icons: "IconBrandDocker", name: "Docker" },
+    { icons: "IconBrandFigma", name: "Figma" },
+    { icons: "IconBrandCloudflare", name: "Cloudflare" },
   ];
 
   return (
@@ -34,33 +38,52 @@ function Knowledge() {
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
           {frontend.map((index, key) => (
-            <div key={key} className="mx-auto w-min">
-              <Icons size={60} icon={index as any} />
-            </div>
+            <Parallax
+              speed={7}
+              scale={[0.7, 1]}
+              translateY={[40, -40]}
+              key={key}
+              className="mx-auto w-min flex flex-col items-center justify-center"
+            >
+              <Icons size={60} icon={index.icons as any} />
+              <H1>{index.name}</H1>
+            </Parallax>
           ))}
         </div>
       </div>
       <div>
-        {" "}
         <H1 size={"1rem"}>Backend</H1>
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "150px" }}>
           {backend.map((index, key) => (
-            <div key={key} className="mx-auto w-min">
-              <Icons size={60} icon={index as any} />
-            </div>
+            <Parallax
+              speed={7}
+              scale={[0.7, 1]}
+              translateY={[40, -40]}
+              key={key}
+              className="mx-auto w-min flex flex-col justify-center items-center"
+            >
+              <Icons size={60} icon={index.icons as any} />
+              <H1>{index.name}</H1>
+            </Parallax>
           ))}
         </div>
       </div>
       <div>
-        {" "}
         <H1 size={"1rem"}>Tools</H1>
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
           {tools.map((index, key) => (
-            <div key={key} className="w-min mx-auto">
-              <Icons size={60} icon={index as any} />
-            </div>
+            <Parallax
+              speed={7}
+              scale={[0.7, 1]}
+              translateY={[40, -40]}
+              key={key}
+              className="mx-auto w-min flex flex-col justify-center items-center"
+            >
+              <Icons size={60} icon={index.icons as any} />
+              <H1>{index.name}</H1>
+            </Parallax>
           ))}
         </div>
       </div>
