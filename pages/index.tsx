@@ -1,15 +1,16 @@
-import About from "@/components/page/About";
-import Comunity from "@/components/page/Comunity";
-import Hero from "@/components/page/Hero";
-import Knowledge from "@/components/page/Knowledge";
-import RecentlyWork from "@/components/page/RecentlyWork";
-import { DropSettingTheme, Dropdown, H1, Input } from "cllk";
+const About = dynamic(import("@/components/page/About"));
+const Comunity = dynamic(import("@/components/page/Comunity"));
+const Hero = dynamic(import("@/components/page/Hero"));
+const Knowledge = dynamic(import("@/components/page/Knowledge"));
+const RecentlyWork = dynamic(import("@/components/page/RecentlyWork"));
+import { DropSettingTheme, Dropdown } from "cllk";
+import dynamic from "next/dynamic";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home() {
   return (
     <ParallaxProvider>
-      <div className="space-y-10 max-w-[400px]">
+      <div className="space-y-10 max-w-[390px] mx-auto">
         <Hero />
         <About />
         <Knowledge />
