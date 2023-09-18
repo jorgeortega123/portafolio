@@ -1,6 +1,5 @@
-import { H1, Icons, useCss } from "cllk";
+import { H1, Icons, useCss, useT } from "cllk";
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
 
 function Knowledge() {
   useCss(`.gallery {
@@ -29,61 +28,52 @@ function Knowledge() {
     { icons: "IconBrandFigma", name: "Figma" },
     { icons: "IconBrandCloudflare", name: "Cloudflare" },
   ];
-
+  const { t } = useT();
   return (
     <div className="space-y-10">
-      <H1 size={"2rem"}>Knowledge</H1>
+      <H1 size={"2rem"}>{t("Conocimiento", "Knowledge")} </H1>
       <div>
-        <H1 size={"1rem"}>Frontend</H1>
+        <H1 size={"1rem"}>{t("Frontend", "Frontend")} </H1>
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
           {frontend.map((index, key) => (
-            <Parallax
-              speed={7}
-              scale={[0.7, 1]}
-              translateY={[40, -40]}
+            <div
               key={key}
               className="mx-auto w-min flex flex-col items-center justify-center"
             >
               <Icons size={60} icon={index.icons as any} />
               <H1>{index.name}</H1>
-            </Parallax>
+            </div>
           ))}
         </div>
       </div>
       <div>
-        <H1 size={"1rem"}>Backend</H1>
+        <H1 size={"1rem"}>{t("Backend", "Backend")} </H1>
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "150px" }}>
           {backend.map((index, key) => (
-            <Parallax
-              speed={7}
-              scale={[0.7, 1]}
-              translateY={[40, -40]}
+            <div
               key={key}
               className="mx-auto w-min flex flex-col justify-center items-center"
             >
               <Icons size={60} icon={index.icons as any} />
               <H1>{index.name}</H1>
-            </Parallax>
+            </div>
           ))}
         </div>
       </div>
       <div>
-        <H1 size={"1rem"}>Tools</H1>
+        <H1 size={"1rem"}>{t("Herramientas","Tools")} </H1>
         {/* @ts-ignore */}
         <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
           {tools.map((index, key) => (
-            <Parallax
-              speed={7}
-              scale={[0.7, 1]}
-              translateY={[40, -40]}
+            <div
               key={key}
               className="mx-auto w-min flex flex-col justify-center items-center"
             >
               <Icons size={60} icon={index.icons as any} />
               <H1>{index.name}</H1>
-            </Parallax>
+            </div>
           ))}
         </div>
       </div>

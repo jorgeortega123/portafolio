@@ -1,8 +1,9 @@
-import { H1, Img } from "cllk";
+import { H1, Img, useT } from "cllk";
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
 function About() {
+  const { t } = useT();
   return (
     <div className="my-6">
       <Parallax
@@ -15,11 +16,12 @@ function About() {
             "https://scontent.fuio1-1.fna.fbcdn.net/v/t39.30808-6/306075656_1094347401188869_5110241233234463185_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=wTX27Bh26mYAX84FVWL&_nc_ht=scontent.fuio1-1.fna&oh=00_AfDOQIa5pSiEgkvzfHRhOQUAnbKlmlhvC_XByQXrKzNKVg&oe=650A8F88"
           }
         />
-        <H1 size={"2rem"}>about Me</H1>
+        <H1 size={"2rem"}>{t("sobre mi", "about Me")} </H1>
         <p className="font-semibold">
-          I am an enthusiastic developer who has been developing since I was 17,
-          I like to try new technologies in development. I also like video
-          games, motorcycles.
+          {t(
+            "Soy un desarrollador entusiasta que lleva desarrollando desde los 17 años, me gusta probar nuevas tecnologías en el desarrollo. También me gustan los videojuegos, las motos.",
+            "I am an enthusiastic developer who has been developing since I was 17, I like to try new technologies in development. I also like video games, motorcycles"
+          )}
         </p>
       </Parallax>
     </div>
