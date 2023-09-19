@@ -1,15 +1,11 @@
 import { H1, Img, useT } from "cllk";
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
 
 function About() {
   const { t } = useT();
   return (
     <div className="my-6">
-      <Parallax
-        opacity={[0, 2]}
-        className=" rounded-3xl w-10/12 mx-auto p-5 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500"
-      >
+      <div className=" rounded-3xl w-10/12 mx-auto p-5 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500">
         <Img
           className="w-80 h-80 object-cover rounded-3xl mx-auto"
           src={
@@ -23,7 +19,7 @@ function About() {
             "I am an enthusiastic developer who has been developing since I was 17, I like to try new technologies in development. I also like video games, motorcycles"
           )}
         </p>
-      </Parallax>
+      </div>
     </div>
   );
 }

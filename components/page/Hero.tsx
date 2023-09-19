@@ -1,7 +1,6 @@
 import React from "react";
 import Stars from "../stars/Stars";
 import { H1, Icons, useT } from "cllk";
-import { Parallax } from "react-scroll-parallax";
 
 function Hero() {
   const { t } = useT();
@@ -11,10 +10,7 @@ function Hero() {
         <div className="absolute w-full h-full z-[-1] ">
           <Stars></Stars>
         </div>
-        <Parallax
-          translateY={[30, -30]}
-          className="flex flex-col justify-center items-center"
-        >
+        <div className="flex flex-col justify-center items-center">
           <H1 span size={"4rem"}>
             Luis Ortega
           </H1>
@@ -25,7 +21,7 @@ function Hero() {
             <Icons size={70} icon="IconBrandGithub" />
             <Icons size={70} icon="IconBrandFacebook" />
           </div>
-        </Parallax>
+        </div>
       </div>
     </div>
   );
