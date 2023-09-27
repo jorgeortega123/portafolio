@@ -1,6 +1,5 @@
 import { Button, Container, H1, P, useT } from "cllk";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 function Comunity() {
   const { t } = useT();
   const data = [
@@ -70,11 +69,11 @@ function Comunity() {
           )}
         </P>
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="flex flex-wrap gap-5">
         {data.map((x, index) => (
           <Container
             key={index}
-            className={`${x.bg} flex flex-col justify-between items-center space-y-5`}
+            className={`${x.bg} flex flex-col justify-between items-center max-w-[400px]`}
           >
             <H1 size={"1.5em"}>{x.title}</H1>
             <P>{x.p}</P>

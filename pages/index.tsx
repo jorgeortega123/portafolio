@@ -1,10 +1,9 @@
-const About = dynamic(import("@/components/page/About"));
-const Comunity = dynamic(import("@/components/page/Comunity"));
-const Hero = dynamic(import("@/components/page/Hero"));
-const Knowledge = dynamic(import("@/components/page/Knowledge"));
-const RecentlyWork = dynamic(import("@/components/page/RecentlyWork"));
 import Contact from "@/components/Contact";
-import dynamic from "next/dynamic";
+import About from "@/components/page/About";
+import Comunity from "@/components/page/Comunity";
+import Hero from "@/components/page/Hero";
+import Knowledge from "@/components/page/Knowledge";
+import RecentlyWork from "@/components/page/RecentlyWork";
 
 export default function Home() {
   return (

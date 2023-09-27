@@ -28,10 +28,10 @@ function Knowledge() {
   return (
     <div className="space-y-10">
       <H1 size={"2em"}>{t("Conocimiento", "Knowledge")} </H1>
-      <Container gradient="bg-gradient-to-r from-green-500 via-blue-500 to-purple-600">
+      <Container gradient="bg-gradient-to-r from-green-600 to-green-700">
         <H1 size={"2em"}>{t("Frontend", "Frontend")} </H1>
 
-        <div className="flex">
+        <div className="flex flex-wrap gap-2">
           {frontend.map((index, key) => (
             <div
               key={key}
@@ -45,7 +45,7 @@ function Knowledge() {
       </Container>
       <Container gradient="bg-gradient-to-r from-purple-500 to-purple-800">
         <H1 size={"2em"}>{t("Backend", "Backend")} </H1>
-        <div className="flex">
+        <div className="flex flex-wrap gap-2">
           {backend.map((index, key) => (
             <div
               key={key}
@@ -60,7 +60,7 @@ function Knowledge() {
       <Container gradient="bg-gradient-to-r from-red-500 to-red-700">
         <H1 size={"2em"}>{t("Herramientas", "Tools")} </H1>
 
-        <div className="flex">
+        <div className="flex flex-wrap gap-2">
           {tools.map((index, key) => (
             <div
               key={key}

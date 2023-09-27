@@ -40,14 +40,14 @@ function Contact() {
     );
   };
   return (
-    <div className="max-w-[1000px] mx-auto">
+    <>
       <Container className="dark:bg-zinc-800 bg-zinc-100">
-        <H1 span size={"2em"}>
+        <H1 span size={"2.2em"}>
           {t("Contactame", "Contact me")}
         </H1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 px-6 mx-auto lg:px-8 sm:divide-x divide-y sm:divide-y-0 sm:m-10 cursor-default">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto lg:px-8 sm:divide-x divide-y sm:divide-y-0 sm:m-10 cursor-default">
           <div className="py-6 flex flex-col space-y-5 justify-center items-center">
-            <H1 size={"1.em"}>{t("Redes Sociales", "Social Media")}</H1>
+            <H1 size={"1.5em"}>{t("Redes Sociales", "Social Media")}</H1>
             <Button
               onClick={() => {
                 window.open("https://m.me/104952405483178", "_blank");
@@ -85,7 +85,7 @@ function Contact() {
             onSubmit={handleSubmit(giveData)}
             className="flex flex-col md:py-0 w-full mx-auto py-5 md:px-10"
           >
-            <H1 size={"1.2em"}>Enviar Mensaje</H1>
+            <H1 size={"1.5em"}>Enviar Mensaje</H1>
             <Input
               register={register}
               name="name"
@@ -117,7 +117,7 @@ function Contact() {
           </form>
         </div>
       </Container>
-    </div>
+    </>
   );
 }
 
