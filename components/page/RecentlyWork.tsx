@@ -9,7 +9,11 @@ function RecentlyWork({}: Props) {
   return (
     <div className="space-y-5">
       <H1 size="2rem">{t("Mi trabajo reciente", "My recently work")} </H1>
-      <Container gradient="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 space-y-3">
+      <Container
+        p="pb-0 px-10 pt-10"
+        gradient="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 space-y-3"
+        className="shadow-[0px_0px_300px_0px_rgba(255,255,255,.3)]"
+      >
         <H1 size={"1.9em"}>Llampukaq Technology </H1>
         <P>
           {t(
@@ -26,23 +30,23 @@ function RecentlyWork({}: Props) {
           Mirar
         </Button>
         {isDesktop ? (
-          <div className="flex justify-center space-x-2 sm:space-x-10">
+          <div className="flex justify-center space-x-2 sm:space-x-5">
             <Img
-              className="w-full rounded-2xl "
-              src={"/asset/llampukaq.webp"}
+              className="min-w-[800px] rounded-2xl "
+              src={"/asset/llampukaq1.webp"}
             ></Img>
             <Img
-              className="w-full rounded-3xl "
-              src={"/asset/llampukaq.webp"}
+              className="min-w-[800px] rounded-3xl "
+              src={"/asset/llampukaq2.webp"}
             ></Img>
           </div>
         ) : (
           <div className="flex justify-center relative">
             <Img
-              className="min-w-[400px] absolute top-0"
-              src={"/asset/llampukaq.webp"}
+              className="min-w-[350px] absolute top-0"
+              src={"/asset/llampukaq2.webp"}
             />
-            <div className="h-[170px]"></div>
+            <div className="h-[200px]"></div>
           </div>
         )}
       </Container>

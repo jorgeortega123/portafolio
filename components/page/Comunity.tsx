@@ -14,7 +14,7 @@ function Comunity() {
     },
     {
       title: "@llampukaq/builder",
-      bg: "bg-gradient-to-r from-green-500 to-blue-500",
+      bg: "bg-gradient-to-r from-green-500 to-green-700",
       p: t(
         "Un proyecto que aún está en desarrollo y que permite utilizar la biblioteca Grapesjs, potenciando y creando complementos de fácil acceso.",
         "A project that is still in development and allows the use of the grapesjs library, enhancing and creating easy-access plugins"
@@ -49,13 +49,13 @@ function Comunity() {
       link: "https://www.npmjs.com/package/react-cache-state",
     },
     {
-      title: "react-cache-state",
+      title: "react-scroll-video",
       bg: "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-slate-500 to-slate-700",
       p: t(
-        "una libreria que permite gurdar datos, persistiendo en memoria y encritando la informacion guardad",
-        "a library that allows saving data, persistence in memory and encrypting the saved information"
+        "Este componente permite desplazarse en videos.",
+        "This component allows scrolling in videos"
       ),
-      link: "https://www.npmjs.com/package/react-cache-state",
+      link: "https://www.npmjs.com/package/react-scroll-video",
     },
   ];
   return (
