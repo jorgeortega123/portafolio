@@ -1,11 +1,7 @@
-import { H1, Icons, useCss, useT } from "cllk";
+import { Container, H1, Icons, useCss, useT } from "cllk";
 import React from "react";
 
 function Knowledge() {
-  useCss(`.gallery {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(var(--gw, 200px), 1fr));
-        }`);
   const frontend = [
     { icons: "IconBrandReact", name: "React" },
     { icons: "IconBrandHtml5", name: "Html" },
@@ -31,11 +27,11 @@ function Knowledge() {
   const { t } = useT();
   return (
     <div className="space-y-10">
-      <H1 size={"2rem"}>{t("Conocimiento", "Knowledge")} </H1>
-      <div>
-        <H1 size={"1rem"}>{t("Frontend", "Frontend")} </H1>
-        {/* @ts-ignore */}
-        <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
+      <H1 size={"2em"}>{t("Conocimiento", "Knowledge")} </H1>
+      <Container gradient="bg-gradient-to-r from-green-500 via-blue-500 to-purple-600">
+        <H1 size={"2em"}>{t("Frontend", "Frontend")} </H1>
+
+        <div className="flex">
           {frontend.map((index, key) => (
             <div
               key={key}
@@ -46,11 +42,10 @@ function Knowledge() {
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <H1 size={"1rem"}>{t("Backend", "Backend")} </H1>
-        {/* @ts-ignore */}
-        <div className="gallery gap-5 mx-auto" style={{ "--gw": "150px" }}>
+      </Container>
+      <Container gradient="bg-gradient-to-r from-purple-500 to-purple-800">
+        <H1 size={"2em"}>{t("Backend", "Backend")} </H1>
+        <div className="flex">
           {backend.map((index, key) => (
             <div
               key={key}
@@ -61,11 +56,11 @@ function Knowledge() {
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <H1 size={"1rem"}>{t("Herramientas","Tools")} </H1>
-        {/* @ts-ignore */}
-        <div className="gallery gap-5 mx-auto" style={{ "--gw": "100px" }}>
+      </Container>
+      <Container gradient="bg-gradient-to-r from-red-500 to-red-700">
+        <H1 size={"2em"}>{t("Herramientas", "Tools")} </H1>
+
+        <div className="flex">
           {tools.map((index, key) => (
             <div
               key={key}
@@ -76,7 +71,7 @@ function Knowledge() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

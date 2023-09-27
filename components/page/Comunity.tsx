@@ -6,7 +6,7 @@ function Comunity() {
   const data = [
     {
       title: "@llampukaq/realm",
-      bg: "bg-gradient-to-r from-pink-500 to-red-500",
+      bg: "bg-gradient-to-r from-red-500 to-red-700",
       p: t(
         "Esta es una libreria que dise;e para esta empresa, la cual mantengo y uso con frecuencia en mis proyectos, permite gestionar el backend as services de realm, de manera mas sencilla y con multiples plugins que le va a dar facilidad de uso",
         "This is a library that I designed for this company, which I maintain and use frequently in my projects, it allows you to manage the backend as services of realm, in a simpler way and with multiple plugins that will give it ease of use"
@@ -24,7 +24,7 @@ function Comunity() {
     },
     {
       title: "cllk",
-      bg: "bg-gradient-to-r from-indigo-500 to-purple-500",
+      bg: "bg-gradient-to-r from-indigo-500 to-indigo-700",
       p: t(
         "una biblioteca de componentes esencial y fácil de usar, pretende ser ligera y fácil de usar",
         "a essential and easy-to-use component library, it aims to be light and easy to use"
@@ -49,6 +49,15 @@ function Comunity() {
       ),
       link: "https://www.npmjs.com/package/react-cache-state",
     },
+    {
+      title: "react-cache-state",
+      bg: "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-slate-500 to-slate-700",
+      p: t(
+        "una libreria que permite gurdar datos, persistiendo en memoria y encritando la informacion guardad",
+        "a library that allows saving data, persistence in memory and encrypting the saved information"
+      ),
+      link: "https://www.npmjs.com/package/react-cache-state",
+    },
   ];
   return (
     <div className="w-full space-y-3">
@@ -61,34 +70,23 @@ function Comunity() {
           )}
         </P>
       </div>
-      <div className="px-5">
-        <Swiper
-          pagination={{
-            clickable: true,
-          }}
-          loop={true}
-          navigation={true}
-          slidesPerView={1}
-          className="mySwiper"
-        >
-          {data.map((x, index) => (
-            <SwiperSlide key={index} className="w-full mx-auto">
-              <Container
-                className={`h-80 w-full rounded-3xl ${x.bg} flex flex-col justify-between py-10 items-center space-y-5`}
-              >
-                <H1>{x.title}</H1>
-                <P>{x.p}</P>
-                <Button
-                  onClick={() => {
-                    window.open(x.link);
-                  }}
-                >
-                  {t("Abrir", "Open")}
-                </Button>
-              </Container>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="grid grid-cols-2 gap-5">
+        {data.map((x, index) => (
+          <Container
+            key={index}
+            className={`${x.bg} flex flex-col justify-between items-center space-y-5`}
+          >
+            <H1 size={"1.5em"}>{x.title}</H1>
+            <P>{x.p}</P>
+            <Button
+              onClick={() => {
+                window.open(x.link);
+              }}
+            >
+              {t("Abrir", "Open")}
+            </Button>
+          </Container>
+        ))}
       </div>
     </div>
   );
