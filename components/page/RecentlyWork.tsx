@@ -1,10 +1,11 @@
-import { Button, Container, H1, Img, P, useT } from "cllk";
+import { Button, Container, H1, Img, P, useIsDesktop, useT } from "cllk";
 import React from "react";
 
 type Props = {};
 
 function RecentlyWork({}: Props) {
   const { t } = useT();
+  const { isDesktop } = useIsDesktop();
   return (
     <div className="space-y-5">
       <H1 size="2rem">{t("Mi trabajo reciente", "My recently work")} </H1>
@@ -24,17 +25,26 @@ function RecentlyWork({}: Props) {
         >
           Mirar
         </Button>
-
-        <div className="flex justify-center space-x-2 sm:space-x-10">
-          <Img
-            className="w-full rounded-2xl "
-            src={"/asset/llampukaq.webp"}
-          ></Img>
-          <Img
-            className="w-full rounded-3xl "
-            src={"/asset/llampukaq.webp"}
-          ></Img>
-        </div>
+        {isDesktop ? (
+          <div className="flex justify-center space-x-2 sm:space-x-10">
+            <Img
+              className="w-full rounded-2xl "
+              src={"/asset/llampukaq.webp"}
+            ></Img>
+            <Img
+              className="w-full rounded-3xl "
+              src={"/asset/llampukaq.webp"}
+            ></Img>
+          </div>
+        ) : (
+          <div className="flex justify-center relative">
+            <Img
+              className="min-w-[400px] absolute top-0"
+              src={"/asset/llampukaq.webp"}
+            />
+            <div className="h-[170px]"></div>
+          </div>
+        )}
       </Container>
     </div>
   );

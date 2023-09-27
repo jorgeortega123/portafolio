@@ -28,50 +28,55 @@ function Knowledge() {
   return (
     <div className="space-y-10">
       <H1 size={"2em"}>{t("Conocimiento", "Knowledge")} </H1>
-      <Container gradient="bg-gradient-to-r from-green-600 to-green-700">
-        <H1 size={"2em"}>{t("Frontend", "Frontend")} </H1>
+      <div className="flex flex-wrap gap-5">
+        <Container gradient="bg-gradient-to-r from-green-600 to-green-700">
+          <H1 size={"2em"}>{t("Frontend", "Frontend")} </H1>
 
-        <div className="flex flex-wrap gap-2">
-          {frontend.map((index, key) => (
-            <div
-              key={key}
-              className="mx-auto w-min flex flex-col items-center justify-center"
-            >
-              <Icons size={60} icon={index.icons as any} />
-              <H1>{index.name}</H1>
-            </div>
-          ))}
-        </div>
-      </Container>
-      <Container gradient="bg-gradient-to-r from-purple-500 to-purple-800">
-        <H1 size={"2em"}>{t("Backend", "Backend")} </H1>
-        <div className="flex flex-wrap gap-2">
-          {backend.map((index, key) => (
-            <div
-              key={key}
-              className="mx-auto w-min flex flex-col justify-center items-center"
-            >
-              <Icons size={60} icon={index.icons as any} />
-              <H1>{index.name}</H1>
-            </div>
-          ))}
-        </div>
-      </Container>
-      <Container gradient="bg-gradient-to-r from-red-500 to-red-700">
-        <H1 size={"2em"}>{t("Herramientas", "Tools")} </H1>
+          <div className="flex flex-wrap gap-2">
+            {frontend.map((index, key) => (
+              <div
+                key={key}
+                className="mx-auto w-min flex flex-col items-center justify-center"
+              >
+                <Icons size={60} icon={index.icons as any} />
+                <H1>{index.name}</H1>
+              </div>
+            ))}
+          </div>
+        </Container>
+        <Container
+          gradient="bg-gradient-to-r from-red-500 to-red-700"
+          className="max-w-[600px]"
+        >
+          <H1 size={"2em"}>{t("Herramientas", "Tools")} </H1>
 
-        <div className="flex flex-wrap gap-2">
-          {tools.map((index, key) => (
-            <div
-              key={key}
-              className="mx-auto w-min flex flex-col justify-center items-center"
-            >
-              <Icons size={60} icon={index.icons as any} />
-              <H1>{index.name}</H1>
-            </div>
-          ))}
-        </div>
-      </Container>
+          <div className="flex flex-wrap gap-2">
+            {tools.map((index, key) => (
+              <div
+                key={key}
+                className="mx-auto w-min flex flex-col justify-center items-center"
+              >
+                <Icons size={60} icon={index.icons as any} />
+                <H1>{index.name}</H1>
+              </div>
+            ))}
+          </div>
+        </Container>
+        <Container gradient="bg-gradient-to-r from-purple-500 to-purple-800 max-w-[400px]">
+          <H1 size={"2em"}>{t("Backend", "Backend")} </H1>
+          <div className="flex flex-wrap gap-2">
+            {backend.map((index, key) => (
+              <div
+                key={key}
+                className="mx-auto w-min flex flex-col justify-center items-center"
+              >
+                <Icons size={60} icon={index.icons as any} />
+                <H1>{index.name}</H1>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }
