@@ -1,4 +1,5 @@
 import Contact from "@/components/Contact";
+import Typed from "@/components/Typed";
 import About from "@/components/page/About";
 import Comunity from "@/components/page/Comunity";
 import Hero from "@/components/page/Hero";
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="space-y-10 overflow-x-hidden mx-auto max-w-[1000px]">
+      <div className="space-y-10 overflow-x-hidden mx-auto">
         <About />
         <Knowledge />
         <RecentlyWork />

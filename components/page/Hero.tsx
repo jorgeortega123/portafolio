@@ -1,6 +1,5 @@
 import React from "react";
 import { H1, Icons, useIsDesktop, useT } from "cllk";
-import Star from "../stars/Star";
 
 function Hero() {
   const { t } = useT();
@@ -8,10 +7,7 @@ function Hero() {
   return (
     <div className="h-screen">
       <div className="h-full z-[1] flex flex-col items-center justify-center relative">
-        <div className="absolute w-full h-full z-[-1] ">
-          <Star />
-        </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center space-y-5">
           <H1 span size={isDesktop ? "9em" : "4em"}>
             Luis Ortega
           </H1>

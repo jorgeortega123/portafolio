@@ -4,11 +4,8 @@ import React from "react";
 function About() {
   const { t } = useT();
   return (
-    <div className="my-6">
-      <Container
-        gradient="bg-gradient-to-tr from-blue-500 via-blue-600 to-blue-700"
-        className=" max-w-[600px]"
-      >
+    <div>
+      <Container c className=" max-w-[600px] space-y-5">
         <Img
           className="w-80 h-80 object-cover rounded-3xl mx-auto"
           src={"/profile.webp"}

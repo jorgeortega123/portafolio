@@ -1,11 +1,11 @@
-import { Button, Container, H1, P, useT } from "cllk";
+import { Button, Container, H1, Marquee, P, useT } from "cllk";
 import React from "react";
 function Comunity() {
   const { t } = useT();
   const data = [
     {
       title: "@llampukaq/realm",
-      bg: "bg-gradient-to-r from-red-500 to-red-700",
+
       p: t(
         "Esta es una libreria que dise;e para esta empresa, la cual mantengo y uso con frecuencia en mis proyectos, permite gestionar el backend as services de realm, de manera mas sencilla y con multiples plugins que le va a dar facilidad de uso",
         "This is a library that I designed for this company, which I maintain and use frequently in my projects, it allows you to manage the backend as services of realm, in a simpler way and with multiple plugins that will give it ease of use"
@@ -14,7 +14,7 @@ function Comunity() {
     },
     {
       title: "@llampukaq/builder",
-      bg: "bg-gradient-to-r from-green-500 to-green-700",
+
       p: t(
         "Un proyecto que aún está en desarrollo y que permite utilizar la biblioteca Grapesjs, potenciando y creando complementos de fácil acceso.",
         "A project that is still in development and allows the use of the grapesjs library, enhancing and creating easy-access plugins"
@@ -23,7 +23,7 @@ function Comunity() {
     },
     {
       title: "cllk",
-      bg: "bg-gradient-to-r from-indigo-500 to-indigo-700",
+
       p: t(
         "una biblioteca de componentes esencial y fácil de usar, pretende ser ligera y fácil de usar",
         "a essential and easy-to-use component library, it aims to be light and easy to use"
@@ -32,7 +32,7 @@ function Comunity() {
     },
     {
       title: "react-languajes",
-      bg: "bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900",
+
       p: t(
         "una libreria para integrar traduccion en react",
         "una libreria para integrar traduccion en react"
@@ -41,7 +41,7 @@ function Comunity() {
     },
     {
       title: "react-cache-state",
-      bg: "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900",
+
       p: t(
         "una libreria que permite gurdar datos, persistiendo en memoria y encritando la informacion guardad",
         "a library that allows saving data, persistence in memory and encrypting the saved information"
@@ -50,7 +50,7 @@ function Comunity() {
     },
     {
       title: "react-scroll-video",
-      bg: "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-slate-500 to-slate-700",
+
       p: t(
         "Este componente permite desplazarse en videos.",
         "This component allows scrolling in videos"
@@ -69,11 +69,12 @@ function Comunity() {
           )}
         </P>
       </div>
-      <div className="flex flex-wrap gap-5">
+      <Marquee className="flex justify-center items-center gap-5" speed={100}>
         {data.map((x, index) => (
           <Container
+            c
             key={index}
-            className={`${x.bg} flex flex-col justify-between items-center max-w-[400px]`}
+            className={`flex flex-col justify-between items-center max-w-[400px] space-y-5 h-full`}
           >
             <H1 size={"1.5em"}>{x.title}</H1>
             <P>{x.p}</P>
@@ -86,7 +87,7 @@ function Comunity() {
             </Button>
           </Container>
         ))}
-      </div>
+      </Marquee>
     </div>
   );
 }

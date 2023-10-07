@@ -41,82 +41,87 @@ function Contact() {
   };
   return (
     <>
-      <Container className="dark:bg-zinc-800 bg-zinc-100">
-        <H1 span size={"2.2em"}>
-          {t("Contactame", "Contact me")}
+      <div className="max-w-[1000px] mx-auto">
+        <H1 size={"5em"} span>
+          {t("Contactame", "Contact Me")}
         </H1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto lg:px-8 sm:divide-x divide-y sm:divide-y-0 sm:m-10 cursor-default">
-          <div className="py-6 flex flex-col space-y-5 justify-center items-center">
-            <H1 size={"1.5em"}>{t("Redes Sociales", "Social Media")}</H1>
-            <Button
-              onClick={() => {
-                window.open("https://m.me/104952405483178", "_blank");
-              }}
-              icon={<Icons icon="IconBrandMessenger" />}
+        <Container
+          p="py-10 px-10 sm:px-0"
+          className="dark:bg-zinc-800 bg-zinc-100"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto lg:px-8 sm:divide-x divide-y sm:divide-y-0 cursor-default">
+            <div className="py-6 md:py-0 flex flex-col space-y-5 justify-center items-center">
+              <H1 size="text-3xl">{t("Contactanos", "Get in touch")}</H1>
+              <Button
+                onClick={() => {
+                  window.open("https://m.me/104952405483178", "_blank");
+                }}
+                icon={<Icons icon="IconBrandMessenger" />}
+              >
+                Messenger
+              </Button>
+              <Button
+                onClick={() => {
+                  window.open("https://wa.me/593959434867", "_blank");
+                }}
+                icon={<Icons icon="IconBrandWhatsapp" />}
+              >
+                Whatsapp
+              </Button>
+              <Button
+                onClick={() => {
+                  window.open("https://t.me/llkT_bot", "_blank");
+                }}
+                icon={<Icons icon="IconBrandTelegram" />}
+              >
+                Telegram
+              </Button>
+              <Button
+                onClick={() => {
+                  window.location.href = "tel:+593959434867";
+                }}
+                icon={<Icons icon="IconCell" />}
+              >
+                Telefono
+              </Button>
+            </div>
+            <form
+              onSubmit={handleSubmit(giveData)}
+              className="flex flex-col md:py-0 w-full mx-auto py-5 md:px-10"
             >
-              Messenger
-            </Button>
-            <Button
-              onClick={() => {
-                window.open("https://wa.me/593959434867", "_blank");
-              }}
-              icon={<Icons icon="IconBrandWhatsapp" />}
-            >
-              Whatsapp
-            </Button>
-            <Button
-              onClick={() => {
-                window.open("https://t.me/llkT_bot", "_blank");
-              }}
-              icon={<Icons icon="IconBrandTelegram" />}
-            >
-              Telegram
-            </Button>
-            <Button
-              onClick={() => {
-                window.location.href = "tel:+593959434867";
-              }}
-              icon={<Icons icon="IconCell" />}
-            >
-              Telefono
-            </Button>
+              <H1>Enviar Mensaje</H1>
+              <Input
+                register={register}
+                name="name"
+                label={t("Nombre", "Name")}
+              />
+              <Input
+                register={register}
+                name="email"
+                type="email"
+                label={t("Email", "Email")}
+              />
+
+              <TextArea
+                register={register}
+                name="message"
+                label={t("Descripcion", "Description")}
+                required
+              />
+
+              <Button
+                className="mt-5"
+                type="submit"
+                icon={<Icons icon="IconSend" />}
+                center
+                onClick={giveData}
+              >
+                {t("Enviar", "Send")}
+              </Button>
+            </form>
           </div>
-          <form
-            onSubmit={handleSubmit(giveData)}
-            className="flex flex-col md:py-0 w-full mx-auto py-5 md:px-10"
-          >
-            <H1 size={"1.5em"}>Enviar Mensaje</H1>
-            <Input
-              register={register}
-              name="name"
-              label={t("Nombre", "Name")}
-            />
-            <Input
-              register={register}
-              name="email"
-              type="email"
-              label={t("Email", "Email")}
-            />
-
-            <TextArea
-              register={register}
-              name="message"
-              label={t("Descripcion", "Description")}
-              required
-            />
-
-            <Button
-              className="mt-5"
-              type="submit"
-              icon={<Icons icon="IconSend" />}
-              center
-              onClick={giveData}
-            >
-              {t("Enviar", "Send")}
-            </Button>
-          </form>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </>
   );
 }

@@ -26,10 +26,10 @@ function Knowledge() {
   ];
   const { t } = useT();
   return (
-    <div className="space-y-10">
+    <div className="space-y-5">
       <H1 size={"2em"}>{t("Conocimiento", "Knowledge")} </H1>
       <div className="flex flex-wrap gap-5">
-        <Container gradient="bg-gradient-to-r from-green-600 to-green-700">
+        <Container c>
           <H1 size={"2em"}>{t("Frontend", "Frontend")} </H1>
 
           <div className="flex flex-wrap gap-2">
@@ -44,10 +44,7 @@ function Knowledge() {
             ))}
           </div>
         </Container>
-        <Container
-          gradient="bg-gradient-to-r from-red-500 to-red-700"
-          className="max-w-[600px]"
-        >
+        <Container c className="max-w-[600px]">
           <H1 size={"2em"}>{t("Herramientas", "Tools")} </H1>
 
           <div className="flex flex-wrap gap-2">
@@ -62,7 +59,7 @@ function Knowledge() {
             ))}
           </div>
         </Container>
-        <Container gradient="bg-gradient-to-r from-purple-500 to-purple-800 max-w-[400px]">
+        <Container className="max-w-[400px]" c>
           <H1 size={"2em"}>{t("Backend", "Backend")} </H1>
           <div className="flex flex-wrap gap-2">
             {backend.map((index, key) => (

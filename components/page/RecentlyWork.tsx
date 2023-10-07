@@ -12,7 +12,7 @@ function RecentlyWork({}: Props) {
       <Container
         p="pb-0 px-10 pt-10"
         gradient="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 space-y-3"
-        className="shadow-[0px_0px_300px_0px_rgba(255,255,255,.3)]"
+        className="shadow-[0px_0px_300px_0px_rgba(255,255,255,.3)] overflow-hidden space-y-5"
       >
         <H1 size={"1.9em"}>Llampukaq Technology </H1>
         <P>
