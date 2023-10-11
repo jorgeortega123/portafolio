@@ -1,21 +1,18 @@
-import Contact from "@/components/Contact";
-import Typed from "@/components/Typed";
-import About from "@/components/page/About";
-import Comunity from "@/components/page/Comunity";
-import Hero from "@/components/page/Hero";
-import Knowledge from "@/components/page/Knowledge";
-import RecentlyWork from "@/components/page/RecentlyWork";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <div className="space-y-10 overflow-x-hidden mx-auto">
+      <div>
+        <Header />
+        <Hero />
         <About />
-        <Knowledge />
-        <RecentlyWork />
-        <Comunity />
-        <Contact />
+        <Projects />
+        <Footer />
       </div>
     </>
   );
