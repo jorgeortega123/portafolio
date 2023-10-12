@@ -1,11 +1,26 @@
+import useScrollTo from "@/hooks/useScroll";
 import React from "react";
 
 function About() {
+  const skills = [
+    {icon: "", name: "React JS"},
+    {icon: "", name: "Typescript"},
+    {icon: "", name: "HTML"},
+    {icon: "", name: "CSS"},
+    {icon: "", name: "Next Js"},
+    {icon: "", name: "Example"},
+    {icon: "", name: "Example"},
+    {icon: "", name: "Example"},
+  ]
+  const scrollToElement = useScrollTo();
+  const handleOnClick = (e:string) => { 
+    scrollToElement(e)
+  }
   return (
     <section id="about" className="about sec-pad">
       <div className="main-container">
         <h2 className="heading heading-sec heading-sec__mb-med">
-          <span className="heading-sec__main">About Me</span>
+          <span className="heading-sec__main">Acerca de mi</span>
           <span className="heading-sec__sub">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
             tempora explicabo quae quod deserunt eius sapiente
@@ -33,17 +48,22 @@ function About() {
                 <strong>contact</strong> me here.
               </p>
             </div>
-            <a
-              href="./#contact"
+            <p
+            onClick={()=>handleOnClick("contact")}
               className="btn btn--med btn--theme dynamicBgClr"
             >
               Contact
-            </a>
+            </p>
           </div>
           <div className="about__content-skills">
             <h3 className="about__content-title">My Skills</h3>
             <div className="skills">
-              <div className="skills__skill">HTML</div>
+              {
+                skills.map((e)=>(
+                  <div className="skills__skill">{e.name}</div>
+                ))
+              }
+{/*             
               <div className="skills__skill">CSS</div>
               <div className="skills__skill">JavaScript</div>
               <div className="skills__skill">React</div>
@@ -54,7 +74,7 @@ function About() {
               <div className="skills__skill">Google ADS</div>
               <div className="skills__skill">Facebook Ads</div>
               <div className="skills__skill">Android</div>
-              <div className="skills__skill">IOS</div>
+              <div className="skills__skill">IOS</div> */}
             </div>
           </div>
         </div>
