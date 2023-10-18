@@ -12,7 +12,7 @@ function Header() {
         <div className="header__logo-container">
           <div className="header__logo-img-cont">
             <img
-              src="./assets/png/john-doe.png"
+              src="./assets/png/luis.jpg"
               alt="Ram Maheshwari Logo Image"
               className="header__logo-img"
             />
