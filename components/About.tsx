@@ -110,8 +110,8 @@ function About() {
                   mundo digital y un apasionado defensor de la libertad
                   creativa. He trabajado bajo la metodología del tipo
                   freelancer, colaborando en proyectos diversos para{" "}
-                  <strong> agencias </strong> y <strong> startups</strong> .
-                  Mi enfoque se centra en crear{" "}
+                  <strong> agencias </strong> y <strong> startups</strong> . Mi
+                  enfoque se centra en crear{" "}
                   <strong> experiencias digitales</strong> únicas y efectivas.
                 </p>
                 {/* <p className="about__content-details-para">
@@ -134,28 +134,20 @@ function About() {
                 {skills.map((e) => (
                   <div className="skills__skill">{e.id}</div>
                 ))}
-                {/*             
-              <div className="skills__skill">CSS</div>
-              <div className="skills__skill">JavaScript</div>
-              <div className="skills__skill">React</div>
-              <div className="skills__skill">SASS</div>
-              <div className="skills__skill">GIT</div>
-              <div className="skills__skill">Shopify</div>
-              <div className="skills__skill">Wordpress</div>
-              <div className="skills__skill">Google ADS</div>
-              <div className="skills__skill">Facebook Ads</div>
-              <div className="skills__skill">Android</div>
-              <div className="skills__skill">IOS</div> */}
               </div>
             </div>
           </div>
         </div>
+        <Marquee  className="mt-[55px]">
+          {skills.map((e) => (
+            <img
+              draggable={false}
+              src={e.link}
+              className="gray-img w-[50px] mx-12"
+            ></img>
+          ))}
+        </Marquee>
       </section>
-      <Marquee className="mt-[-25px]">
-        {skills.map((e) => (
-          <img draggable={false} src={e.link} className="gray-img w-[50px] mx-12"></img>
-        ))}
-      </Marquee>
     </>
   );
 }

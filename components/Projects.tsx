@@ -1,3 +1,4 @@
+import useMainContext from "@/context/useMainContext";
 import React, { FC } from "react";
 
 const ListItem: FC<ListItemProps> = ({ date, title, description }) => (
@@ -37,48 +38,7 @@ const ListItem: FC<ListItemProps> = ({ date, title, description }) => (
 );
 
 export function Projects() {
-  const proyects = [
-    {
-      title: "Example 1",
-      about: `Registra tusde manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
-      tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
-      img: "./assets/png/llam.png",
-      web: "https://jetmatch.pages.dev",
-      repo: "https://github.com/jorgeortega123/JetMatch",
-      moreDetails: "/proyect-1",
-    },
-    {
-      title: "Example 2",
-      about: `Registra tusde manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
-      tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
-      img: "./assets/png/llam.png",
-      web: "https://jetmatch.pages.dev",
-      repo: "https://github.com/jorgeortega123/JetMatch",
-      moreDetails: "/proyect-1",
-    },
-  ];
-  const dataProyects = [
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-  ];
+  const { proyects } = useMainContext();
 
   return (
     <section id="projects" className="projects sec-pad">
@@ -109,55 +69,33 @@ export function Projects() {
                 <h3 className="projects__row-content-title">{e.title}</h3>
                 <p className="projects__row-content-desc">{e.about}</p>
                 <a
-                  href="./project-1.html"
-                  className="btn btn--med btn--theme dynamicBgClr"
+                  href={`/proyect?id=${e.id}`}
+                  className="btn btn--med btn--theme dynamicBgClr relative"
                   target="_blank"
                 >
                   Ver mas
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute top-0 right-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+                    <path d="M11 13l9 -9"></path>
+                    <path d="M15 4h5v5"></path>
+                  </svg>
                 </a>
               </div>
             </div>
           ))}
         </div>
-        <section id="libraries" className="">
-          <div className=" max-w-[660px] lg:max-w-[800px] px-4 mx-auto">
-            <div className="flex flex-col  mx-4 items-center px-[4rem] mb-[12rem]">
-              <div className="col-span-12 sm:col-span-3  w-full text-left">
-                <div className="  mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto   before:dark:bg-transparent -[#0062b9]">
-                  <h2 className="font-[700] pb-0 mb-[0px] text-[2.8rem] ">
-                    Librerias
-                  </h2>
-                  <span className="text-sm font-bold uppercase dark:text-gray-400">
-                    Subida a npm
-                  </span>
-                </div>
-              </div>
-              <div className="w-full s relative col-span-12 px-4 space-y-6 sm:col-span-9">
-                <div className=" space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:dark:bg-[#0062b9]">
-                  {dataProyects.map((e) => (
-                    <div className=" rounded-[6px] flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:z-[1] before:dark:bg-[#0062b9]">
-                      <h3 className="text-[2rem] text-black">{e.title}</h3>
-                      <time className="text-[1.2rem] tracki uppercase dark:text-gray-400">
-                        {e.fecha}
-                      </time>
-                      <p className="text-[1.5rem] mt-3 text-[#777] leading-[1.7]">
-                        {e.description}
-                      </p>
-                      <div className="absolute right-0 top-1 flex gap-[0px] items-center">
-                        <img
-                          className="main-footer__icon brightness-75 "
-                          src="./assets/png/github-ico.png"
-                          alt="icon"
-                        />
-                        <p className=""></p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </section>
   );
