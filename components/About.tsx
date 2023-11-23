@@ -5,84 +5,56 @@ import Marquee from "react-fast-marquee";
 function About() {
   const skills = [
     {
-      id: "react",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
-    },
-    {
-      id: "html",
+      id: "HTML",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845292/pngegg_pnsolw.png",
     },
 
     {
-      id: "css",
+      id: "CSS",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/k_fhm489.png",
     },
     {
-      id: "javascript",
+      id: "Javascript",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845292/javascript-39404_yvaz5m.png",
     },
     {
-      id: "typescript",
+      id: "React",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
+    },
+    {
+      id: "Typescript",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/typescript_original_logo_icon_146317_p5xnyi.png",
     },
     {
-      id: "vuejs",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/vue_pcrlxt.png",
-    },
-    {
-      id: "sass",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/sass-logo-7702_sxv52z.png",
-    },
-    {
-      id: "tailwindcss",
+      id: "Tailwindcss",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805670/Tailwind_CSS_Logo.svg_mch3ci.png",
     },
     {
-      id: "framer-motion",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805764/framer-motion-logo-DA1E33CAA1-seeklogo.com_k8smvm.png",
-    },
-    {
-      id: "bootstrap",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805814/bootstrap-logo-shadow_wsyug6.png",
-    },
-    {
-      id: "material-ui",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806164/logo_t5er37.png",
-    },
-    {
-      id: "nodejs",
+      id: "NodeJs",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
     },
     {
-      id: "express",
+      id: "Express",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805507/6202fcdee5ee8636a145a41b_1234_xvfbkk.png",
     },
     {
-      id: "python",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806004/267_Python-512_gt1yds.webp",
-    },
-    {
-      id: "git",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805964/Git-Icon-1788C_ncuqfg.png",
-    },
-    {
-      id: "github",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806043/2111612_ftyjzh.png",
-    },
-    {
-      id: "figma",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png",
-    },
-    {
-      id: "linux",
+      id: "Linux",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805986/6124995_xpzgrl.png",
     },
     {
-      id: "postsgres",
+      id: "Docker",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788736/ezgif.com-resize_jkk1kr.png",
     },
     {
-      id: "cloudfare-pages",
+      id: "GIT",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805964/Git-Icon-1788C_ncuqfg.png",
+    },
+    {
+      id: "Figma",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png",
+    },
+    {
+      id: "Cloudflare workers pages",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806235/download_oglnre.png",
     },
   ];

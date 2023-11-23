@@ -2,7 +2,7 @@ import useMainContext from "@/context/useMainContext";
 import React from "react";
 
 export default function Libraries() {
-  const {libraries} = useMainContext()
+  const { libraries } = useMainContext();
   return (
     <section id="libraries" className="sec-pad">
       <div className=" max-w-[660px] lg:max-w-[800px] px-4 mx-auto">
@@ -41,6 +41,11 @@ export default function Libraries() {
                   </div>
                 </div>
               ))}
+              <div>
+                <div>
+                  <p>Ver mas... (+7)</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
