@@ -1,13 +1,14 @@
 import React from "react";
-import useScrollTo from "../hooks/useScroll.jsx";
+import Link from "next/link.js";
 function Header() {
-  const scrollToElement = useScrollTo();
-  const handleOnClick = (e:string) => { 
-    scrollToElement(e)
-  }
+  const links = [
+    { link: "/", name: "Inicio" },
+    { link: "/#me", name: "Acerca de mi" },
+    { link: "/#proyectos", name: "proyectos" },
+    { link: "/#contacto", name: "contacto" },
+  ];
   return (
     <header id="" className="header">
-
       <div className="header__content">
         <div className="header__logo-container">
           <div className="header__logo-img-cont">
@@ -21,27 +22,13 @@ function Header() {
         </div>
         <div className="header__main">
           <ul className="header__links">
-            <li className="header__link-wrapper cursor-pointer 
-             ">
-              <p onClick={()=>handleOnClick("home")} className=" header__link cursor-pointer">
-                Inicio
-              </p>
-            </li>
-            <li className="header__link-wrapper">
-              <p onClick={()=>handleOnClick("about")}   className="cursor-pinter header__link">
-                Acerca de mi
-              </p>
-            </li>
-            <li className="header__link-wrapper">
-              <p onClick={()=>handleOnClick("projects")}  className="cursor-pointer header__link">
-                Proyectos
-              </p>
-            </li>
-            <li className="header__link-wrapper">
-              <p onClick={()=>handleOnClick("contact")} className="cursor-pointer header__link">
-                Contacto
-              </p>
-            </li>
+            {links.map((x, index) => (
+              <Link href={x.link} key={index}>
+                <li className="header__link-wrapper cursor-pointer" key={index}>
+                  <p className=" header__link cursor-pointer">{x.name}</p>
+                </li>
+              </Link>
+            ))}
           </ul>
           <div className="header__main-ham-menu-cont">
             <img

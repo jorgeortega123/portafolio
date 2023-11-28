@@ -10,15 +10,21 @@ import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <>
-      <div id="home">
-
+      <div>
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
+        <div id="me">
+          <About />
+        </div>
+        <div id="about">
+          <Experience />
+        </div>
+        <div id="proyectos">
+          <Projects />
+        </div>
         <Libraries />
-        <Contact />
-
+        <div id="contacto">
+          <Contact />
+        </div>
       </div>
     </>
   );

@@ -52,7 +52,11 @@ function Footer() {
             </div>
           </div>
           <div className="main-footer__row main-footer__row-2">
+<<<<<<< HEAD
             <h4 className="heading heading-sm text-lt">Luis Ortega</h4>
+=======
+            <h4 className="heading heading-sm text-lt">Luis</h4>
+>>>>>>> 282e774227397b02571d0070f0640c685687299c
             <p className="main-footer__short-desc">
               Desarrollador Full Stack especializado en frontend con bases
               firmes en el funcionamiento de Backend y servicios en la nube.
@@ -72,3 +76,5 @@ function Footer() {
 }
 
 export default Footer;
+
+
