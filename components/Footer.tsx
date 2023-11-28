@@ -48,7 +48,7 @@ function Footer() {
             </div>
           </div>
           <div className="main-footer__row main-footer__row-2">
-            <h4 className="heading heading-sm text-lt">John Doe</h4>
+            <h4 className="heading heading-sm text-lt">Luis</h4>
             <p className="main-footer__short-desc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
               tempora explicabo quae quod deserunt
@@ -68,3 +68,5 @@ function Footer() {
 }
 
 export default Footer;
+
+

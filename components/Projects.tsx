@@ -1,4 +1,5 @@
 import useMainContext from "@/context/useMainContext";
+import Link from "next/link";
 import React, { FC } from "react";
 
 const ListItem: FC<ListItemProps> = ({ date, title, description }) => (
@@ -39,7 +40,6 @@ const ListItem: FC<ListItemProps> = ({ date, title, description }) => (
 
 export function Projects() {
   const { proyects } = useMainContext();
-
   return (
     <section id="projects" className="projects sec-pad">
       <div className="main-container">
@@ -68,10 +68,9 @@ export function Projects() {
               <div className="projects__row-content">
                 <h3 className="projects__row-content-title">{e.title}</h3>
                 <p className="projects__row-content-desc">{e.about}</p>
-                <a
+                <Link
                   href={`/proyect?id=${e.id}`}
-                  className="btn btn--med btn--theme dynamicBgClr relative"
-                  target="_blank"
+                  className="btn btn--med btn--theme dynamicBgClr relative flex justify-center items-center"
                 >
                   Ver mas
                   <svg
@@ -91,7 +90,7 @@ export function Projects() {
                     <path d="M11 13l9 -9"></path>
                     <path d="M15 4h5v5"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
