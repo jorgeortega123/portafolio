@@ -79,24 +79,14 @@ function MainContextComponent({ children }: { children: ReactNode }) {
   ];
   const proyects = [
     {
-      title: "Example 1",
-      about: `Registra tusde manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
-      tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
-      img: "./assets/png/llam.png",
+      title: "Native Translator",
+      about: `Un proyecto simple que permite escribir frases y una IA las traduce al inglés, sin importar el idioma en el que se escriban. Este proyecto funciona de manera estática y utiliza Cloudflare Worker para la comunicación con la API de OpenAI`,
+      tags: ["NextJs", "React", "TypeScript", "Workers"],
+      img: "/mac.png",
       web: "https://jetmatch.pages.dev",
       repo: "https://github.com/jorgeortega123/JetMatch",
       moreDetails: "/proyect-1",
       id: "example-1",
-    },
-    {
-      title: "Example 2",
-      about: `Registra tusde manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
-      tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
-      img: "./assets/png/llam.png",
-      web: "https://jetmatch.pages.dev",
-      repo: "https://github.com/jorgeortega123/JetMatch",
-      moreDetails: "/proyect-1",
-      id: "example-2",
     },
   ];
   const libraries = [

@@ -1,4 +1,3 @@
-import Laptop from "@/components/mokup/Laptop";
 import useMainContext from "@/context/useMainContext";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -41,19 +40,15 @@ const ProjectDetails = () => {
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}
 
-      <section className="project-cs-hero relative overflow-hidden">
-        <img
-          src="assets/png/backgrounds/patron1.png"
-          className="opacity-60 w-full h-auto top-0 absolute z-[0]"
-          alt=""
-        />
-
+      <section className="project-cs-hero overflow-hidden">
         <div className="project-cs-hero__content flex flex-col ">
-          <h1 className="heading-primary z-[2] fondo-bold text-[5.2rem]">{project?.title}</h1>
+          <h1 className="heading-primary  fondo-bold text-[5.2rem]">
+            {project?.title}
+          </h1>
           <div className="project-cs-hero__info">
-            <p className="text-primary flex z-[2]">{project?.about}</p>
+            <p className="text-primary flex ">{project?.about}</p>
           </div>
-          <div className="project-cs-hero__cta flex justify-center z-[3] ">
+          <div className="project-cs-hero__cta flex justify-center  ">
             <a
               href="#"
               className="btn btn--bg"

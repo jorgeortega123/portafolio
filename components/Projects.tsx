@@ -59,30 +59,31 @@ export default function Projects() {
                   : "flex-col md:flex-row-reverse"
               }`}
             >
-              <div className="w-full md:w-1/2 h-auto">
-                <img src="assets/png/images.png" alt="" />
+              <div className="w-full md:w-1/2 h-auto bg-slate-800">
+                <img draggable={false} src={e.img} alt="" />
               </div>
               <div
                 className={`w-full md:w-1/2 flex border relative flex-col  ${
-                  l % 2 === 0 ? "items-center md:pl-12" : "items-center md:pr-12"
+                  l % 2 === 0
+                    ? "items-center md:pl-12"
+                    : "items-center md:pr-12"
                 } justify-center `}
               >
-                
-                  <div
-                    className={`triangulo absolute ${
-                      l % 2 === 0
-                        ? "rotate-[270deg] bottom-[92%] md:bottom-auto  md:rotate-180 md:right-[100%] "
-                        : "rotate-[270deg] bottom-[92%] md:bottom-auto  md:left-[100%] md:rotate-0"
-                    }`}
-                  ></div>
-              
+                <div
+                  className={`triangulo absolute ${
+                    l % 2 === 0
+                      ? "rotate-[270deg] bottom-[92%] md:bottom-auto  md:rotate-180 md:right-[100%] "
+                      : "rotate-[270deg] bottom-[92%] md:bottom-auto  md:left-[100%] md:rotate-0"
+                  }`}
+                ></div>
+
                 <div className="h-[340px] mt-[50px] md:mt-0 md:h-auto flex flex-col items-center max-w-[500px]">
-                  <p className={`w-full fondo-bold text-[4rem] py-4 text-[#0a233c]`}>
-                    Nombre del proyecto
+                  <p
+                    className={`w-full fondo-bold text-[4rem] py-4 text-[#0a233c]`}
+                  >
+                    {e.title}
                   </p>
-                  <p className="text-[1.8rem] w-full ">
-                    {e.about}
-                  </p>
+                  <p className="text-[1.8rem] w-full ">{e.about}</p>
                   <div className="md:my-5  border w-max rounded-[6px] cursor-pointer">
                     <Link
                       href={`/proyect?id=${e.id}`}

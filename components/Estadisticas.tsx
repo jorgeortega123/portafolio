@@ -1,14 +1,17 @@
 import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
 import React, { useState } from "react";
+import CountUp from "react-countup";
 
 const Contributions = () => {
   const { libraries } = useMainContext();
+
   return (
     <div className="">
       <p>
         Subidas a <span className="fondo-bold">NPM</span> se ecuentran las
-        librerias con su respectiva documentacion a forma de contribuir a la comunidad.
+        librerias con su respectiva documentacion a forma de contribuir a la
+        comunidad.
       </p>
       <ol className="" type="a">
         {libraries.map((e) => (
@@ -35,7 +38,8 @@ const Experience_text = () => {
         Trabajando como Frotend Developer en <span>LLK</span>
       </p>
       <p>
-        Mi rol ha sido componentizar y encapsular piezas de codigo para optimizar el funcionamiento de aplicaciones web.
+        Mi rol ha sido componentizar y encapsular piezas de codigo para
+        optimizar el funcionamiento de aplicaciones web.
       </p>
     </div>
   );
@@ -44,19 +48,19 @@ const Experience_text = () => {
 export default function Estadisticas() {
   const datosComponente = [
     {
-      bold: "+2",
+      bold: 2,
       title: "Años de experiencia",
       icon: "",
       info: <Experience_text />,
     },
     {
-      bold: "14k",
+      bold: 8,
       title: "Líneas de código",
       icon: "",
       info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
     },
     {
-      bold: "+7",
+      bold: 7,
       title: "Contribuciones comunidad",
       icon: "",
       info: <Contributions />,
@@ -75,9 +79,16 @@ export default function Estadisticas() {
 }
 const Children = ({ e }: any) => {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="w-full md:w-1/3  flex flex-col items-center  relative">
-      <p className="fondo-bold text-[8rem] block">{e.bold}</p>
+      <div className="flex justify-center items-center">
+        <p className="fondo-bold text-[8rem] block">+</p>
+        <CountUp className="fondo-bold text-[8rem] block" end={e.bold} />
+        {e.bold === 8 ? <p className="fondo-bold text-[8rem]">k</p>: ""}
+        
+      </div>
+
       <p className="text-[1.8rem] mt-[-12px]">{e.title}</p>
       <div
         onClick={() => {
