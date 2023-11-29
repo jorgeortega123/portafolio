@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "bold";
+    src: url("/fonts/bold.ttf");
+  }
+  @font-face {
+    font-family: "texto";
+    src: url("/fonts/texto.otf");
+  }
+  @font-face {
+    font-family: "alternativa-1";
+    src: url("/fonts/gh1.ttf");
+  }
+/* 
+h1 { 
+ font-family: "bold";
+} */
+
+
+.text-parrafo { 
+  font-family: "texto";
+}
+.text-estadistica { 
+  font-family: "texto";
+}
+
+.fondo-bold { 
+  font-family: "bold";
+}
+
+.transition-custom { 
+  transition: all .6s;
+}
+
+.mi-lista {
+  list-style-type: disc; /* Establecer el tipo de viñeta (puedes probar con circle, square, etc.) */
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent; /* Tamaño del triángulo */
+  border-bottom: 60px solid transparent;
+  border-left: 56.6px solid white; /* Altura del triángulo, calculada como la mitad de la base por la altura de un triángulo equilátero */
+}
+
+.estadistica-animacion-hover:hover p,.svg-custom {
+
+  color: black;
+
+}
+
+.estadistica-animacion-hover:hover .svg-custom {
+  fill: black; 
+
+}
+
+/* Tarjetas.css */
+
+/* Estilos del slider */
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Desactiva el efecto de desplazamiento de iOS */
+}
+
+.slider-item {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Estilos específicos del slider */
+@media (min-width: 768px) {
+  .slider-container {
+    overflow-x: visible;
+    display: flex;
+  }
+
+  .slider-item {
+    flex: 0 0 33.33%; /* 3 items en una fila */
+  }
+}

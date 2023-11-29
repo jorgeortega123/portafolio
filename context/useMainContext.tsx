@@ -16,18 +16,26 @@ interface Library {
   title: string;
   fecha: string;
   description: string;
+  link:string
 }
 
+interface Skills {
+  id: string;
+  link: string;
+  type: string;
+}
 function useMainContext() {
-  const { isLoad, proyects, libraries } = useContext(MainContext) as {
+  const { isLoad, proyects, libraries, skills } = useContext(MainContext) as {
     isLoad: boolean;
     proyects: Project[];
     libraries: Library[];
+    skills: Skills[];
   };
   return {
     isLoad,
     proyects,
     libraries,
+    skills,
   };
 }
 

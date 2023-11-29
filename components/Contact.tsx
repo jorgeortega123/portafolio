@@ -42,19 +42,22 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact sec-pad dynamicBg">
-      <div className="main-container">
-        <h2 className="heading heading-sec heading-sec__mb-med">
+    <section id="contact" className="contact sec-pad relative  overflow-hidden">
+      <div>
+        <img src="assets/png/backgrounds/patron1.png" className="opacity-60 w-full h-auto top-0 absolute z-[0]" alt="" />
+      </div>
+      <div className="flex flex-col z-[2]">
+        <h2 className="heading heading-sec flex flex-col z-[3] ">
           <span className="heading-sec__main heading-sec__main--lt">
             Contacto
           </span>
-          <span className="heading-sec__sub heading-sec__sub--lt">
+          <span className="heading-sec__sub heading-sec__sub--lt px-3">
             Si necesitas asistencia técnica, colaboración en un proyecto o
             simplemente quieres charlar de tu idea, estaré encantado de
             ayudarte. ¡No dudes en contactarme!
           </span>
         </h2>
-        <div className="contact__form-container">
+        <div className="contact__form-container flex flex-col z-[3]">
           <form onSubmit={(e)=>sendInformation(e)} action="#" className="contact__form">
             <div className="contact__form-field">
               <label className="contact__form-label" htmlFor="name">

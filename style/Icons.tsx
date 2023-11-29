@@ -7,10 +7,100 @@ export default function Icons({
   icon: string;
   stroke?: string;
   className?: string;
+
   text?: string;
   fromNav?: boolean;
 }) {
   switch (icon) {
+    case "left":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke={stroke}
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M9 6c0 -.852 .986 -1.297 1.623 -.783l.084 .076l6 6a1 1 0 0 1 .083 1.32l-.083 .094l-6 6l-.094 .083l-.077 .054l-.096 .054l-.036 .017l-.067 .027l-.108 .032l-.053 .01l-.06 .01l-.057 .004l-.059 .002l-.059 -.002l-.058 -.005l-.06 -.009l-.052 -.01l-.108 -.032l-.067 -.027l-.132 -.07l-.09 -.065l-.081 -.073l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057l-.002 -12.059z"
+            stroke-width="0"
+            
+          />
+        </svg>
+      );
+    case "backend":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
+          <path d="M15 20h-9a3 3 0 0 1 -3 -3v-2a3 3 0 0 1 3 -3h12" />
+          <path d="M7 8v.01" />
+          <path d="M7 16v.01" />
+          <path d="M20 15l-2 3h3l-2 3" />
+        </svg>
+      );
+    case "frontend":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+          <path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+          <path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+          <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+        </svg>
+      );
+    case "seo":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke={stroke}
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697" />
+          <path d="M18 12v-5a2 2 0 0 0 -2 -2h-2" />
+          <path d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+          <path d="M8 11h4" />
+          <path d="M8 15h3" />
+          <path d="M16.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" />
+          <path d="M18.5 19.5l2.5 2.5" />
+        </svg>
+      );
     case "check":
       return (
         <svg
@@ -35,7 +125,6 @@ export default function Icons({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={className}
-
           viewBox="0 0 24 24"
           stroke-width="2"
           stroke="currentColor"
@@ -44,7 +133,7 @@ export default function Icons({
           stroke-linejoin="round"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path  d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+          <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
           <path className="anim-down" d="M7 11l5 5l5 -5"></path>
           <path className="anim-down" d="M12 4l0 12"></path>
         </svg>
@@ -129,42 +218,6 @@ export default function Icons({
         </svg>
       );
 
-    case "love1":
-      return (
-        <svg
-          className={className}
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19 8.77673C18.7932 8.10613 18.4228 7.47603 17.8547 6.91284C17.4075 6.46941 16.9433 6.17698 16.4776 6M10.3993 4.14593C8.72567 3.08425 6.02273 2.08032 3.68853 4.46071C-1.85248 10.1114 7.64984 21 12 21C16.3501 21 25.8525 10.1114 20.3115 4.46072C17.9773 2.08035 15.2744 3.08427 13.6007 4.14593C12.655 4.74582 11.345 4.74582 10.3993 4.14593Z"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-        </svg>
-      );
-    case "love":
-      return (
-        <svg
-          id="button-love"
-          className={className}
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_0_33)">
-            <path d="M13.35 20.13C12.59 20.82 11.42 20.82 10.66 20.12L10.55 20.02C5.3 15.27 1.87 12.16 2 8.28C2.06 6.58 2.93 4.95 4.34 3.99C6.98 2.19 10.24 3.03 12 5.09C13.76 3.03 17.02 2.18 19.66 3.99C21.07 4.95 21.94 6.58 22 8.28C22.14 12.16 18.7 15.27 13.45 20.04L13.35 20.13Z" />
-          </g>
-          <defs>
-            <clipPath id="clip0_0_33">
-              <rect width="24" height="24" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      );
     case "time":
       return (
         <svg
