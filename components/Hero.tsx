@@ -21,16 +21,22 @@ function Hero() {
     },
   ];
   return (
-    <section className="home-hero">
-      <div className="home-hero__content">
+    <section className="home-hero relative border border-[black] overflow-hidden ">
+      <img
+        src="/assets/png/backgrounds/hexagonal.png"
+        className="absolute  top-0 left-0 object-cover md:w-full h-[110%] "
+        alt=""
+      />
+      <div className="home-hero__content ">
         <h1 className="heading-primary">
           Hey, me llamo <span className="font-bold">Luis Ortega</span>
         </h1>
-        <div className="home-hero__info">
-          <p className="text-primary">
+        <div className="home-hero__info text-left">
+          <p className="text-primary  ">
             Soy un apasionado programador con amplios conocimientos en frontend
             y backend usando typescript con experiencia en el desarrollo de
-            aplicaciones web innovadoras y escalables donde la creatividad es lo primero.
+            aplicaciones web innovadoras y escalables donde la creatividad es lo
+            primero.
           </p>
           <p className="text-primary">Conoce como trabajo.</p>
         </div>
@@ -71,12 +77,12 @@ function Hero() {
         <div className="mouse" />
       </div>
       <div className="absolute bottom-6 right-6 cursor-pointer">
-        <div className="p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6">
-          <Icons className="w-7 h-7" icon="download"></Icons>
-          <p className="text-[1.6rem] font-bold">Descargar CV</p>
-        </div>
-
-
+        <a href="https://drive.google.com/uc?export=download&id=1H_8KIsgecAFDMBpo-Pvl_GfKiA0-RAu3"  download={"Luis Ortega CV"}>
+          <div className="p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6">
+            <Icons className="w-7 h-7" icon="download"></Icons>
+            <p className="text-[1.6rem] font-bold">Descargar CV</p>
+          </div>
+        </a>
       </div>
     </section>
   );

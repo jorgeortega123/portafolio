@@ -9,7 +9,7 @@ export default function Tarjetas() {
     {
       title: "Frontend",
       description:
-        "Aqui hablo sencillamente del ejemplo para demostrar conocimiento",
+        "Creativo al momento de crear interfaces web con frameworks y librerias actuales.",
       image: "/assets/png/backgrounds/rose.png",
       icon: "frontend",
       type: "fr",
@@ -17,7 +17,7 @@ export default function Tarjetas() {
     {
       title: "Backend",
       description:
-        "Aqui hablo sencillamente del ejemplo para demostrar conocimiento",
+        "Alto nivel de manejo al trabajar con procesamiento en la Nube y base de datos (SQL y no SQL).",
       image: "/assets/png/backgrounds/blue.png",
       type: "ba",
       icon: "backend",
@@ -25,7 +25,7 @@ export default function Tarjetas() {
     {
       title: "Servicios",
       description:
-        "Aqui hablo sencillamente del ejemplo para demostrar conocimiento",
+        "Dominio de plataformas como Azure y mongo Atlas.",
       image: "/assets/png/backgrounds/red.png",
       type: "se",
       icon: "seo",
@@ -50,7 +50,7 @@ export default function Tarjetas() {
           </div>
           <img className="" src={e.image} alt="" />
           <div className="absolute top-2 left-2 flex gap-1">
-            {skills.map((a) => {
+            {/* {skills.map((a) => {
               if (e.type === a.type) {
                 console.log(e.type, a.type)
                 return (
@@ -61,7 +61,7 @@ export default function Tarjetas() {
                   ></img>
                 );
               }
-            })}
+            })} */}
           </div>
         </div>
       ))}

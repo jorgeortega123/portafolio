@@ -13,20 +13,20 @@ function About() {
     <>
       <section id="about" className="about sec-pad">
         <div className="main-container">
-          <h2 className="heading heading-sec heading-sec__mb-med">
-            <span className="heading-sec__main">Acerca de mi</span>
-            <span className="heading-sec__sub">
+          <h2 className="heading heading-sec heading-sec__mb-med ">
+            <span className="heading-sec__main about__content-title">Acerca de mi</span>
+            {/* <span className="heading-sec__sub">
               Todo mi conocimiento radica en crear proyectos visualmente
               hermosos, pero no solo eso, sino que tambien me encargo de una
               manera eficiente de guardar datos, con el fin de obtimizar bases
               de datos y tener mejor experiencia a usuario.
-            </span>
+            </span> */}
           </h2>
           <div className="about__content items-center">
             <div className="about__content-main items-center flex flex-col">
               <div className="about__content-details">
                 <p className="about__content-details-para ">
-                  ¡Hola! Soy <strong> Luis Ortega </strong>, un apasionado del
+                  ¡Hola! Soy <strong> Luis Ortega </strong>,un apasionado del
                   mundo digital y defensor de la libertad
                   creativa. He trabajado bajo la metodología del tipo
                   freelancer, colaborando en proyectos diversos para{" "}
@@ -45,11 +45,11 @@ function About() {
                 onClick={() => handleOnClick("contact")}
                 className="btn btn--med btn--theme dynamicBgClr"
               >
-                Contact
+                Contacto
               </p>
             </div>
             <div className="about__content-skills">
-              <h3 className="about__content-title">My Skills</h3>
+              <h3 className="text-[3.2rem] mb-[3rem]">Mis habilidades</h3>
               <div className="skills">
                 {skills.map((e) => (
                   <div className="skills__skill cursor-default">{e.id}</div>

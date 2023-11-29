@@ -41,9 +41,9 @@ import React, { FC } from "react";
 export default function Projects() {
   const { proyects } = useMainContext();
   return (
-    <section id="projects" className="projects sec-pad">
+    <section id="projects" className="projects sec-pad ">
       <div className="">
-        <h2 className="heading heading-sec mb-[3rem]">
+        <h2 className="heading heading-sec mb-[12rem]">
           <span className="heading-sec__main">Proyectos</span>
           <span className="heading-sec__sub">
             Conoce mi pasion materializada con estos proyectos.
@@ -63,19 +63,19 @@ export default function Projects() {
                 <img src="assets/png/images.png" alt="" />
               </div>
               <div
-                className={`w-full md:w-1/2 flex  relative flex-col  ${
-                  l % 2 === 0 ? "items-center pl-12" : "items-center pr-12"
+                className={`w-full md:w-1/2 flex border relative flex-col  ${
+                  l % 2 === 0 ? "items-center md:pl-12" : "items-center md:pr-12"
                 } justify-center `}
               >
-                <div className="">
+                
                   <div
                     className={`triangulo absolute ${
                       l % 2 === 0
-                        ? "rotate-90 top-[-32px] md:top-auto md:rotate-0 md:left-0 "
-                        : "rotate-90 top-[-32px] md:top-auto md:right-0 md:rotate-180"
+                        ? "rotate-[270deg] bottom-[92%] md:bottom-auto  md:rotate-180 md:right-[100%] "
+                        : "rotate-[270deg] bottom-[92%] md:bottom-auto  md:left-[100%] md:rotate-0"
                     }`}
                   ></div>
-                </div>
+              
                 <div className="h-[340px] mt-[50px] md:mt-0 md:h-auto flex flex-col items-center max-w-[500px]">
                   <p className={`w-full fondo-bold text-[4rem] py-4 text-[#0a233c]`}>
                     Nombre del proyecto
@@ -83,10 +83,10 @@ export default function Projects() {
                   <p className="text-[1.8rem] w-full ">
                     {e.about}
                   </p>
-                  <div className="my-5  border w-max rounded-[6px] cursor-pointer">
+                  <div className="md:my-5  border w-max rounded-[6px] cursor-pointer">
                     <Link
                       href={`/proyect?id=${e.id}`}
-                      className="btn btn--med btn--theme dynamicBgClr relative flex justify-center items-center"
+                      className="btn btn--theme text-[1.2rem] lg:text-[1.6rem] dynamicBgClr py-[1.5rem] px-[2.4rem] relative flex justify-center items-center"
                     >
                       Ver mas
                       <svg

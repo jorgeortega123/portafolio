@@ -36,16 +36,24 @@ const ProjectDetails = () => {
   }, [id, proyects]);
 
   return (
-    <div>
-      <section className="project-cs-hero">
-        <div className="project-cs-hero__content">
-          <h1 className="heading-primary">{project?.title}</h1>
+    <div className="relative">
+      {/* <div className="absolute w-[220px] h-[540px] border py-7 px-2 z-[200] top-0 left-0 bg-black">
+        <p className="text-[80rem]">Regresar donde estaba</p>
+      </div> */}
+
+      <section className="project-cs-hero relative overflow-hidden">
+        <img
+          src="assets/png/backgrounds/patron1.png"
+          className="opacity-60 w-full h-auto top-0 absolute z-[0]"
+          alt=""
+        />
+
+        <div className="project-cs-hero__content flex flex-col ">
+          <h1 className="heading-primary z-[2] fondo-bold text-[5.2rem]">{project?.title}</h1>
           <div className="project-cs-hero__info">
-            <p className="text-primary">
-              {project?.about}
-            </p>
+            <p className="text-primary flex z-[2]">{project?.about}</p>
           </div>
-          <div className="project-cs-hero__cta">
+          <div className="project-cs-hero__cta flex justify-center z-[3] ">
             <a
               href="#"
               className="btn btn--bg"
@@ -61,9 +69,9 @@ const ProjectDetails = () => {
         <div className="main-container">
           <div className="project-details__content">
             <div className="project-details__showcase-img-cont">
-                <Laptop url={"/example.png"}></Laptop>
+              {/* <Laptop url={"/example.png"}></Laptop> */}
               <img
-                src="./assets/jpeg/project-mockup-example.jpeg"
+                src={project?.img}
                 alt="Project Image"
                 className="project-details__showcase-img"
               />
@@ -91,7 +99,9 @@ const ProjectDetails = () => {
                 </p>
               </div>
               <div className="project-details__tools-used">
-                <h3 className="project-details__content-title">Herramientas usadas</h3>
+                <h3 className="project-details__content-title">
+                  Herramientas usadas
+                </h3>
                 <div className="skills">
                   <div className="skills__skill">HTML</div>
                   <div className="skills__skill">CSS</div>
@@ -108,7 +118,9 @@ const ProjectDetails = () => {
                 </div>
               </div>
               <div className="project-details__links">
-                <h3 className="project-details__content-title">Mirar el proyecto:</h3>
+                <h3 className="project-details__content-title">
+                  Mirar el proyecto:
+                </h3>
                 <a
                   href="#"
                   className="btn btn--med btn--theme project-details__links-btn"

@@ -18,7 +18,7 @@ function Header() {
               className="header__logo-img"
             />
           </div>
-          <span className="header__logo-sub">Luis Ortega</span>
+          <span className="header__logo-sub fondo-bold">Luis Ortega</span>
         </div>
         <div className="header__main">
           <ul className="header__links">

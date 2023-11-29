@@ -40,7 +40,7 @@ h1 {
   height: 0;
   border-top: 60px solid transparent; /* Tamaño del triángulo */
   border-bottom: 60px solid transparent;
-  border-left: 56.6px solid white; /* Altura del triángulo, calculada como la mitad de la base por la altura de un triángulo equilátero */
+  border-left: 56.6px solid #efefef; /*#efefef Altura del triángulo, calculada como la mitad de la base por la altura de un triángulo equilátero */
 }
 
 .estadistica-animacion-hover:hover p,.svg-custom {

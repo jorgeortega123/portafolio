@@ -8,7 +8,7 @@ const Contributions = () => {
     <div className="">
       <p>
         Subidas a <span className="fondo-bold">NPM</span> se ecuentran las
-        librerias a forma de contribuir a la comunidad.
+        librerias con su respectiva documentacion a forma de contribuir a la comunidad.
       </p>
       <ol className="" type="a">
         {libraries.map((e) => (
@@ -45,15 +45,15 @@ export default function Estadisticas() {
   const datosComponente = [
     {
       bold: "+2",
-      title: "Anios de experiencia",
+      title: "Años de experiencia",
       icon: "",
       info: <Experience_text />,
     },
     {
       bold: "14k",
-      title: "Lineas de codigo",
+      title: "Líneas de código",
       icon: "",
-      info: "Datos basados desde el momento que subi el primer repositorio a GitHub.",
+      info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
     },
     {
       bold: "+7",
