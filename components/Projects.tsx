@@ -65,8 +65,8 @@ export default function Projects() {
               <div
                 className={`w-full md:w-1/2 flex border relative flex-col  ${
                   l % 2 === 0
-                    ? "items-center md:pl-12"
-                    : "items-center md:pr-12"
+                    ? "items-center md:pr-[80px]"
+                    : "items-center md:pl-[80px]"
                 } justify-center `}
               >
                 <div
@@ -77,41 +77,43 @@ export default function Projects() {
                   }`}
                 ></div>
 
-                <div className="h-[340px] mt-[50px] md:mt-0 md:h-auto flex flex-col items-center max-w-[500px]">
+                <div className="px-4 lg:px-0 h-[340px] mt-[50px] md:mt-0 md:h-auto flex flex-col  items-center max-w-[500px]">
                   <p
                     className={`w-full fondo-bold text-[4rem] py-4 text-[#0a233c]`}
                   >
                     {e.title}
                   </p>
                   <p className="text-[1.8rem] w-full ">{e.about}</p>
-                  <div className="md:my-5  border w-max rounded-[6px] cursor-pointer">
-                    <Link
-                      href={`/proyect?id=${e.id}`}
-                      className="btn btn--theme text-[1.2rem] lg:text-[1.6rem] dynamicBgClr py-[1.5rem] px-[2.4rem] relative flex justify-center items-center"
-                    >
-                      Ver mas
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute top-0 right-0"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="#ccc"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                  <div className="w-full">
+                    <div className="md:my-5 ml-0 border-3 w-max rounded-[6px] cursor-pointer">
+                      <Link
+                        href={`/proyect?id=${e.id}`}
+                        className="btn btn--theme text-[1.2rem] lg:text-[1.6rem] dynamicBgClr py-[1.5rem] px-[2.4rem] relative flex justify-center items-center"
                       >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
+                        Ver mas
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="absolute top-0 right-0"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="#ccc"
                           fill="none"
-                        ></path>
-                        <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
-                        <path d="M11 13l9 -9"></path>
-                        <path d="M15 4h5v5"></path>
-                      </svg>
-                    </Link>
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+                          <path d="M11 13l9 -9"></path>
+                          <path d="M15 4h5v5"></path>
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

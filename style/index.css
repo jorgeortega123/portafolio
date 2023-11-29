@@ -2938,7 +2938,7 @@ textarea {
   transition: background 0.3s;
 }
 .home-hero__social-icon-link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff1a;
 }
 .home-hero__social-icon-link--bd-none {
   border-bottom: 0;

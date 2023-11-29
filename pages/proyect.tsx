@@ -45,13 +45,13 @@ const ProjectDetails = () => {
           <h1 className="heading-primary  fondo-bold text-[5.2rem]">
             {project?.title}
           </h1>
-          <div className="project-cs-hero__info">
+          {/* <div className="project-cs-hero__info">
             <p className="text-primary flex ">{project?.about}</p>
-          </div>
+          </div> */}
           <div className="project-cs-hero__cta flex justify-center  ">
             <a
               href="#"
-              className="btn btn--bg"
+              className="btn--bg hover:bg-[#ffffff1a] border border-[#00001a] "
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -77,21 +77,14 @@ const ProjectDetails = () => {
                   Caracteristicas del proyecto
                 </h3>
                 <p className="project-details__desc-para">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                  alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                  deleniti aspernatur ipsam eaque veniam voluptatem corporis
-                  vitae mollitia laborum corrupti ullam rem. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Neque alias tenetur
-                  minus quaerat aliquid, aut provident blanditiis, deleniti
-                  aspernatur ipsam eaque veniam voluptatem corporis vitae
-                  mollitia laborum corrupti ullam rem?
+                {project?.about}
                 </p>
-                <p className="project-details__desc-para">
+                {/* <p className="project-details__desc-para">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                   alias tenetur minus quaerat aliquid, aut provident blanditiis,
                   deleniti aspernatur ipsam eaque veniam voluptatem corporis
                   vitae mollitia laborum corrupti ullam rem?
-                </p>
+                </p> */}
               </div>
               <div className="project-details__tools-used">
                 <h3 className="project-details__content-title">
@@ -104,12 +97,12 @@ const ProjectDetails = () => {
                   <div className="skills__skill">React</div>
                   <div className="skills__skill">SASS</div>
                   <div className="skills__skill">GIT</div>
-                  <div className="skills__skill">Shopify</div>
+                  {/* <div className="skills__skill">Shopify</div>
                   <div className="skills__skill">Wordpress</div>
                   <div className="skills__skill">Google ADS</div>
                   <div className="skills__skill">Facebook Ads</div>
                   <div className="skills__skill">Android</div>
-                  <div className="skills__skill">IOS</div>
+                  <div className="skills__skill">IOS</div> */}
                 </div>
               </div>
               <div className="project-details__links">
@@ -122,7 +115,7 @@ const ProjectDetails = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Live Link
+                  Live WEB
                 </a>
                 <a
                   href="#"
@@ -130,7 +123,7 @@ const ProjectDetails = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Code Link
+                  Link del repositorio
                 </a>
               </div>
             </div>

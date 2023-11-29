@@ -38,8 +38,8 @@ const Experience_text = () => {
         Trabajando como Frotend Developer en <span>LLK</span>
       </p>
       <p>
-        Mi rol ha sido componentizar y encapsular piezas de codigo para
-        optimizar el funcionamiento de aplicaciones web.
+        Mi rol ha sido componetizar y encapsular piezas de código para optimizar
+        el funcionamiento de aplicaciones web.
       </p>
     </div>
   );
@@ -85,8 +85,7 @@ const Children = ({ e }: any) => {
       <div className="flex justify-center items-center">
         <p className="fondo-bold text-[8rem] block">+</p>
         <CountUp className="fondo-bold text-[8rem] block" end={e.bold} />
-        {e.bold === 8 ? <p className="fondo-bold text-[8rem]">k</p>: ""}
-        
+        {e.bold === 8 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
       </div>
 
       <p className="text-[1.8rem] mt-[-12px]">{e.title}</p>
@@ -97,14 +96,14 @@ const Children = ({ e }: any) => {
         className="w-full py-5 estadistica-animacion-hover  max-w-[300px] cursor-pointer mt-[12px]  flex gap-2 items-center"
       >
         <Icons
-          className={`svg-custom transition-custom fill-[#ccc] ${
-            open ? "rotate-90 fill-[#0a233c]" : ""
+          className={`svg-custom transition-custom  ${
+            open ? "rotate-90 fill-[#0a233c]" : "fill-[#ccc]"
           }`}
           icon="left"
         ></Icons>
         <p
           className={` text-[1.4rem] text-[#272727d3] text-estadistica ${
-            open ? "text-[#0a233c]" : ""
+            open ? "text-black" : ""
           }`}
         >
           Ver mas
@@ -112,7 +111,7 @@ const Children = ({ e }: any) => {
       </div>
       <div
         className={`w-full justify-start transition-custom overflow-clip  ${
-          open ? "h-[200px]" : "h-[0px]"
+          open ? "h-[175px]" : "h-[0px]"
         }`}
       >
         <div className="max-w-[300px] text-estadistica text-[1.5rem] flex flex-col mx-auto text-[#0a233c]">

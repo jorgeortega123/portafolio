@@ -9,7 +9,7 @@ export default function Tarjetas() {
     {
       title: "Frontend",
       description:
-        "Creativo al momento de crear interfaces web con frameworks y librerias actuales.",
+        "Creativo al momento de crear interfaces web con frameworks y librerias del momento.",
       image: "/assets/png/backgrounds/rose.png",
       icon: "frontend",
       type: "fr",

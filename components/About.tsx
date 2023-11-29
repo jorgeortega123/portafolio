@@ -43,7 +43,7 @@ function About() {
               </div>
               <p
                 onClick={() => handleOnClick("contact")}
-                className="btn btn--med btn--theme dynamicBgClr"
+                className="cursor-pointer btn btn--med btn--theme dynamicBgClr"
               >
                 Contacto
               </p>

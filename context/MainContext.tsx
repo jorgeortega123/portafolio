@@ -47,6 +47,16 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "ba",
+      id: "MongoDb",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
+    },
+    {
+      type: "ba",
+      id: "Mongo Atlas",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
+    },
+    {
+      type: "ba",
       id: "NodeJs",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
     },
@@ -80,7 +90,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
   const proyects = [
     {
       title: "Native Translator",
-      about: `Un proyecto simple que permite escribir frases y una IA las traduce al inglés, sin importar el idioma en el que se escriban. Este proyecto funciona de manera estática y utiliza Cloudflare Worker para la comunicación con la API de OpenAI`,
+      about: `Un proyecto simple que permite escribir frases y una IA las traduce al inglés, sin importar el idioma en el que se escriban. Este proyecto funciona de manera estática y utiliza Cloudflare Worker para la comunicación con la API de OpenAI.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],
       img: "/mac.png",
       web: "https://jetmatch.pages.dev",

@@ -41,7 +41,7 @@ function Hero() {
           </p>
           <p className="text-primary">Conoce como trabajo.</p>
         </div>
-        <div className="home-hero__cta">
+        <div className="home-hero__cta cursor-pointer">
           <p onClick={() => handleOnClick("contact")} className="btn btn--bg">
             Proyectos
           </p>
