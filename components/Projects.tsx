@@ -68,7 +68,7 @@ export default function Projects() {
                 <img draggable={false} src={e.img} alt="" />
               </div>
               <div
-                className={`w-full md:w-1/2 flex border relative flex-col  ${
+                className={`w-full md:w-1/2 flex p-8 lg:p-auto border relative flex-col  ${
                   l % 2 === 0
                     ? "items-center lg:pr-[80px]"
                     : "items-center lg:pl-[80px]"
@@ -91,22 +91,22 @@ export default function Projects() {
                   <p className="text-[1.8rem] w-full">
                     {truncateText(e.about)}
                   </p>
-                  <div className="w-full">
+                  <div className="w-full my-7 lg:my-4">
                     <div className="md:my-5 ml-0 border-3 w-max rounded-[6px] cursor-pointer">
                       <Link
                         target="_blank"
                         href={`/proyect?id=${e.id}`}
-                        className="btn btn--theme text-[1.2rem] lg:text-[1.6rem] dynamicBgClr py-[1.5rem] px-[2.4rem] relative flex justify-center items-center"
+                        className="rounded-[6px] text-[#efefef] text-parrafo btn--theme text-[1.4rem] lg:text-[1.6rem] dynamicBgClr py-[1.2rem] px-[3.4rem] relative flex justify-center items-center"
                       >
-                        Ver mas
+                        Ver más
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="absolute top-0 right-0"
-                          width="24"
-                          height="24"
+                          className="absolute top-0 right-0 stroke-slate-200"
+                          width="20"
+                          height="20"
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
-                          stroke="#ccc"
+                          
                           fill="none"
                           stroke-linecap="round"
                           stroke-linejoin="round"

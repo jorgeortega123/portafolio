@@ -35,7 +35,7 @@ const Experience_text = () => {
     <div>
       <p className="block">
         {" "}
-        Trabajando como Frotend Developer en <span>LLK</span>
+        Trabajando como Frontend Developer en <span>LLK.</span>
       </p>
       <p>
         Mi rol ha sido componetizar y encapsular piezas de código para optimizar
@@ -106,12 +106,12 @@ const Children = ({ e }: any) => {
             open ? "text-black" : ""
           }`}
         >
-          Ver mas
+          Ver más
         </p>
       </div>
       <div
         className={`w-full justify-start transition-custom overflow-clip  ${
-          open ? "h-[175px]" : "h-[0px]"
+          open ? "h-[195px]" : "h-[0px]"
         }`}
       >
         <div className="max-w-[300px] text-estadistica text-[1.5rem] flex flex-col mx-auto text-[#0a233c]">

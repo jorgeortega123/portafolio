@@ -1,6 +1,7 @@
 import useScrollTo from "@/hooks/useScroll";
 import Icons from "@/style/Icons";
 import React from "react";
+import Descarga from "./sub/Descarga";
 
 function Hero() {
   const scrollToElement = useScrollTo();
@@ -77,14 +78,7 @@ function Hero() {
       <div className="home-hero__mouse-scroll-cont">
         <div className="mouse" />
       </div>
-      <div className="absolute bottom-6 right-6 cursor-pointer">
-        <a href="https://drive.google.com/uc?export=download&id=1H_8KIsgecAFDMBpo-Pvl_GfKiA0-RAu3"  download={"Luis Ortega CV"}>
-          <div className="p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6">
-            <Icons className="w-7 h-7" icon="download"></Icons>
-            <p className="text-[1.6rem] font-bold">Descargar CV</p>
-          </div>
-        </a>
-      </div>
+     <Descarga />
     </section>
   );
 }

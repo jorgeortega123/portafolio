@@ -27,7 +27,7 @@ export default function Tarjetas() {
       description: "Dominio de plataformas como Azure y mongo Atlas.",
       image: "/assets/png/backgrounds/red.png",
       type: "se",
-      icon: "seo",
+      icon: "services",
     },
   ];
 
@@ -35,7 +35,7 @@ export default function Tarjetas() {
     <div className="flex flex-col md:flex-row w-full">
       {datosComponente.map((e) => (
         <div className="w-full md:w-1/3 relative flex items-center justify-center">
-          <div className="w-full h-full bg-[#00000040] absolute z-[2] flex  items-center justify-center ">
+          <div className="w-full h-full bg-[#00000030] absolute z-[2] flex  items-center justify-center ">
             <Icons
               className="stroke-white w-[130px] h-auto md:w-[70px] lg:w-[130px]"
               icon={e.icon}
