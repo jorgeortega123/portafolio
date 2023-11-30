@@ -89,6 +89,16 @@ function MainContextComponent({ children }: { children: ReactNode }) {
   ];
   const proyects = [
     {
+      title: "Llampukaq Technology",
+      about: `En este proyecto me encargué de gestionar el frontend y el backend. Para ello, utilizamos diferentes tecnologías y se buscó una estrategia para mejorar el rendimiento. En cuanto al frontend, utilizamos React y Next.js, optando por SSG (Static Site Generation) para obtener un mejor rendimiento. En cuanto al backend, elegimos un servicio Backend-as-a-Service (BaaS), en nuestro caso, utilizamos Mongo Realm. También me encargué de desarrollar y liberar parte de nuestro código como open source, atendiendo a las solicitudes de la empresa.`,
+      tags: ["NextJs", "React", "TypeScript", "Workers"],
+      img: "/llampukaq.png",
+      web: "https://www.llampukaq.com/",
+      repo: "https://github.com/orgs/Llampukaq-Labs/dashboard",
+      moreDetails: "/proyect-1",
+      id: "llampukaq",
+    },
+    {
       title: "Native Translator",
       about: `Un proyecto simple que permite escribir frases y una IA las traduce al inglés, sin importar el idioma en el que se escriban. Este proyecto funciona de manera estática y utiliza Cloudflare Worker para la comunicación con la API de OpenAI.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],

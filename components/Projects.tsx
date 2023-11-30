@@ -37,7 +37,12 @@ import React, { FC } from "react";
 //     </a>
 //   </li>
 // );
-
+function truncateText(text: any, maxLines = 3, maxLength = 200) {
+  const lines = text.split("\n").slice(0, maxLines).join("\n");
+  return lines.length > maxLength
+    ? lines.substring(0, maxLength) + "..."
+    : lines;
+}
 export default function Projects() {
   const { proyects } = useMainContext();
   return (
@@ -65,8 +70,8 @@ export default function Projects() {
               <div
                 className={`w-full md:w-1/2 flex border relative flex-col  ${
                   l % 2 === 0
-                    ? "items-center md:pr-[80px]"
-                    : "items-center md:pl-[80px]"
+                    ? "items-center lg:pr-[80px]"
+                    : "items-center lg:pl-[80px]"
                 } justify-center `}
               >
                 <div
@@ -83,10 +88,13 @@ export default function Projects() {
                   >
                     {e.title}
                   </p>
-                  <p className="text-[1.8rem] w-full ">{e.about}</p>
+                  <p className="text-[1.8rem] w-full">
+                    {truncateText(e.about)}
+                  </p>
                   <div className="w-full">
                     <div className="md:my-5 ml-0 border-3 w-max rounded-[6px] cursor-pointer">
                       <Link
+                        target="_blank"
                         href={`/proyect?id=${e.id}`}
                         className="btn btn--theme text-[1.2rem] lg:text-[1.6rem] dynamicBgClr py-[1.5rem] px-[2.4rem] relative flex justify-center items-center"
                       >

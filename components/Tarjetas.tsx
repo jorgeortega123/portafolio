@@ -24,8 +24,7 @@ export default function Tarjetas() {
     },
     {
       title: "Servicios",
-      description:
-        "Dominio de plataformas como Azure y mongo Atlas.",
+      description: "Dominio de plataformas como Azure y mongo Atlas.",
       image: "/assets/png/backgrounds/red.png",
       type: "se",
       icon: "seo",
@@ -42,7 +41,9 @@ export default function Tarjetas() {
               icon={e.icon}
             ></Icons>
             <div>
-              <p className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">{e.title}</p>
+              <p className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
+                {e.title}
+              </p>
               <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#ccc] ">
                 {e.description}
               </p>

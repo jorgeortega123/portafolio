@@ -50,12 +50,12 @@ const ProjectDetails = () => {
           </div> */}
           <div className="project-cs-hero__cta flex justify-center  ">
             <a
-              href="#"
+              href={project?.web}
               className="btn--bg hover:bg-[#ffffff1a] border border-[#00001a] "
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Link
+              Live Web
             </a>
           </div>
         </div>
@@ -76,9 +76,7 @@ const ProjectDetails = () => {
                 <h3 className="project-details__content-title">
                   Caracteristicas del proyecto
                 </h3>
-                <p className="project-details__desc-para">
-                {project?.about}
-                </p>
+                <p className="project-details__desc-para">{project?.about}</p>
                 {/* <p className="project-details__desc-para">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                   alias tenetur minus quaerat aliquid, aut provident blanditiis,
@@ -110,7 +108,7 @@ const ProjectDetails = () => {
                   Mirar el proyecto:
                 </h3>
                 <a
-                  href="#"
+                  href={project?.web}
                   className="btn btn--med btn--theme project-details__links-btn"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -118,7 +116,7 @@ const ProjectDetails = () => {
                   Live WEB
                 </a>
                 <a
-                  href="#"
+                  href={project?.repo}
                   className="btn btn--med btn--theme-inv project-details__links-btn"
                   target="_blank"
                   rel="noopener noreferrer"
