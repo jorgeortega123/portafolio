@@ -24,7 +24,7 @@ function Hero() {
   return (
     <section className="home-hero relative border border-[black] overflow-hidden ">
       <img
-      draggable={false}
+        draggable={false}
         src="/assets/png/backgrounds/hexagonal.png"
         className="absolute  top-0 left-0 object-cover md:w-full h-[110%] "
         alt=""
@@ -78,7 +78,7 @@ function Hero() {
       <div className="home-hero__mouse-scroll-cont">
         <div className="mouse" />
       </div>
-     <Descarga />
+      <Descarga />
     </section>
   );
 }

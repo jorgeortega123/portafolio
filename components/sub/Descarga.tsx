@@ -8,26 +8,20 @@ export default function Descarga() {
     try {
       setIsDownloading(true);
 
-      const corsProxy = "https://cors-anywhere.herokuapp.com/";
-      const downloadUrl =
-        "https://drive.google.com/uc?export=download&id=1H_8KIsgecAFDMBpo-Pvl_GfKiA0-RAu3";
-
-      const response = await fetch(`${corsProxy}${downloadUrl}`);
-      const blob = await response.blob();
-
-      // Crear un enlace temporal para descargar el archivo
-      const url = window.URL.createObjectURL(blob);
+      const url = "/Resume.pdf";
       const a = document.createElement("a");
       a.href = url;
       a.download = "Luis_Ortega_CV.pdf";
       document.body.appendChild(a);
-      a.click();
-
-      // Limpiar después de la descarga
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-
-      setIsDownloading(false);
+      setTimeout(() => {
+        a.click();
+        // Limpiar después de la descarga
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+  
+        setIsDownloading(false);
+      }, 2500);
+     
     } catch (error) {
       console.error("Error durante la descarga:", error);
       setIsDownloading(false);
@@ -44,11 +38,11 @@ export default function Descarga() {
       >
         {isDownloading ? (
           <>
-          <Icons  className="w-7 h-7"  icon="loading"></Icons>
-          <p className="text-[1.6rem] font-bold">Descargando</p></>
+            <Icons className="w-7 h-7" icon="loading"></Icons>
+            <p className="text-[1.6rem] font-bold">Descargando</p>
+          </>
         ) : (
           <>
-           
             <Icons className="w-7 h-7" icon="download"></Icons>
             <p className="text-[1.6rem] font-bold">Descargar CV</p>
           </>

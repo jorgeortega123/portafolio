@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: rgb(19, 31, 82);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .body {
   height: 100vh;
   background: linear-gradient(
@@ -76,14 +95,12 @@ a {
   color: inherit;
 }
 
-
 input:focus,
 button:focus,
 a:focus,
 textarea:focus {
   outline: none;
 }
-
 
 textarea {
   resize: none;
@@ -414,9 +431,6 @@ textarea {
     text-align: center;
   }
 }
-
-
-
 
 .contact {
   background: linear-gradient(
