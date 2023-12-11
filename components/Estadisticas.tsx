@@ -5,7 +5,6 @@ import CountUp from "react-countup";
 
 const Contributions = () => {
   const { libraries } = useMainContext();
-
   return (
     <div className="">
       <p>
@@ -46,6 +45,7 @@ const Experience_text = () => {
 };
 
 export default function Estadisticas() {
+  const { libraries } = useMainContext();
   const datosComponente = [
     {
       bold: 2,
@@ -60,7 +60,7 @@ export default function Estadisticas() {
       info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
     },
     {
-      bold: 7,
+      bold: libraries.length,
       title: "Contribuciones comunidad",
       icon: "",
       info: <Contributions />,
