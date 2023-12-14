@@ -32,7 +32,7 @@ export default function Descarga() {
     <div className="absolute bottom-6 right-6 cursor-pointer">
       <div
         onClick={handleDownload}
-        className={`p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6 ${
+        className={`container-anim-download p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6 ${
           isDownloading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
         }`}
       >
@@ -43,7 +43,7 @@ export default function Descarga() {
           </>
         ) : (
           <>
-            <Icons className="w-7 h-7" icon="download"></Icons>
+            <Icons className="w-7 h-7  overflow-visible" icon="download"></Icons>
             <p className="text-[1.6rem] font-bold">Descargar CV</p>
           </>
         )}

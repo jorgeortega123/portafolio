@@ -110,8 +110,8 @@ const Children = ({ e }: any) => {
         </p>
       </div>
       <div
-        className={`w-full justify-start transition-custom overflow-clip  ${
-          open ? "h-[195px]" : "h-[0px]"
+        className={`w-full border justify-start transition-custom overflow-hidden  ${
+          open ? "max-h-[400px]" : "max-h-[0px]"
         }`}
       >
         <div className="max-w-[300px] text-estadistica text-[1.5rem] flex flex-col mx-auto text-[#0a233c]">

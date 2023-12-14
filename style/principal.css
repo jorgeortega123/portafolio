@@ -1,34 +1,33 @@
 @font-face {
-    font-family: "bold";
-    src: url("/fonts/bold.ttf");
-  }
-  @font-face {
-    font-family: "texto";
-    src: url("/fonts/texto.otf");
-  }
-  @font-face {
-    font-family: "alternativa-1";
-    src: url("/fonts/gh1.ttf");
-  }
+  font-family: "bold";
+  src: url("/fonts/bold.ttf");
+}
+@font-face {
+  font-family: "texto";
+  src: url("/fonts/texto.otf");
+}
+@font-face {
+  font-family: "alternativa-1";
+  src: url("/fonts/gh1.ttf");
+}
 /* 
 h1 { 
  font-family: "bold";
 } */
 
-
-.text-parrafo { 
+.text-parrafo {
   font-family: "alternativa-1";
 }
-.text-estadistica { 
+.text-estadistica {
   font-family: "texto";
 }
 
-.fondo-bold { 
+.fondo-bold {
   font-family: "bold";
 }
 
-.transition-custom { 
-  transition: all .6s;
+.transition-custom {
+  transition: all 0.6s;
 }
 
 .mi-lista {
@@ -43,15 +42,13 @@ h1 {
   border-left: 56.6px solid #efefef; /*#efefef Altura del triángulo, calculada como la mitad de la base por la altura de un triángulo equilátero */
 }
 
-.estadistica-animacion-hover:hover p,.svg-custom {
-
+.estadistica-animacion-hover:hover p,
+.svg-custom {
   color: black;
-
 }
 
 .estadistica-animacion-hover:hover .svg-custom {
-  fill: black; 
-
+  fill: black;
 }
 
 /* Tarjetas.css */
@@ -68,6 +65,45 @@ h1 {
   width: 100%;
   padding: 0 10px;
   box-sizing: border-box;
+}
+.container-anim-download {
+  transition: background .5s;
+}
+
+.container-anim-download:hover .anim-down {
+  animation: download-anim 1s ease-in-out infinite;
+}
+
+.container-anim-download:hover {
+  background: #003b8e;
+}
+
+/* button { 
+  position: relative;
+} */
+
+/* .btn-background { 
+ position: relative;
+ background: transparent;
+ 
+}
+
+.btn-background::after { 
+  content: "";
+  top: 0;
+  left: 0;
+  background: url("/assets/png/font.png");
+  background-position: 100% 20% 12%;
+  width: 100px;
+  height: 10px;
+  position: absolute;
+  z-index: 0;
+ } */
+
+@keyframes download-anim {
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Estilos específicos del slider */

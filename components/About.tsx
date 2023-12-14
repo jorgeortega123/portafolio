@@ -41,12 +41,13 @@ function About() {
                   <strong>contact</strong> me here.
                 </p> */}
               </div>
-              <p
+              <div
                 onClick={() => handleOnClick("contact")}
-                className="cursor-pointer btn btn--med btn--theme dynamicBgClr"
+                className="relative cursor-pointer btn btn--med btn-background overflow-hidden "
               >
-                Contacto
-              </p>
+                <img className="absolute w-[600px] h-[100px] top-0 left-0 z-[1]" src="/assets/png/font.png" alt="" />
+                 <p className="sticky z-[12] text-white"> Contacto</p>
+              </div>
             </div>
             <div className="about__content-skills">
               <h3 className="text-[3.2rem] mb-[3rem]">Mis habilidades</h3>

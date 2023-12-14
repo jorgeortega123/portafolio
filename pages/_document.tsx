@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>Luis Ortega</title>
-        <link rel="icon" href={"https://www.llampukaq.com/logo/luis.png"} />
+        <link rel="icon" href={"/assets/png/icon.png"} />
       </Head>
       <body className="overflow-x-hidden">
         <Main />
