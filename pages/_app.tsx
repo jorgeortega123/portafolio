@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import "../style/index.css";
+import "../style/efectos.css";
 import "../style/principal.css";
 import MainContextComponent from "@/context/MainContext";
 import Header from "@/components/Header";

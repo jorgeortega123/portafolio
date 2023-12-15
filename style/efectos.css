@@ -1,0 +1,11 @@
+.background-inicio-delay {
+
+    animation: delay-opacity .5s forwards;
+}
+
+
+@keyframes delay-opacity {
+    100% { 
+        opacity: 1;
+    }
+}

@@ -1,6 +1,6 @@
 import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
 const Contributions = () => {
@@ -54,7 +54,7 @@ export default function Estadisticas() {
       info: <Experience_text />,
     },
     {
-      bold: 8,
+      bold: 36,
       title: "Líneas de código",
       icon: "",
       info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
@@ -78,14 +78,52 @@ export default function Estadisticas() {
   );
 }
 const Children = ({ e }: any) => {
-  const [open, setOpen] = useState(false);
+  const contenedorRef = useRef(null);
+  const [open, setOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+ const [hasReset, setHasReset] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (contenedorRef.current) {
+        const contenedorRect = contenedorRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        const contenedorEnPantalla = contenedorRect.top < windowHeight && contenedorRect.bottom >= 0;
+
+        if (contenedorEnPantalla && !isVisible) {
+          setIsVisible(true);
+          setHasReset(false);
+        } else if (!contenedorEnPantalla && isVisible) {
+          setHasReset(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible]);
   return (
-    <div className="w-full md:w-1/3  flex flex-col items-center  relative">
+    <div
+      ref={contenedorRef}
+      className="w-full md:w-1/3  flex flex-col items-center  relative"
+    >
       <div className="flex justify-center items-center">
         <p className="fondo-bold text-[8rem] block">+</p>
-        <CountUp className="fondo-bold text-[8rem] block" end={e.bold} />
-        {e.bold === 8 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
+        {isVisible && (
+          <CountUp
+          delay={.3}
+            duration={3}
+            start={99}
+            className="fondo-bold text-[8rem] block"
+            end={e.bold}
+          />
+        )}
+
+        {e.bold === 36 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
       </div>
 
       <p className="text-[1.8rem] mt-[-12px]">{e.title}</p>
@@ -110,8 +148,8 @@ const Children = ({ e }: any) => {
         </p>
       </div>
       <div
-        className={`w-full border justify-start transition-custom overflow-hidden  ${
-          open ? "max-h-[400px]" : "max-h-[0px]"
+        className={`w-full  justify-start transition-custom overflow-hidden  ${
+          open ? "max-h-[300px]" : "max-h-[0px]"
         }`}
       >
         <div className="max-w-[300px] text-estadistica text-[1.5rem] flex flex-col mx-auto text-[#0a233c]">
