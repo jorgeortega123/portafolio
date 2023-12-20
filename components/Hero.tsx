@@ -49,8 +49,8 @@ function Hero() {
         </div>
       </div>
       <div className="home-hero__socials">
-        {sociaMedia.map((e) => (
-          <div className="home-hero__social">
+        {sociaMedia.map((e,l) => (
+          <div key={"social" + l} className="home-hero__social">
             <a
               href={e.url}
               target="_blank"

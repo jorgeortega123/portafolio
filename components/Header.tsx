@@ -25,7 +25,7 @@ function Header() {
             {links.map((x, index) => (
               <Link href={x.link} key={index}>
                 <li className="header__link-wrapper cursor-pointer" key={index}>
-                  <p className=" header__link cursor-pointer">{x.name}</p>
+                  <p className=" header__link cursor-pointer hover:underline">{x.name}</p>
                 </li>
               </Link>
             ))}

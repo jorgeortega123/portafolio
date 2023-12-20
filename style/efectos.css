@@ -9,3 +9,12 @@
         opacity: 1;
     }
 }
+
+
+.contenedor-con-sombra {
+
+    
+   
+    box-shadow: 12px 8px 8px rgba(0, 0, 0, 0.1); /* offsetX, offsetY, blurRadius, color */
+
+  }

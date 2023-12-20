@@ -13,8 +13,8 @@ const Contributions = () => {
         comunidad.
       </p>
       <ol className="" type="a">
-        {libraries.map((e) => (
-          <a href={e.link}>
+        {libraries.map((e,l) => (
+          <a key={"contribuciones" + l} href={e.link}>
             <li className="cursor pointer rounded-[6px] flex flex-col relative before:absolute before:top-3 before:w-2 before:h-2 before:rounded-full before:left-0 before:z-[1] before:bg-[black]">
               <h3 className="hover:underline ml-3 text-[#0062b9] capitalize">
                 {e.title}
@@ -70,8 +70,8 @@ export default function Estadisticas() {
   return (
     <div className=" mb-[116px] flex items-center justify-center">
       <section className=" items-start justify-center flex flex-col md:flex-row gap-12 w-full max-w-[760px]">
-        {datosComponente.map((e) => (
-          <Children e={e} />
+        {datosComponente.map((e,l) => (
+          <Children key={"acontribuciones" + l}  e={e} />
         ))}
       </section>
     </div>

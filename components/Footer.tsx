@@ -10,9 +10,9 @@ function Footer() {
       <div className="main-container">
         <div className="main-footer__upper">
           <div className="main-footer__row main-footer__row-1">
-            <h2 className="heading heading-sm main-footer__heading-sm">
+            <h1 className="heading heading-sm main-footer__heading-sm">
               <span>Social</span>
-            </h2>
+            </h1>
             <div className="main-footer__social-cont">
               <a
                 target="_blank"
@@ -42,9 +42,9 @@ function Footer() {
             </div>
           </div>
           <div className="main-footer__row main-footer__row-2">
-            <h4 className="heading heading-sm text-lt">Luis Ortega</h4>
+            <h1 className="heading heading-sm text-lt">Luis Ortega</h1>
             <p className="main-footer__short-desc">
-              Desarrollador Full Stack especializado en frontend con bases
+              Desarrollador Full Stack en Quito especializado en frontend con bases
               firmes en el funcionamiento de Backend y servicios en la nube.
             </p>
             <p className="main-footer__short-desc">

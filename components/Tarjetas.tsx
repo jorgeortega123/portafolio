@@ -11,6 +11,9 @@ export default function Tarjetas() {
       image: "/assets/png/backgrounds/rose.png",
       icon: "frontend",
       type: "fr",
+      s_title: "Habilidades Frontend",
+      s_description:
+        "Apasionado por el diseño y la creación de experiencias visuales cautivadoras. Experto en la implementación de interfaces web atractivas mediante el uso de los últimos frameworks y librerías del momento. Capaz de traducir ideas creativas en código funcional que mejora la interacción del usuario y la usabilidad del sitio.",
     },
     {
       title: "Backend",
@@ -19,6 +22,9 @@ export default function Tarjetas() {
       image: "/assets/png/backgrounds/blue.png",
       type: "ba",
       icon: "backend",
+      s_title: "Desarrollo Backend",
+      s_description:
+        "Con experiencia avanzada en el desarrollo backend, me especializo en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL. Capaz de diseñar arquitecturas robustas que garantizan el rendimiento, la escalabilidad y la seguridad de las aplicaciones. Comprometido con la entrega de soluciones backend sólidas y de alta calidad.",
     },
     {
       title: "Servicios",
@@ -26,15 +32,20 @@ export default function Tarjetas() {
       image: "/assets/png/backgrounds/red.png",
       type: "se",
       icon: "services",
+      s_title: "Gestión de Plataformas",
+      s_description:
+        "Especializado en la gestión de plataformas en la nube, poseo un sólido conocimiento en el dominio de servicios en plataformas como Azure y MongoDB Atlas. Desde la implementación hasta la optimización, tengo experiencia en garantizar que las plataformas sean eficientes, seguras y cumplan con los requisitos del proyecto. Enfocado en la entrega de soluciones tecnológicas que impulsen el éxito del negocio.",
     },
   ];
 
   return (
-    <div className="flex flex-col md:flex-row w-full relative bg-slate-700">
-      {datosComponente.map((e, inx) => (
-        <Children inx={inx} e={e} />
-      ))}
-    </div>
+    <section>
+      <div className="flex flex-col md:flex-row w-full relative bg-slate-700">
+        {datosComponente.map((e, inx) => (
+          <Children key={"datos" + inx} inx={inx} e={e} />
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -83,7 +94,6 @@ const Children = ({ e, inx }: any) => {
   return (
     <div
       id="container-must"
-    
       className={`w-full md:w-1/3  h-auto ${
         open ? ` h-[${altura}px]` : " overflow-hidden relative"
       }  flex items-center justify-center`}
@@ -95,7 +105,7 @@ const Children = ({ e, inx }: any) => {
         }}
         onClick={() => handleClick("no")}
         className={`cursor-pointer w-full h-full ${
-          open ? `z-[5]` : "z-[1] "
+          open ? `z-[5]` : "z-[1] hover:backdrop-brightness-50 "
         }  absolute  flex  items-center justify-center  `}
       >
         <Icons
@@ -103,9 +113,9 @@ const Children = ({ e, inx }: any) => {
           icon={e.icon}
         ></Icons>
         <div>
-          <p className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
+          <h1 className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
             {e.title}
-          </p>
+          </h1>
           <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#ccc] ">
             {e.description}
           </p>
@@ -116,7 +126,7 @@ const Children = ({ e, inx }: any) => {
           <div
             className={`opacity-0 background-inicio-delay absolute top-0 left-0 bg-slate-700 w-[100%] h-full z-[3]`}
           >
-            <div className={`relative  h-full w-full border z-[3] text-[2rem]`}>
+            <div className={`relative  h-full w-full  z-[3] text-[2rem]`}>
               <div
                 style={{
                   marginLeft: `${ancho}px`,
@@ -125,12 +135,14 @@ const Children = ({ e, inx }: any) => {
                 }}
                 className={`absolute z-[3] r p-12`}
               >
-                <div className="relative s w-full h-full">
-                  <h1 className="block">Titulo de ejemplo</h1>
-                  <p>He dominado gran </p>
+                <div className="relative s w-full h-full text-white">
+                  <h1 className="block ">{e.s_title}</h1>
+                  <p className="text-[#ccc] text-[1.4rem] tracking-tight max-w-[450px]">
+                    {e.s_description}
+                  </p>
                   <div
                     onClick={() => {
-                      setOpen(false)
+                      setOpen(false);
                     }}
                     className="z-[6] absolute top-0 right-0 p-1 rounded-full hover:bg-white/10"
                   >
@@ -138,10 +150,11 @@ const Children = ({ e, inx }: any) => {
                   </div>
 
                   <div className="absolute bottom-0 flex gap-2">
-                    {skills.map((a) => {
+                    {skills.map((a, l) => {
                       if (e.type === a.type) {
                         return (
                           <img
+                            key={"imagen" + l}
                             draggable={false}
                             src={a.link}
                             className=" w-[22px] h-auto "

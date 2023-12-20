@@ -70,8 +70,8 @@ export default function Experience() {
           </div>
           <div className="w-full s relative col-span-12 px-4 space-y-6 sm:col-span-9">
             <div className=" space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 before:absolute before:top-2 before:bottom-0 before:w-0.5 before:-left-3 before:dark:bg-[#0062b9]">
-              {dataProyects.map((e) => (
-                <div className=" rounded-[6px] flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:z-[1] before:dark:bg-[#0062b9]">
+              {dataProyects.map((e,l) => (
+                <div key={"experiencia" + l}  className=" rounded-[6px] flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:z-[1] before:dark:bg-[#0062b9]">
                   <h3 className="text-[2rem] text-black">{e.title}</h3>
                   <time className="text-[1.2rem] tracki uppercase dark:text-gray-400">
                     {e.fecha}
