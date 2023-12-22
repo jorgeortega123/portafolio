@@ -35,7 +35,7 @@ const ProjectDetails = () => {
   }, [id, proyects]);
 
   return (
-    <div className="relative">
+    <div className="relative bg-[#F7F7FA]">
       {/* <div className="absolute w-[220px] h-[540px] border py-7 px-2 z-[200] top-0 left-0 bg-black">
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}

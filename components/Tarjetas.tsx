@@ -2,18 +2,55 @@ import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
 import React, { useEffect, useState } from "react";
 
+type SkillDescription = {
+  title: string;
+  icon: string;
+  content: string;
+};
+
+interface FrontendSkill {
+  title: string;
+  description: string;
+  image: string;
+  icon: string;
+  type: string;
+  s_title: string;
+  s_description: SkillDescription[];
+}
+
+// const Frontend_tajeta = () => {
+//   return (
+//     <div></div>
+//   )
+// }
+// const Backend_tajeta = () => {
+//   return (
+//     <div></div>
+//   )
+// }
+
+const Servicios_tajeta = (data: SkillDescription) => {
+  return <div>{data.content}</div>;
+};
+
 export default function Tarjetas() {
-  const datosComponente = [
+  const datosComponente: FrontendSkill[] = [
     {
       title: "Frontend",
       description:
         "Creativo al momento de crear interfaces web con frameworks y librerias del momento.",
       image: "/assets/png/backgrounds/rose.png",
-      icon: "frontend",
+      icon: "/assets/png/frontend.png",
       type: "fr",
       s_title: "Habilidades Frontend",
-      s_description:
-        "Apasionado por el diseño y la creación de experiencias visuales cautivadoras. Experto en la implementación de interfaces web atractivas mediante el uso de los últimos frameworks y librerías del momento. Capaz de traducir ideas creativas en código funcional que mejora la interacción del usuario y la usabilidad del sitio.",
+      s_description: [
+        {
+          title: "",
+          icon: "",
+          content:
+            "Apasionado por el diseño y la creación de experiencias visuales cautivadoras. Experto en la implementación de interfaces web atractivas mediante el uso de los últimos frameworks y librerías del momento. Capaz de traducir ideas creativas en código funcional que mejora la interacción del usuario y la usabilidad del sitio.",
+        },
+      ],
     },
     {
       title: "Backend",
@@ -21,20 +58,32 @@ export default function Tarjetas() {
         "Alto nivel de manejo al trabajar con procesamiento en la Nube y base de datos (SQL y no SQL).",
       image: "/assets/png/backgrounds/blue.png",
       type: "ba",
-      icon: "backend",
+      icon: "/assets/png/backend.png",
       s_title: "Desarrollo Backend",
-      s_description:
-        "Con experiencia avanzada en el desarrollo backend, me especializo en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL. Capaz de diseñar arquitecturas robustas que garantizan el rendimiento, la escalabilidad y la seguridad de las aplicaciones. Comprometido con la entrega de soluciones backend sólidas y de alta calidad.",
+      s_description: [
+        {
+          title: "",
+          icon: "",
+          content:
+            "Con experiencia avanzada en el desarrollo backend, me especializo en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL. Capaz de diseñar arquitecturas robustas que garantizan el rendimiento, la escalabilidad y la seguridad de las aplicaciones. Comprometido con la entrega de soluciones backend sólidas y de alta calidad.",
+        },
+      ],
     },
     {
       title: "Servicios",
       description: "Dominio de plataformas como Azure y mongo Atlas.",
       image: "/assets/png/backgrounds/red.png",
       type: "se",
-      icon: "services",
+      icon: "/assets/png/services.png",
       s_title: "Gestión de Plataformas",
-      s_description:
-        "Especializado en la gestión de plataformas en la nube, poseo un sólido conocimiento en el dominio de servicios en plataformas como Azure y MongoDB Atlas. Desde la implementación hasta la optimización, tengo experiencia en garantizar que las plataformas sean eficientes, seguras y cumplan con los requisitos del proyecto. Enfocado en la entrega de soluciones tecnológicas que impulsen el éxito del negocio.",
+      s_description: [
+        {
+          title: "",
+          icon: "",
+          content:
+            "Especializado en la gestión de plataformas en la nube, poseo un sólido conocimiento en el dominio de servicios en plataformas como Azure y MongoDB Atlas. Desde la implementación hasta la optimización, tengo experiencia en garantizar que las plataformas sean eficientes, seguras y cumplan con los requisitos del proyecto. Enfocado en la entrega de soluciones tecnológicas que impulsen el éxito del negocio.",
+        },
+      ],
     },
   ];
 
@@ -94,25 +143,33 @@ const Children = ({ e, inx }: any) => {
   return (
     <div
       id="container-must"
-      className={`w-full md:w-1/3  h-auto ${
+      className={`w-full md:w-1/3   h-auto ${
         open ? ` h-[${altura}px]` : " overflow-hidden relative"
       }  flex items-center justify-center`}
     >
       <div
         style={{
           transform: `${open ? `translateX(-${ancho * inx}px)` : ""} `,
-          transition: `transform 2s`,
+          transition: `transform 2s  cubic-bezier(0.2, 0.81, 0.42, 1);`,
         }}
         onClick={() => handleClick("no")}
-        className={`cursor-pointer w-full h-full ${
-          open ? `z-[5]` : "z-[1] hover:backdrop-brightness-50 "
+        className={` w-full h-full  ${
+          open ? `z-[5]` : "z-[1] bg-black/50 hover:bg-black/10 cursor-pointer "
         }  absolute  flex  items-center justify-center  `}
       >
-        <Icons
+        <img
+          style={{
+            transition: `transform 2s`,
+          }}
+          className={`w-full ${open ? " max-w-[250px]" : "max-w-[150px]"}`}
+          src={e.icon}
+          alt=""
+        />
+        {/* <Icons
           className="stroke-white w-[130px] h-auto md:w-[70px] lg:w-[130px]"
           icon={e.icon}
-        ></Icons>
-        <div>
+        ></Icons> */}
+        <div className="ml-6">
           <h1 className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
             {e.title}
           </h1>
@@ -136,15 +193,15 @@ const Children = ({ e, inx }: any) => {
                 className={`absolute z-[3] r p-12`}
               >
                 <div className="relative s w-full h-full text-white">
-                  <h1 className="block ">{e.s_title}</h1>
-                  <p className="text-[#ccc] text-[1.4rem] tracking-tight max-w-[450px]">
-                    {e.s_description}
-                  </p>
+                  <h1 className="block text-[2rem] ">{e.s_title}</h1>
+                  <div className="text-[#f1f1f1] text-[1.5rem] tracking-tight max-w-[450px]">
+                    <Servicios_tajeta data={e.s_description} />
+                  </div>
                   <div
                     onClick={() => {
                       setOpen(false);
                     }}
-                    className="z-[6] absolute top-0 right-0 p-1 rounded-full hover:bg-white/10"
+                    className="z-[6] cursor-pointer absolute top-0 right-0 p-1 rounded-full "
                   >
                     <Icons className=" stroke-white  " icon="close"></Icons>
                   </div>

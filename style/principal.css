@@ -10,10 +10,9 @@
   font-family: "alternativa-1";
   src: url("/fonts/gh1.ttf");
 }
-/* 
-h1 { 
- font-family: "bold";
-} */
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 .text-parrafo {
   font-family: "alternativa-1";
@@ -67,7 +66,7 @@ h1 {
   box-sizing: border-box;
 }
 .container-anim-download {
-  transition: background .5s;
+  transition: background 0.5s;
 }
 
 .container-anim-download:hover .anim-down {

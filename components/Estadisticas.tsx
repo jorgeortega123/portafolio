@@ -14,7 +14,7 @@ const Contributions = () => {
       </p>
       <ol className="" type="a">
         {libraries.map((e,l) => (
-          <a key={"contribuciones" + l} href={e.link}>
+          <a  key={"contribuciones" + l} href={e.link} target="_blank">
             <li className="cursor pointer rounded-[6px] flex flex-col relative before:absolute before:top-3 before:w-2 before:h-2 before:rounded-full before:left-0 before:z-[1] before:bg-[black]">
               <h3 className="hover:underline ml-3 text-[#0062b9] capitalize">
                 {e.title}
@@ -109,7 +109,7 @@ const Children = ({ e }: any) => {
   return (
     <div
       ref={contenedorRef}
-      className="w-full md:w-1/3  flex flex-col items-center  relative"
+      className="select-none w-full md:w-1/3  flex flex-col items-center  relative"
     >
       <div className="flex justify-center items-center">
         <p className="fondo-bold text-[8rem] block">+</p>
