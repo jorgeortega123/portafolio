@@ -70,7 +70,7 @@ function About() {
                   <div key={"key-skills" + e.type + l } className="skills__skill cursor-default relative overflow-hidden  ">
                     <p className="sticky z-[12] ">{e.id}</p>
                     <img
-                      className="w-[40px]  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"
+                      className="w-[40px] h-auto p-2  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"
                       src={e.link}
                       alt=""
                     />

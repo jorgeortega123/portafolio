@@ -1,6 +1,7 @@
 import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
 import React, { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 type SkillDescription = {
   title: string;
@@ -29,8 +30,18 @@ interface FrontendSkill {
 //   )
 // }
 
-const Servicios_tajeta = (data: SkillDescription) => {
-  return <div>{data.content}</div>;
+const Servicios_tajeta = ({ data }: { data: SkillDescription[] }) => {
+  console.log(data);
+  return (
+    <div>
+      {data.map((e) => (
+        <>
+          <h1>{e.title}</h1>
+          <p>{e.content}</p>
+        </>
+      ))}
+    </div>
+  );
 };
 
 export default function Tarjetas() {
@@ -154,14 +165,14 @@ const Children = ({ e, inx }: any) => {
         }}
         onClick={() => handleClick("no")}
         className={` w-full h-full  ${
-          open ? `z-[5]` : "z-[1] bg-black/50 hover:bg-black/10 cursor-pointer "
+          open ? `z-[5]` : "z-[1] bg-black/10 hover:bg-black/20 cursor-pointer "
         }  absolute  flex  items-center justify-center  `}
       >
         <img
           style={{
             transition: `transform 2s`,
           }}
-          className={`w-full ${open ? " max-w-[250px]" : "max-w-[150px]"}`}
+          className={`w-full  ${open ? " max-w-[250px]" : "max-w-[150px]"}`}
           src={e.icon}
           alt=""
         />
@@ -194,7 +205,7 @@ const Children = ({ e, inx }: any) => {
               >
                 <div className="relative s w-full h-full text-white">
                   <h1 className="block text-[2rem] ">{e.s_title}</h1>
-                  <div className="text-[#f1f1f1] text-[1.5rem] tracking-tight max-w-[450px]">
+                  <div className="text-[#f1f1f1] border text-[1.5rem] tracking-tight max-w-[450px]">
                     <Servicios_tajeta data={e.s_description} />
                   </div>
                   <div
@@ -207,18 +218,20 @@ const Children = ({ e, inx }: any) => {
                   </div>
 
                   <div className="absolute bottom-0 flex gap-2">
-                    {skills.map((a, l) => {
-                      if (e.type === a.type) {
-                        return (
-                          <img
-                            key={"imagen" + l}
-                            draggable={false}
-                            src={a.link}
-                            className=" w-[22px] h-auto "
-                          ></img>
-                        );
-                      }
-                    })}
+                    <Marquee>
+                      {skills.map((a, l) => {
+                        if (e.type === a.type) {
+                          return (
+                            <img
+                              key={"imagen" + l}
+                              draggable={false}
+                              src={a.link}
+                              className=" w-[22px] h-auto "
+                            ></img>
+                          );
+                        }
+                      })}
+                    </Marquee>
                   </div>
                 </div>
               </div>

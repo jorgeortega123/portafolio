@@ -17,13 +17,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "HTML",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845292/pngegg_pnsolw.png",
+      link: "/assets/png/skills/html.png",
     },
 
     {
       type: "fr",
       id: "CSS",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/k_fhm489.png",
+      link: "/assets/png/skills/css.png",
     },
     {
       type: "fr",
@@ -48,12 +48,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "MongoDb",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
+      link: "/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
       id: "Mongo Atlas",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805871/node-js-1174925_tubnek.webp",
+      link: "/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
@@ -69,7 +69,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "Docker",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788736/ezgif.com-resize_jkk1kr.png",
+      link: "/assets/png/skills/docker.png",
     },
     {
       type: "se",
