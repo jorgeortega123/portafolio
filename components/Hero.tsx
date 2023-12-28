@@ -29,9 +29,9 @@ function Hero() {
         className="absolute  top-0 left-0 object-cover md:w-full h-[110%] "
         alt=""
       />
-      <div className="home-hero__content ">
+      <div className="home-hero__content tracking-wide ">
         <h1 className="heading-primary">
-          Hey, me llamo <span className="font-bold">Luis Ortega</span>
+          Hey! me llamo <span className="font-bold">Luis Ortega</span>
         </h1>
         <div className="home-hero__info text-left">
           <p className="text-primary  ">

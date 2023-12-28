@@ -1,22 +1,21 @@
 .background-inicio-delay {
-    background-image: url("/assets/png/backgrounds/cover_hexagonal.png");
-    background-size: cover;
-  background-position: center; 
-    animation: delay-opacity .5s forwards;
-}
+  /* background-image: url("/assets/png/backgrounds/cover_hexagonal.png"); */
+  background-size: cover;
+  background-position: center;
 
+  animation: delay-opacity .5s forwards;
+  animation-direction: normal;
+  
+}
 
 @keyframes delay-opacity {
-    100% { 
-        opacity: 1;
-    }
+  100% {
+    
+    right: 0;
+    width: 100%;
+  }
 }
 
-
 .contenedor-con-sombra {
-
-    
-   
-    box-shadow: 12px 8px 8px rgba(0, 0, 0, 0.1); /* offsetX, offsetY, blurRadius, color */
-
-  }
+  box-shadow: 12px 8px 8px rgba(0, 0, 0, 0.1); /* offsetX, offsetY, blurRadius, color */
+}

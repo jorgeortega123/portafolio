@@ -32,7 +32,7 @@ export default function Descarga() {
     <div className="absolute bottom-6 right-6 cursor-pointer">
       <div
         onClick={handleDownload}
-        className={`container-anim-download p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6 ${
+        className={`tracking-widest opacity-70 container-anim-download p-2 gap-2 flex justify-center items-center border rounded-[6px] px-6 ${
           isDownloading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
         }`}
       >

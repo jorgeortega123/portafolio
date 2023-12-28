@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script src="https://cdn.tailwindcss.com"></script>
         <title>Luis Ortega</title>
         <meta
           name="description"
@@ -11,7 +12,7 @@ export default function Document() {
         />
         <link rel="icon" href={"/assets/png/icon.png"} />
       </Head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden relative">
         <Main />
         <NextScript />
       </body>

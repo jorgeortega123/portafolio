@@ -18,14 +18,18 @@ function Header() {
               className="header__logo-img"
             />
           </div>
-          <span className="header__logo-sub fondo-bold">Luis Ortega</span>
+          <Link href={"/"}>
+            <span className="header__logo-sub fondo-bold">Luis Ortega</span>
+          </Link>
         </div>
         <div className="header__main">
           <ul className="header__links">
             {links.map((x, index) => (
               <Link href={x.link} key={index}>
                 <li className="header__link-wrapper cursor-pointer" key={index}>
-                  <p className=" header__link cursor-pointer hover:underline">{x.name}</p>
+                  <p className=" header__link cursor-pointer hover:underline #121e76">
+                    {x.name}
+                  </p>
                 </li>
               </Link>
             ))}

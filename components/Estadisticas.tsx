@@ -13,8 +13,8 @@ const Contributions = () => {
         comunidad.
       </p>
       <ol className="" type="a">
-        {libraries.map((e,l) => (
-          <a  key={"contribuciones" + l} href={e.link} target="_blank">
+        {libraries.map((e, l) => (
+          <a key={"contribuciones" + l} href={e.link} target="_blank">
             <li className="cursor pointer rounded-[6px] flex flex-col relative before:absolute before:top-3 before:w-2 before:h-2 before:rounded-full before:left-0 before:z-[1] before:bg-[black]">
               <h3 className="hover:underline ml-3 text-[#0062b9] capitalize">
                 {e.title}
@@ -34,11 +34,10 @@ const Experience_text = () => {
     <div>
       <p className="block">
         {" "}
-        Trabajando como Frontend Developer en <span>LLK.</span>
-      </p>
-      <p>
-        Mi rol ha sido componetizar y encapsular piezas de código para optimizar
-        el funcionamiento de aplicaciones web.
+        Trabajando como Frontend Developer en{" "}
+        <a href="" className="underline">
+          LLK.
+        </a>
       </p>
     </div>
   );
@@ -70,8 +69,8 @@ export default function Estadisticas() {
   return (
     <div className=" mb-[116px] flex items-center justify-center">
       <section className=" items-start justify-center flex flex-col md:flex-row gap-12 w-full max-w-[760px]">
-        {datosComponente.map((e,l) => (
-          <Children key={"acontribuciones" + l}  e={e} />
+        {datosComponente.map((e, l) => (
+          <Children key={"acontribuciones" + l} e={e} />
         ))}
       </section>
     </div>
@@ -79,9 +78,9 @@ export default function Estadisticas() {
 }
 const Children = ({ e }: any) => {
   const contenedorRef = useRef(null);
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
- const [hasReset, setHasReset] = useState(false);
+  const [hasReset, setHasReset] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,7 +88,8 @@ const Children = ({ e }: any) => {
         const contenedorRect = contenedorRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        const contenedorEnPantalla = contenedorRect.top < windowHeight && contenedorRect.bottom >= 0;
+        const contenedorEnPantalla =
+          contenedorRect.top < windowHeight && contenedorRect.bottom >= 0;
 
         if (contenedorEnPantalla && !isVisible) {
           setIsVisible(true);
@@ -100,22 +100,24 @@ const Children = ({ e }: any) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [isVisible]);
   return (
     <div
+      onClick={() => {
+        setOpen(!open);
+      }}
       ref={contenedorRef}
-      className="select-none w-full md:w-1/3  flex flex-col items-center  relative"
+      className="select-none cursor-pointer w-full md:w-1/3  flex flex-col items-center  relative"
     >
       <div className="flex justify-center items-center">
-        <p className="fondo-bold text-[8rem] block">+</p>
         {isVisible && (
           <CountUp
-          delay={.3}
+            delay={0.3}
             duration={3}
             start={99}
             className="fondo-bold text-[8rem] block"
@@ -124,15 +126,11 @@ const Children = ({ e }: any) => {
         )}
 
         {e.bold === 36 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
+        <p className="fondo-bold text-[8rem] block">+</p>
       </div>
 
-      <p className="text-[1.8rem] mt-[-12px]">{e.title}</p>
-      <div
-        onClick={() => {
-          setOpen(!open);
-        }}
-        className="w-full py-5 estadistica-animacion-hover  max-w-[300px] cursor-pointer mt-[12px]  flex gap-2 items-center"
-      >
+      <p className="text-[1.8rem] mt-[-12px] opacity-80">{e.title}</p>
+      <div className="w-full py-5 estadistica-animacion-hover  max-w-[300px] cursor-pointer mt-[12px]  flex gap-2 items-center">
         <Icons
           className={`svg-custom transition-custom  ${
             open ? "rotate-90 fill-[#0a233c]" : "fill-[#ccc]"
@@ -140,7 +138,7 @@ const Children = ({ e }: any) => {
           icon="left"
         ></Icons>
         <p
-          className={` text-[1.4rem] text-[#272727d3] text-estadistica ${
+          className={` text-[1.4rem] font-[500] text-[#272727d3] text-estadistica ${
             open ? "text-black" : ""
           }`}
         >
@@ -152,7 +150,7 @@ const Children = ({ e }: any) => {
           open ? "max-h-[300px]" : "max-h-[0px]"
         }`}
       >
-        <div className="max-w-[300px] text-estadistica text-[1.5rem] flex flex-col mx-auto text-[#0a233c]">
+        <div className="max-w-[300px] text-estadistica text-[1.6rem] flex flex-col mx-auto text-[#0a233c]">
           {e.info}
         </div>
       </div>

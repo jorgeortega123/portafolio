@@ -35,28 +35,41 @@ const ProjectDetails = () => {
   }, [id, proyects]);
 
   return (
-    <div className="relative bg-[#F7F7FA]">
+    <div className="relative bg-[#F7F7FA] ">
       {/* <div className="absolute w-[220px] h-[540px] border py-7 px-2 z-[200] top-0 left-0 bg-black">
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}
 
-      <section className="project-cs-hero overflow-hidden">
-        <div className="project-cs-hero__content flex flex-col ">
+      <section className=" project-cs-hero overflow-hidden ">
+        <div className="project-cs-hero__content flex flex-col  w-max ">
           <h1 className="heading-primary  fondo-bold text-[5.2rem]">
             {project?.title}
           </h1>
           {/* <div className="project-cs-hero__info">
             <p className="text-primary flex ">{project?.about}</p>
           </div> */}
-          <div className="project-cs-hero__cta flex justify-center  ">
-            <a
+          <div className=" flex justify-start gap-3 text-[2rem]  ">
+            <a 
+            style={{transition: ".2s all"}}
               href={project?.web}
-              className="btn--bg hover:bg-[#ffffff1a] border border-[#00001a] "
+              className="bg-white transition-custom text-black hover:hover:opacity-70 rounded-[6px] mt-[5rem] px-[5rem] py-[1rem] border border-[#00001a] "
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Web
+              Link de pagina
+              
             </a>
+            <a
+        
+              href={project?.repo}
+              className="transition-custom hover:opacity-70 rounded-[6px] mt-[5rem] px-[3rem] py-[1rem] border border-[#00001a] "
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Repositorio
+            </a>
+            
+            
           </div>
         </div>
       </section>
@@ -71,12 +84,12 @@ const ProjectDetails = () => {
                 className="project-details__showcase-img"
               />
             </div>
-            <div className="project-details__content-main">
-              <div className="project-details__desc">
-                <h3 className="project-details__content-title">
+            <div className="project-details__content-main ">
+              <div className="project-details__desc inverse full-bleed ">
+                <h3 className="project-details__content-title inverse ">
                   Caracteristicas del proyecto
                 </h3>
-                <p className="project-details__desc-para">{project?.about}</p>
+                <p className="project-details__desc-para inverse opacity-90">{project?.about}</p>
                 {/* <p className="project-details__desc-para">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                   alias tenetur minus quaerat aliquid, aut provident blanditiis,
@@ -89,12 +102,10 @@ const ProjectDetails = () => {
                   Herramientas usadas
                 </h3>
                 <div className="skills">
-                  <div className="skills__skill">HTML</div>
-                  <div className="skills__skill">CSS</div>
-                  <div className="skills__skill">JavaScript</div>
-                  <div className="skills__skill">React</div>
-                  <div className="skills__skill">SASS</div>
-                  <div className="skills__skill">GIT</div>
+                  {project?.tags.map((e,i)=> ( 
+                    <div key={`tags-${i}`} className="skills__skill cursor-default">{e}</div>
+                  ))}
+                
                   {/* <div className="skills__skill">Shopify</div>
                   <div className="skills__skill">Wordpress</div>
                   <div className="skills__skill">Google ADS</div>

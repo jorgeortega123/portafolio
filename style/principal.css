@@ -10,15 +10,19 @@
   font-family: "alternativa-1";
   src: url("/fonts/gh1.ttf");
 }
+@font-face {
+  font-family: "texto-general";
+  src: url("/fonts/lato-latin-400-normal.woff");
+}
+
 body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "texto-general";
+
 }
 
 .text-parrafo {
   font-family: "alternativa-1";
-}
-.text-estadistica {
-  font-family: "texto";
 }
 
 .fondo-bold {
@@ -41,14 +45,14 @@ body {
   border-left: 56.6px solid #efefef; /*#efefef Altura del triángulo, calculada como la mitad de la base por la altura de un triángulo equilátero */
 }
 
-.estadistica-animacion-hover:hover p,
+/* .estadistica-animacion-hover:hover p,
 .svg-custom {
   color: black;
 }
 
 .estadistica-animacion-hover:hover .svg-custom {
   fill: black;
-}
+} */
 
 /* Tarjetas.css */
 
@@ -75,6 +79,16 @@ body {
 
 .container-anim-download:hover {
   background: #003b8e;
+}
+
+.inverse {
+  background-color: #121212;
+  color: #efefef;
+}
+.full-bleed {
+  box-shadow: 0 0 0 100vmax #121212;
+  clip-path: inset(0 -100vmax);
+  padding: 5rem 0 5rem 0;
 }
 
 /* button { 

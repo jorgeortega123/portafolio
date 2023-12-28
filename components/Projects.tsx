@@ -51,7 +51,7 @@ export default function Projects() {
 
                 <div className="px-4 lg:px-0 h-[340px] mt-[50px] md:mt-0 md:h-auto flex flex-col  items-center max-w-[500px]">
                   <h1
-                    className={`w-full fondo-bold text-[4rem] py-4 text-[#0a233c]`}
+                    className={`w-full fondo-bold text-[4rem] leading-none py-4 text-[#0a233c]`}
                   >
                     {e.title}
                   </h1>
@@ -63,7 +63,7 @@ export default function Projects() {
                       <Link
                         target="_blank"
                         href={`/proyect?id=${e.id}`}
-                        className="rounded-[6px] text-[#efefef] text-parrafo btn--theme text-[1.4rem] lg:text-[1.6rem] dynamicBgClr py-[1.2rem] px-[3.4rem] relative flex justify-center items-center"
+                        className="rounded-[6px] text-[#efefef]  btn--theme text-[1.4rem] lg:text-[1.6rem] dynamicBgClr py-[1.2rem] px-[3.4rem] relative flex justify-center items-center"
                       >
                         Ver más
                         <svg

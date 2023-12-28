@@ -52,6 +52,11 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "ba",
+      id: "PostgreSQL",
+      link: "/assets/png/skills/postgree.png",
+    },
+    {
+      type: "ba",
       id: "Mongo Atlas",
       link: "/assets/png/skills/mongodb.png",
     },
@@ -78,8 +83,18 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "se",
+      id: "GitHub",
+      link: "/assets/png/skills/github.png",
+    },
+    {
+      type: "se",
       id: "Figma",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png",
+    },
+    {
+      type: "se",
+      id: "Microsoft Azure",
+      link: "/assets/png/skills/azure.png",
     },
     {
       type: "se",

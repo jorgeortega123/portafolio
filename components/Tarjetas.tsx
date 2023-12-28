@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 type SkillDescription = {
+  needContrast?: boolean;
   title: string;
   icon: string;
   content: string;
@@ -14,6 +15,7 @@ interface FrontendSkill {
   description: string;
   image: string;
   icon: string;
+  banner: string;
   type: string;
   s_title: string;
   s_description: SkillDescription[];
@@ -30,33 +32,21 @@ interface FrontendSkill {
 //   )
 // }
 
-const Servicios_tajeta = ({ data }: { data: SkillDescription[] }) => {
-  console.log(data);
-  return (
-    <div>
-      {data.map((e) => (
-        <>
-          <h1>{e.title}</h1>
-          <p>{e.content}</p>
-        </>
-      ))}
-    </div>
-  );
-};
-
 export default function Tarjetas() {
   const datosComponente: FrontendSkill[] = [
     {
       title: "Frontend",
       description:
         "Creativo al momento de crear interfaces web con frameworks y librerias del momento.",
-      image: "/assets/png/backgrounds/rose.png",
+      image: "/assets/png/backgrounds/primero.png",
       icon: "/assets/png/frontend.png",
+      banner: "/assets/png/backgrounds/banner_1.png",
       type: "fr",
       s_title: "Habilidades Frontend",
       s_description: [
         {
-          title: "",
+          title:
+            "Manejo adecuado en el aspecto visual tanto en Pc/Tables/Movile",
           icon: "",
           content:
             "Apasionado por el diseño y la creación de experiencias visuales cautivadoras. Experto en la implementación de interfaces web atractivas mediante el uso de los últimos frameworks y librerías del momento. Capaz de traducir ideas creativas en código funcional que mejora la interacción del usuario y la usabilidad del sitio.",
@@ -67,28 +57,37 @@ export default function Tarjetas() {
       title: "Backend",
       description:
         "Alto nivel de manejo al trabajar con procesamiento en la Nube y base de datos (SQL y no SQL).",
-      image: "/assets/png/backgrounds/blue.png",
+      image: "/assets/png/backgrounds/segundo.png",
       type: "ba",
       icon: "/assets/png/backend.png",
+      banner: "/assets/png/backgrounds/banner_2.png",
       s_title: "Desarrollo Backend",
       s_description: [
         {
-          title: "",
+          title: "Ejemplo",
           icon: "",
           content:
-            "Con experiencia avanzada en el desarrollo backend, me especializo en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL. Capaz de diseñar arquitecturas robustas que garantizan el rendimiento, la escalabilidad y la seguridad de las aplicaciones. Comprometido con la entrega de soluciones backend sólidas y de alta calidad.",
+            "Experiencia avanzada en el desarrollo backend, conocimiento en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL.",
+        },
+        {
+          title: "Ejemplo",
+          icon: "",
+          content:
+            "Experiencia avanzada en el desarrollo backend, conocimiento en el manejo eficiente de servidores, procesamiento en la nube y la gestión de bases de datos tanto SQL como NoSQL.",
         },
       ],
     },
     {
       title: "Servicios",
       description: "Dominio de plataformas como Azure y mongo Atlas.",
-      image: "/assets/png/backgrounds/red.png",
+      image: "/assets/png/backgrounds/tercero.png",
       type: "se",
       icon: "/assets/png/services.png",
+      banner: "/assets/png/backgrounds/banner_3.png",
       s_title: "Gestión de Plataformas",
       s_description: [
         {
+          needContrast: true,
           title: "",
           icon: "",
           content:
@@ -100,7 +99,7 @@ export default function Tarjetas() {
 
   return (
     <section>
-      <div className="flex flex-col md:flex-row w-full relative bg-slate-700">
+      <div className="flex flex-col md:flex-row w-full relative ">
         {datosComponente.map((e, inx) => (
           <Children key={"datos" + inx} inx={inx} e={e} />
         ))}
@@ -110,7 +109,6 @@ export default function Tarjetas() {
 }
 
 const Children = ({ e, inx }: any) => {
-  const { skills } = useMainContext();
   const [open, setOpen] = useState(false);
   const [altura, setaltura] = useState<number | undefined>();
   const [ancho, setancho] = useState<number | undefined>();
@@ -154,25 +152,27 @@ const Children = ({ e, inx }: any) => {
   return (
     <div
       id="container-must"
-      className={`w-full md:w-1/3   h-auto ${
+      className={`w-full md:w-1/3 bg-slate-800   h-auto ${
         open ? ` h-[${altura}px]` : " overflow-hidden relative"
       }  flex items-center justify-center`}
     >
       <div
         style={{
           transform: `${open ? `translateX(-${ancho * inx}px)` : ""} `,
-          transition: `transform 2s  cubic-bezier(0.2, 0.81, 0.42, 1);`,
+          transition: `transform 1.3s  cubic-bezier(0.2, 0.81, 0.42, 1);`,
         }}
         onClick={() => handleClick("no")}
-        className={` w-full h-full  ${
-          open ? `z-[5]` : "z-[1] bg-black/10 hover:bg-black/20 cursor-pointer "
-        }  absolute  flex  items-center justify-center  `}
+        className={`  h-full  ${
+          open ? `z-[5]` : "z-[1] cursor-pointer "
+        }  absolute   flex  items-center justify-center  `}
       >
         <img
           style={{
-            transition: `transform 2s`,
+            transition: `all 1s`,
           }}
-          className={`w-full  ${open ? " max-w-[250px]" : "max-w-[150px]"}`}
+          className={`w-full max-w-[160px] sm:max-w-[90px]  ${
+            open ? " lg:max-w-[250px]" : "lg:max-w-[150px]"
+          }`}
           src={e.icon}
           alt=""
         />
@@ -184,16 +184,21 @@ const Children = ({ e, inx }: any) => {
           <h1 className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
             {e.title}
           </h1>
-          <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#ccc] ">
+          <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#f5f5f5] ">
             {e.description}
           </p>
         </div>
       </div>
-      {open ? (
-        <>
-          <div
-            className={`opacity-0 background-inicio-delay absolute top-0 left-0 bg-slate-700 w-[100%] h-full z-[3]`}
-          >
+      <div
+        style={{ backgroundImage: `url(${e.banner})` }}
+        className={`overflow-hidden ${
+          open
+            ? " w-[0%] background-inicio-delay absolute top-0 right-[50%] bg-slate-700  h-full z-[3]"
+            : ""
+        }`}
+      >
+        {open ? (
+          <>
             <div className={`relative  h-full w-full  z-[3] text-[2rem]`}>
               <div
                 style={{
@@ -203,22 +208,22 @@ const Children = ({ e, inx }: any) => {
                 }}
                 className={`absolute z-[3] r p-12`}
               >
-                <div className="relative s w-full h-full text-white">
-                  <h1 className="block text-[2rem] ">{e.s_title}</h1>
-                  <div className="text-[#f1f1f1] border text-[1.5rem] tracking-tight max-w-[450px]">
-                    <Servicios_tajeta data={e.s_description} />
+                <div className="relative flex w-full h-full text-white">
+                  {/* <h1 className="block text-[2rem] ">{e.s_title}</h1> */}
+                  <div className=" flex flex-col items-center justify-center tracking-tight ">
+                    <Servicios_tajeta data={e} />
                   </div>
                   <div
                     onClick={() => {
                       setOpen(false);
                     }}
-                    className="z-[6] cursor-pointer absolute top-0 right-0 p-1 rounded-full "
+                    className="z-[6] bg-black cursor-pointer absolute top-0 right-0 p-1 rounded-full "
                   >
                     <Icons className=" stroke-white  " icon="close"></Icons>
                   </div>
 
-                  <div className="absolute bottom-0 flex gap-2">
-                    <Marquee>
+                  {/* <div className="absolute top-0 border  flex gap-2">
+                    <Marquee  className="absolute" direction="left">
                       {skills.map((a, l) => {
                         if (e.type === a.type) {
                           return (
@@ -232,17 +237,66 @@ const Children = ({ e, inx }: any) => {
                         }
                       })}
                     </Marquee>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <img className="" src={e.image} alt="" />
-      )}
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
+      <img className="" src={e.image} alt="" />
+      {/* <div className="absolute z-[6] top-2 left-2 flex gap-1"></div> */}
+    </div>
+  );
+};
 
-      <div className="absolute z-[6] top-2 left-2 flex gap-1"></div>
+const color = ["#ff8400", "#f316b0", "#00c4c2"];
+const Servicios_tajeta = ({ data }: { data: FrontendSkill }) => {
+  const { skills } = useMainContext();
+  console.log(data);
+  return (
+    <div className={`${data.s_description[0]?.needContrast? "rounded-[12px] bg-black/30":""} flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}>
+      <h1 className=" text-[3rem] font-[900] text-left w-full">{data.title}</h1>
+      <p className="">{data.s_description[0].content}</p>
+      <div className="flex flex-col gap-5">
+        <p>Tecnologias en este hambito:</p>
+        <Marquee speed={20} gradient gradientColor="red" gradientWidth={"150"} pauseOnHover={true} className="absolute z-[99] max-w-[700px]" direction="right">
+          <div className="flex flex-wrap gap-3 pl-3 ">
+            {skills.map((a, l) => {
+              if (data.type === a.type) {
+                return (
+                  <div className="flex border border-white/60 p-4 rounded-[5px] items-center justify-center gap-3">
+                    <img
+                      key={"imagen" + l}
+                      draggable={false}
+                      src={a.link}
+                      className=" w-[25px] h-auto "
+                    ></img>
+                    <p className="cursor-default text-white/85">{a.id}</p>
+                  </div>
+                );
+              }
+            })}
+          </div>{" "}
+        </Marquee>
+      </div>
+
+      {/* {data.map((e, index) => (
+        <div
+          key={"colorBorder" + index}
+          className="overflow-hidden bg-[#2b2b2b5e] rounded-[6px]  relative px-4 py-2"
+        >
+          <div
+            className={`absolute z-[7] bg-[${color[index]}] h-full w-[3px] top-0 left-0`}
+          ></div>
+          <h1 className="my-2 font-bold tracking-wide text-[1.6rem]">
+            {e.title}
+          </h1>
+          <p>{e.content}</p>
+        </div>
+      ))} */}
     </div>
   );
 };

@@ -221,7 +221,7 @@ textarea {
   display: inline-block;
   font-weight: 700;
   border-radius: 5px;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
   transition: transform 0.3s;
 }
 .btn:hover {
@@ -462,7 +462,7 @@ textarea {
 }
 .contact__form-label {
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 1px;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -470,15 +470,15 @@ textarea {
   text-align: left;
 }
 .contact__form-input {
-  color: #333;
+  color: #eeeeee;
   padding: 2rem;
   width: 100%;
-  border: 1px solid #ebebeb;
+  border: 1px solid #ebebeb50;
   font-size: 1.6rem;
   letter-spacing: 0px;
-  background: #f0f0f0;
+  background: #e7e7e713;
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 500;
   /* Code for Modern Browsers */
   /* Code for WebKit, Blink, Edge */
   /* Code for Internet Explorer 10-11 */
@@ -487,14 +487,14 @@ textarea {
   /* Code for Mozilla Firefox 19+ */
 }
 .contact__form-input::placeholder {
-  color: #999;
+  color: #dadada;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .contact__form-input::-webkit-input-placeholder {
-  color: #999;
+  color: #a3a3a3;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .contact__form-input:-ms-input-placeholder {
   color: #999;
@@ -531,12 +531,8 @@ textarea {
 
 .project-cs-hero {
   color: #fff;
-  background: linear-gradient(
-      to right,
-      rgba(0, 98, 185, 0.8),
-      rgba(0, 98, 185, 0.8)
-    ),
-    url("../public/assets/png/backgrounds/patron1.png");
+  background:
+    url("../public/assets/png/backgrounds/cover_proyectos.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -564,10 +560,6 @@ textarea {
 .project-cs-hero__info {
   margin: 3rem auto 0 auto;
   max-width: 80rem;
-}
-.project-cs-hero__cta {
-  margin-top: 5rem;
-  text-align: center;
 }
 
 .project-details__content {
@@ -798,7 +790,7 @@ textarea {
 }
 
 .main-footer {
-  background: #000;
+  background: #121212;
   color: #fff;
 }
 .main-footer__upper {
