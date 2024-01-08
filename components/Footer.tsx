@@ -48,13 +48,13 @@ function Footer() {
               firmes en el funcionamiento de Backend y servicios en la nube.
             </p>
             <p className="main-footer__short-desc">
-              <span className="block">
+              <a href="mailto:luisgarrido0987@gmail.com"  className="block">
                 Email:{" "}
                 <span className="underline">luisgarrido0987@gmail.com</span>
-              </span>
-              <span className="block">
+              </a>
+              <a href="tel:+593959859877" className="block">
                 Teléfono: <span>(+593) 095 985 9877</span>
-              </span>
+              </a>
             </p>
           </div>
         </div>

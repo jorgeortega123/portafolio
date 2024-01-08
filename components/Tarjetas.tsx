@@ -159,7 +159,7 @@ const Children = ({ e, inx }: any) => {
       <div
         style={{
           transform: `${open ? `translateX(-${ancho * inx}px)` : ""} `,
-          transition: `transform 1.3s  cubic-bezier(0.2, 0.81, 0.42, 1);`,
+          transition: `transform 1.3s `,
         }}
         onClick={() => handleClick("no")}
         className={`  h-full  ${
@@ -257,17 +257,17 @@ const Servicios_tajeta = ({ data }: { data: FrontendSkill }) => {
   const { skills } = useMainContext();
   console.log(data);
   return (
-    <div className={`${data.s_description[0]?.needContrast? "rounded-[12px] bg-black/30":""} flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}>
+    <div className={`mb-[100px] ${data.s_description[0]?.needContrast? "rounded-[12px] bg-black/30":""} flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}>
       <h1 className=" text-[3rem] font-[900] text-left w-full">{data.title}</h1>
-      <p className="">{data.s_description[0].content}</p>
-      <div className="flex flex-col gap-5">
-        <p>Tecnologias en este hambito:</p>
-        <Marquee speed={20} gradient gradientColor="red" gradientWidth={"150"} pauseOnHover={true} className="absolute z-[99] max-w-[700px]" direction="right">
+      <p className="w-10/12 ">{data.s_description[0].content}</p>
+      <div className="flex flex-col gap-5 absolute bottom-0">
+        <p>Tecnologías en este ámbito:</p>
+        <Marquee speed={20} gradient gradientColor="red" gradientWidth={"250"}  className="block z-[99] max-w-[710px]" direction="right">
           <div className="flex flex-wrap gap-3 pl-3 ">
             {skills.map((a, l) => {
               if (data.type === a.type) {
                 return (
-                  <div className="flex border border-white/60 p-4 rounded-[5px] items-center justify-center gap-3">
+                  <div className="flex border select-none border-white/60 p-4 rounded-[5px] items-center justify-center gap-3">
                     <img
                       key={"imagen" + l}
                       draggable={false}

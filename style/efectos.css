@@ -2,9 +2,9 @@
   /* background-image: url("/assets/png/backgrounds/cover_hexagonal.png"); */
   background-size: cover;
   background-position: center;
-
   animation: delay-opacity .5s forwards;
   animation-direction: normal;
+  transform-origin: left;
   
 }
 

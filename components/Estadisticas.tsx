@@ -35,7 +35,7 @@ const Experience_text = () => {
       <p className="block">
         {" "}
         Trabajando como Frontend Developer en{" "}
-        <a href="" className="underline">
+        <a target="_blank" href="https://www.llampukaq.com/team?focus=luis_ortega" className="underline">
           LLK.
         </a>
       </p>

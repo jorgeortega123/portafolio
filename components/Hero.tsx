@@ -33,16 +33,18 @@ function Hero() {
         <h1 className="heading-primary">
           Hey! me llamo <span className="font-bold">Luis Ortega</span>
         </h1>
-        <div className="home-hero__info text-left">
-          <p className="text-primary  ">
+        <div className="home-hero__info text-left pb-7">
+          <p className="text-primary text-white/90  ">
             Soy un apasionado programador con amplios conocimientos en frontend
             y backend usando typescript con experiencia en el desarrollo de
             aplicaciones web innovadoras y escalables donde la creatividad es lo
             primero.
           </p>
-          <p className="text-primary">Conoce como trabajo.</p>
+       
         </div>
-        <div className="home-hero__cta cursor-pointer">
+        <div className="home-hero__cta cursor-pointer relative">
+        <p className="text-primary absolute bottom-[110%]">Te invito a conocer mi trabajo!</p>
+          
           <p onClick={() => handleOnClick("contact")} className="btn btn--bg">
             Proyectos
           </p>

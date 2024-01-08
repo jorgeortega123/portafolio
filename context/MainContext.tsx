@@ -105,7 +105,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
   const proyects = [
     {
       title: "Llampukaq Technology",
-      about: `En este proyecto me encargué de gestionar el frontend y el backend. Para ello, utilizamos diferentes tecnologías y se buscó una estrategia para mejorar el rendimiento. En cuanto al frontend, utilizamos React y Next.js, optando por SSG (Static Site Generation) para obtener un mejor rendimiento. En cuanto al backend, elegimos un servicio Backend-as-a-Service (BaaS), en nuestro caso, utilizamos Mongo Realm. También me encargué de desarrollar y liberar parte de nuestro código como open source, atendiendo a las solicitudes de la empresa.`,
+      about: `En el marco de este proyecto, la gestión del frontend y el backend fue encomendada en gran parte a mi persona. Se emplearon diversas tecnologías con la finalidad de mejorar el rendimiento, adoptando una estrategia específica. Respecto al frontend, se optó por la utilización de React y Next.js, eligiendo SSG (Generación de Sitios Estáticos) para optimizar el rendimiento. En lo que respecta al backend, se seleccionó un servicio Backend-as-a-Service (BaaS), siendo Mongo Realm la elección para nuestro caso. Además, se llevó a cabo el desarrollo y la liberación de una porción de nuestro código como open source, respondiendo de manera efectiva a las solicitudes de la empresa. Estas tareas se llevaron a cabo en el contexto de un proyecto con un enfoque centrado en la experiencia.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],
       img: "/llampukaq.png",
       web: "https://www.llampukaq.com/",

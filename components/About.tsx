@@ -2,6 +2,7 @@ import useMainContext from "@/context/useMainContext";
 import useScrollTo from "@/hooks/useScroll";
 import React from "react";
 import Marquee from "react-fast-marquee";
+import Button from "./sub/Button";
 
 function About() {
   const { skills } = useMainContext();
@@ -28,7 +29,7 @@ function About() {
             <div className="about__content-main items-center flex flex-col">
               <div className="about__content-details">
                 <p className="about__content-details-para ">
-                  ¡Hola! Soy <strong> Luis Ortega </strong>,un apasionado del
+                  ¡Hola! Soy <strong> Luis Ortega</strong>, un apasionado del
                   mundo digital y defensor de la libertad creativa. He trabajado
                   bajo la metodología del tipo freelancer, colaborando en
                   proyectos diversos para <strong> agencias </strong> y{" "}
@@ -43,22 +44,15 @@ function About() {
                   <strong>contact</strong> me here.
                 </p> */}
               </div>
-              <div
+              <Button
                 onClick={() => handleOnClick("contact")}
-                className="relative cursor-pointer btn btn--med btn-background overflow-hidden "
-              >
-                <img
-                  className="absolute w-[600px] h-[100px] top-0 left-0 z-[1]"
-                  src="/assets/png/font.png"
-                  alt=""
-                />
-                <p className="sticky z-[12] text-white"> Contactar</p>
-              </div>
+                buttonName="Contactar"
+              ></Button>
             </div>
             <div className="about__content-skills">
               <h2 className="text-[3.2rem] mb-[3rem]">Mis habilidades</h2>
               <div className="skills">
-                {skills.map((e,l) => (
+                {skills.map((e, l) => (
                   // <div className="skills__skill cursor-default relative overflow-hidden ">
                   //   <p className="flex z-[12] ml-[6px]">{e.id}</p>
                   //   <img
@@ -67,7 +61,10 @@ function About() {
                   //     alt=""
                   //   />
                   // </div>
-                  <div key={"key-skills" + e.type + l } className="skills__skill cursor-default relative overflow-hidden  ">
+                  <div
+                    key={"key-skills" + e.type + l}
+                    className="select-none skills__skill cursor-default relative overflow-hidden  "
+                  >
                     <p className="sticky z-[12] tracking-wider ">{e.id}</p>
                     <img
                       className="w-[40px] h-auto p-2  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"

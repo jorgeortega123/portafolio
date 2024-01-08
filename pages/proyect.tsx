@@ -52,17 +52,17 @@ const ProjectDetails = () => {
             <a 
             style={{transition: ".2s all"}}
               href={project?.web}
-              className="bg-white transition-custom text-black hover:hover:opacity-70 rounded-[6px] mt-[5rem] px-[5rem] py-[1rem] border border-[#00001a] "
+              className="bg-white transition-custom text-black hover:hover:opacity-70 rounded-[6px] mt-[5rem] px-[5rem] py-[1rem] border  "
               target="_blank"
               rel="noopener noreferrer"
             >
-              Link de pagina
+              Link de página
               
             </a>
             <a
         
               href={project?.repo}
-              className="transition-custom hover:opacity-70 rounded-[6px] mt-[5rem] px-[3rem] py-[1rem] border border-[#00001a] "
+              className=" hover:opacity-70 rounded-[6px] mt-[5rem] px-[3rem] py-[1rem] border border-white "
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -87,7 +87,7 @@ const ProjectDetails = () => {
             <div className="project-details__content-main ">
               <div className="project-details__desc inverse full-bleed ">
                 <h3 className="project-details__content-title inverse ">
-                  Caracteristicas del proyecto
+                Características del proyecto
                 </h3>
                 <p className="project-details__desc-para inverse opacity-90">{project?.about}</p>
                 {/* <p className="project-details__desc-para">

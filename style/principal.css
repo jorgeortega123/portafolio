@@ -30,7 +30,7 @@ body {
 }
 
 .transition-custom {
-  transition: all 0.6s;
+  transition: all 1s;
 }
 
 .mi-lista {
