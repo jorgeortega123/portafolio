@@ -40,8 +40,8 @@ const ProjectDetails = () => {
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}
 
-      <section className=" project-cs-hero overflow-hidden ">
-        <div className="project-cs-hero__content flex flex-col  w-max ">
+      <section className=" project-cs-hero  bg-dinamic-project ">
+        <div className="project-cs-hero__content flex flex-col   w-max ">
           <h1 className="heading-primary  fondo-bold text-[5.2rem]">
             {project?.title}
           </h1>
@@ -49,18 +49,16 @@ const ProjectDetails = () => {
             <p className="text-primary flex ">{project?.about}</p>
           </div> */}
           <div className=" flex justify-start gap-3 text-[2rem]  ">
-            <a 
-            style={{transition: ".2s all"}}
+            <a
+              style={{ transition: ".2s all" }}
               href={project?.web}
               className="bg-white transition-custom text-black hover:hover:opacity-70 rounded-[6px] mt-[5rem] px-[5rem] py-[1rem] border  "
               target="_blank"
               rel="noopener noreferrer"
             >
               Link de página
-              
             </a>
             <a
-        
               href={project?.repo}
               className=" hover:opacity-70 rounded-[6px] mt-[5rem] px-[3rem] py-[1rem] border border-white "
               target="_blank"
@@ -68,28 +66,26 @@ const ProjectDetails = () => {
             >
               Repositorio
             </a>
-            
-            
           </div>
         </div>
-      </section>
-      <section className="project-details">
         <div className="main-container">
-          <div className="project-details__content">
-            <div className="project-details__showcase-img-cont">
+          <div className="">
+            <div className="mt-[80px] p-12 w-full items-center flex justify-center ">
               {/* <Laptop url={"/example.png"}></Laptop> */}
               <img
                 src={project?.img}
                 alt="Project Image"
-                className="project-details__showcase-img"
+                className="project-details__showcase-img max-w-[800px]"
               />
             </div>
-            <div className="project-details__content-main ">
+            <div className="project-details__content-main text-black/90">
               <div className="project-details__desc inverse full-bleed ">
                 <h3 className="project-details__content-title inverse ">
-                Características del proyecto
+                  Características del proyecto
                 </h3>
-                <p className="project-details__desc-para inverse opacity-90">{project?.about}</p>
+                <p className="project-details__desc-para inverse opacity-90">
+                  {project?.about}
+                </p>
                 {/* <p className="project-details__desc-para">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                   alias tenetur minus quaerat aliquid, aut provident blanditiis,
@@ -98,14 +94,19 @@ const ProjectDetails = () => {
                 </p> */}
               </div>
               <div className="project-details__tools-used">
-                <h3 className="project-details__content-title">
+                <h3 className="project-details__content-title tex">
                   Herramientas usadas
                 </h3>
                 <div className="skills">
-                  {project?.tags.map((e,i)=> ( 
-                    <div key={`tags-${i}`} className="skills__skill cursor-default">{e}</div>
+                  {project?.tags.map((e, i) => (
+                    <div
+                      key={`tags-${i}`}
+                      className="skills__skill cursor-default"
+                    >
+                      {e}
+                    </div>
                   ))}
-                
+
                   {/* <div className="skills__skill">Shopify</div>
                   <div className="skills__skill">Wordpress</div>
                   <div className="skills__skill">Google ADS</div>
@@ -114,7 +115,7 @@ const ProjectDetails = () => {
                   <div className="skills__skill">IOS</div> */}
                 </div>
               </div>
-              <div className="project-details__links">
+              <div className="project-details__links pb-12">
                 <h3 className="project-details__content-title">
                   Mirar el proyecto:
                 </h3>
@@ -139,6 +140,7 @@ const ProjectDetails = () => {
           </div>
         </div>
       </section>
+      <section className="project-details"></section>
 
       {/* {project ? (
         <div>

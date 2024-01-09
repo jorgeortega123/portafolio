@@ -11,7 +11,6 @@ import Tarjetas from "@/components/Tarjetas";
 export default function Home() {
   return (
     <>
-      
       <div>
         <Hero />
         <div id="me">

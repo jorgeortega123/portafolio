@@ -73,6 +73,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
 
     {
       type: "ba",
+      id: " GraphQL",
+      link: "/assets/png/skills/graphql.png",
+    },
+
+    {
+      type: "ba",
       id: "Docker",
       link: "/assets/png/skills/docker.png",
     },
@@ -107,7 +113,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       title: "Llampukaq Technology",
       about: `En el marco de este proyecto, la gestión del frontend y el backend fue encomendada en gran parte a mi persona. Se emplearon diversas tecnologías con la finalidad de mejorar el rendimiento, adoptando una estrategia específica. Respecto al frontend, se optó por la utilización de React y Next.js, eligiendo SSG (Generación de Sitios Estáticos) para optimizar el rendimiento. En lo que respecta al backend, se seleccionó un servicio Backend-as-a-Service (BaaS), siendo Mongo Realm la elección para nuestro caso. Además, se llevó a cabo el desarrollo y la liberación de una porción de nuestro código como open source, respondiendo de manera efectiva a las solicitudes de la empresa. Estas tareas se llevaron a cabo en el contexto de un proyecto con un enfoque centrado en la experiencia.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],
-      img: "/llampukaq.png",
+      img: "/assets/cases/llam.png",
       web: "https://www.llampukaq.com/",
       repo: "https://github.com/orgs/Llampukaq-Labs/dashboard",
       moreDetails: "/proyect-1",

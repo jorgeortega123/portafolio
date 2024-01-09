@@ -531,8 +531,7 @@ textarea {
 
 .project-cs-hero {
   color: #fff;
-  background:
-    url("../public/assets/png/backgrounds/cover_proyectos.png");
+
   background-size: cover;
   background-position: center;
   position: relative;

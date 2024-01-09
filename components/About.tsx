@@ -51,7 +51,7 @@ function About() {
             </div>
             <div className="about__content-skills">
               <h2 className="text-[3.2rem] mb-[3rem]">Mis habilidades</h2>
-              <div className="skills">
+              <div className="skills max-w-[530px] ">
                 {skills.map((e, l) => (
                   // <div className="skills__skill cursor-default relative overflow-hidden ">
                   //   <p className="flex z-[12] ml-[6px]">{e.id}</p>
