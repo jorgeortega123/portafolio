@@ -2,8 +2,10 @@ import useScrollTo from "@/hooks/useScroll";
 import Icons from "@/style/Icons";
 import React from "react";
 import Descarga from "./sub/Descarga";
+import useMainContext from "@/context/useMainContext";
 
 function Hero() {
+  const { isLoad,numberCharge } = useMainContext();
   const scrollToElement = useScrollTo();
   const handleOnClick = (e: string) => {
     scrollToElement(e);
@@ -22,7 +24,21 @@ function Hero() {
     },
   ];
   return (
-    <section className="home-hero relative border border-[black] overflow-hidden ">
+    <section className="home-hero relative overflow-hidden ">
+      {!isLoad && (
+        <div className="absolute z-[3]  border border-blue-800/60 bottom-5 rounded-[22px] left-5">
+          <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[22px] overflow-hidden justify-center text-white/70">
+            <Icons
+              className="w-12 fill-black"
+              stroke="#cbdade"
+              icon="loading"
+            ></Icons>
+            <p className="lg:text-[1.4rem]">Cargando recursos...</p>
+            <div className={`absolute transition-loading z-[-1] left-0 h-full w-[${numberCharge}%] bg-blue-400`}></div>
+          </div>
+        </div>
+      )}
+
       <img
         draggable={false}
         src="/assets/png/backgrounds/hexagonal.png"
@@ -40,18 +56,19 @@ function Hero() {
             aplicaciones web innovadoras y escalables donde la creatividad es lo
             primero.
           </p>
-       
         </div>
         <div className="home-hero__cta cursor-pointer relative">
-        <p className="text-primary absolute bottom-[110%]">Te invito a conocer mi trabajo!</p>
-          
+          <p className="text-primary absolute bottom-[110%]">
+            Te invito a conocer mi trabajo!
+          </p>
+
           <p onClick={() => handleOnClick("contact")} className="btn btn--bg">
             Proyectos
           </p>
         </div>
       </div>
       <div className="home-hero__socials">
-        {sociaMedia.map((e,l) => (
+        {sociaMedia.map((e, l) => (
           <div key={"social" + l} className="home-hero__social">
             <a
               href={e.url}

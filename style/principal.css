@@ -2,10 +2,7 @@
   font-family: "bold";
   src: url("/fonts/bold.ttf");
 }
-@font-face {
-  font-family: "texto";
-  src: url("/fonts/texto.otf");
-}
+
 @font-face {
   font-family: "alternativa-1";
   src: url("/fonts/gh1.ttf");
@@ -48,6 +45,10 @@ body {
   background-size: cover;
   background: url("../public/assets/png/backgrounds/cover_proyectos.png");
   background-repeat: no-repeat;
+}
+
+.transition-loading { 
+  transition: width .5s;
 }
 
 /* .estadistica-animacion-hover:hover p,

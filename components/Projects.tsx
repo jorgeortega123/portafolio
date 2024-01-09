@@ -32,7 +32,7 @@ export default function Projects() {
               }`}
             >
               <div className="w-full md:w-1/2 h-auto bg-slate-800">
-                <img draggable={false} src={e.img} alt="" />
+                <img loading="lazy" draggable={false} src={e.img} alt="" />
               </div>
               <div
                 className={`w-full md:w-1/2 flex p-8 lg:p-auto border relative flex-col  ${

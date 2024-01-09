@@ -2,17 +2,53 @@ import React, { ReactNode, createContext, useEffect, useState } from "react";
 import { cargarFuentes } from "./Loads/FontsLoader";
 export const MainContext = createContext({});
 
+const data = [{ id: "hero", link: "/assets/png/backgrounds/hexagonal.png" }];
+
 function MainContextComponent({ children }: { children: ReactNode }) {
+  const [imageMap, setImageMap] = useState({});
   const [isLoad, setisLoad] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [numberCharge, setnumberCharge] = useState<number>(0);
   useEffect(() => {
-    const logicaDeCarga = async () => {
-      var res = await cargarFuentes();
-      if (res) {
-        setisLoad(true);
-      }
-    };
     logicaDeCarga();
   }, []);
+
+  const logicaDeCarga = async () => {
+    var res = await cargarFuentes();
+    setnumberCharge(28);
+    console.log(res);
+    if (res) {
+      loadImages();
+    }
+  };
+  const loadImages = async () => {
+    let num = 0;
+    try {
+      const map = {};
+
+      for (const item of data) {
+        setnumberCharge(++num);
+
+        const response = await fetch(item.link);
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        //@ts-ignore
+        map[item.id] = url;
+      }
+
+      setImageMap(map);
+      setnumberCharge(100);
+      setTimeout(() => {
+        setisLoad(true);
+      }, 500);
+    } catch (error) {
+      console.log("Error loading images:", error);
+      setnumberCharge(100);
+      setTimeout(() => {
+        setisLoad(true);
+      }, 500);
+    }
+  };
   const skills = [
     {
       type: "fr",
@@ -164,6 +200,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         proyects: proyects,
         libraries: libraries,
         skills: skills,
+        numberCharge: numberCharge,
       }}
     >
       {children}

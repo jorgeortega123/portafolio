@@ -25,17 +25,19 @@ interface Skills {
   type: string;
 }
 function useMainContext() {
-  const { isLoad, proyects, libraries, skills } = useContext(MainContext) as {
+  const { isLoad, proyects, libraries, skills,numberCharge } = useContext(MainContext) as {
     isLoad: boolean;
     proyects: Project[];
     libraries: Library[];
     skills: Skills[];
+    numberCharge: number
   };
   return {
     isLoad,
     proyects,
     libraries,
     skills,
+    numberCharge
   };
 }
 

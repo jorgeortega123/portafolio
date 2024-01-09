@@ -67,6 +67,7 @@ function About() {
                   >
                     <p className="sticky z-[12] tracking-wider ">{e.id}</p>
                     <img
+                    loading="lazy"
                       className="w-[40px] h-auto p-2  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"
                       src={e.link}
                       alt=""

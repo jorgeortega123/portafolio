@@ -1,7 +1,7 @@
 const fonts: { name: string; url: string }[] = [
-    { name: 'normal', url: '/fonts/normal.ttf' },
-    { name: 'titles', url: '/fonts/titles.ttf' },
-    { name: 'amor', url: '/fonts/escrita.otf' },
+    { name: 'texto-general', url: '/fonts/lato-latin-400-normal.woff' },
+    { name: 'alternativa-1', url: '/fonts/gh1.ttf' },
+    { name: '/fonts/bold.ttf', url: '/fonts/bold.ttf' },
     // ... más fuentes
   ];
   

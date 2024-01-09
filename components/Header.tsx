@@ -11,13 +11,13 @@ function Header() {
     <header id="" className="header">
       <div className="header__content">
         <div className="header__logo-container">
-          <div className="header__logo-img-cont">
+          {/* <div className="header__logo-img-cont">
             <img
               src="./assets/png/luis.jpg"
               alt="Ram Maheshwari Logo Image"
               className="header__logo-img"
             />
-          </div>
+          </div> */}
           <Link href={"/"}>
             <span className="header__logo-sub fondo-bold">Luis Ortega</span>
           </Link>
