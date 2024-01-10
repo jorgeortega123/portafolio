@@ -27,7 +27,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       const map = {};
 
       for (const item of data) {
-        setnumberCharge(++num);
+        setnumberCharge(++num * 1 * 2);
 
         const response = await fetch(item.link);
         const blob = await response.blob();
@@ -40,13 +40,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       setnumberCharge(100);
       setTimeout(() => {
         setisLoad(true);
-      }, 500);
+      }, 720);
     } catch (error) {
       console.log("Error loading images:", error);
       setnumberCharge(100);
       setTimeout(() => {
         setisLoad(true);
-      }, 500);
+      }, 220);
     }
   };
   const skills = [
@@ -160,8 +160,8 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       about: `Un proyecto simple que permite escribir frases y una IA las traduce al inglés, sin importar el idioma en el que se escriban. Este proyecto funciona de manera estática y utiliza Cloudflare Worker para la comunicación con la API de OpenAI.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],
       img: "/mac.png",
-      web: "https://jetmatch.pages.dev",
-      repo: "https://github.com/jorgeortega123/JetMatch",
+      web: "https://nativetranslator.pages.dev/",
+      repo: "https://nativetranslator.pages.dev/",
       moreDetails: "/proyect-1",
       id: "example-1",
     },

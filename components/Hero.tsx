@@ -26,8 +26,8 @@ function Hero() {
   return (
     <section className="home-hero relative overflow-hidden ">
       {!isLoad && (
-        <div className="absolute z-[3]  border border-blue-800/60 bottom-5 rounded-[22px] left-5">
-          <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[22px] overflow-hidden justify-center text-white/70">
+        <div className="absolute z-[3] opacity-50  border border-blue-800/60 bottom-5 rounded-[14px] left-5">
+          <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[14px] overflow-hidden justify-center text-white/70">
             <Icons
               className="w-12 fill-black"
               stroke="#cbdade"

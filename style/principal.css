@@ -48,7 +48,7 @@ body {
 }
 
 .transition-loading { 
-  transition: width .5s;
+  transition: width .7s;
 }
 
 /* .estadistica-animacion-hover:hover p,
