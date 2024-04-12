@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "quicksand-tittle";
+  src: url("/fonts/dm-sans-latin-ext-800-normal.ttf");
+}
+
+@font-face {
+    font-family: "quicksand-thin";
+    src: url("/fonts/open-sans-cyrillic-500-normal.ttf");
+  }
+  
+/* h1 {
+  font-family: "quicksand-tittle";
+} */
+
+.hands-font {
+  font-family: "quicksand-tittle";
+}
+
+.thin-texto { 
+    font-family: "quicksand-thin";
+}

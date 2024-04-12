@@ -12,17 +12,8 @@ $breakpoint arguement choices:
 
 Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only inside media queries
 */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-family: inherit;
-}
 
-html {
-  font-size: 62.5%;
+/* html {
   scroll-behavior: smooth;
 }
 @media only screen and (max-width: 75em) {
@@ -39,16 +30,16 @@ html {
   html {
     font-size: 65%;
   }
-}
+} */
 
 body {
   box-sizing: border-box;
   position: relative;
   line-height: 1.5;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: "Source Sans Pro", sans-serif;
+  /* font-family: "Source Sans Pro", sans-serif; */
 }
 
 a {
@@ -646,8 +637,6 @@ textarea {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background: #000;
-  background: #fff;
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
 }
 .header__content {
@@ -665,7 +654,6 @@ textarea {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #333;
   transition: color 0.3s;
 }
 .header__logo-container:hover {
@@ -711,11 +699,9 @@ textarea {
   padding: 2.2rem 3rem;
   display: inline-block;
   font-size: 1.6rem;
-  color: #333;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 700;
-  transition: color 0.3s;
+  font-weight: 600;
 }
 .header__link:hover {
   color: #0062b9;

@@ -8,65 +8,21 @@ function Header() {
     { link: "/#contacto", name: "contacto" },
   ];
   return (
-    <header id="" className="header">
-      <div className="header__content">
-        <div className="header__logo-container">
-          {/* <div className="header__logo-img-cont">
-            <img
-              src="./assets/png/luis.jpg"
-              alt="Ram Maheshwari Logo Image"
-              className="header__logo-img"
-            />
-          </div> */}
-          <Link href={"/"}>
-            <span className="header__logo-sub fondo-bold">Luis Ortega</span>
-          </Link>
-        </div>
-        <div className="header__main">
-          <ul className="header__links">
-            {links.map((x, index) => (
-              <Link href={x.link} key={index}>
-                <li className="header__link-wrapper cursor-pointer" key={index}>
-                  <p className=" header__link cursor-pointer hover:underline #121e76">
-                    {x.name}
-                  </p>
-                </li>
-              </Link>
-            ))}
-          </ul>
-          <div className="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              className="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              className="header__main-ham-menu-close d-none"
-            />
+    <>
+      <div className=" w-full top-0 z-[3] flex flex-col items-center">
+        <div className="max-w-[1200px] w-full mt-[2.5%]">
+          <div className="flex  justify-between items-center">
+            <div className="flex items-center">
+              <p className="shrink-0 bg-white tracking-wide w-max  text-green-500 px-9 py-4 text-[2rem] rounded-[10px] hands-font">
+                Luis Ortega
+              </p>
+              <p className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]">desarrollador full stack</p>
+            </div>
+            <div className="text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">Contactar</div>
           </div>
         </div>
       </div>
-      <div className="header__sm-menu">
-        <div className="header__sm-menu-content">
-          <ul className="header__sm-menu-links">
-            <li className="header__sm-menu-link">
-              <a href="./index.html"> Inicio </a>
-            </li>
-            <li className="header__sm-menu-link">
-              <a href="./index.html#about"> Acerca de mi </a>
-            </li>
-            <li className="header__sm-menu-link">
-              <a href="./index.html#projects"> Projectos </a>
-            </li>
-            <li className="header__sm-menu-link">
-              <a href="./index.html#contact"> Contacto </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    </>
   );
 }
 

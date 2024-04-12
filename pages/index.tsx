@@ -7,10 +7,18 @@ import Hero from "@/components/Hero";
 
 import Projects from "@/components/Projects";
 import Tarjetas from "@/components/Tarjetas";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Inicio | Luis Ortega</title>
+        <meta
+          name="description"
+          content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
+        />
+      </Head>
       <div>
         <Hero />
         <div id="me">

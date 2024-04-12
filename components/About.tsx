@@ -14,7 +14,7 @@ function About() {
     <>
       <section id="about" className="about sec-pad">
         <div className="main-container">
-          <h1 className="heading heading-sec heading-sec__mb-med ">
+          <h2 className="heading heading-sec heading-sec__mb-med ">
             <span className="heading-sec__main about__content-title">
               Acerca de mi
             </span>
@@ -24,7 +24,7 @@ function About() {
               manera eficiente de guardar datos, con el fin de obtimizar bases
               de datos y tener mejor experiencia a usuario.
             </span> */}
-          </h1>
+          </h2>
           <div className="about__content items-center">
             <div className="about__content-main items-center flex flex-col">
               <div className="about__content-details">

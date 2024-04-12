@@ -16,6 +16,9 @@
   }
 }
 
+.anim-delay-nav { 
+  transition: all .5s;
+}
 .contenedor-con-sombra {
   box-shadow: 12px 8px 8px rgba(0, 0, 0, 0.1); /* offsetX, offsetY, blurRadius, color */
 }
