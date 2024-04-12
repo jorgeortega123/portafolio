@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const HandwritingAnimation = ({ words }) => {
+const HandwritingAnimation = ({ words }:{words:any}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
