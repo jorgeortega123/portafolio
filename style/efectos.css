@@ -2,7 +2,7 @@
   /* background-image: url("/assets/png/backgrounds/cover_hexagonal.png"); */
   background-size: cover;
   background-position: center;
-  animation: delay-opacity .5s forwards;
+  animation: delay-opacity .1s forwards;
   animation-direction: normal;
   transform-origin: left;
   
@@ -17,7 +17,7 @@
 }
 
 .anim-delay-nav { 
-  transition: all .5s;
+  transition: all ease .7s;
 }
 .contenedor-con-sombra {
   box-shadow: 12px 8px 8px rgba(0, 0, 0, 0.1); /* offsetX, offsetY, blurRadius, color */

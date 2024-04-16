@@ -12,7 +12,7 @@ export default function Document() {
      
         <link rel="icon" href={"/assets/png/icon.png"} />
       </Head>
-      <body className="overflow-x-hidden relative">
+      <body className="overflow-x-hidden relative ">
         <Main />
         <NextScript />
       </body>

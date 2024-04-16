@@ -67,7 +67,7 @@ export default function Estadisticas() {
   ];
 
   return (
-    <div className=" mb-[116px] flex items-center justify-center">
+    <div className=" pb-[116px] flex items-center justify-center">
       <section className=" items-start justify-center flex flex-col md:flex-row gap-12 w-full max-w-[760px]">
         {datosComponente.map((e, l) => (
           <Children key={"acontribuciones" + l} e={e} />

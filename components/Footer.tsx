@@ -6,7 +6,7 @@ function Footer() {
   // Get the full year
   const fullYear: number = currentDate.getFullYear();
   return (
-    <footer className="main-footer">
+    <footer className="main-footer fixed bottom-0 w-full z-[-1]">
       <div className="main-container">
         <div className="main-footer__upper">
           <div className="main-footer__row main-footer__row-1">

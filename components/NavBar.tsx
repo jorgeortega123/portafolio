@@ -6,7 +6,7 @@ export default function NavBar() {
     { link: "/", name: "Inicio" },
     { link: "/#me", name: "Acerca de mi" },
     { link: "/#proyectos", name: "proyectos" },
-    { link: "/#contacto", name: "contacto" },
+    // { link: "/#contacto", name: "contacto" },
   ];
 
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
@@ -36,10 +36,12 @@ export default function NavBar() {
   return (
     <div
       className={`anim-delay-nav w-full flex justify-center items-center ${
-        showNavbar ? "z-[13] fixed top-0 opacity-100  border bg-white" : "opacity- fixed top-[-110px]"
+        showNavbar
+          ? "z-[13] fixed top-0 opacity-100  border bg-white"
+          : "opacity- fixed top-[-110px]"
       }`}
     >
-      <div className="w-full flex items-center justify-center  shadow-xl">
+      <div className="w-full flex items-center justify-between  shadow-xl px-6 md:px-12">
         <div className="text-black header__logo-container">
           {/* <div className="header__logo-img-cont">
               <img
@@ -49,23 +51,27 @@ export default function NavBar() {
               />
             </div> */}
           <Link href={"/"}>
-            <p className="shrink-0 border border-blue-500 rounded-[8px] bg-white tracking-wide w-max  text-green-500 px-9 py-4 text-[2rem] rounded-[10px] hands-font">
+            <p className="shrink-0 border border-blue-500 rounded-[8px] bg-white tracking-wide w-max  text-blue-500 px-9 py-4 text-[2rem] rounded-[10px] hands-font">
               Luis Ortega
             </p>
           </Link>
         </div>
-
-        <ul className="text-black flex gap-2">
-          {links.map((x, index) => (
-            <Link href={x.link} key={index}>
-              <li className="header__link-wrapper cursor-pointer" key={index}>
-                <p className=" header__link cursor-pointer hover:underline #121e76 ">
-                  {x.name}
-                </p>
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="flex gap-2 lg:mr-[150px]">
+          <ul className="text-black  gap-2  hidden  sm:flex">
+            {links.map((x, index) => (
+              <Link href={x.link} key={index}>
+                <li className=" cursor-pointer" key={index}>
+                  <p className=" header__link cursor-pointer hover:underline #121e76 ">
+                    {x.name}
+                  </p>
+                </li>
+              </Link>
+            ))}
+          </ul>
+          <div className="m-4  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">
+            Contactar
+          </div>
+        </div>
       </div>
     </div>
   );

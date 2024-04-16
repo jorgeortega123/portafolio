@@ -45,11 +45,11 @@ function Hero() {
       className="home-hero relative overflow-hidden "
     >
       <NavBar />
-      <div className="bg-[#00000040] w-full min-h-[80vh] h-full relative flex flex-col justify-between">
+      <div className="bg-[#00000040] w-full min-h-[100vh] h-full relative flex flex-col justify-between">
         <Header />
         {!isLoad && (
-          <div className="absolute z-[3] opacity-50  border border-blue-800/60 bottom-5 rounded-[14px] left-5">
-            <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[14px] overflow-hidden justify-center text-white/70">
+          <div className={`fixed transition-all duration-300 top-0 z-[3] h-[5px] opacity-30  left-0 bg-blue-400 w-full max-w-[${numberCharge}%]`}>
+            {/* <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[14px] overflow-hidden justify-center text-white/70">
               <Icons
                 className="w-12 fill-black"
                 stroke="#cbdade"
@@ -59,12 +59,12 @@ function Hero() {
               <div
                 className={`absolute transition-loading z-[-1] left-0 h-full w-[${numberCharge}%] bg-blue-400`}
               ></div>
-            </div>
+            </div> */}
           </div>
         )}
-        <div className="flex justify-start items-center  mb-[10.5%] ml-[10.5%] h-full md:h-auto">
+        <div className="flex justify-start items-center mb-[28px] px-7 md:px-auto md:mb-[10.5%] md:ml-[10.5%] h-full md:h-auto">
           <HandwritingAnimation words={services} />
-          <div className="absolute right-[18.7%] bottom-[10%]">
+          <div className="absolute opacity-0 md:opacity-100 md:left-auto bot md:right-[18.7%] md:bottom-[10%]">
             <div className="mouse" />
           </div>
         </div>

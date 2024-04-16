@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+
 import Estadisticas from "@/components/Estadisticas";
 import Experience from "@/components/Experience";
 
@@ -19,7 +20,7 @@ export default function Home() {
           content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
         />
       </Head>
-      <div>
+      <div className="min-h-[calc(100vh_+_250px)]">
         <Hero />
         <div id="me">
           <About />
@@ -30,15 +31,16 @@ export default function Home() {
         <div id="tarjetas">
           <Tarjetas />
         </div>
-        <div id="proyectos">
+        <div className="bg-white" id="proyectos">
           <Projects />
         </div>
-        <div>
+        <div className="bg-white">
           <Estadisticas />
         </div>
         {/* <Libraries /> */}
-        <div id="contacto">
+        <div className="mb-[450px]" id="contacto">
           <Contact />
+          {/* <ContactForm/> */}
         </div>
       </div>
     </>
