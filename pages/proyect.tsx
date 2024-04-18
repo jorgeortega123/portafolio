@@ -40,7 +40,7 @@ const ProjectDetails = () => {
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}
 
-      <section className=" project-cs-hero  bg-dinamic-project ">
+      <section className=" project-cs-hero   ">
         <div className="project-cs-hero__content flex flex-col   w-max ">
           <h1 className="heading-primary  fondo-bold text-[5.2rem]">
             {project?.title}

@@ -41,7 +41,7 @@ export default function NavBar() {
           : "opacity- fixed top-[-110px]"
       }`}
     >
-      <div className="w-full flex items-center justify-between  shadow-xl px-6 md:px-12">
+      <div className="w-full flex items-center justify-between  shadow-md px-6 md:px-12">
         <div className="text-black header__logo-container">
           {/* <div className="header__logo-img-cont">
               <img
