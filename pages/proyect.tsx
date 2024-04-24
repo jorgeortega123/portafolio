@@ -35,7 +35,7 @@ const ProjectDetails = () => {
   }, [id, proyects]);
 
   return (
-    <div className="relative bg-[#F7F7FA] ">
+    <div className="relative bg-gray-600 ">
       {/* <div className="absolute w-[220px] h-[540px] border py-7 px-2 z-[200] top-0 left-0 bg-black">
         <p className="text-[80rem]">Regresar donde estaba</p>
       </div> */}
@@ -94,14 +94,14 @@ const ProjectDetails = () => {
                 </p> */}
               </div>
               <div className="project-details__tools-used">
-                <h3 className="project-details__content-title tex">
+                <h3 className="project-details__content-title text-white">
                   Herramientas usadas
                 </h3>
                 <div className="skills">
                   {project?.tags.map((e, i) => (
                     <div
                       key={`tags-${i}`}
-                      className="skills__skill cursor-default"
+                      className="skills__skill cursor-default text-white/80"
                     >
                       {e}
                     </div>
@@ -116,7 +116,7 @@ const ProjectDetails = () => {
                 </div>
               </div>
               <div className="project-details__links pb-12">
-                <h3 className="project-details__content-title">
+                <h3 className="project-details__content-title text-white">
                   Mirar el proyecto:
                 </h3>
                 <a

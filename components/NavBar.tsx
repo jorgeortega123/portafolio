@@ -68,9 +68,9 @@ export default function NavBar() {
               </Link>
             ))}
           </ul>
-          <div className="m-4  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">
+          <Link href={"#contact"} className="m-4  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">
             Contactar
-          </div>
+          </Link>
         </div>
       </div>
     </div>

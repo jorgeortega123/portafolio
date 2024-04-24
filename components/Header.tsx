@@ -16,9 +16,16 @@ function Header() {
               <h2 className="shrink-0  bg-white tracking-wide w-max  text-black px-9 py-4 text-[2rem] rounded-[10px] ">
                 Luis Ortega
               </h2>
-              <p className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]">desarrollador full stack</p>
+              <p className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]">
+                desarrollador full stack
+              </p>
             </div>
-            <div className= "transition-colors duration-200 hover:bg-white hover:text-black cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">Contactar</div>
+            <Link
+              href={"#contact"}
+              className="transition-colors duration-200 hover:bg-white hover:text-black cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]"
+            >
+              Contactar
+            </Link>
           </div>
         </div>
       </div>

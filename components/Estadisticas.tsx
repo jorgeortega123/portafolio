@@ -34,7 +34,7 @@ const Experience_text = () => {
     <div>
       <p className="block">
         {" "}
-        Trabajando como Frontend Developer en{" "}
+        Trabajando como desarrollador Full Stack en {" "}
         <a target="_blank" href="https://www.llampukaq.com/team?focus=luis_ortega" className="underline">
           LLK.
         </a>
@@ -53,7 +53,7 @@ export default function Estadisticas() {
       info: <Experience_text />,
     },
     {
-      bold: 36,
+      bold: 73,
       title: "Líneas de código",
       icon: "",
       info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
@@ -125,7 +125,7 @@ const Children = ({ e }: any) => {
           />
         )}
 
-        {e.bold === 36 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
+        {e.bold === 73 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
         <p className="fondo-bold text-[8rem] block">+</p>
       </div>
 

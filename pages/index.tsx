@@ -39,7 +39,7 @@ export default function Home() {
           <Estadisticas />
         </div>
         {/* <Libraries /> */}
-        <div className=" bg-gray-100" id="contacto">
+        <div className=" bg-[#efefef]" id="contacto">
           {/* <Contact /> */}
           <ContactForm/>
         </div>
