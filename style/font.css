@@ -15,11 +15,39 @@
   font-stretch: 100%;
   src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)
     format("woff2");
-  unicode-range: U+1F00-1FFF;
 }
 
-h2 { 
-  font-family: "Open Sans";
+@font-face {
+  font-family: "bold";
+  src: url("/fonts/bold.ttf");
+}
+
+@font-face {
+  font-family: "alternativa-1";
+  src: url("/fonts/gh1.ttf");
+}
+@font-face {
+  font-family: "texto-general";
+  src: url("/fonts/nunito-latin-400-normal.ttf");
+}
+
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "texto-general";
+}
+p {
+  font-family: "texto-general";
+}
+.text-parrafo {
+  font-family: "texto-general";
+}
+
+.fondo-bold {
+  font-family: "alternativa-1";
+}
+
+h2 {
+  font-family: "alternativa-1";
 }
 /* h1 {
   font-family: "quicksand-tittle";

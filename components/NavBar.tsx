@@ -5,7 +5,7 @@ export default function NavBar() {
   const links = [
     { link: "/", name: "Inicio" },
     { link: "/#me", name: "Acerca de mi" },
-    { link: "/#proyectos", name: "proyectos" },
+    // { link: "/#proyectos", name: "proyectos" },
     // { link: "/#contacto", name: "contacto" },
   ];
 

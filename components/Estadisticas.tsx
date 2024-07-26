@@ -34,10 +34,12 @@ const Experience_text = () => {
     <div>
       <p className="block">
         {" "}
-        Trabajando como desarrollador Full Stack en {" "}
-        <a target="_blank" href="https://www.llampukaq.com/team?focus=luis_ortega" className="underline">
-          LLK.
-        </a>
+        Trabajando como desarrollador en llampukaq (LLK).
+        {/* <a
+          target="_blank"
+          href="https://www.llampukaq.com/team?focus=luis_ortega"
+          className="underline"
+        ></a> */}
       </p>
     </div>
   );
@@ -47,16 +49,16 @@ export default function Estadisticas() {
   const { libraries } = useMainContext();
   const datosComponente = [
     {
-      bold: 2,
+      bold: 3,
       title: "Años de experiencia",
       icon: "",
       info: <Experience_text />,
     },
     {
-      bold: 73,
+      bold: 89,
       title: "Líneas de código",
       icon: "",
-      info: "Datos basados desde el repositorio de GitHub, esta cifra incluye proyectos no asociados a la plataforma.",
+      info: "Datos basados desde el repositorio de GitHub.",
     },
     {
       bold: libraries.length,
@@ -125,7 +127,7 @@ const Children = ({ e }: any) => {
           />
         )}
 
-        {e.bold === 73 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
+        {e.bold === 89 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
         <p className="fondo-bold text-[8rem] block">+</p>
       </div>
 

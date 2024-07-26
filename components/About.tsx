@@ -28,14 +28,13 @@ function About() {
           <div className="about__content items-center">
             <div className="about__content-main items-center flex flex-col">
               <div className="about__content-details">
-                <p className="about__content-details-para ">
-                  ¡Hola! Soy <strong> Luis Ortega</strong>, un apasionado del
-                  mundo digital y defensor de la libertad creativa. He trabajado
-                  bajo la metodología del tipo freelancer, colaborando en
-                  proyectos diversos para <strong> agencias </strong> y{" "}
-                  <strong> startups</strong> . Mi enfoque se centra en crear{" "}
-                  <strong> experiencias digitales</strong> a traves de
-                  Aplicaciones web únicas y efectivas.
+                <p className="about__content-details-para  text-parrafo">
+                  ¡Hola! Soy <strong>Luis Ortega</strong>. Gran parte de mi
+                  conocimiento se debe a mi naturaleza autodidacta. He trabajado
+                  en diversos proyectos tanto para clientes individuales como
+                  para empresas tecnológicas. Disfruto del trabajo en equipo, pero
+                  también soy capaz de trabajar de manera independiente. Me
+                  apasiona la investigación en el mundo de la tecnología.
                 </p>
                 {/* <p className="about__content-details-para">
                   I'm a bit of a digital product junky. Over the years, I've
@@ -67,7 +66,7 @@ function About() {
                   >
                     <p className="sticky z-[12] tracking-wider ">{e.id}</p>
                     <img
-                    loading="lazy"
+                      loading="lazy"
                       className="w-[40px] h-auto p-2  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"
                       src={e.link}
                       alt=""

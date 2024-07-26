@@ -167,18 +167,18 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
   ];
   const libraries = [
-    {
-      title: "@llampukaq/icons",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-      link: "https://github.com/Llampukaq-Labs/icons",
-    },
-    {
-      title: "@llampukaq/realm",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-      link: "https://github.com/Llampukaq-Labs/realm",
-    },
+    // {
+    //   title: "@llampukaq/icons",
+    //   fecha: "Diciembre 2021",
+    //   description: "Descripcion de todo",
+    //   link: "https://github.com/Llampukaq-Labs/icons",
+    // },
+    // {
+    //   title: "@llampukaq/realm",
+    //   fecha: "Diciembre 2021",
+    //   description: "Descripcion de todo",
+    //   link: "https://github.com/Llampukaq-Labs/realm",
+    // },
     {
       title: "react-scroll-video",
       fecha: "Diciembre 2021",

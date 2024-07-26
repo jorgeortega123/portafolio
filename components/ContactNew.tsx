@@ -1,3 +1,4 @@
+import Icons from "@/style/Icons";
 import React, { useState } from "react";
 
 const ContactForm = () => {
@@ -14,33 +15,36 @@ const ContactForm = () => {
       id="contact"
       className="flex justify-center min-h-screen items-center z-[1] w-full"
     >
-      <div className="bg-white p-8 flex gap-2 items-center w-full max-w-[1200px] rounded-[10px] shadow-md">
+      <div className="bg-white p-8 flex flex-col lg:flex-row gap-2 items-center w-full max-w-[1200px] rounded-[10px] shadow-md">
         {/* Left Side */}
-        <div className="w-1/2 h-full flex flex-col justify-start items-center">
+        <div className="w-full lg:w-1/2 h-full flex flex-col justify-start items-center">
           <img
             className=" mb-4 max-w-[250px]"
             src="./assets/svg/rocket.svg"
             alt="Rocket"
           />
-          <h3 className="text-[3rem] font-semibold">Ponte en contacto</h3>
-          <h6 className="text-[1.5rem]">
-            Escribe un mail a:{" "}
-            <span className="underline">luisgarrido0987@gmail.com</span>
-            <a href="tel:+593959859877" className="block mt-1 text-center">
-              Teléfono:{" "}
+          <h2 className="text-[3rem] font-semibold">Contacto</h2>
+          <p className="text-[1.5rem]">
+            <span className="flex gap-2 items-center">
+              <Icons icon="mail"></Icons>
+              <a href="mailto:luisgarrido0987@gmail.com" className="underline">luisgarrido0987@gmail.com</a>
+            </span>
+
+            <a href="tel:+593959859877" className="justify-center mt-1 text-center flex gap-2">
+              <Icons icon="phone"></Icons>
               <span>
                 (+593) <span className="underline"> 095 985 9877</span>
               </span>
             </a>
-          </h6>
+          </p>
         </div>
 
         {/* Right Side */}
-        <div className="w-1/2 flex flex-col justify-center items-center pr-[66px]">
+        <div className="w-full lg:w-1/2  flex flex-col justify-center items-center pr-[66px]">
           {/* Heading */}
-          <h3 className="text-[2.5rem] font-semibold mb-12">
-            Tienes alguna idea ? Comunicala ahora
-          </h3>
+          <h2 className="text-[2.5rem] font-semibold mb-12">
+          ¿Tienes alguna idea ? Comunícala ahora
+          </h2>
 
           {/* Form */}
 
@@ -96,7 +100,10 @@ const ContactForm = () => {
           {showSms && (
             <div className="text-red-500 text-[1.5rem] w-full text-left mt-3">
               Error al enviar datos
-              <span className="block text-gray-700">Considera comunicarte a través del correo o número de teléfono proporcionados en la izquierda</span>
+              <span className="block text-gray-700">
+                Considera comunicarte a través del correo o número de teléfono
+                proporcionados en la izquierda
+              </span>
             </div>
           )}
           {/*       

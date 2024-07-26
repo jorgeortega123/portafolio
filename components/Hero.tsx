@@ -28,9 +28,11 @@ function Hero() {
   ];
   const carBrands = ["Toyota", "Honda", "BMW", "Tesla", "Ford"];
   const services = [
-    "Diseño y creación de bases de datos SQL y NoSQL",
+    "Desarrollo de aplicaciones web a gran escala",
+    "Diseño y creación de bases de datos",
     "Integración de sistemas y APIs",
     "Despliegue y administración de aplicaciones en la nube",
+    "Integración a plataformas de maquinas virtuales",
     "Optimización y mantenimiento de aplicaciones existentes",
   ];
   return (

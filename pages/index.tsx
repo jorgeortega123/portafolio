@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 
 import Projects from "@/components/Projects";
+import Proyecto from "@/components/Proyecto";
 import Tarjetas from "@/components/Tarjetas";
 import Head from "next/head";
 
@@ -32,16 +33,17 @@ export default function Home() {
         <div id="tarjetas">
           <Tarjetas />
         </div>
-        <div className="bg-white" id="proyectos">
+        <Proyecto />
+        {/* <div className="bg-white" id="proyectos">
           <Projects />
-        </div>
+        </div> */}
         <div className="bg-white">
           <Estadisticas />
         </div>
         {/* <Libraries /> */}
         <div className=" bg-[#efefef]" id="contacto">
           {/* <Contact /> */}
-          <ContactForm/>
+          <ContactForm />
         </div>
       </div>
     </>
