@@ -1,7 +1,7 @@
 import Icons from "@/style/Icons";
 import React, { useState } from "react";
 
-const ContactForm = () => {
+const ContactFormNew = () => {
   const [showSms, setshowSms] = useState(false);
   const submitContactForm = () => {
     setshowSms(true);
@@ -27,10 +27,15 @@ const ContactForm = () => {
           <p className="text-[1.5rem]">
             <span className="flex gap-2 items-center">
               <Icons icon="mail"></Icons>
-              <a href="mailto:luisgarrido0987@gmail.com" className="underline">luisgarrido0987@gmail.com</a>
+              <a href="mailto:luisgarrido0987@gmail.com" className="underline">
+                luisgarrido0987@gmail.com
+              </a>
             </span>
 
-            <a href="tel:+593959859877" className="justify-center mt-1 text-center flex gap-2">
+            <a
+              href="tel:+593959859877"
+              className="justify-center mt-1 text-center flex gap-2"
+            >
               <Icons icon="phone"></Icons>
               <span>
                 (+593) <span className="underline"> 095 985 9877</span>
@@ -43,7 +48,7 @@ const ContactForm = () => {
         <div className="w-full lg:w-1/2  flex flex-col justify-center items-center pr-[66px]">
           {/* Heading */}
           <h2 className="text-[2.5rem] font-semibold mb-12">
-          ¿Tienes alguna idea ? Comunícala ahora
+            ¿Tienes alguna idea ? Comunícala ahora
           </h2>
 
           {/* Form */}
@@ -129,4 +134,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ContactFormNew;

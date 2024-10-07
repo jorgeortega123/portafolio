@@ -143,6 +143,50 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "Cloudflare workers pages",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806235/download_oglnre.png",
     },
+    {
+      type: "se",
+      id: "Firebase",
+      link: "https://luisalberto.pages.dev/public/assets/png/skills/firebase.png",
+    },
+  ];
+
+  const trabajos = [
+    {
+      title: "Licoreria Spondylus 1",
+      sub: "Ecommerce para venta de licores",
+      description:
+        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
+      tags: [
+        "React",
+        "NextJs",
+        "TypeScript",
+        "MongoDb",
+        "MongoAtlas",
+        "Realm",
+        "Cloudflare",
+        "PedidoYaEnvios-Api",
+      ],
+      link: "https://www.licoreriaspondylus.com/",
+      img: "/assets/cases/licoreriaSpondylusCase.png",
+    },
+    {
+      title: "Licoreria Spondylus 2",
+      sub: "Ecommerce para venta de licores",
+      description:
+        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
+      tags: [
+        "React",
+        "NextJs",
+        "TypeScript",
+        "MongoDb",
+        "MongoAtlas",
+        "Realm",
+        "Cloudflare",
+        "PedidoYaEnvios-Api",
+      ],
+      link: "https://www.licoreriaspondylus.com/",
+      img: "/assets/cases/licoreriaSpondylusCase.png",
+    },
   ];
   const proyects = [
     {
@@ -200,6 +244,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         proyects: proyects,
         libraries: libraries,
         skills: skills,
+        trabajos: trabajos,
         numberCharge: numberCharge,
       }}
     >

@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import ContactFormNew from "@/components/contact/Contacto";
 import ContactForm from "@/components/ContactNew";
 
 import Estadisticas from "@/components/Estadisticas";
@@ -9,6 +10,7 @@ import Hero from "@/components/Hero";
 
 import Projects from "@/components/Projects";
 import Proyecto from "@/components/Proyecto";
+import Testimonials from "@/components/proyectos/ProyectoContainer";
 import Tarjetas from "@/components/Tarjetas";
 import Head from "next/head";
 
@@ -22,7 +24,7 @@ export default function Home() {
           content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
         />
       </Head>
-      <div className="min-h-[calc(100vh_+_250px)] mb-[450px]">
+      <div className="">
         <Hero />
         <div id="me">
           <About />
@@ -33,7 +35,8 @@ export default function Home() {
         <div id="tarjetas">
           <Tarjetas />
         </div>
-        <Proyecto />
+        <Testimonials />
+        {/* <Proyecto /> */}
         {/* <div className="bg-white" id="proyectos">
           <Projects />
         </div> */}
@@ -43,7 +46,7 @@ export default function Home() {
         {/* <Libraries /> */}
         <div className=" bg-[#efefef]" id="contacto">
           {/* <Contact /> */}
-          <ContactForm />
+          <ContactFormNew />
         </div>
       </div>
     </>

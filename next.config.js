@@ -11,7 +11,7 @@ module.exports = () => {
       register: true,
     },
     reactStrictMode: true,
-    transpilePackages: ["cllk"],
+    transpilePackages: ["@llampukaq/icons"],
     output: "export",
     swcMinify: true,
     reactStrictMode: false,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import H2 from "../html/H2";
 
-const HandwritingAnimation = ({ words }:{words:any}) => {
+const HandwritingAnimation = ({ words }: { words: any }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -43,12 +44,12 @@ const HandwritingAnimation = ({ words }:{words:any}) => {
   }, [text, isDeleting, currentIndex, words, speed, delay]);
 
   return (
-    <div className="text-[4rem] hans-font">
+    <div className=" hans-font">
       <span className={"block"}>
-        <span className=" ">
+        <H2 size="medium" className="text-white/90 font-medium">
           {text}
           <span className="animate-blink">|</span>
-        </span>
+        </H2>
       </span>
 
       {/* <span>Un bit a la vez</span> */}

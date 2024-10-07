@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link.js";
+import H2 from "./html/H2";
+import P from "./html/P";
 function Header() {
   const links = [
     { link: "/", name: "Inicio" },
@@ -13,12 +15,18 @@ function Header() {
         <div className="max-w-[1200px] w-full mt-[2.5%]">
           <div className="flex  justify-between items-center">
             <div className="flex items-center">
-              <h2 className="shrink-0  bg-white tracking-wide w-max  text-black px-9 py-4 text-[2rem] rounded-[10px] ">
+              <H2
+                size="small"
+                className="shrink-0  bg-white tracking-wide w-max  text-black px-9 py-4 rounded-[10px] "
+              >
                 Luis Ortega
-              </h2>
-              <p className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]">
+              </H2>
+              <P
+                size="medium"
+                className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]"
+              >
                 desarrollador full stack
-              </p>
+              </P>
             </div>
             <Link
               href={"#contact"}

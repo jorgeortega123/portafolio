@@ -64,7 +64,7 @@ function Hero() {
             </div> */}
           </div>
         )}
-        <div className="flex justify-start items-center mb-[28px] px-7 md:px-auto md:mb-[10.5%] md:ml-[10.5%] h-full md:h-auto">
+        <div className="flex justify-start items-center mb-[28px] px-7 md:px-auto md:mb-[5.5%] md:ml-[8.5%] h-full md:h-auto">
           <HandwritingAnimation words={services} />
           <div className="absolute opacity-0 md:opacity-100 md:left-auto bot md:right-[18.7%] md:bottom-[10%]">
             <div className="mouse" />
@@ -109,35 +109,3 @@ function Hero() {
 }
 
 export default Hero;
-{
-  /* <img
-        draggable={false}
-        src="/assets/png/backgrounds/hexagonal.png"
-        className="absolute  top-0 left-0 object-cover md:w-full h-[110%] "
-        alt=""
-      /> */
-}
-{
-  /* <div className="home-hero__content tracking-wide  ">
-          <h1 className="heading-primary">
-            Hey! me llamo <span className="font-bold">Luis Ortega</span>
-          </h1>
-          <div className="home-hero__info text-left pb-7">
-            <p className="text-primary text-white/90  ">
-              Soy un apasionado programador con amplios conocimientos en
-              frontend y backend usando typescript con experiencia en el
-              desarrollo de aplicaciones web innovadoras y escalables donde la
-              creatividad es lo primero.
-            </p>
-          </div>
-          <div className="home-hero__cta cursor-pointer relative">
-            <p className="text-primary absolute bottom-[110%]">
-              Te invito a conocer mi trabajo!
-            </p>
-
-            <p onClick={() => handleOnClick("contact")} className="btn btn--bg">
-              Proyectos
-            </p>
-          </div>
-        </div> */
-}

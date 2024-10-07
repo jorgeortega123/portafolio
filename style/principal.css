@@ -1,5 +1,3 @@
-
-
 .transition-custom {
   transition: all 1s;
 }
@@ -22,8 +20,8 @@
   background-repeat: no-repeat;
 }
 
-.transition-loading { 
-  transition: width .7s;
+.transition-loading {
+  transition: width 0.7s;
 }
 
 /* .estadistica-animacion-hover:hover p,
@@ -93,6 +91,7 @@
   position: absolute;
   z-index: 0;
  } */
+
 
 @keyframes download-anim {
   50% {

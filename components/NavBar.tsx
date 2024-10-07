@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import H2 from "./html/H2";
+import P from "./html/P";
 
 export default function NavBar() {
   const links = [
@@ -37,11 +39,11 @@ export default function NavBar() {
     <div
       className={`anim-delay-nav w-full flex justify-center items-center ${
         showNavbar
-          ? "z-[13] fixed top-0 opacity-100  border bg-white"
+          ? "z-[55] fixed top-0 opacity-100  border bg-white shadow-md"
           : "opacity- fixed top-[-110px]"
       }`}
     >
-      <div className="w-full flex items-center justify-between  shadow-md px-6 md:px-12">
+      <div className="w-full flex items-center justify-between max-w-[1200px] mx-auto  px-6 md:px-12">
         <div className="text-black header__logo-container">
           {/* <div className="header__logo-img-cont">
               <img
@@ -51,9 +53,12 @@ export default function NavBar() {
               />
             </div> */}
           <Link href={"/"}>
-            <p className="shrink-0 border border-blue-500 rounded-[8px] bg-white tracking-wide w-max  text-blue-500 px-9 py-4 text-[2rem] rounded-[10px] hands-font">
+            <H2
+              size="small"
+              className="shrink-0 font-normal border border-blue-500  bg-white tracking-wide w-max  text-blue-500 px-9 py-4  rounded-[10px]"
+            >
               Luis Ortega
-            </p>
+            </H2>
           </Link>
         </div>
         <div className="flex gap-2 lg:mr-[150px]">
@@ -61,14 +66,20 @@ export default function NavBar() {
             {links.map((x, index) => (
               <Link href={x.link} key={index}>
                 <li className=" cursor-pointer" key={index}>
-                  <p className=" header__link cursor-pointer hover:underline #121e76 ">
+                  <P
+                    size="medium"
+                    className=" header__link cursor-pointer hover:underline #121e76 "
+                  >
                     {x.name}
-                  </p>
+                  </P>
                 </li>
               </Link>
             ))}
           </ul>
-          <Link href={"#contact"} className="m-4  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]">
+          <Link
+            href={"#contact"}
+            className="m-4 text-white flex items-center justify-center tracking-widest font-bold transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer px-7"
+          >
             Contactar
           </Link>
         </div>

@@ -2,6 +2,8 @@ import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
+import H2 from "./html/H2";
+import P from "./html/P";
 
 const Contributions = () => {
   const { libraries } = useMainContext();
@@ -69,7 +71,7 @@ export default function Estadisticas() {
   ];
 
   return (
-    <div className=" pb-[116px] flex items-center justify-center">
+    <div className=" py-[116px] flex items-center justify-center">
       <section className=" items-start justify-center flex flex-col md:flex-row gap-12 w-full max-w-[760px]">
         {datosComponente.map((e, l) => (
           <Children key={"acontribuciones" + l} e={e} />
@@ -118,20 +120,22 @@ const Children = ({ e }: any) => {
     >
       <div className="flex justify-center items-center">
         {isVisible && (
-          <CountUp
-            delay={0.3}
-            duration={3}
-            start={99}
-            className="fondo-bold text-[8rem] block"
-            end={e.bold}
-          />
+          <H2>
+            <CountUp
+              delay={0.3}
+              duration={3}
+              start={99}
+              className=" block"
+              end={e.bold}
+            />
+          </H2>
         )}
 
-        {e.bold === 89 ? <p className="fondo-bold text-[8rem]">k</p> : ""}
-        <p className="fondo-bold text-[8rem] block">+</p>
+        {e.bold === 89 ? <H2 className="">k</H2> : ""}
+        <H2 className="">+</H2>
       </div>
 
-      <p className="text-[1.8rem] mt-[-12px] opacity-80">{e.title}</p>
+      <P size="medium" className="text-[1.8rem] mt-[-12px] opacity-80">{e.title}</P>
       <div className="w-full py-5 estadistica-animacion-hover  max-w-[300px] cursor-pointer mt-[12px]  flex gap-2 items-center">
         <Icons
           className={`svg-custom transition-custom  ${

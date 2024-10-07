@@ -3,6 +3,9 @@ import useScrollTo from "@/hooks/useScroll";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Button from "./sub/Button";
+import H2 from "./html/H2";
+import P from "./html/P";
+import { Icons } from "@llampukaq/icons";
 
 function About() {
   const { skills } = useMainContext();
@@ -12,80 +15,56 @@ function About() {
   };
   return (
     <>
-      <section id="about" className="about sec-pad">
-        <div className="main-container">
-          <h2 className="heading heading-sec heading-sec__mb-med ">
-            <span className="heading-sec__main about__content-title">
-              Acerca de mi
-            </span>
-            {/* <span className="heading-sec__sub">
-              Todo mi conocimiento radica en crear proyectos visualmente
-              hermosos, pero no solo eso, sino que tambien me encargo de una
-              manera eficiente de guardar datos, con el fin de obtimizar bases
-              de datos y tener mejor experiencia a usuario.
-            </span> */}
-          </h2>
-          <div className="about__content items-center">
-            <div className="about__content-main items-center flex flex-col">
-              <div className="about__content-details">
-                <p className="about__content-details-para  text-parrafo">
-                  ¡Hola! Soy <strong>Luis Ortega</strong>. Gran parte de mi
-                  conocimiento se debe a mi naturaleza autodidacta. He trabajado
-                  en diversos proyectos tanto para clientes individuales como
-                  para empresas tecnológicas. Disfruto del trabajo en equipo, pero
-                  también soy capaz de trabajar de manera independiente. Me
-                  apasiona la investigación en el mundo de la tecnología.
-                </p>
-                {/* <p className="about__content-details-para">
-                  I'm a bit of a digital product junky. Over the years, I've
-                  used hundreds of web and mobile apps in different industries
-                  and verticals. Feel free to
-                  <strong>contact</strong> me here.
-                </p> */}
-              </div>
-              <Button
-                onClick={() => handleOnClick("contact")}
-                buttonName="Contactar"
-              ></Button>
+      <section
+        id="about"
+        className="bg-white z-[3] min-h-[90vh] flex items-center justify-center"
+      >
+        <div className="max-w-[1200px] w-full">
+          <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
+            <div className="flex flex-col w-full lg:max-w-1/2 ">
+              <H2 size="medium" className="mb-12">Acerca de mi</H2>
+              <P
+                size="medium"
+                className="h-auto leading-7 max-w-[420px] text-black/90"
+              >
+                <span className="mb-3 block">
+                  Hola, Soy <strong>Luis Ortega</strong>, programador con más de
+                  3 años de experiencia trabajando tanto de forma independiente
+                  como en el ámbito laboral.
+                </span>
+                <span className="mb-5 block">
+                  ¡Bienvenido a mi portafolio! Descubre los proyectos que he
+                  desarrollado y aprende más sobre mi trayectoria profesional.
+                </span>
+              </P>
+              <button className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-2">
+                <Icons className="stroke-white/90" icon="IconPhoneCall"></Icons>
+                Contactar
+              </button>
             </div>
-            <div className="about__content-skills">
-              <h2 className="text-[3.2rem] mb-[3rem]">Mis habilidades</h2>
-              <div className="skills max-w-[530px] ">
+            <div className="w-full lg:max-w-1/2">
+              <H2 size="medium" className="mb-[3rem]">
+                Mis habilidades
+              </H2>
+              <div className="flex flex-wrap max-w-[530px] gap-5 ">
                 {skills.map((e, l) => (
-                  // <div className="skills__skill cursor-default relative overflow-hidden ">
-                  //   <p className="flex z-[12] ml-[6px]">{e.id}</p>
-                  //   <img
-                  //     className="w-[40px]  filter grayscale absolute z-[0 top-1/2 left-[12px] transform -translate-x-1/2 -translate-y-1/2"
-                  //     src={e.link}
-                  //     alt=""
-                  //   />
-                  // </div>
                   <div
                     key={"key-skills" + e.type + l}
-                    className="select-none skills__skill cursor-default relative overflow-hidden  "
+                    className="select-none cursor-default relative overflow-hidden flex gap-3 rounded-[9px] items-center bg-blue-500/10 px-4 py-2"
                   >
-                    <p className="sticky z-[12] tracking-wider ">{e.id}</p>
                     <img
                       loading="lazy"
-                      className="w-[40px] h-auto p-2  filter grayscale absolute z-[0 top-1/2 left-[-55px] transform -translate-x-1/2 -translate-y-1/2"
+                      className="w-[40px] max-w-[36px]"
                       src={e.link}
                       alt=""
                     />
+                    <P className="sticky z-[12] ">{e.id}</P>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        {/* <Marquee className="mt-[55px]">
-          {skills.map((e) => (
-            <img
-              draggable={false}
-              src={e.link}
-              className="gray-img w-[50px] mx-12"
-            ></img>
-          ))}
-        </Marquee> */}
       </section>
     </>
   );
