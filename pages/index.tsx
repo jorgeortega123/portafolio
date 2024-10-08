@@ -12,6 +12,7 @@ import Projects from "@/components/Projects";
 import Proyecto from "@/components/Proyecto";
 import Testimonials from "@/components/proyectos/ProyectoContainer";
 import Tarjetas from "@/components/Tarjetas";
+import TarjetasNew from "@/components/Tarjetas/Tarjetas";
 import Head from "next/head";
 
 export default function Home() {
@@ -33,7 +34,8 @@ export default function Home() {
           <Experience />
         </div>
         <div id="tarjetas">
-          <Tarjetas />
+          <TarjetasNew />
+          {/* <Tarjetas /> */}
         </div>
         <Testimonials />
         {/* <Proyecto /> */}

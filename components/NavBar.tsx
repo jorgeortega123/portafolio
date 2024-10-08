@@ -78,7 +78,7 @@ export default function NavBar() {
           </ul>
           <Link
             href={"#contact"}
-            className="m-4 text-white flex items-center justify-center tracking-widest font-bold transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer px-7"
+            className="m-4 text-white flex items-center justify-center tracking-widest  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer px-7"
           >
             Contactar
           </Link>

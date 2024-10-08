@@ -19,10 +19,12 @@ function About() {
         id="about"
         className="bg-white z-[3] min-h-[90vh] flex items-center justify-center"
       >
-        <div className="max-w-[1200px] w-full">
+        <div className="max-w-[1500px] w-full">
           <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
-            <div className="flex flex-col w-full lg:max-w-1/2 ">
-              <H2 size="medium" className="mb-12">Acerca de mi</H2>
+            <div className="flex flex-col w-full  lg:max-w-1/2 ">
+              <H2 size="medium" className="mb-12">
+                Acerca de mi
+              </H2>
               <P
                 size="medium"
                 className="h-auto leading-7 max-w-[420px] text-black/90"

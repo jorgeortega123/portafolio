@@ -30,9 +30,9 @@ function Header() {
             </div>
             <Link
               href={"#contact"}
-              className="transition-colors duration-200 hover:bg-white hover:text-black cursor-pointer text-[1.3rem] px-12 py-5 border  font-medium tracking-[.2rem]"
+              className="transition-colors rounded-[9px] text-white duration-200 hover:bg-white hover:text-black cursor-pointer  px-8 py-2 border  "
             >
-              Contactar
+              <H2 size="small">Contactar</H2>
             </Link>
           </div>
         </div>

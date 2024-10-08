@@ -2,6 +2,7 @@ import useMainContext from "@/context/useMainContext";
 import Icons from "@/style/Icons";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import H2 from "./html/H2";
 
 type SkillDescription = {
   needContrast?: boolean;
@@ -181,9 +182,12 @@ const Children = ({ e, inx }: any) => {
           icon={e.icon}
         ></Icons> */}
         <div className="ml-6">
-          <h1 className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white">
+          <H2
+            size="small"
+            className=" fondo-bold text-[3.2rem] md:text-[2rem] lg:text-[3.2rem] text-white"
+          >
             {e.title}
-          </h1>
+          </H2>
           <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#f5f5f5] ">
             {e.description}
           </p>
@@ -257,12 +261,23 @@ const Servicios_tajeta = ({ data }: { data: FrontendSkill }) => {
   const { skills } = useMainContext();
   console.log(data);
   return (
-    <div className={`mb-[100px] ${data.s_description[0]?.needContrast? "rounded-[12px] bg-black/30":""} flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}>
+    <div
+      className={`mb-[100px] ${
+        data.s_description[0]?.needContrast ? "rounded-[12px] bg-black/30" : ""
+      } flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}
+    >
       <h1 className=" text-[3rem] font-[900] text-left w-full">{data.title}</h1>
       <p className="w-10/12 ">{data.s_description[0].content}</p>
       <div className="flex flex-col gap-5 absolute bottom-0">
         <p>Tecnologías en este ámbito:</p>
-        <Marquee speed={20} gradient gradientColor="red" gradientWidth={"250"}  className="block z-[99] max-w-[710px]" direction="right">
+        <Marquee
+          speed={20}
+          gradient
+          gradientColor="red"
+          gradientWidth={"250"}
+          className="block z-[99] max-w-[710px]"
+          direction="right"
+        >
           <div className="flex flex-wrap gap-3 pl-3 ">
             {skills.map((a, l) => {
               if (data.type === a.type) {

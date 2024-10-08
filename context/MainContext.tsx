@@ -146,7 +146,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "se",
       id: "Firebase",
-      link: "https://luisalberto.pages.dev/public/assets/png/skills/firebase.png",
+      link: "https://luisalberto.pages.dev/assets/png/skills/firebase.png",
     },
   ];
 
