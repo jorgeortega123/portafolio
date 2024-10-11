@@ -44,13 +44,15 @@ function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="home-hero relative overflow-hidden "
+      className="home-hero relative overflow-hidden pattern bg-gray-900 "
     >
       <NavBar />
       <div className="bg-[#00000040] w-full min-h-[100vh] h-full relative flex flex-col justify-between">
         <Header />
         {!isLoad && (
-          <div className={`fixed transition-all duration-300 top-0 z-[3] h-[5px] opacity-30  left-0 bg-blue-400 w-full max-w-[${numberCharge}%]`}>
+          <div
+            className={`fixed transition-all duration-300 top-0 z-[3] h-[5px] opacity-30  left-0 bg-blue-400 w-full max-w-[${numberCharge}%]`}
+          >
             {/* <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[14px] overflow-hidden justify-center text-white/70">
               <Icons
                 className="w-12 fill-black"

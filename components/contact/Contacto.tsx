@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import H2 from "../html/H2";
+import P from "../html/P";
 
 export default function ContactFormNew() {
   const { register, handleSubmit } = useForm();
@@ -10,19 +12,20 @@ export default function ContactFormNew() {
   };
 
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center border">
-      <div className="container px-6 py-12 mx-auto max-w-[1200px] w-full">
+    <section className="pattern bg-gray-900 min-h-screen flex items-center justify-center ">
+      <div className=" px-6 py-12 mx-auto max-w-[1200px] w-full">
         <div className="lg:flex lg:items-center lg:-mx-6">
           <div className="lg:w-1/2 lg:mx-6">
-            <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl">
-              Pongamos en cotacto <br /> Mas informacion
-            </h1>
+            <H2 className="text-2xl mb-3.5 font-semibold text-white capitalize lg:text-3xl">
+              Hablemos
+            </H2>
+            <P className="text-white/90">Aqui tienes diferentes formas de contactarte conmigo:</P>
 
             <div className="mt-6 space-y-8 md:mt-8">
               <p className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="w-6 h-6 mx-2 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -40,7 +43,7 @@ export default function ContactFormNew() {
                   />
                 </svg>
 
-                <span className="mx-2 text-gray-700 truncate w-72">
+                <span className="mx-2 text-white truncate w-72">
                   Quito, Pinchincha, Ecuador.
                 </span>
               </p>
@@ -73,7 +76,7 @@ export default function ContactFormNew() {
               <p className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="w-6 h-6 mx-2 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -88,7 +91,7 @@ export default function ContactFormNew() {
 
                 <Link
                   href={"mailto:luisgarrido0987@gmail.com"}
-                  className="mx-2 text-gray-700 truncate w-72 hover:underline"
+                  className="mx-2 text-white truncate w-72 hover:underline"
                 >
                   luisgarrido0987@gmail.com
                 </Link>

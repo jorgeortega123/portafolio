@@ -13,7 +13,7 @@ const ContactFormNew = () => {
   return (
     <div
       id="contact"
-      className="flex justify-center min-h-screen items-center z-[1] w-full"
+      className="flex justify-center min-h-screen pattern bg-gray-800 items-center z-[1] w-full"
     >
       <div className="bg-white p-8 flex flex-col lg:flex-row gap-2 items-center w-full max-w-[1200px] rounded-[10px] shadow-md">
         {/* Left Side */}

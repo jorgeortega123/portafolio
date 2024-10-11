@@ -152,7 +152,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
 
   const trabajos = [
     {
-      title: "Licoreria Spondylus 1",
+      title: "Licoreria Spondylus",
       sub: "Ecommerce para venta de licores",
       description:
         "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
@@ -167,13 +167,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         "PedidoYaEnvios-Api",
       ],
       link: "https://www.licoreriaspondylus.com/",
-      img: "/assets/cases/licoreriaSpondylusCase.png",
+      img: "/assets/cases/casoLicoreria.png",
     },
     {
-      title: "Licoreria Spondylus 2",
-      sub: "Ecommerce para venta de licores",
+      title: "Jandrea",
+      sub: "Ecommerce para venta de manualidades en mdf",
       description:
-        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
+        "Página web que muestra el catálogo de productos hechos con madera mdf",
       tags: [
         "React",
         "NextJs",
@@ -182,10 +182,10 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         "MongoAtlas",
         "Realm",
         "Cloudflare",
-        "PedidoYaEnvios-Api",
+        "Firebase",
       ],
-      link: "https://www.licoreriaspondylus.com/",
-      img: "/assets/cases/licoreriaSpondylusCase.png",
+      link: "https://www.jandrea.art/",
+      img: "/assets/cases/casoJandrea.jpg",
     },
   ];
   const proyects = [

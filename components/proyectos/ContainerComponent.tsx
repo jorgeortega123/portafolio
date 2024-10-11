@@ -42,7 +42,7 @@ export default function ContainerComponent({
       <div
         className={`${
           fullScreen ? " h-full min-h-[85vh]" : " "
-        } w-full p-6 bg-blue-600  md:items-center ${
+        } w-full p-6 bg-blue-600     md:items-center ${
           index % 2 == 0 ? "md:flex md:flex-row-reverse " : "md:flex"
         }  rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly"`}
       >
@@ -51,41 +51,42 @@ export default function ContainerComponent({
           src={item.img}
           alt="client photo"
         />
+        <div className="">
+          <div className="mt-2 md:mx-6 ">
+            <div>
+              <p className="text-[1.75rem] font-medium tracking-tight text-white">
+                {item.title}
+              </p>
+              <p className="text-blue-200">{item.sub}</p>
+            </div>
 
-        <div className="mt-2 md:mx-6">
-          <div>
-            <p className="text-[1.75rem] font-medium tracking-tight text-white">
-              {item.title}
+            <p className="mt-4 text-[1.1rem] leading-relaxed text-white ">
+              {item.description}
             </p>
-            <p className="text-blue-200">{item.sub}</p>
-          </div>
 
-          <p className="mt-4 text-[1.1rem] leading-relaxed text-white ">
-            {item.description}
-          </p>
+            <div className="flex items-center justify-between mt-6 md:justify-start">
+              <Link
+                href={{
+                  pathname: `/casos/[caso]`,
+                  query: {
+                    caso: `${formatWords(item.title)}`,
+                  },
+                }}
+                target="_self"
+                onClick={handleButton}
+                //   title={`"Ver mas sobre ${}`}
+                className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 hover:bg-blue-400"
+              >
+                Leer mas
+              </Link>
 
-          <div className="flex items-center justify-between mt-6 md:justify-start">
-            <Link
-              href={{
-                pathname: `/casos/[caso]`,
-                query: {
-                  caso: `${formatWords(item.title)}`,
-                },
-              }}
-              target="_self"
-              onClick={handleButton}
-              //   title={`"Ver mas sobre ${}`}
-              className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 hover:bg-blue-400"
-            >
-              Leer mas
-            </Link>
-
-            <button
-              title="right arrow"
-              className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 md:mx-6 hover:bg-blue-400"
-            >
-              Visitar aplicacion web
-            </button>
+              <button
+                title="right arrow"
+                className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 md:mx-6 hover:bg-blue-400"
+              >
+                Visitar aplicacion web
+              </button>
+            </div>
           </div>
         </div>
       </div>
