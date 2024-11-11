@@ -167,7 +167,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         "PedidoYaEnvios-Api",
       ],
       link: "https://www.licoreriaspondylus.com/",
-      img: "/assets/cases/casoLicoreria.png",
+      img: "/assets/cases/casoLicoreria.jpg",
     },
     {
       title: "Jandrea",

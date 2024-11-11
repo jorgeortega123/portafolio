@@ -31,15 +31,14 @@ function About() {
               >
                 <span className="mb-3 block">
                   Hola, Soy <strong>Luis Ortega</strong>, programador con más de
-                  3 años de experiencia trabajando tanto de forma independiente
-                  como en el ámbito laboral.
+                  2 años de experiencia trabajando de forma independiente.
                 </span>
                 <span className="mb-5 block">
                   ¡Bienvenido a mi portafolio! Descubre los proyectos que he
                   desarrollado y aprende más sobre mi trayectoria profesional.
                 </span>
               </P>
-              <button className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-2">
+              <button className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-3">
                 <Icons className="stroke-white/90" icon="IconPhoneCall"></Icons>
                 Contactar
               </button>

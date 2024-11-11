@@ -45,8 +45,8 @@ export default function TarjetasNew() {
           </h1>
 
           <p className="mt-4 text-gray-500 xl:mt-6 text-lg">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-            quam voluptatibus
+            Los proyectos en los que he trabajado abarcan estos tres hámbitos
+            necesarios para desarrollar páginas a la medida.
           </p>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
@@ -95,8 +95,14 @@ export default function TarjetasNew() {
                     })}
                   </div>{" "}
                 </Marquee> */}
+                <div className="bg-blue-100  rounded-full  p-1 w-max">
+                  <Icons
+                    className="stroke-blue-500 "
+                    icon="IconCheck"
+                  ></Icons>
+                </div>
 
-                <a
+                {/* <a
                   href="#"
                   className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 hover:underline hover:text-blue-600"
                 >
@@ -114,7 +120,7 @@ export default function TarjetasNew() {
                       d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                </a>
+                </a> */}
               </div>
             ))}
           </div>

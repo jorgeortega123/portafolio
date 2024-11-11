@@ -1,25 +1,41 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import H2 from "../html/H2";
 import P from "../html/P";
+import { Icons } from "@llampukaq/icons";
 
 export default function ContactFormNew() {
   const { register, handleSubmit } = useForm();
-
+  const [sending, setsending] = useState(false);
+  const [mostrarMensajer, setmostrarMensajer] = useState(false);
   const onSubmit = (data: any) => {
-    console.log(data);
+    handleButton();
+  };
+  const handleButton = () => {
+    if (mostrarMensajer) {
+      setmostrarMensajer(false);
+    }
+    setsending(true);
+    setTimeout(() => {
+      setmostrarMensajer(true);
+    }, 1800);
   };
 
   return (
-    <section className="pattern bg-gray-900 min-h-screen flex items-center justify-center ">
+    <section
+      id="contact"
+      className="pattern bg-gray-900 min-h-screen flex items-center justify-center "
+    >
       <div className=" px-6 py-12 mx-auto max-w-[1200px] w-full">
         <div className="lg:flex lg:items-center lg:-mx-6">
           <div className="lg:w-1/2 lg:mx-6">
             <H2 className="text-2xl mb-3.5 font-semibold text-white capitalize lg:text-3xl">
               Hablemos
             </H2>
-            <P className="text-white/90">Aqui tienes diferentes formas de contactarte conmigo:</P>
+            <P className="text-white/90">
+              Aqui tienes diferentes formas de contactarte conmigo:
+            </P>
 
             <div className="mt-6 space-y-8 md:mt-8">
               <p className="flex items-start -mx-2">
@@ -51,7 +67,7 @@ export default function ContactFormNew() {
               <p className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="w-6 h-6 mx-2 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -67,7 +83,7 @@ export default function ContactFormNew() {
                 <Link
                   target="_blank"
                   href="tel: 95 985 9877"
-                  className="mx-2 text-gray-700 truncate w-72 hover:underline"
+                  className="mx-2 text-white truncate w-72 hover:underline"
                 >
                   095 985 9877
                 </Link>
@@ -97,33 +113,14 @@ export default function ContactFormNew() {
                 </Link>
               </p>
             </div>
-            <div className="mt-6 w-80 md:mt-8">
-              <h3 className="text-gray-600">Follow us</h3>
-
-              <div className="flex mt-4 -mx-1.5">
-                <a
-                  className="mx-1.5 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
-                  href="#"
-                >
-                  <svg
-                    className="w-10 h-10 fill-current"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M18.6668 6.67334C18.0002 7.00001 17.3468 7.13268 16.6668 7.33334C15.9195 6.49001 14.8115 6.44334 13.7468 6.84201C12.6822 7.24068 11.9848 8.21534 12.0002 9.33334V10C9.83683 10.0553 7.91016 9.07001 6.66683 7.33334C6.66683 7.33334 3.87883 12.2887 9.3335 14.6667C8.0855 15.498 6.84083 16.0587 5.3335 16C7.53883 17.202 9.94216 17.6153 12.0228 17.0113C14.4095 16.318 16.3708 14.5293 17.1235 11.85C17.348 11.0351 17.4595 10.1932 17.4548 9.34801C17.4535 9.18201 18.4615 7.50001 18.6668 6.67268V6.67334Z" />
-                  </svg>
-                </a>
-
-                {/* Other social icons... */}
-              </div>
-            </div>
           </div>
 
           <div className="mt-8 lg:w-1/2 lg:mx-6 shadow-lg px-12 py-6">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex-1">
-                <label className="block mb-2 text-sm text-gray-600">Name</label>
+                <label className="block mb-2 text-sm text-white/90">
+                  Nombre
+                </label>
                 <input
                   type="text"
                   {...register("name")}
@@ -132,7 +129,7 @@ export default function ContactFormNew() {
               </div>
 
               <div className="flex-1 mt-4">
-                <label className="block mb-2 text-sm text-gray-600">
+                <label className="block mb-2 text-sm text-white/90">
                   Email
                 </label>
                 <input
@@ -143,8 +140,8 @@ export default function ContactFormNew() {
               </div>
 
               <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-gray-600">
-                  Message
+                <label className="block mb-2 text-sm text-white/90">
+                  Mensaje
                 </label>
                 <textarea
                   {...register("message")}
@@ -154,9 +151,32 @@ export default function ContactFormNew() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white  bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
               >
-                Send Message
+                {sending ? (
+                  <div className="flex gap-2 justify-center items-center">
+                    {mostrarMensajer ? (
+                      <>
+                        <Icons
+                          icon="IconX"
+                          className="stroke-white  min-h-[26px]"
+                        ></Icons>
+                        Hubo un error al enviar los datos
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <Icons
+                          icon="IconLoader"
+                          className="stroke-white animate-spin min-h-[26px]"
+                        ></Icons>
+                        Enviando...
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  <> Enviar mensaje</>
+                )}
               </button>
             </form>
           </div>

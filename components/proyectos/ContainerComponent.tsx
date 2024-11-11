@@ -65,7 +65,7 @@ export default function ContainerComponent({
             </p>
 
             <div className="flex items-center justify-between mt-6 md:justify-start">
-              <Link
+              {/* <Link
                 href={{
                   pathname: `/casos/[caso]`,
                   query: {
@@ -74,18 +74,21 @@ export default function ContainerComponent({
                 }}
                 target="_self"
                 onClick={handleButton}
-                //   title={`"Ver mas sobre ${}`}
-                className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 hover:bg-blue-400"
+               
+                className="p-2 text-white transition-colors duration-300 border rounded-lg rtl:-scale-x-100 hover:bg-blue-400"
               >
-                Leer mas
-              </Link>
+                Leer más
+              </Link> */}
 
-              <button
-                title="right arrow"
-                className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 md:mx-6 hover:bg-blue-400"
+              <Link
+              href={item.link}
+              target="_blank"
+              
+                title={item.title}
+                className="p-2 text-white transition-colors duration-300 border rounded-lg rtl:-scale-x-100 md:mx-6 hover:bg-blue-400"
               >
-                Visitar aplicacion web
-              </button>
+                Visitar aplicación web
+              </Link>
             </div>
           </div>
         </div>
