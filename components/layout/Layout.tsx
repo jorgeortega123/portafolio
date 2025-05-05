@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import useMainContext from "@/context/useMainContext";
 import Footer from "../Footer";
 import NavBar from "../NavBar";
+import NavBarV2 from "../NavBarV2";
 
 function Layout({ children }: { children: ReactNode }) {
   const [minHeight, setMinHeight] = useState<number>(0);

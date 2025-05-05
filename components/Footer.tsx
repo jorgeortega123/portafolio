@@ -1,6 +1,7 @@
 import React from "react";
 import H2 from "./html/H2";
 import P from "./html/P";
+import { dataPage } from "@/context/dataPage";
 
 function Footer() {
   const currentDate: Date = new Date();
@@ -53,7 +54,7 @@ function Footer() {
           </div>
           <div className="main-footer__row main-footer__row-2">
             <H2 size="medium" className="heading heading-sm text-lt">
-              Luis Ortega
+              {dataPage.nombre}
             </H2>
             <P size="medium" className="main-footer__short-desc leading-8">
               Desarrollador Full Stack en Quito especializado en frontend con
@@ -61,12 +62,11 @@ function Footer() {
               nube.
             </P>
             <P size="medium" className="main-footer__short-desc leading-8">
-              <a href="mailto:luisgarrido0987@gmail.com" className="block">
-                Email:{" "}
-                <span className="underline">luisgarrido0987@gmail.com</span>
+              <a href={`mailto:${dataPage.email}`} className="block">
+                Email: <span className="underline">{dataPage.email}</span>
               </a>
-              <a href="tel:+593959859877" className="block">
-                Teléfono: <span>(+593) 095 985 9877</span>
+              <a href={`tel:+593${dataPage.telefono}`} className="block">
+                Teléfono: <span>(+593) {dataPage.telefono}</span>
               </a>
             </P>
           </div>
@@ -75,7 +75,7 @@ function Footer() {
         <div className="main-footer__lower">
           © Copyright {fullYear}. Hecho por
           <a rel="noreferrer" target="_blank" href="">
-            Luis Ortega
+            {dataPage.nombre}
           </a>
         </div>
       </div>

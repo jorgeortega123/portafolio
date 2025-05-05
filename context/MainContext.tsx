@@ -150,44 +150,6 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
   ];
 
-  const trabajos = [
-    {
-      title: "Licoreria Spondylus",
-      sub: "Ecommerce para venta de licores",
-      description:
-        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
-      tags: [
-        "React",
-        "NextJs",
-        "TypeScript",
-        "MongoDb",
-        "MongoAtlas",
-        "Realm",
-        "Cloudflare",
-        "PedidoYaEnvios-Api",
-      ],
-      link: "https://www.licoreriaspondylus.com/",
-      img: "/assets/cases/casoLicoreria.jpg",
-    },
-    {
-      title: "Jandrea",
-      sub: "Ecommerce para venta de manualidades en mdf",
-      description:
-        "Página web que muestra el catálogo de productos hechos con madera mdf",
-      tags: [
-        "React",
-        "NextJs",
-        "TypeScript",
-        "MongoDb",
-        "MongoAtlas",
-        "Realm",
-        "Cloudflare",
-        "Firebase",
-      ],
-      link: "https://www.jandrea.art/",
-      img: "/assets/cases/casoJandrea.jpg",
-    },
-  ];
   const proyects = [
     {
       title: "Llampukaq Technology",
@@ -244,7 +206,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         proyects: proyects,
         libraries: libraries,
         skills: skills,
-        trabajos: trabajos,
+        
         numberCharge: numberCharge,
       }}
     >

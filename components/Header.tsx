@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link.js";
 import H2 from "./html/H2";
 import P from "./html/P";
+import { dataPage } from "@/context/dataPage";
 function Header() {
   const links = [
     { link: "/", name: "Inicio" },
@@ -19,7 +20,7 @@ function Header() {
                 size="small"
                 className="shrink-0  bg-white tracking-wide w-max  text-black px-9 py-4 rounded-[10px] "
               >
-                Luis Ortega
+                {dataPage.nombre}
               </H2>
               <P
                 size="medium"

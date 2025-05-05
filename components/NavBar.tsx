@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import H2 from "./html/H2";
 import P from "./html/P";
+import { dataPage } from "@/context/dataPage";
 
 export default function NavBar() {
   const links = [
@@ -57,7 +58,7 @@ export default function NavBar() {
               size="small"
               className="shrink-0 font-normal border border-blue-500  bg-white tracking-wide w-max  text-blue-500 px-9 py-4  rounded-[10px]"
             >
-              Luis Ortega
+              {dataPage.nombre}
             </H2>
           </Link>
         </div>

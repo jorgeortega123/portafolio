@@ -6,6 +6,7 @@ import Button from "./sub/Button";
 import H2 from "./html/H2";
 import P from "./html/P";
 import { Icons } from "@llampukaq/icons";
+import { dataPage } from "@/context/dataPage";
 
 function About() {
   const { skills } = useMainContext();
@@ -30,8 +31,9 @@ function About() {
                 className="h-auto leading-7 max-w-[420px] text-black/90"
               >
                 <span className="mb-3 block">
-                  Hola, Soy <strong>Luis Ortega</strong>, programador con más de
-                  2 años de experiencia trabajando de forma independiente.
+                  Hola, Soy <strong>{dataPage.nombre}</strong>, programador con
+                  más de 3 años de experiencia estos incluyen trabajos como
+                  programador en empresas y como vendedor de servicios web
                 </span>
                 <span className="mb-5 block">
                   ¡Bienvenido a mi portafolio! Descubre los proyectos que he

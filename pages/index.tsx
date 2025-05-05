@@ -11,15 +11,17 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Proyecto from "@/components/Proyecto";
 import Testimonials from "@/components/proyectos/ProyectoContainer";
+import ProyectosPersonales from "@/components/ProyectosPersonales";
 import Tarjetas from "@/components/Tarjetas";
 import TarjetasNew from "@/components/Tarjetas/Tarjetas";
+import { dataPage } from "@/context/dataPage";
 import Head from "next/head";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Inicio | Luis Ortega</title>
+        <title>{dataPage.nombre} | Inicio</title>
         <meta
           name="description"
           content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
@@ -42,9 +44,10 @@ export default function Home() {
         {/* <div className="bg-white" id="proyectos">
           <Projects />
         </div> */}
-        <div className="bg-white">
+        <ProyectosPersonales />
+        {/* <div className="bg-white">
           <Estadisticas />
-        </div>
+        </div> */}
         {/* <Libraries /> */}
         <div className=" bg-[#efefef]" id="contacto">
           {/* <Contact /> */}

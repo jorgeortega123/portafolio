@@ -8,16 +8,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { IconsProvider } from "@llampukaq/icons";
 import Layout from "@/components/layout/Layout";
+import { HeroUIProvider } from "@heroui/system";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <IconsProvider>
-      <MainContextComponent>
-        <Layout>
-          <Component {...pageProps} />
-          <Footer />
-        </Layout>
-      </MainContextComponent>{" "}
-    </IconsProvider>
+    <HeroUIProvider>
+      <IconsProvider>
+        <MainContextComponent>
+          <Layout>
+            <Component {...pageProps} />
+            <Footer />
+          </Layout>
+        </MainContextComponent>{" "}
+      </IconsProvider>
+    </HeroUIProvider>
   );
 }
