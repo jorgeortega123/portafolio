@@ -18,20 +18,20 @@ function Header() {
             <div className="flex items-center">
               <H2
                 size="small"
-                className="shrink-0  bg-white tracking-wide w-max  text-black px-9 py-4 rounded-[10px] "
+                className="shrink-0  bg-white tracking-wide w-max  text-black px-2 sm:px-9 py-2 sm:py-4 rounded-[10px] "
               >
                 {dataPage.nombre}
               </H2>
               <P
                 size="medium"
-                className="text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]"
+                className="text-sm lg:text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]"
               >
                 desarrollador full stack
               </P>
             </div>
             <Link
               href={"#contact"}
-              className="transition-colors rounded-[9px] text-white duration-200 hover:bg-white hover:text-black cursor-pointer  px-8 py-2 border  "
+              className="transition-colors rounded-[9px] text-white duration-200 hover:bg-white hover:text-black cursor-pointer px-3 sm:px-8 py-2 border  "
             >
               <H2 size="small">Contactar</H2>
             </Link>

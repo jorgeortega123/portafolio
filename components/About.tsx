@@ -23,7 +23,7 @@ function About() {
         <div className="max-w-[1500px] w-full">
           <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
             <div className="flex flex-col w-full  lg:max-w-1/2 ">
-              <H2 size="medium" className="mb-12">
+              <H2 size="medium" className="lg:mb-12 pt-6 mb-4">
                 Acerca de mi
               </H2>
               <P
@@ -46,7 +46,7 @@ function About() {
               </button>
             </div>
             <div className="w-full lg:max-w-1/2">
-              <H2 size="medium" className="mb-[3rem]">
+              <H2 size="medium" className="pt-6 lg:pt-0 mb-3 lg:mb-[3rem]">
                 Mis habilidades
               </H2>
               <div className="flex flex-wrap max-w-[530px] gap-5 ">

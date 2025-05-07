@@ -18,7 +18,7 @@ export const dataPage = {
         "Cloudflare",
         "PedidoYaEnvios-Api",
       ],
-      link: "https://www.licoreriaspondylus.com/",
+      link: "https://spondylus.pages.dev/",
       img: "/assets/cases/casoLicoreria.jpg",
     },
     {
