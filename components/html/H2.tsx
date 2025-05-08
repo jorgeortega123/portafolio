@@ -10,7 +10,7 @@ export default function H2({ children, className = "", size }: PProps) {
   const sizeFinal = () => {
     switch (size) {
       case "small":
-        return "text-[1.1rem] lg:text-[1.4rem]";
+        return "text-[1rem] lg:text-[1.2rem]";
       case "normal":
         return "text-[.9rem] lg:text-[1rem]";
       case "medium":

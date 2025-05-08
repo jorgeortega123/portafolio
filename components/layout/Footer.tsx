@@ -1,6 +1,6 @@
 import React from "react";
-import H2 from "./html/H2";
-import P from "./html/P";
+import H2 from "../html/H2";
+import P from "../html/P";
 import { dataPage } from "@/context/dataPage";
 
 function Footer() {

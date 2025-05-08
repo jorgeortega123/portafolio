@@ -5,7 +5,7 @@ import "../style/font.css";
 import "../style/principal.css";
 import MainContextComponent from "@/context/MainContext";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import { IconsProvider } from "@llampukaq/icons";
 import Layout from "@/components/layout/Layout";
 import { HeroUIProvider } from "@heroui/system";

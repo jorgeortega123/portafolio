@@ -33,10 +33,10 @@ export default function ContainerComponent({
   return (
     <main
       id={`container-pr-${index}`}
-      className="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12"
+      className="relative z-[8] w-full mt-8 md:flex md:items-center xl:mt-12"
     >
       <div
-        className={`absolute w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
+        className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
       ></div>
 
       <div

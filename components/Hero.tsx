@@ -1,11 +1,13 @@
 import useScrollTo from "@/hooks/useScroll";
-import Icons from "@/style/Icons";
+
 import React from "react";
 import Descarga from "./sub/Descarga";
 import useMainContext from "@/context/useMainContext";
 import Header from "./Header";
 import HandwritingAnimation from "./TypeEfecto/HandwritingAnimation";
 import NavBar from "./NavBar";
+import { dataPage } from "@/context/dataPage";
+import { ICONS, Icons } from "@llampukaq/icons";
 
 function Hero() {
   const { isLoad, numberCharge } = useMainContext();
@@ -17,13 +19,13 @@ function Hero() {
   const sociaMedia = [
     {
       name: "linkedin",
-      url: "https://www.linkedin.com/in/luis-ortega-a866a3218",
-      icon: "./assets/png/linkedin-ico.png",
+      url: dataPage.social.linkedin,
+      icon: "IconBrandLinkedin" as ICONS,
     },
     {
       name: "git hub",
-      url: "https://github.com/luis030821",
-      icon: "./assets/png/github-ico.png",
+      url: dataPage.social.github,
+      icon: "IconBrandGithub" as ICONS,
     },
   ];
   const carBrands = ["Toyota", "Honda", "BMW", "Tesla", "Ford"];
@@ -80,15 +82,11 @@ function Hero() {
                 target="_blank"
                 className="home-hero__social-icon-link"
               >
-                <img
-                  src={e.icon}
-                  alt="icon"
-                  className="home-hero__social-icon"
-                />
+                <Icons size={28} icon={e.icon} className="stroke-gray-200" />
               </a>
             </div>
           ))}
-
+          {/* 
           <div className="home-hero__social">
             <a
               target="_blank"
@@ -101,7 +99,7 @@ function Hero() {
                 className="home-hero__social-icon"
               />
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* <Descarga /> */}

@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactNew";
 
 import Estadisticas from "@/components/Estadisticas";
 import Experience from "@/components/Experience";
+import { FormularioContacto } from "@/components/Form/FormularioContacto";
 
 import Hero from "@/components/Hero";
 
@@ -16,12 +17,16 @@ import Tarjetas from "@/components/Tarjetas";
 import TarjetasNew from "@/components/Tarjetas/Tarjetas";
 import { dataPage } from "@/context/dataPage";
 import Head from "next/head";
+export const getStaticProps = async () => {
+  const dataPageProps = dataPage; // Tu función para obtener datos
+  return { props: { dataPageProps } };
+};
 
-export default function Home() {
+export default function Home({ dataPageProps }: any) {
   return (
     <>
       <Head>
-        <title>{dataPage.nombre} | Inicio</title>
+        <title>{dataPageProps.nombre} | Inicio</title>
         <meta
           name="description"
           content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
