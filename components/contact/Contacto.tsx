@@ -4,24 +4,10 @@ import { useForm } from "react-hook-form";
 import H2 from "../html/H2";
 import P from "../html/P";
 import { Icons } from "@llampukaq/icons";
+import { FormularioContacto } from "../Form/FormularioContacto";
+import { dataPage } from "@/context/dataPage";
 
 export default function ContactFormNew() {
-  const { register, handleSubmit } = useForm();
-  const [sending, setsending] = useState(false);
-  const [mostrarMensajer, setmostrarMensajer] = useState(false);
-  const onSubmit = (data: any) => {
-    handleButton();
-  };
-  const handleButton = () => {
-    if (mostrarMensajer) {
-      setmostrarMensajer(false);
-    }
-    setsending(true);
-    setTimeout(() => {
-      setmostrarMensajer(true);
-    }, 1800);
-  };
-
   return (
     <section
       id="contact"
@@ -85,7 +71,7 @@ export default function ContactFormNew() {
                   href="tel: 95 985 9877"
                   className="mx-2 text-white truncate w-72 hover:underline"
                 >
-                  095 985 9877
+                  {dataPage.nombre}
                 </Link>
               </p>
 
@@ -106,79 +92,18 @@ export default function ContactFormNew() {
                 </svg>
 
                 <Link
-                  href={"mailto:luisgarrido0987@gmail.com"}
+                  target="_blank"
+                  href={`mailto:${dataPage.email}`}
                   className="mx-2 text-white truncate w-72 hover:underline"
                 >
-                  luisgarrido0987@gmail.com
+                  {dataPage.email}
                 </Link>
               </p>
             </div>
           </div>
 
           <div className="mt-8 lg:w-1/2 lg:mx-6 shadow-lg px-12 py-6">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex-1">
-                <label className="block mb-2 text-sm text-white/90">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  {...register("name")}
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                />
-              </div>
-
-              <div className="flex-1 mt-4">
-                <label className="block mb-2 text-sm text-white/90">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  {...register("email")}
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                />
-              </div>
-
-              <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-white/90">
-                  Mensaje
-                </label>
-                <textarea
-                  {...register("message")}
-                  className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md md:h-48 focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white  bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-              >
-                {sending ? (
-                  <div className="flex gap-2 justify-center items-center">
-                    {mostrarMensajer ? (
-                      <>
-                        <Icons
-                          icon="IconX"
-                          className="stroke-white  min-h-[26px]"
-                        ></Icons>
-                        Hubo un error al enviar los datos
-                      </>
-                    ) : (
-                      <>
-                        {" "}
-                        <Icons
-                          icon="IconLoader"
-                          className="stroke-white animate-spin min-h-[26px]"
-                        ></Icons>
-                        Enviando...
-                      </>
-                    )}
-                  </div>
-                ) : (
-                  <> Enviar mensaje</>
-                )}
-              </button>
-            </form>
+            <FormularioContacto />
           </div>
         </div>
       </div>
