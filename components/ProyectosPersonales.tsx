@@ -7,7 +7,7 @@ import ZoomComponentWithModal from "./layout/ZoomComponentWithModal";
 export default function ProyectosPersonales() {
   const { goToUrl } = useNavigation();
   return (
-    <div className="py-12 px-4 sm:px-auto  bg-[#111827]">
+    <div id="proyectos" className="py-12 px-4 sm:px-auto  bg-[#111827]">
       <div className="max-w-[1200px] mx-auto w-full">
         <p className="text-xl font-medium text-blue-400">
           Conoce un poco más de mi con estos
@@ -29,10 +29,10 @@ export default function ProyectosPersonales() {
           <div className="text-gray-50 transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#0000001a]  bg-[#00000023] px-2 lg:rounded-[12px]">
             <div className=" items-center flex justify-center relative ">
               <div
-                className=" relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects useTextColor"
+                className=" relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[1.1ren] lg:text-[1.8rem] lg:my-1  container-proyects useTextColor"
                 onClick={() => goToUrl(item.web)}
               >
-                <p>{item.title}</p>
+                <p className="font-medium">{item.title}</p>
                 <Icons icon="IconLink" className="rotate-[135deg] "></Icons>
               </div>
             </div>
