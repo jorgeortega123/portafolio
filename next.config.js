@@ -12,7 +12,7 @@ module.exports = () => {
     },
     reactStrictMode: true,
     transpilePackages: ["@llampukaq/icons"],
-    output: "export",
+    // output: "export",
     swcMinify: true,
     reactStrictMode: false,
     // webpack: (config, { dev, isServer }) => {
@@ -31,6 +31,11 @@ module.exports = () => {
     },
     eslint: {
       ignoreDuringBuilds: true,
+    },
+
+    i18n: {
+      locales: ["en", "es"],
+      defaultLocale: "en",
     },
   });
 };
