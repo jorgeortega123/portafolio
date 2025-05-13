@@ -84,17 +84,17 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "MongoDb",
-      link: "/assets/png/skills/mongodb.png",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
       id: "PostgreSQL",
-      link: "/assets/png/skills/postgree.png",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/postgree.png",
     },
     {
       type: "ba",
-      id: "Mongo Atlas",
-      link: "/assets/png/skills/mongodb.png",
+      id: "MongoAtlas",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
@@ -110,13 +110,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: " GraphQL",
-      link: "/assets/png/skills/graphql.png",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/graphql.png",
     },
 
     {
       type: "ba",
       id: "Docker",
-      link: "/assets/png/skills/docker.png",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/docker.png",
     },
     {
       type: "se",
@@ -126,7 +126,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "se",
       id: "GitHub",
-      link: "/assets/png/skills/github.png",
+      link: "https://jorgeortega-portafolio.pages.dev/assets/png/skills/github.png",
     },
     {
       type: "se",
@@ -135,8 +135,8 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "se",
-      id: "Microsoft Azure",
-      link: "/assets/png/skills/azure.png",
+      id: "MicrosoftAzure",
+      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/azure.png",
     },
     {
       type: "se",

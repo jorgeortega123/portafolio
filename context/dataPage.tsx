@@ -10,14 +10,17 @@ export const dataPage = {
     {
       title: "Licoreria Spondylus",
       sub: "Ecommerce para venta de licores",
+      update:
+        "ACTUALIZACIÓN: Actualmente la licorería ha cerrado y con ello cancelado totalmente el desarrollo, considere que la aplicación está un 60% terminado",
       description:
-        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas. ACTUALIZACIÓN: Actualmente la licorería ha cerrado y con ello cancelado totalmente el desarrollo, considere que la aplicación está un 60% terminado",
+        "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas. ",
       tags: [
         "React",
         "NextJs",
         "TypeScript",
         "MongoDb",
         "MongoAtlas",
+        "Tailwindcss",
         "Realm",
         "Cloudflare",
         "PedidoYaEnvios-Api",
