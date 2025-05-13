@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 800;
   font-stretch: 100%;
   src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)
     format("woff2");
@@ -26,17 +26,17 @@
   font-family: "alternativa-1";
   src: url("/fonts/gh1.ttf");
 }
-@font-face {
+/* @font-face {
   font-family: "texto-general";
   src: url("/fonts/nunito-latin-400-normal.ttf");
-}
+} */
 
 body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-family: "texto-general";
 }
 p {
-  font-family: "texto-general";
+  font-family: "quicksand-thin";
 }
 .text-parrafo {
   font-family: "texto-general";
