@@ -3,8 +3,11 @@ import useNavigation from "./hooks/useNavigation";
 import { dataPage } from "@/context/dataPage";
 import { Icons } from "@llampukaq/icons";
 import ZoomComponentWithModal from "./layout/ZoomComponentWithModal";
+import useMainContext from "@/context/useMainContext";
+import Img from "./html/Img";
 
 export default function ProyectosPersonales() {
+  const { skills } = useMainContext();
   const { goToUrl } = useNavigation();
   return (
     <div id="proyectos" className="py-12 px-4 sm:px-auto  bg-[#111827]">
@@ -26,14 +29,14 @@ export default function ProyectosPersonales() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[1200px] mx-auto w-full">
         {dataPage.proyects.map((item, index) => (
-          <div className="text-gray-50 transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#0000001a]  bg-[#00000023] px-2 lg:rounded-[12px]">
+          <div className="text-gray-50  relative  w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#0000001a]  bg-[#00000023] px-2 lg:rounded-[12px]">
             <div className=" items-center flex justify-center relative ">
               <div
-                className=" relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[1.1ren] lg:text-[1.8rem] lg:my-1  container-proyects useTextColor"
+                className="stroke-zinc-100 text-zinc-100 hover:stroke-zinc-500 hover:text-zinc-950 relative flex items-center mr-[-26px] gap-2 px-[1px] cursor-pointer text-[1.1ren] lg:text-[1.8rem] lg:my-1  container-proyects useTextColor"
                 onClick={() => goToUrl(item.web)}
               >
                 <p className="font-medium">{item.title}</p>
-                <Icons icon="IconLink" className="rotate-[135deg] "></Icons>
+                <Icons icon="IconLink" className="rotate-[65deg]   "></Icons>
               </div>
             </div>
             <div className="flex-col w-full ">
@@ -41,11 +44,6 @@ export default function ProyectosPersonales() {
                 <ZoomComponentWithModal item={item} />
               </div>
               <div className=" normalText text-[12px] h-full lg:p-3  flex flex-col ">
-                {/* <div className="relative flex items-center useTextColor  pb-[1px] text-[29px] lg:text-[32px] lg:my-1 container-proyects ">
-    <p className="cursor-pointer " onClick={() => goToUrl(web)}>
-      {title}
-    </p>
-  </div> */}
                 <div
                   className="  normalText text-[13px] lg:text-[16px]  leading-5 my-2"
                   dangerouslySetInnerHTML={{ __html: item.about }}
@@ -55,9 +53,35 @@ export default function ProyectosPersonales() {
                   id={"appendp" + index}
                   className=" flex flex-wrap pb-3 pt-1 mb-2 select-none opacity-[75%]"
                 ></div>
+
+                <div className="flex gap-2 ">
+                  {item.tags.map((tag) => {
+                    const skill = skills.find(
+                      (skill) => skill.id.toLowerCase() == tag.toLowerCase()
+                    );
+                    return (
+                      <>
+                        {skill && (
+                          <div className="flex gap-2 pr-3 text-zinc-100 items-center justify-center bg-zinc-800 border border-zinc-700 px-2 rounded-full">
+                            {skill.link && (
+                              <Img
+                                className="max-w-[22px] w-full pl-1 py-1"
+                                link
+                                src={skill.link}
+                                alt={skill.id}
+                                q={10}
+                              />
+                            )}
+                            <p>{skill.id}</p>
+                          </div>
+                        )}
+                      </>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-            <div className="absolute bottom-0  w-full left-0  flex space-x-3 px-2 pb-2">
+            <div className=" bottom-0  pb-3 w-full left-0  flex space-x-3 px-2 ">
               <button
                 onClick={() => goToUrl(item.web)}
                 className=" useTransitionDelay border-[1px] rounded-[6px] px-7 border-[#66ff00] text-[#66ff00]  hover:bg-[#66ff00f1] hover:text-[black]"
