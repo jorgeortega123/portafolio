@@ -8,6 +8,7 @@ import HandwritingAnimation from "./TypeEfecto/HandwritingAnimation";
 import NavBar from "./NavBar";
 import { dataPage } from "@/context/dataPage";
 import { ICONS, Icons } from "@llampukaq/icons";
+import { useTranslations } from "next-intl";
 
 function Hero() {
   const { isLoad, numberCharge } = useMainContext();
@@ -29,14 +30,8 @@ function Hero() {
     },
   ];
   const carBrands = ["Toyota", "Honda", "BMW", "Tesla", "Ford"];
-  const services = [
-    "Desarrollo de aplicaciones web a gran escala",
-    "Diseño y creación de bases de datos",
-    "Integración de sistemas y APIs",
-    "Despliegue y administración de aplicaciones en la nube",
-    "Integración a plataformas de maquinas virtuales",
-    "Optimización y mantenimiento de aplicaciones existentes",
-  ];
+  const t = useTranslations("");
+  const services = t.raw("services") as string[];
   return (
     <div
       id="main-div"

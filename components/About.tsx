@@ -7,13 +7,16 @@ import H2 from "./html/H2";
 import P from "./html/P";
 import { Icons } from "@llampukaq/icons";
 import { dataPage } from "@/context/dataPage";
+import { useTranslations } from "next-intl";
 
 function About() {
+  const t = useTranslations("about");
   const { skills } = useMainContext();
   const scrollToElement = useScrollTo();
   const handleOnClick = (e: string) => {
     scrollToElement(e);
   };
+
   return (
     <>
       <section
@@ -30,7 +33,14 @@ function About() {
                 size="medium"
                 className="h-auto leading-7 max-w-[420px] text-black/90"
               >
-                <span className="mb-3 block">
+                <div className="mb-2">
+                  {t("greeting")}
+                  <strong className="mb-2">{t("name")}</strong>
+                  {t("text")}
+                  <span className="block my-2">{t("secondaryText")}</span>
+                </div>
+
+                {/* <span className="mb-3 block">
                   Hola, Soy <strong>{dataPage.nombre}</strong>, programador con
                   más de 3 años de experiencia estos incluyen trabajos como
                   programador en empresas y como vendedor de servicios web
@@ -38,7 +48,7 @@ function About() {
                 <span className="mb-5 block">
                   ¡Bienvenido a mi portafolio! Descubre los proyectos que he
                   desarrollado y aprende más sobre mi trayectoria profesional.
-                </span>
+                </span> */}
               </P>
               <button className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-3">
                 <Icons className="stroke-white/90" icon="IconPhoneCall"></Icons>
@@ -50,20 +60,23 @@ function About() {
                 Mis habilidades
               </H2>
               <div className="flex flex-wrap max-w-[530px] gap-5 ">
-                {skills.map((e, l) => (
-                  <div
-                    key={"key-skills" + e.type + l}
-                    className="select-none cursor-default relative overflow-hidden flex gap-3 rounded-[9px] items-center bg-blue-500/10 px-4 py-2"
-                  >
-                    <img
-                      loading="lazy"
-                      className="w-[40px] max-w-[36px]"
-                      src={e.link}
-                      alt=""
-                    />
-                    <P className="sticky z-[12] ">{e.id}</P>
-                  </div>
-                ))}
+                {skills.map((e, l) => {
+                  if (!e.link) return;
+                  return (
+                    <div
+                      key={"key-skills" + e.type + l}
+                      className="select-none cursor-default relative overflow-hidden flex gap-3 rounded-[9px] items-center bg-blue-500/10 px-4 py-2"
+                    >
+                      <img
+                        loading="lazy"
+                        className="w-[40px] max-w-[36px]"
+                        src={e.link}
+                        alt=""
+                      />
+                      <P className="sticky z-[12] ">{e.id}</P>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

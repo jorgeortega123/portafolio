@@ -4,13 +4,16 @@ import H2 from "./html/H2";
 import P from "./html/P";
 import { dataPage } from "@/context/dataPage";
 import { Divider } from "@heroui/react";
+import TranslatePageDropDown from "./actions/TranslatePage";
+import { useTranslations } from "next-intl";
 
 export default function NavBar() {
+  const t = useTranslations("nav");
   const links = [
-    { link: "/", name: "Inicio" },
-    { link: "/#me", name: "Acerca de mi" },
-    { link: "/#proyectos", name: "Proyectos" },
-    // { link: "/#contacto", name: "contacto" },
+    { link: "/", name: t("home") },
+    { link: "/#me", name: t("about") },
+    { link: "/#proyectos", name: t("projects") },
+
   ];
 
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
@@ -46,7 +49,7 @@ export default function NavBar() {
       }`}
     >
       <div className="w-full flex items-center justify-between max-w-[1200px] mx-auto  px-6 md:px-12">
-        <div className="text-black">
+        <div className="text-zinc-900 flex gap-3 items-center">
           {/* <div className="header__logo-img-cont">
               <img
                 src="./assets/png/luis.jpg"
@@ -62,6 +65,7 @@ export default function NavBar() {
               {dataPage.nombre}
             </H2>
           </Link>
+          <TranslatePageDropDown dark />
         </div>
         <div className="flex gap-2   ">
           <ul className="text-black  gap-5  hidden  sm:flex lg:gap-5 w-full lg:pr-5">
@@ -82,7 +86,7 @@ export default function NavBar() {
             href={"#contact"}
             className="p-2 rounded-lg text-white flex items-center  justify-center tracking-widest  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer px-7"
           >
-            Contactar
+            {t("contact")}
           </Link>
         </div>
       </div>
