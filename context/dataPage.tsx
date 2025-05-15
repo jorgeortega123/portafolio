@@ -91,7 +91,7 @@ export const dataPage = {
       conteos predefinidos. Como
       <span class="text-bold">eventos astronómicos</span>, feriados y
       <span class="text-bold">sucesos mundiales</span>.`,
-      tags: ["react"],
+      tags: ["react", "BackApp", "Parse", "MongoDb"],
       img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
       web: "https://countdown-holidays.pages.dev/",
       repo: "https://github.com/jorgeortega123/countdown",
