@@ -20,7 +20,7 @@ function Footer() {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://www.linkedin.com/in/luis-ortega-a866a3218"
+                href={dataPage.social.linkedin}
               >
                 <img
                   className="main-footer__icon"
@@ -31,7 +31,7 @@ function Footer() {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://github.com/luis030821"
+                href={dataPage.social.linkedin}
               >
                 <img
                   className="main-footer__icon"
@@ -39,11 +39,7 @@ function Footer() {
                   alt="icon"
                 />
               </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/luis030821"
-              >
+              <a target="_blank" rel="noreferrer" href={dataPage.social.github}>
                 <img
                   className="main-footer__icon main-footer__icon--mr-none"
                   src="./assets/png/insta-ico.png"
@@ -57,9 +53,7 @@ function Footer() {
               {dataPage.nombre}
             </H2>
             <P size="medium" className="main-footer__short-desc leading-8">
-              Desarrollador Full Stack en Quito especializado en frontend con
-              bases firmes en el funcionamiento de Backend y servicios en la
-              nube.
+              Desarrollador Full Stack en Quito
             </P>
             <P size="medium" className="main-footer__short-desc leading-8">
               <a href={`mailto:${dataPage.email}`} className="block">
@@ -67,6 +61,13 @@ function Footer() {
               </a>
               <a href={`tel:+593${dataPage.telefono}`} className="block">
                 Teléfono: <span>(+593) {dataPage.telefono}</span>
+              </a>
+              <a
+                target="_blank"
+                href={`https://api.whatsapp.com/send?phone=+593${dataPage.telefono}&text=Hola, vengo de tu portafolio...`}
+                className="block"
+              >
+                Whastapp: <span>(+593) {dataPage.telefono}</span>
               </a>
             </P>
           </div>
