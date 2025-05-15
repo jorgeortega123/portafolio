@@ -34,8 +34,8 @@ module.exports = () => {
     },
 
     i18n: {
-      locales: ["en", "es"],
-      defaultLocale: "en",
+      locales: ["es-ES", "en-US"],
+      defaultLocale: "en-US",
     },
   });
 };
