@@ -55,7 +55,6 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "HTML",
       link: "/assets/png/skills/html.png",
     },
-
     {
       type: "fr",
       id: "CSS",
@@ -71,6 +70,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "React",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
     },
+
+    {
+      type: "fr",
+      id: "python",
+      link: "/assets/webp/python.webp",
+    },
+
     {
       type: "fr",
       id: "Typescript",
@@ -124,9 +130,19 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805964/Git-Icon-1788C_ncuqfg.png",
     },
     {
+      type: "fr",
+      id: "batch",
+      link: "/assets/webp/batch.webp",
+    },
+    {
       type: "se",
       id: "GitHub",
       link: "https://jorgeortega-portafolio.pages.dev/assets/png/skills/github.png",
+    },
+    {
+      type: "se",
+      id: "VsCode",
+      link: "https://jorgeortega-portafolio.pages.dev/assets/png/skills/vsCode.png",
     },
     {
       type: "se",
@@ -206,7 +222,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
         proyects: proyects,
         libraries: libraries,
         skills: skills,
-        
+
         numberCharge: numberCharge,
       }}
     >
