@@ -12,27 +12,11 @@ module.exports = () => {
     },
     reactStrictMode: true,
     transpilePackages: ["@llampukaq/icons"],
-    // output: "export",
     swcMinify: true,
     reactStrictMode: false,
-    // webpack: (config, { dev, isServer }) => {
-    //   if (!dev && !isServer) {
-    //     Object.assign(config.resolve.alias, {
-    //       "react/jsx-runtime.js": "preact/compat/jsx-runtime",
-    //       react: "preact/compat",
-    //       "react-dom/test-utils": "preact/test-utils",
-    //       "react-dom": "preact/compat",
-    //     });
-    //   }
-    //   return config;
-    // },
-    typescript: {
-      ignoreBuildErrors: true,
-    },
     eslint: {
       ignoreDuringBuilds: true,
     },
-
     i18n: {
       locales: ["es-ES", "en-US"],
       defaultLocale: "en-US",
