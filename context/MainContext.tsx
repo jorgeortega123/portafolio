@@ -53,12 +53,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "HTML",
-      link: "/assets/png/skills/html.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/html.png",
     },
     {
       type: "fr",
       id: "CSS",
-      link: "/assets/png/skills/css.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/css.png",
     },
     {
       type: "fr",
@@ -74,7 +74,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "python",
-      link: "/assets/webp/python.webp",
+      link: "https://jorgeortega.vercel.app/assets/webp/python.webp",
     },
 
     {
@@ -90,17 +90,17 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "MongoDb",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/mongodb.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
       id: "PostgreSQL",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/postgree.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/postgree.png",
     },
     {
       type: "ba",
       id: "MongoAtlas",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/mongodb.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
@@ -116,13 +116,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: " GraphQL",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/graphql.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/graphql.png",
     },
 
     {
       type: "ba",
       id: "Docker",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/docker.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
     },
     {
       type: "se",
@@ -132,17 +132,17 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "batch",
-      link: "/assets/webp/batch.webp",
+      link: "https://jorgeortega.vercel.app/assets/webp/batch.webp",
     },
     {
       type: "se",
       id: "GitHub",
-      link: "https://jorgeortega-portafolio.pages.dev/assets/png/skills/github.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/github.png",
     },
     {
       type: "se",
       id: "VsCode",
-      link: "https://jorgeortega-portafolio.pages.dev/assets/png/skills/vsCode.png",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/vsCode.png",
     },
     {
       type: "se",
@@ -152,7 +152,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "se",
       id: "MicrosoftAzure",
-      link: "https://jorgeortega-portafolio.pages.dev//assets/png/skills/azure.png",
+      link: "https://jorgeortega.vercel.app//assets/png/skills/azure.png",
     },
     {
       type: "se",
