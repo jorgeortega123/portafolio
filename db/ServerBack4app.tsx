@@ -32,7 +32,6 @@ export const enviarDatosFormulario = async (
   try {
     const errors: Partial<DatosFormulario> = {};
 
-    // Validaciones (ejemplo simplificado)
     if (!/^[A-Za-z\s]+$/.test(datos.name)) {
       errors.name = "El nombre solo puede contener letras";
     }
