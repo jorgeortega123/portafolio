@@ -10,6 +10,7 @@ import {
 } from "@heroui/react";
 import ZoomableImage from "./ZoomComponenteProduct";
 import { Icons } from "@llampukaq/icons";
+import Img from "../html/Img";
 export default function ZoomComponentWithModal({ item }: { item: any }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
@@ -28,7 +29,9 @@ export default function ZoomComponentWithModal({ item }: { item: any }) {
           />
         </svg>
 
-        <img
+        <Img
+          link
+          width="500"
           className=""
           //   draggable={false}
           //   onClick={() => imgSrc(imagesFrom[index].all[0])}

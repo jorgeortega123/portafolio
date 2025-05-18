@@ -5,7 +5,7 @@ import Link from "next/link";
 import { formatWords } from "@/hooks/FormatWord";
 import useMainContext from "@/context/useMainContext";
 import P from "../html/P";
-import { Button, Tooltip } from "@heroui/react";
+import { Alert, Button, Tooltip } from "@heroui/react";
 import { Icons } from "@llampukaq/icons";
 
 export default function ContainerComponent({
@@ -52,47 +52,29 @@ export default function ContainerComponent({
         }  rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly"`}
       >
         <Img
+          link
+          width="500"
           className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
           src={item.img}
           alt="client photo"
         />
         <div className="">
           <div className="mt-2 md:mx-6 ">
-            <div className="flex gap-2 items-center">
-              <div>
+            <div className="flex gap-2 items-center ">
+              <div className="min-w-max">
                 <p className="text-[1.75rem] font-medium tracking-tight text-white">
                   {item.title}
                 </p>
                 <p className="text-blue-200">{item.sub}</p>
               </div>
-              {/* 
-              {item?.update && (
-                <Tooltip
-                  showArrow
-                  classNames={{
-                    base: [
-                      // arrow color
-                      "before:bg-neutral-400 dark:before:bg-white",
-                    ],
-                    content: [
-                      "py-2 px-4 shadow-xl",
-                      "text-black bg-gradient-to-br from-white to-neutral-400",
-                    ],
-                  }}
-                  content={item.update}
-                  placement="right"
-                >
-                  <Button size="sm" color="primary" variant="flat">
-                    Incomplento
-                  </Button>
-                </Tooltip>
-              )} */}
             </div>
 
             <p className="my-1 text-[1.1rem] leading-relaxed text-white font-medium">
               {item.description}
+              <strong>{item.update}</strong>
             </p>
 
+            {/* {item?.update && <Alert variant="flat" description={item.update} />} */}
             <div className="flex flex-wrap gap-3 py-2">
               {item.tags.map((tag) => {
                 const skill = skills.find(

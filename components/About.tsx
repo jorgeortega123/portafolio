@@ -8,6 +8,7 @@ import P from "./html/P";
 import { Icons } from "@llampukaq/icons";
 import { dataPage } from "@/context/dataPage";
 import { useTranslations } from "next-intl";
+import Img from "./html/Img";
 
 function About() {
   const t = useTranslations("about");
@@ -21,7 +22,7 @@ function About() {
     <>
       <section
         id="about"
-        className="bg-white z-[3] min-h-[90vh] flex items-center justify-center"
+        className="bg-white z-[3]  min-h-[90vh] flex items-center justify-center"
       >
         <div className="max-w-[1500px] w-full">
           <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
@@ -67,9 +68,11 @@ function About() {
                       key={"key-skills" + e.type + l}
                       className="select-none cursor-default relative overflow-hidden flex gap-3 rounded-[9px] items-center bg-blue-500/10 px-4 py-2"
                     >
-                      <img
+                      <Img
+                        link
                         loading="lazy"
-                        className="w-[40px] max-w-[36px]"
+                        width="40"
+                        className="w-[40px] max-w-[40px]"
                         src={e.link}
                         alt=""
                       />

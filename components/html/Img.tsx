@@ -13,7 +13,7 @@ interface Img
   lazy?: boolean;
 }
 function Img({
-  width = "1000",
+  width = "80",
   alt,
   src,
   q = 80,
@@ -45,7 +45,7 @@ function Img({
         className={`${props.className} relative`}
         src={
           link
-            ? `https://wsrv.nl/?url=${src}&output=${format}&w=${width}&q=${q}`
+            ? `https://api.llampukaq.com/v1/images?url=${src}&output=${format}&w=${width}&q=${q}`
             : src
         }
         {...props}
