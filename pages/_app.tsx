@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider locale={pageProps.locale} messages={pageProps.messages}>
       <HeroUIProvider>
-        <IconsProvider>
+        <IconsProvider >
           <MainContextComponent>
             <Layout>
               <Component {...pageProps} />
