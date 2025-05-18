@@ -31,7 +31,7 @@ export default function Home({ dataPageProps }: any) {
       </Head>
       <div className="bg-white">
         <Hero />
-        <div className="px-4 2xl:px-0">
+        <div className="lg:px-12 lg:py-12 2xl:px-0">
           <div id="me">
             <About />
           </div>
