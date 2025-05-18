@@ -11,7 +11,7 @@ export const dataPage = {
       title: "Licoreria Spondylus",
       sub: "Ecommerce para venta de licores",
       update:
-        "ACTUALIZACIÓN: Actualmente la licorería ha cerrado y con ello cancelado totalmente el desarrollo, considere que la aplicación está un 60% terminado",
+        "Actualización: MONGO REALM fue descontinuado, además la licorería cerró sus puertas y con ello el proyecto fue abandonado porque no resulta viable migrar de BaaS",
       description:
         "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas. ",
       tags: [
@@ -19,6 +19,7 @@ export const dataPage = {
         "NextJs",
         "TypeScript",
         "MongoDb",
+        "MongoREALM",
         "MongoAtlas",
         "Tailwindcss",
         "Realm",
@@ -26,7 +27,7 @@ export const dataPage = {
         "PedidoYaEnvios-Api",
       ],
       link: "https://spondylus.pages.dev/",
-      img: "/assets/cases/casoLicoreria.jpg",
+      img: "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg",
     },
     {
       title: "Jandrea",
@@ -44,7 +45,7 @@ export const dataPage = {
         "Firebase",
       ],
       link: "https://www.jandrea.art/",
-      img: "/assets/cases/casoJandrea.jpg",
+      img: "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg",
     },
   ],
   proyects: [
