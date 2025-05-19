@@ -87,28 +87,24 @@ const Children = ({ e }: any) => {
   const [hasReset, setHasReset] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (contenedorRef.current) {
-        const contenedorRect = contenedorRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        const contenedorEnPantalla =
-          contenedorRect.top < windowHeight && contenedorRect.bottom >= 0;
-
-        if (contenedorEnPantalla && !isVisible) {
-          setIsVisible(true);
-          setHasReset(false);
-        } else if (!contenedorEnPantalla && isVisible) {
-          setHasReset(true);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // const handleScroll = () => {
+    //   if (contenedorRef.current) {
+    //     const contenedorRect = contenedorRef.current?.getBoundingClientRect();
+    //     const windowHeight = window.innerHeight;
+    //     const contenedorEnPantalla =
+    //       contenedorRect.top < windowHeight && contenedorRect.bottom >= 0;
+    //     if (contenedorEnPantalla && !isVisible) {
+    //       setIsVisible(true);
+    //       setHasReset(false);
+    //     } else if (!contenedorEnPantalla && isVisible) {
+    //       setHasReset(true);
+    //     }
+    //   }
+    // };
+    // window.addEventListener("scroll", handleScroll);
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
   }, [isVisible]);
   return (
     <div
@@ -135,7 +131,9 @@ const Children = ({ e }: any) => {
         <H2 className="">+</H2>
       </div>
 
-      <P size="medium" className="text-[1.8rem] mt-[-12px] opacity-80">{e.title}</P>
+      <P size="medium" className="text-[1.8rem] mt-[-12px] opacity-80">
+        {e.title}
+      </P>
       <div className="w-full py-5 estadistica-animacion-hover  max-w-[300px] cursor-pointer mt-[12px]  flex gap-2 items-center">
         <Icons
           className={`svg-custom transition-custom  ${

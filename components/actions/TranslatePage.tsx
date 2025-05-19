@@ -44,12 +44,15 @@ export default function TranslatePageDropDown({ dark }: { dark?: boolean }) {
           aria-label="Example with disabled actions"
           disabledKeys={["edit", "delete"]}
         >
-          <DropdownItem onClick={() => handleChangeLanguage("en-US")}>
+          <DropdownItem
+            key={"Drop1tem"}
+            onClick={() => handleChangeLanguage("en-US")}
+          >
             English (en-US)
           </DropdownItem>
           <DropdownItem
+            key={"Drop2tem"}
             onClick={() => handleChangeLanguage("es-ES")}
-            key="copy"
           >
             Español (es-ES)
           </DropdownItem>

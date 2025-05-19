@@ -159,7 +159,7 @@ const Children = ({ e, inx }: any) => {
     >
       <div
         style={{
-          transform: `${open ? `translateX(-${ancho * inx}px)` : ""} `,
+          transform: `${open ? `translateX(-${ancho ?? 0 * inx}px)` : ""} `,
           transition: `transform 1.3s `,
         }}
         onClick={() => handleClick("no")}
@@ -208,7 +208,7 @@ const Children = ({ e, inx }: any) => {
                 style={{
                   marginLeft: `${ancho}px`,
                   height: `${altura}px`,
-                  width: `${ancho * 2}px`,
+                  width: `${ancho ?? 0 * 2}px`,
                 }}
                 className={`absolute z-[3] r p-12`}
               >
