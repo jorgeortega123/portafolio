@@ -4,9 +4,11 @@
     "subInfo": "desarollador full stack"
   },
   "about": {
+    "contact": "Contactar",
     "title": "Acerca de mi",
     "greeting": "Hola soy, ",
     "name": "Jorge Ortega ",
+    "skills": "Habilidades",
     "text": "programador con más de 3 años de experiencia estos incluyen trabajos como programador en empresas y como vendedor de servicios web.",
     "secondaryText": "¡Bienvenido a mi portafolio! Descubre los proyectos que he desarrollado y aprende más sobre mi trayectoria profesional."
   },
@@ -15,6 +17,28 @@
     "home": "Inicio",
     "about": "Acerca de mi",
     "projects": "Proyectos"
+  },
+  "cotainerSegments": {
+    "title": "Mis conocimientos en diferentes áreas",
+    "description": "Los proyectos en los que he trabajado abarcan estos tres hámbitos necesarios para desarrollar páginas a la medida.",
+    "projects": "Proyectos",
+    "contact": "Contactar",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Desarrollo de interfaces de usuario atractivas y funcionales utilizando tecnologías modernas como React, Next.js y Tailwind CSS."
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "Creación de APIs y servicios robustos con Node.js, Express y bases de datos como MongoDB y PostgreSQL."
+    },
+    "servicios": {
+      "title": "Servicios y platformas",
+      "description": "Implementación de soluciones en la nube, integración de sistemas y optimización de aplicaciones existentes para mejorar el rendimiento y la escalabilidad."
+    }
+  },
+  "jobs": {
+    "title": "Trabajos destacados",
+    "description": "A continuación, encontrarás una selección de los trabajos más destacados en los que he participado. Cada proyecto refleja mi compromiso con la calidad y la innovación en el desarrollo de software. Adaptados especialmente para interfaces mobiles, garantizando una experiencia de usuario fluida y atractiva."
   },
   "services": [
     "Desarrollo de aplicaciones web a gran escala",

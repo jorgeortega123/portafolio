@@ -28,7 +28,7 @@ function About() {
           <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
             <div className="flex flex-col w-full sm:items-end lg:items-start  lg:max-w-1/2 lg:pr-12 ">
               <H2 size="medium" className="lg:mb-12 mb-4 ">
-                Acerca de mi
+                {t("title")}
               </H2>
               <P
                 size="medium"
@@ -53,12 +53,12 @@ function About() {
               </P>
               <button className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-3">
                 <Icons className="stroke-white/90" icon="IconPhoneCall"></Icons>
-                Contactar
+                {t("contact")}
               </button>
             </div>
             <div className="w-full lg:max-w-1/2">
               <H2 size="medium" className="pt-6 lg:pt-0 mb-3 lg:mb-[3rem]">
-                Mis habilidades
+                {t("skills")}
               </H2>
               <div className="flex flex-wrap max-w-[530px] gap-5 ">
                 {skills.map((e, l) => {

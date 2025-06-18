@@ -4,9 +4,11 @@
         "subInfo": "full stack developer"
     },
     "about": {
+        "contact": "Contact",
         "title": "About me",
         "greeting": "Hi, I'm ",
         "name": "Jorge Ortega ",
+        "skills": "Skills",
         "text": "a programmer with over 3 years of experience, including roles as a developer in companies and as a web services seller.",
         "secondaryText": "Welcome to my portfolio! Discover the projects I've developed and learn more about my professional journey."
     },
