@@ -23,7 +23,7 @@ export default function Home({ dataPageProps }: any) {
   return (
     <>
       <Head>
-        <title>{dataPageProps.nombre} | Inicio</title>
+        <title>{`${dataPageProps.nombre} | Inicio`}</title>
         <meta
           name="description"
           content="Conoce más acerca del mejor desarrollador Full Stack en Quito. Mira sus proyectos y conoce su trabajo dentro del mundo de la informática."
