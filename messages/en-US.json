@@ -18,6 +18,12 @@
         "about": "About me",
         "projects": "Projects"
     },
+    "projects": {
+        "title": "Works",
+        "subtitle": "Custom made for my clients",
+        "description": "These projects were completely made by me, under contract with clients who requested my services",
+        "mobileFocus": "Please note that due to the tight budget, I prioritized the MOBILE aspect, to make it as user-friendly as possible, since more than 80% of the traffic on these pages comes from mobile users"
+    },
     "services": [
         "Large-scale web application development",
         "Database design and creation",
@@ -32,6 +38,23 @@
     "social": {
         "github": "https://github.com/jorgeortega123",
         "linkedin": "https://www.linkedin.com/in/jorge-ortega-quito/"
+    },
+    "cards": {
+        "title": "My knowledge ",
+        "title_split": "in different areas",
+        "subtitle": "The projects I've worked on cover these three necessary areas to develop custom pages.",
+        "frontend": {
+            "title": "Frontend",
+            "description": "Able to develop readable interfaces adaptable to any page context"
+        },
+        "backend": {
+            "title": "Backend",
+            "description": "Create scalable infrastructures following clean code best practices"
+        },
+        "services": {
+            "title": "Services/Platforms",
+            "description": "Able to handle platforms for service and API integration in an optimal way"
+        }
     },
     "trabajos": [
         {

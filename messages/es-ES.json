@@ -18,22 +18,27 @@
     "about": "Acerca de mi",
     "projects": "Proyectos"
   },
-  "cotainerSegments": {
-    "title": "Mis conocimientos en diferentes áreas",
-    "description": "Los proyectos en los que he trabajado abarcan estos tres hámbitos necesarios para desarrollar páginas a la medida.",
-    "projects": "Proyectos",
-    "contact": "Contactar",
+  "projects": {
+    "title": "Trabajos",
+    "subtitle": "Hecho a medida para mis clientes",
+    "description": "Estos proyectos fueron hechos completamente por mi persona, bajo contrato con clientes que solicitaron mis servicios",
+    "mobileFocus": "Tenga en cuenta que por el ajustado presupuesto priorizé el apartado MOBILE, para que este luzca lo más amigable con el usuario, ya que más del 80% del tráfico en estas páginas son desde usuarios mobile"
+  },
+  "cards": {
+    "title": "Mis conocimientos ",
+    "title_split": "en diferentes áreas",
+    "subtitle": "Los proyectos en los que he trabajado abarcan estos tres hámbitos necesarios para desarrollar páginas a la medida.",
     "frontend": {
       "title": "Frontend",
-      "description": "Desarrollo de interfaces de usuario atractivas y funcionales utilizando tecnologías modernas como React, Next.js y Tailwind CSS."
+      "description": "Capaz de desarrollar interfaces legibles y adaptables a cualquier contexto de la página"
     },
     "backend": {
       "title": "Backend",
-      "description": "Creación de APIs y servicios robustos con Node.js, Express y bases de datos como MongoDB y PostgreSQL."
+      "description": "Crear infraestructuras escalables siguiendo buenas prácticas de código limpio"
     },
-    "servicios": {
-      "title": "Servicios y platformas",
-      "description": "Implementación de soluciones en la nube, integración de sistemas y optimización de aplicaciones existentes para mejorar el rendimiento y la escalabilidad."
+    "services": {
+      "title": "Servicios/Plataformas",
+      "description": "Capaz de manejar plataformas para la integración de servicios y API's de una manera óptima"
     }
   },
   "jobs": {

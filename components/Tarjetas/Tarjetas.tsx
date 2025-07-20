@@ -3,6 +3,7 @@ import useMainContext from "@/context/useMainContext";
 import { Icons, ICONS } from "@llampukaq/icons";
 import React from "react";
 import Marquee from "react-fast-marquee";
+import { useTranslations } from "next-intl";
 interface tarjeta {
   title: string;
   description: string;
@@ -12,25 +13,23 @@ interface tarjeta {
 
 export default function TarjetasNew() {
   const { skills } = useMainContext();
+  const t = useTranslations("cards");
   const data: tarjeta[] = [
     {
-      title: "Frontend",
-      description:
-        "Capaz de desarrollar interfaces legibles y adaptables a cualquier contexto de la página",
+      title: t("frontend.title"),
+      description: t("frontend.description"),
       icon: "IconBrandTinder",
       type: "fr",
     },
     {
-      title: "Backend",
-      description:
-        "Crear infraestructuras escalables siguiendo buenas prácticas de código limpio",
+      title: t("frontend.title"),
+      description: t("backend.description"),
       icon: "IconDeviceDesktop",
       type: "ba",
     },
     {
-      title: "Servicios/Plataformas",
-      description:
-        "Capaz de manejar plataformas para la integración de servicios y API's de una manera óptima ",
+      title: t("services.title"),
+      description: t("services.description"),
       icon: "IconBrandCodepen",
       type: "se",
     },
@@ -40,14 +39,13 @@ export default function TarjetasNew() {
       <section className="bg-white">
         <div className="container px-6 py-10 max-w-[1500px] mx-auto">
           <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl">
-            Mi conocimiento en <br /> diferentes{" "}
-            <span className="underline decoration-blue-500">hámbitos</span>
+            {t("title")} <br />
+            <span className="underline decoration-blue-500">
+              {t("title_split")}
+            </span>
           </h1>
 
-          <p className="mt-4 text-gray-500 xl:mt-6 text-lg">
-            Los proyectos en los que he trabajado abarcan estos tres hámbitos
-            necesarios para desarrollar páginas a la medida.
-          </p>
+          <p className="mt-4 text-gray-500 xl:mt-6 text-lg">{t("subtitle")}</p>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
             {data.map((e) => (
@@ -96,10 +94,7 @@ export default function TarjetasNew() {
                   </div>{" "}
                 </Marquee> */}
                 <div className="bg-blue-100  rounded-full  p-1 w-max">
-                  <Icons
-                    className="stroke-blue-500 "
-                    icon="IconCheck"
-                  ></Icons>
+                  <Icons className="stroke-blue-500 " icon="IconCheck"></Icons>
                 </div>
 
                 {/* <a
