@@ -46,11 +46,13 @@
     "description": "A continuación, encontrarás una selección de los trabajos más destacados en los que he participado. Cada proyecto refleja mi compromiso con la calidad y la innovación en el desarrollo de software. Adaptados especialmente para interfaces mobiles, garantizando una experiencia de usuario fluida y atractiva."
   },
   "services": [
-    "Desarrollo de aplicaciones web a gran escala",
-    "Diseño y creación de bases de datos",
+    "Desarrollo de aplicaciones web",
+    "Manejo de ORM's",
+    "Diseño y creación de bases de datos SQL y noSQL",
     "Integración de sistemas y APIs",
     "Despliegue y administración de aplicaciones en la nube",
     "Integración a plataformas de maquinas virtuales",
+    "Conexión de diferentes lenguajes mediante API-REST",
     "Optimización y mantenimiento de aplicaciones existentes"
   ],
   "nombre": "Jorge Ortega",
