@@ -97,11 +97,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "PostgreSQL",
       link: "https://jorgeortega.vercel.app/assets/png/skills/postgree.png",
     },
-    {
-      type: "ba",
-      id: "MongoAtlas",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
-    },
+
     {
       type: "ba",
       id: "NodeJs",
@@ -123,6 +119,16 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       type: "ba",
       id: "Docker",
       link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
+    },
+    {
+      type: "ba",
+      id: "Prisma",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/466f27c3-e32c-45cd-910b-d03c6c0e9926",
+    },
+    {
+      type: "ba",
+      id: "SQLite",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/ad727278-3d4e-4e9e-b658-c74e36023131",
     },
     {
       type: "se",

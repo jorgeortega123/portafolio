@@ -10,7 +10,30 @@
     "name": "Jorge Ortega ",
     "skills": "Habilidades",
     "text": "programador con más de 3 años de experiencia estos incluyen trabajos como programador en empresas y como vendedor de servicios web.",
-    "secondaryText": "¡Bienvenido a mi portafolio! Descubre los proyectos que he desarrollado y aprende más sobre mi trayectoria profesional."
+    "secondaryText": "¡Bienvenido a mi portafolio! Descubre los proyectos que he desarrollado y aprende más sobre mi trayectoria profesional.",
+    "aptitudes": {
+      "title": "Aptitudes",
+      "subtitle": "Cualidades que me describen como profesional",
+      "list": [
+        {
+          "title": "Resolución de Problemas",
+          "description": "Capacidad para analizar problemas complejos y encontrar soluciones eficientes y elegantes."
+        },
+        {
+          "title": "Aprendizaje Continuo",
+          "description": "Mentalidad de crecimiento constante, adaptándose a nuevas tecnologías y metodologías."
+        },
+        {
+          "title": "Atención al Detalle",
+          "description": "Precisión en el código, documentación y seguimiento de mejores prácticas de desarrollo."
+        },
+        {
+          "title": "Trabajo en Equipo",
+          "description": "Colaboración efectiva, comunicación clara y contribución positiva al ambiente de trabajo."
+        }
+     
+      ]
+    }
   },
   "nav": {
     "contact": "Contactar",
@@ -20,9 +43,9 @@
   },
   "projects": {
     "title": "Trabajos",
-    "subtitle": "Hecho a medida para mis clientes",
+    "subtitle": "Realizados como programador freelance indepediente",
     "description": "Estos proyectos fueron hechos completamente por mi persona, bajo contrato con clientes que solicitaron mis servicios",
-    "mobileFocus": "Tenga en cuenta que por el ajustado presupuesto priorizé el apartado MOBILE, para que este luzca lo más amigable con el usuario, ya que más del 80% del tráfico en estas páginas son desde usuarios mobile"
+    "mobileFocus": ""
   },
   "cards": {
     "title": "Mis conocimientos ",
@@ -38,7 +61,7 @@
     },
     "services": {
       "title": "Servicios/Plataformas",
-      "description": "Capaz de manejar plataformas para la integración de servicios y API's de una manera óptima"
+      "description": "Capaz de manejar plataformas para la integración de servicios, despligues y API's de una manera óptima"
     }
   },
   "jobs": {

@@ -1,7 +1,7 @@
 import type { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import About from "@/components/About/About";
 import Experience from "@/components/Experience";
 import TarjetasNew from "@/components/Tarjetas/Tarjetas";
 import Testimonials from "@/components/proyectos/ProyectoContainer";

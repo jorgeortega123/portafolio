@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import H2 from "./html/H2";
 
 export default function Experience() {
   const t = useTranslations("experience");
@@ -17,9 +18,9 @@ export default function Experience() {
         <div className="flex flex-col  mx-4 items-center px-[4rem]">
           <div className="col-span-12 sm:col-span-3">
             <div className="text-center  mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto   before:dark:bg-[#0062b9]">
-              <h2 className="font-[700] pb-0 mb-[0px] text-[2.8rem] ">
+              <H2 className="font-[700] pb-0 mb-[0px] text-[2.8rem] ">
                 {t("title")}
-              </h2>
+              </H2>
               <span className="text-sm font-bold uppercase dark:text-gray-400">
                 {t("subtitle")}
               </span>
