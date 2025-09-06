@@ -55,6 +55,93 @@
     "Conexión de diferentes lenguajes mediante API-REST",
     "Optimización y mantenimiento de aplicaciones existentes"
   ],
+  "personalProjects": {
+    "title": "Proyectos personales",
+    "subtitle": "Conoce un poco más de mi con estos",
+    "description": "Desarrollados cuando tenía aproximadamente 16 - 18 años, me ayudaron a forjar la lógica que debe haber detrás de cada solución, son proyectos que desarrollé mientras estaba en condiciones de bachillerato",
+    "visit": "Visitar",
+    "code": "Código"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Aqui tienes diferentes formas de contactarte conmigo:",
+    "location": "Quito, Pinchincha, Ecuador.",
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Nombre ejemplo",
+        "required": "El nombre es obligatorio",
+        "invalid": "Ingresa un nombre válido"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "ejemplo123@email.com",
+        "required": "El email es obligatorio",
+        "invalid": "Email no válido"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Hola, me gustaría saber más información.",
+        "required": "El mensaje es obligatorio",
+        "tooShort": "Amplia tu mensaje"
+      },
+      "submit": "Enviar",
+      "success": {
+        "title": "Mensaje enviado correctamente",
+        "description": "Recibirás una respuesta lo antes posible"
+      }
+    }
+  },
+  "experience": {
+    "title": "Librerias",
+    "subtitle": "Vestibulum diam nunc",
+    "trabajos": [
+      {
+        "name": "Trabajo 1",
+        "date": "2021 - 2022",
+        "info": "Descripción del Trabajo 1"
+      },
+      {
+        "name": "Trabajo 2",
+        "date": "2019 - 2020",
+        "info": "Descripción del Trabajo 2"
+      }
+    ],
+    "estudios": [
+      {
+        "name": "Universidad 1",
+        "date": "2017 - 2021",
+        "info": "Título obtenido en Universidad 1"
+      },
+      {
+        "name": "Instituto 2",
+        "date": "2015 - 2017",
+        "info": "Título obtenido en Instituto 2"
+      }
+    ],
+    "dataProyects": [
+      {
+        "title": "Libreria 123",
+        "fecha": "Diciembre 2021",
+        "description": "Descripción de todo"
+      },
+      {
+        "title": "Libreria 456",
+        "fecha": "Enero 2022",
+        "description": "Descripción de todo"
+      },
+      {
+        "title": "Libreria 789",
+        "fecha": "Febrero 2022",
+        "description": "Descripción de todo"
+      },
+      {
+        "title": "Libreria 101",
+        "fecha": "Marzo 2022",
+        "description": "Descripción de todo"
+      }
+    ]
+  },
   "nombre": "Jorge Ortega",
   "email": "garridomateo74@gmail.com",
   "telefono": "096 271 6235",
@@ -66,13 +153,14 @@
     {
       "title": "Licoreria Spondylus",
       "sub": "Ecommerce para venta de licores",
-      "update": "ACTUALIZACIÓN: Actualmente la licorería ha cerrado y con ello cancelado totalmente el desarrollo, considere que la aplicación está un 60% terminado",
-      "description": "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas. ",
+      "update": "Actualización: MONGO REALM fue descontinuado, además la licorería cerró sus puertas y con ello el proyecto fue abandonado porque no resulta viable migrar de BaaS",
+      "description": "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas.",
       "tags": [
         "React",
         "NextJs",
         "TypeScript",
         "MongoDb",
+        "MongoREALM",
         "MongoAtlas",
         "Tailwindcss",
         "Realm",
@@ -80,7 +168,7 @@
         "PedidoYaEnvios-Api"
       ],
       "link": "https://spondylus.pages.dev/",
-      "img": "/assets/cases/casoLicoreria.jpg"
+      "img": "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg"
     },
     {
       "title": "Jandrea",
@@ -97,7 +185,7 @@
         "Firebase"
       ],
       "link": "https://www.jandrea.art/",
-      "img": "/assets/cases/casoJandrea.jpg"
+      "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
     }
   ],
   "proyects": [
@@ -158,5 +246,14 @@
       "repo": "https://github.com/jorgeortega123/Files-manager",
       "onGroup": false
     }
-  ]
+  ],
+  "footer": {
+    "social": "Social",
+    "description": "Desarrollador Full Stack en Quito",
+    "email": "Email",
+    "phone": "Teléfono",
+    "whatsapp": "Whatsapp",
+    "whatsappMessage": "Hola, vengo de tu portafolio...",
+    "copyright": "Hecho por"
+  }
 }

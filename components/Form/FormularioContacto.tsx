@@ -6,8 +6,10 @@ import {
 } from "../../db/ServerBack4app";
 import { useState } from "react";
 import { Alert } from "@heroui/react";
+import { useTranslations } from "next-intl";
 
 export const FormularioContacto = () => {
+  const t = useTranslations("contact.form");
   const {
     register,
     handleSubmit,
@@ -38,17 +40,17 @@ export const FormularioContacto = () => {
         {/* Campo Nombre */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-50 font-bold mb-2">
-            Nombre
+            {t("name.label")}
           </label>
           <input
             id="name"
             type="text"
-            placeholder="Nombre ejemplo"
+            placeholder={t("name.placeholder")}
             {...register("name", {
-              required: "El nombre es obligatorio",
+              required: t("name.required"),
               pattern: {
                 value: /^[A-Za-z\s]+$/,
-                message: "Ingresa un nombre válido",
+                message: t("name.invalid"),
               },
             })}
             className={`w-full px-3 py-2 border rounded-md ${
@@ -63,17 +65,17 @@ export const FormularioContacto = () => {
         {/* Campo Email */}
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-50 font-bold mb-2">
-            Email
+            {t("email.label")}
           </label>
           <input
-            placeholder="ejemplo123@email.com"
+            placeholder={t("email.placeholder")}
             id="email"
             type="email"
             {...register("email", {
-              required: "El email es obligatorio",
+              required: t("email.required"),
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Email no válido",
+                message: t("email.invalid"),
               },
             })}
             className={`w-full px-3 py-2 border rounded-md ${
@@ -91,15 +93,15 @@ export const FormularioContacto = () => {
             htmlFor="message"
             className="block text-gray-50 font-bold mb-2"
           >
-            Mensaje
+            {t("message.label")}
           </label>
           <textarea
-            placeholder="Hola, me gustaría saber más información."
+            placeholder={t("message.placeholder")}
             id="message"
             {...register("message", {
-              required: "El mensaje es obligatorio",
+              required: t("message.required"),
               validate: (value) =>
-                value.trim().split(/\s+/).length >= 3 || "Amplia tu mensaje",
+                value.trim().split(/\s+/).length >= 3 || t("message.tooShort"),
             })}
             rows={4}
             className={`w-full px-3 py-2 border rounded-md ${
@@ -118,18 +120,17 @@ export const FormularioContacto = () => {
           type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-200"
         >
-          Enviar
+          {t("submit")}
         </button>
         {/* {JSON.stringify(respuestaServidor)} */}
         {respuestaServidor?.success && (
           <Alert
-          className="mt-4"
+            className="mt-4"
             color="success"
-            description={"Recibirás una respuesta lo antes posible"}
-            title={respuestaServidor.message}
+            description={t("success.description")}
+            title={t("success.title")}
             variant="faded"
           />
-          // <Alert className="mt-4" color="success" title={} />
         )}
         {respuestaServidor?.success == false && (
           <Alert className="mt-4" color="danger" title={respuestaServidor.message} />

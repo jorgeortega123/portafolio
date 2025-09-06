@@ -1,56 +1,13 @@
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Experience() {
+  const t = useTranslations("experience");
   const [isSelected, setIsSelected] = useState(true);
 
-  const trabajos = [
-    {
-      name: "Trabajo 1",
-      date: "2021 - 2022",
-      info: "Descripción del Trabajo 1",
-    },
-    {
-      name: "Trabajo 2",
-      date: "2019 - 2020",
-      info: "Descripción del Trabajo 2",
-    },
-  ];
-
-  const estudios = [
-    {
-      name: "Universidad 1",
-      date: "2017 - 2021",
-      info: "Título obtenido en Universi 1",
-    },
-    {
-      name: "Instituto 2",
-      date: "2015 - 2017",
-      info: "Título obtenido en Instituto 2",
-    },
-  ];
-
-  const dataProyects = [
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-    {
-      title: "Libreria 123",
-      fecha: "Diciembre 2021",
-      description: "Descripcion de todo",
-    },
-  ];
+  const trabajos = (t.raw("trabajos") || []) as Array<{name: string, date: string, info: string}>;
+  const estudios = (t.raw("estudios") || []) as Array<{name: string, date: string, info: string}>;
+  const dataProyects = (t.raw("dataProyects") || []) as Array<{title: string, fecha: string, description: string}>;
 
   const dataToShow = isSelected ? trabajos : estudios;
 
@@ -61,10 +18,10 @@ export default function Experience() {
           <div className="col-span-12 sm:col-span-3">
             <div className="text-center  mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto   before:dark:bg-[#0062b9]">
               <h2 className="font-[700] pb-0 mb-[0px] text-[2.8rem] ">
-                Librerias
+                {t("title")}
               </h2>
               <span className="text-sm font-bold uppercase dark:text-gray-400">
-                Vestibulum diam nunc
+                {t("subtitle")}
               </span>
             </div>
           </div>

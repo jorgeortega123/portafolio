@@ -41,18 +41,21 @@ export default function TranslatePageDropDown({ dark }: { dark?: boolean }) {
           </div>
         </DropdownTrigger>
         <DropdownMenu
-          aria-label="Example with disabled actions"
-          disabledKeys={["edit", "delete"]}
+          aria-label="Language selection"
+          selectedKeys={new Set([locale])}
+          selectionMode="single"
         >
           <DropdownItem
-            key={"Drop1tem"}
+            key="en-US"
             onClick={() => handleChangeLanguage("en-US")}
+            endContent={locale === "en-US" ? <Icons icon="IconCheck" className="w-4 h-4" /> : null}
           >
             English (en-US)
           </DropdownItem>
           <DropdownItem
-            key={"Drop2tem"}
+            key="es-ES"
             onClick={() => handleChangeLanguage("es-ES")}
+            endContent={locale === "es-ES" ? <Icons icon="IconCheck" className="w-4 h-4" /> : null}
           >
             Español (es-ES)
           </DropdownItem>

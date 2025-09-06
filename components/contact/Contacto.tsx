@@ -6,8 +6,10 @@ import P from "../html/P";
 import { Icons } from "@llampukaq/icons";
 import { FormularioContacto } from "../Form/FormularioContacto";
 import { dataPage } from "@/context/dataPage";
+import { useTranslations } from "next-intl";
 
 export default function ContactFormNew() {
+  const t = useTranslations("contact");
   return (
     <section
       id="contact"
@@ -17,10 +19,10 @@ export default function ContactFormNew() {
         <div className="lg:flex lg:items-center lg:-mx-6">
           <div className="lg:w-1/2 lg:mx-6">
             <H2 className="text-2xl mb-3.5 font-semibold text-white capitalize lg:text-3xl">
-              Hablemos
+              {t("title")}
             </H2>
             <P className="text-white/90">
-              Aqui tienes diferentes formas de contactarte conmigo:
+              {t("subtitle")}
             </P>
 
             <div className="mt-6 space-y-8 md:mt-8">
@@ -46,7 +48,7 @@ export default function ContactFormNew() {
                 </svg>
 
                 <span className="mx-2 text-white truncate w-72">
-                  Quito, Pinchincha, Ecuador.
+                  {t("location")}
                 </span>
               </p>
 

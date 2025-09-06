@@ -14,6 +14,17 @@ interface TestimonialsIn {
 }
 const Testimonials: React.FC = () => {
   const t = useTranslations("projects");
+  const tRoot = useTranslations("");
+  const trabajos = (tRoot.raw("trabajos") || []) as Array<{
+    title: string;
+    sub: string;
+    update?: string;
+    description: string;
+    tags: string[];
+    link: string;
+    img: string;
+  }>;
+
   return (
     <section className="bg-white pt-[72px]">
       <div className=" px-6 py-10 mx-auto max-w-[1500px] ">
@@ -29,16 +40,9 @@ const Testimonials: React.FC = () => {
             </span>
           </p>
         </div>
-        {/* <p className="mt-4 text-gray-500 text-lg xl:mt-6">
-          Ambos proyectos tienen su dominio propio y puedes ir a verlos.
-        
-          <span className="block">
-            En cada footer de estos trabajos podrás ver mi firma digital
-          </span>
-        </p> */}
         <div className="flex flex-col gap-5">
-          {dataPage.trabajos.map((e, index) => (
-            <ContainerComponent index={index} item={e} />
+          {trabajos.map((e, index) => (
+            <ContainerComponent key={`trabajo-${index}`} index={index} item={e} />
           ))}
         </div>
       </div>

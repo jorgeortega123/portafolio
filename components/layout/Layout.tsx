@@ -22,13 +22,6 @@ function Layout({ children }: { children: ReactNode }) {
         {/* <div className={`min-h-[${minHeight}px] mt-[100px]`}>{children}</div> */}
       </div>
       <Footer />
-      {locale === "en-US" && (
-        <Alert
-          className="fixed bottom-3 left-3 max-w-max z-[12]"
-          title={"Incomplete translation into English"}
-          description={"I'm still working on it"}
-        />
-      )}
     </>
   );
 }

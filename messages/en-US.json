@@ -24,14 +24,107 @@
         "description": "These projects were completely made by me, under contract with clients who requested my services",
         "mobileFocus": "Please note that due to the tight budget, I prioritized the MOBILE aspect, to make it as user-friendly as possible, since more than 80% of the traffic on these pages comes from mobile users"
     },
+    "jobs": {
+        "title": "Featured Works",
+        "description": "Below, you'll find a selection of the most outstanding works I've participated in. Each project reflects my commitment to quality and innovation in software development. Specially adapted for mobile interfaces, ensuring a smooth and attractive user experience."
+    },
     "services": [
-        "Large-scale web application development",
-        "Database design and creation",
+        "Web application development",
+        "ORM management",
+        "SQL and NoSQL database design and creation",
         "System and API integration",
         "Cloud application deployment and management",
-        "Integration with virtual machine platforms",
+        "Virtual machine platform integration",
+        "Different language connection through REST APIs",
         "Optimization and maintenance of existing applications"
     ],
+    "personalProjects": {
+        "title": "Personal Projects",
+        "subtitle": "Learn a little more about me with these",
+        "description": "Developed when I was approximately 16-18 years old, they helped me forge the logic that should be behind each solution, they are projects that I developed while I was in high school conditions",
+        "visit": "Visit",
+        "code": "Code"
+    },
+    "contact": {
+        "title": "Let's Talk",
+        "subtitle": "Here are different ways to contact me:",
+        "location": "Quito, Pichincha, Ecuador.",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Example name",
+                "required": "Name is required",
+                "invalid": "Please enter a valid name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "example123@email.com",
+                "required": "Email is required",
+                "invalid": "Invalid email"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Hello, I would like to know more information.",
+                "required": "Message is required",
+                "tooShort": "Please expand your message"
+            },
+            "submit": "Send",
+            "success": {
+                "title": "Message sent successfully",
+                "description": "You will receive a response as soon as possible"
+            }
+        }
+    },
+    "experience": {
+        "title": "Libraries",
+        "subtitle": "Vestibulum diam nunc",
+        "trabajos": [
+            {
+                "name": "Job 1",
+                "date": "2021 - 2022",
+                "info": "Description of Job 1"
+            },
+            {
+                "name": "Job 2",
+                "date": "2019 - 2020",
+                "info": "Description of Job 2"
+            }
+        ],
+        "estudios": [
+            {
+                "name": "University 1",
+                "date": "2017 - 2021",
+                "info": "Degree obtained at University 1"
+            },
+            {
+                "name": "Institute 2",
+                "date": "2015 - 2017",
+                "info": "Degree obtained at Institute 2"
+            }
+        ],
+        "dataProyects": [
+            {
+                "title": "Library 123",
+                "fecha": "December 2021",
+                "description": "Description of everything"
+            },
+            {
+                "title": "Library 456",
+                "fecha": "January 2022",
+                "description": "Description of everything"
+            },
+            {
+                "title": "Library 789",
+                "fecha": "February 2022",
+                "description": "Description of everything"
+            },
+            {
+                "title": "Library 101",
+                "fecha": "March 2022",
+                "description": "Description of everything"
+            }
+        ]
+    },
     "nombre": "Jorge Ortega",
     "email": "garridomateo74@gmail.com",
     "telefono": "096 271 6235",
@@ -59,14 +152,15 @@
     "trabajos": [
         {
             "title": "Licoreria Spondylus",
-            "sub": "Ecommerce para venta de licores",
-            "update": "ACTUALIZACIÓN: Actualmente la licorería ha cerrado y con ello cancelado totalmente el desarrollo, considere que la aplicación está un 60% terminado",
-            "description": "Aplicación web que permite la compra de bebidas. Este proyecto consistió en adaptar una tienda física a una tienda en línea, gestionando todos los parámetros correspondientes como inventario, precios, descuentos, entre otros. Además, incluye la integración de una API con un servicio de mensajería para la entrega de bebidas. ",
+            "sub": "Ecommerce for liquor sales",
+            "update": "Update: MONGO REALM was discontinued, also the liquor store closed its doors and with it the project was abandoned because it is not viable to migrate from BaaS",
+            "description": "Web application that allows the purchase of beverages. This project consisted of adapting a physical store to an online store, managing all corresponding parameters such as inventory, prices, discounts, among others. It also includes the integration of an API with a messaging service for beverage delivery.",
             "tags": [
                 "React",
                 "NextJs",
                 "TypeScript",
                 "MongoDb",
+                "MongoREALM",
                 "MongoAtlas",
                 "Tailwindcss",
                 "Realm",
@@ -74,12 +168,12 @@
                 "PedidoYaEnvios-Api"
             ],
             "link": "https://spondylus.pages.dev/",
-            "img": "/assets/cases/casoLicoreria.jpg"
+            "img": "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg"
         },
         {
             "title": "Jandrea",
-            "sub": "Ecommerce para venta de servicios como Corte Láser, Impresión 3D y otros objetos personalizables",
-            "description": "App web enfocada en un catálogo intereractivo. Aún sigo brindando ciertas mejoras visuales y optimización de interfaz. Acompañado de la página tambien realice marketing en redes sociales para impulsar las ventas en línea",
+            "sub": "Ecommerce for selling services like Laser Cutting, 3D Printing and other customizable objects",
+            "description": "Web app focused on an interactive catalog. I still continue providing certain visual improvements and interface optimization. Along with the page, I also carried out social media marketing to boost online sales",
             "tags": [
                 "React",
                 "NextJs",
@@ -91,14 +185,14 @@
                 "Firebase"
             ],
             "link": "https://www.jandrea.art/",
-            "img": "/assets/cases/casoJandrea.jpg"
+            "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
         }
     ],
     "proyects": [
         {
             "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
             "title": "Jet Match",
-            "about": "Registra tus <span class=\"text-bold\">rutinas </span> y <span class=\"text-bold\">préstamos bancarios</span> de manera visual y motivadora. Con esta aplicación, podrás <span class=\"text-bold\">pintar</span> un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible.",
+            "about": "Record your <span class=\"text-bold\">routines </span> and <span class=\"text-bold\">bank loans</span> in a visual and motivating way. With this application, you can <span class=\"text-bold\">paint</span> a picture for each interaction you make, thus seeing your progress and achievements tangibly.",
             "tags": [
                 "NextJs",
                 "React",
@@ -112,7 +206,7 @@
         {
             "title": "My Money",
             "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1688088931/Frame_1_qdkriy.png",
-            "about": "Una billetera digital que permite tener gestionado los <span class=\"text-bold\">egresos personales</span> del usuario en un determinado tiempo. Almacena en el historial todas las <span class=\"text-bold\">transacciones</span> del usuario a través de costos y gastos, fijos y variables que permiten hacer <span class=\"text-bold\">ciencias de datos</span> con la información obtenida.",
+            "about": "A digital wallet that allows managing the user's <span class=\"text-bold\">personal expenses</span> over a certain time. It stores all user <span class=\"text-bold\">transactions</span> in history through fixed and variable costs and expenses that allow <span class=\"text-bold\">data science</span> with the obtained information.",
             "tags": [
                 "React",
                 "Typescript",
@@ -127,7 +221,7 @@
         },
         {
             "title": "CountDowns",
-            "about": "Página web que permite crear <span class=\"text-bold\">conteos regresivos</span>, ya sea para recordar alguna <span class=\"text-bold\">fecha importante</span> o para tener en cuenta cuantos días falta para que una fecha específica suceda. Tiene conteos predefinidos. Como <span class=\"text-bold\">eventos astronómicos</span>, feriados y <span class=\"text-bold\">sucesos mundiales</span>.",
+            "about": "Website that allows creating <span class=\"text-bold\">countdowns</span>, whether to remember an <span class=\"text-bold\">important date</span> or to keep track of how many days are left until a specific date happens. It has predefined countdowns. Such as <span class=\"text-bold\">astronomical events</span>, holidays and <span class=\"text-bold\">world events</span>.",
             "tags": [
                 "react",
                 "BackApp",
@@ -142,7 +236,7 @@
         {
             "title": "Files Manager",
             "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
-            "about": "Aplicación sencilla creada a partir de <span class=\"text-bold\">Batch Scripting</span> (Windows) Gestionaba documentos (.docx, .pdf) en carpetas con el nombre de alguna materia escolar. A inicios de <span class=\"text-bold\">pandemia</span> desarrollé esto como un método para hacer más fácil la nueva <span class=\"text-bold\">modalidad online</span> en el colegio.",
+            "about": "Simple application created from <span class=\"text-bold\">Batch Scripting</span> (Windows) that managed documents (.docx, .pdf) in folders named after school subjects. At the beginning of the <span class=\"text-bold\">pandemic</span> I developed this as a method to make the new <span class=\"text-bold\">online mode</span> at school easier.",
             "tags": [
                 "Batch",
                 "Python",
@@ -152,5 +246,14 @@
             "repo": "https://github.com/jorgeortega123/Files-manager",
             "onGroup": false
         }
-    ]
+    ],
+    "footer": {
+        "social": "Social",
+        "description": "Full Stack Developer in Quito",
+        "email": "Email",
+        "phone": "Phone",
+        "whatsapp": "Whatsapp",
+        "whatsappMessage": "Hello, I come from your portfolio...",
+        "copyright": "Made by"
+    }
 }
