@@ -18,7 +18,7 @@ module.exports = () => {
       ignoreDuringBuilds: true,
     },
     i18n: {
-      locales: ["es-ES", "en-US"],
+      locales: ["es-ES", "en-US", "zh-CN"],
       defaultLocale: "en-US",
     },
   });

@@ -1,0 +1,281 @@
+{
+    "home": {
+        "contact": "联系我",
+        "subInfo": "全栈开发工程师"
+    },
+    "about": {
+        "contact": "联系我",
+        "title": "关于我",
+        "greeting": "你好，我是",
+        "name": "Jorge Ortega",
+        "skills": "技能",
+        "text": "一名拥有超过3年经验的程序员，包括在公司担任开发工程师和网络服务销售员的工作经历。",
+        "secondaryText": "欢迎来到我的作品集！了解我开发的项目，并深入了解我的职业历程。",
+        "aptitudes": {
+            "title": "专业能力",
+            "subtitle": "描述我作为专业人士的品质",
+            "list": [
+                {
+                    "title": "问题解决能力",
+                    "description": "能够分析复杂问题并找到高效、优雅的解决方案。"
+                },
+                {
+                    "title": "持续学习",
+                    "description": "不断成长的心态，适应新技术和新方法。"
+                },
+                {
+                    "title": "注重细节",
+                    "description": "在代码、文档和遵循开发最佳实践方面精益求精。"
+                },
+                {
+                    "title": "团队合作",
+                    "description": "有效协作、清晰沟通，为工作环境做出积极贡献。"
+                }
+            ]
+        }
+    },
+    "nav": {
+        "contact": "联系我",
+        "home": "首页",
+        "about": "关于我",
+        "projects": "项目"
+    },
+    "projects": {
+        "title": "作品",
+        "subtitle": "为客户定制开发",
+        "description": "这些项目完全由我个人开发，是与请求我的服务的客户签约完成的",
+        "mobileFocus": ""
+    },
+    "jobs": {
+        "title": "精选作品",
+        "description": "以下是我参与的最杰出作品的精选。每个项目都体现了我对软件开发质量和创新的承诺。特别适配移动端界面，确保流畅、吸引人的用户体验。"
+    },
+    "services": [
+        "网页应用程序开发",
+        "ORM管理",
+        "SQL和NoSQL数据库设计与创建",
+        "系统和API集成",
+        "云应用程序部署和管理",
+        "虚拟机平台集成",
+        "通过REST API连接不同语言",
+        "现有应用程序优化和维护"
+    ],
+    "personalProjects": {
+        "title": "个人项目",
+        "subtitle": "通过这些项目更多了解我",
+        "description": "这些项目是我大约16-18岁时开发的，帮助我构建了每个解决方案背后应有的逻辑，它们是我在高中时期开发的项目",
+        "visit": "访问",
+        "code": "代码"
+    },
+    "contact": {
+        "title": "让我们聊聊",
+        "subtitle": "以下是联系我的不同方式：",
+        "location": "厄瓜多尔，皮钦查省，基多市。",
+        "form": {
+            "name": {
+                "label": "姓名",
+                "placeholder": "示例姓名",
+                "required": "姓名为必填项",
+                "invalid": "请输入有效姓名"
+            },
+            "email": {
+                "label": "邮箱",
+                "placeholder": "example123@email.com",
+                "required": "邮箱为必填项",
+                "invalid": "邮箱格式无效"
+            },
+            "message": {
+                "label": "留言",
+                "placeholder": "你好，我想了解更多信息。",
+                "required": "留言为必填项",
+                "tooShort": "请详细描述您的留言"
+            },
+            "submit": "发送",
+            "success": {
+                "title": "消息发送成功",
+                "description": "您将尽快收到回复"
+            }
+        }
+    },
+    "experience": {
+        "title": "技术库",
+        "subtitle": "Vestibulum diam nunc",
+        "trabajos": [
+            {
+                "name": "工作 1",
+                "date": "2021 - 2022",
+                "info": "工作1描述"
+            },
+            {
+                "name": "工作 2",
+                "date": "2019 - 2020",
+                "info": "工作2描述"
+            }
+        ],
+        "estudios": [
+            {
+                "name": "大学 1",
+                "date": "2017 - 2021",
+                "info": "在大学1获得的学位"
+            },
+            {
+                "name": "学院 2",
+                "date": "2015 - 2017",
+                "info": "在学院2获得的学位"
+            }
+        ],
+        "dataProyects": [
+            {
+                "title": "技术库 123",
+                "fecha": "2021年12月",
+                "description": "所有内容的描述"
+            },
+            {
+                "title": "技术库 456",
+                "fecha": "2022年1月",
+                "description": "所有内容的描述"
+            },
+            {
+                "title": "技术库 789",
+                "fecha": "2022年2月",
+                "description": "所有内容的描述"
+            },
+            {
+                "title": "技术库 101",
+                "fecha": "2022年3月",
+                "description": "所有内容的描述"
+            }
+        ]
+    },
+    "nombre": "Jorge Ortega",
+    "email": "garridomateo74@gmail.com",
+    "telefono": "096 271 6235",
+    "social": {
+        "github": "https://github.com/jorgeortega123",
+        "linkedin": "https://www.linkedin.com/in/jorge-ortega-quito/"
+    },
+    "cards": {
+        "title": "我的专业知识",
+        "title_split": "在不同领域",
+        "subtitle": "我参与的项目涵盖了开发定制页面所必需的这三个领域。",
+        "frontend": {
+            "title": "前端",
+            "description": "能够开发适应任何页面环境的可读界面"
+        },
+        "backend": {
+            "title": "后端",
+            "description": "创建遵循简洁代码最佳实践的可扩展基础架构"
+        },
+        "services": {
+            "title": "服务/平台",
+            "description": "能够以最佳方式处理服务和API集成平台"
+        }
+    },
+    "trabajos": [
+        {
+            "title": "Spondylus酒类专卖店",
+            "sub": "酒类销售电商平台",
+            "update": "更新：MONGO REALM已停用，此外酒类专卖店已关闭，项目因无法从BaaS迁移而被放弃",
+            "description": "允许购买饮品的网页应用程序。该项目包括将实体店适配为在线商店，管理库存、价格、折扣等所有相应参数。还包括与饮品配送消息服务的API集成。",
+            "tags": [
+                "React",
+                "NextJs",
+                "TypeScript",
+                "MongoDb",
+                "MongoREALM",
+                "MongoAtlas",
+                "Tailwindcss",
+                "Realm",
+                "Cloudflare",
+                "PedidoYaEnvios-Api"
+            ],
+            "link": "https://spondylus.pages.dev/",
+            "img": "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg"
+        },
+        {
+            "title": "Jandrea",
+            "sub": "激光切割、3D打印和其他定制物品的服务销售电商",
+            "description": "专注于交互式目录的网页应用。我仍在提供某些视觉改进和界面优化。除了网页，我还进行社交媒体营销来推动在线销售",
+            "tags": [
+                "React",
+                "NextJs",
+                "TypeScript",
+                "MongoDb",
+                "MongoAtlas",
+                "Realm",
+                "Cloudflare",
+                "Firebase"
+            ],
+            "link": "https://www.jandrea.art/",
+            "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
+        }
+    ],
+    "proyects": [
+        {
+            "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
+            "title": "Jet Match",
+            "about": "以视觉化和激励的方式记录您的<span class=\"text-bold\">日常习惯</span>和<span class=\"text-bold\">银行贷款</span>。通过这个应用程序，您可以为每次互动<span class=\"text-bold\">绘制</span>一幅画，从而以有形的方式看到您的进步和成就。",
+            "tags": [
+                "NextJs",
+                "React",
+                "TypeScript",
+                "PostgreeSQL"
+            ],
+            "web": "https://jetmatch.pages.dev",
+            "repo": "https://github.com/jorgeortega123/JetMatch",
+            "onGroup": false
+        },
+        {
+            "title": "My Money",
+            "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1688088931/Frame_1_qdkriy.png",
+            "about": "一个数字钱包，允许在特定时间内管理用户的<span class=\"text-bold\">个人支出</span>。通过固定和可变的成本和费用在历史记录中存储用户的所有<span class=\"text-bold\">交易</span>，从而可以对获得的信息进行<span class=\"text-bold\">数据科学</span>分析。",
+            "tags": [
+                "React",
+                "Typescript",
+                "Express",
+                "TailwindCss",
+                "TelegramApi",
+                "GoogleApi"
+            ],
+            "web": "https://mymoneyapp.pages.dev/app/myMoney",
+            "repo": "https://github.com/jorgeortega123/MyMoneyApp",
+            "onGroup": false
+        },
+        {
+            "title": "CountDowns",
+            "about": "允许创建<span class=\"text-bold\">倒计时</span>的网站，无论是为了记住某个<span class=\"text-bold\">重要日期</span>还是为了记录距离特定日期发生还有多少天。它有预定义的倒计时，如<span class=\"text-bold\">天文事件</span>、节假日和<span class=\"text-bold\">世界事件</span>。",
+            "tags": [
+                "react",
+                "BackApp",
+                "Parse",
+                "MongoDb"
+            ],
+            "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
+            "web": "https://countdown-holidays.pages.dev/",
+            "repo": "https://github.com/jorgeortega123/countdown",
+            "onGroup": false
+        },
+        {
+            "title": "Files Manager",
+            "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
+            "about": "使用<span class=\"text-bold\">批处理脚本</span>（Windows）创建的简单应用程序，可以管理以学校科目命名的文件夹中的文档（.docx、.pdf）。在<span class=\"text-bold\">疫情</span>初期，我开发了这个应用程序，以便更轻松地适应学校的新<span class=\"text-bold\">在线模式</span>。",
+            "tags": [
+                "Batch",
+                "Python",
+                "Windows"
+            ],
+            "web": "https://github.com/jorgeortega123/Files-manager",
+            "repo": "https://github.com/jorgeortega123/Files-manager",
+            "onGroup": false
+        }
+    ],
+    "footer": {
+        "social": "社交媒体",
+        "description": "基多全栈开发工程师",
+        "email": "邮箱",
+        "phone": "电话",
+        "whatsapp": "微信",
+        "whatsappMessage": "你好，我来自您的作品集...",
+        "copyright": "制作者"
+    }
+}
