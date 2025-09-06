@@ -42,14 +42,14 @@ export default function NavBar() {
 
   return (
     <div
-      className={`anim-delay-nav w-full flex justify-center items-center ${
+      className={`anim-delay-nav w-full flex justify-center items-center transition-all duration-300 ${
         showNavbar
-          ? "z-[21] fixed top-0 opacity-100  border bg-white shadow-md"
-          : "opacity-0   fixed top-[-110px]"
+          ? "z-[21] fixed top-0 opacity-100 bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-200/30"
+          : "opacity-0 fixed top-[-110px]"
       }`}
     >
-      <div className="w-full flex items-center justify-between max-w-[1200px] mx-auto  px-6 md:px-12">
-        <div className="text-zinc-900 flex gap-3 items-center">
+      <div className="w-full flex items-center justify-between max-w-[1200px] mx-auto px-6 md:px-12 py-2">
+        <div className="text-zinc-900 flex gap-4 items-center">
           {/* <div className="header__logo-img-cont">
               <img
                 src="./assets/png/luis.jpg"
@@ -60,31 +60,31 @@ export default function NavBar() {
           <Link href={"/"}>
             <H2
               size="small"
-              className="shrink-0 font-normal border border-blue-500  bg-white tracking-wide w-max  text-blue-500 px-9 py-4  rounded-[10px]"
+              className="shrink-0 font-bold text-blue-700 hover:text-blue-800 transition-colors duration-300"
             >
               {dataPage.nombre}
             </H2>
           </Link>
           <TranslatePageDropDown dark />
         </div>
-        <div className="flex gap-2   ">
-          <ul className="text-black  gap-5  hidden  sm:flex lg:gap-5 w-full lg:pr-5">
+        <div className="flex gap-4 items-center">
+          <ul className="text-black gap-6 hidden sm:flex lg:gap-8 w-full items-center">
             {links.map((x, index) => (
               <>
-                <Link className="my-auto" href={x.link} key={index}>
-                  <li className=" cursor-pointer" key={index}>
-                    <p className="font-medium text-[1.2rem] cursor-pointer hover:underline  ">
+                <Link className="my-auto group" href={x.link} key={index}>
+                  <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors duration-200" key={index}>
+                    <p className="font-medium text-[1.1rem] cursor-pointer hover:text-blue-600 transition-colors duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                       {x.name}
                     </p>
                   </li>
                 </Link>
-                {index + 1 < links.length && <Divider orientation="vertical" />}
+                {index + 1 < links.length && <div className="w-px h-6 bg-gray-300/50"></div>}
               </>
             ))}
           </ul>
           <Link
             href={"#contact"}
-            className="p-2 rounded-lg text-white flex items-center  justify-center tracking-widest  transition-colors duration-200 bg-blue-500 hover:bg-blue-600  cursor-pointer px-7"
+            className="px-6 py-2.5 rounded-xl text-white flex items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
           >
             {t("contact")}
           </Link>

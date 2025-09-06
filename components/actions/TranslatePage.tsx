@@ -48,16 +48,35 @@ export default function TranslatePageDropDown({ dark }: { dark?: boolean }) {
           <DropdownItem
             key="en-US"
             onClick={() => handleChangeLanguage("en-US")}
-            endContent={locale === "en-US" ? <Icons icon="IconCheck" className="w-4 h-4" /> : null}
+            endContent={
+              locale === "en-US" ? (
+                <Icons icon="IconCheck" className="w-4 h-4" />
+              ) : null
+            }
           >
             English (en-US)
           </DropdownItem>
           <DropdownItem
             key="es-ES"
             onClick={() => handleChangeLanguage("es-ES")}
-            endContent={locale === "es-ES" ? <Icons icon="IconCheck" className="w-4 h-4" /> : null}
+            endContent={
+              locale === "es-ES" ? (
+                <Icons icon="IconCheck" className="w-4 h-4" />
+              ) : null
+            }
           >
             Español (es-ES)
+          </DropdownItem>
+          <DropdownItem
+            key="zh-CN"
+            onClick={() => handleChangeLanguage("zh-CN")}
+            endContent={
+              locale === "zh-CN" ? (
+                <Icons icon="IconCheck" className="w-4 h-4" />
+              ) : null
+            }
+          >
+            Chinese (zh-CN)
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
