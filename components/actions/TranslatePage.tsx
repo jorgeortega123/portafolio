@@ -42,7 +42,7 @@ export default function TranslatePageDropDown({ dark }: { dark?: boolean }) {
         </DropdownTrigger>
         <DropdownMenu
           aria-label="Language selection"
-          selectedKeys={new Set([locale])}
+          selectedKeys={locale ? new Set([locale]) : new Set()}
           selectionMode="single"
         >
           <DropdownItem

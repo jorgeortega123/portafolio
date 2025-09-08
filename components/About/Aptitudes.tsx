@@ -66,10 +66,7 @@ export default function Aptitudes() {
                         : "IconClock"
                     }
                     className="stroke-white text-white"
-                    style={{
-                      width: "clamp(1rem, 2vw, 1.25rem)",
-                      height: "clamp(1rem, 2vw, 1.25rem)",
-                    }}
+                  
                   />
                 </div>
                 <h3
@@ -93,10 +90,7 @@ export default function Aptitudes() {
                 <Icons
                   icon="IconChevronDown"
                   className="w-5 h-5 stroke-zinc-900 transition-colors duration-300"
-                  style={{
-                    width: "clamp(1.25rem, 2vw, 1.5rem)",
-                    height: "clamp(1.25rem, 2vw, 1.5rem)",
-                  }}
+              
                 />
               </div>
             </div>
