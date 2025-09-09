@@ -15,7 +15,7 @@ export default function P({ children, className = "", size, style }: PProps) {
       case "normal":
         return "text-[.9rem] lg:text-[1rem]";
       case "medium":
-        return "  lg:text-[1.2rem] text-md font-medium text-zinc-800 ";
+        return "  lg:text-[1.2rem] text-md font-medium  ";
       default:
         return "text-[.9rem] lg:text-[1rem]";
     }

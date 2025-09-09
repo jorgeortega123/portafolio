@@ -31,7 +31,6 @@
           "title": "Trabajo en Equipo",
           "description": "Colaboración efectiva, comunicación clara y contribución positiva al ambiente de trabajo."
         }
-     
       ]
     }
   },
@@ -174,6 +173,24 @@
   },
   "trabajos": [
     {
+      "title": "Jandrea",
+      "sub": "Ecommerce para venta de servicios como Corte Láser, Impresión 3D y otros objetos personalizables",
+      "description": "App web enfocada en un catálogo intereractivo. Aún sigo brindando ciertas mejoras visuales y optimización de interfaz. Acompañado de la página tambien realice marketing en redes sociales para impulsar las ventas en línea",
+      "tags": [
+        "React",
+        "NextJs",
+        "TypeScript",
+        "SQLite",
+        "MongoAtlas",
+        "Realm",
+        "HonoJs",
+        "Cloudflare",
+        "Firebase"
+      ],
+      "link": "https://www.jandrea.art/",
+      "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
+    },
+    {
       "title": "Licoreria Spondylus",
       "sub": "Ecommerce para venta de licores",
       "update": "Actualización: MONGO REALM fue descontinuado, además la licorería cerró sus puertas y con ello el proyecto fue abandonado porque no resulta viable migrar de BaaS",
@@ -192,23 +209,6 @@
       ],
       "link": "https://spondylus.pages.dev/",
       "img": "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg"
-    },
-    {
-      "title": "Jandrea",
-      "sub": "Ecommerce para venta de servicios como Corte Láser, Impresión 3D y otros objetos personalizables",
-      "description": "App web enfocada en un catálogo intereractivo. Aún sigo brindando ciertas mejoras visuales y optimización de interfaz. Acompañado de la página tambien realice marketing en redes sociales para impulsar las ventas en línea",
-      "tags": [
-        "React",
-        "NextJs",
-        "TypeScript",
-        "MongoDb",
-        "MongoAtlas",
-        "Realm",
-        "Cloudflare",
-        "Firebase"
-      ],
-      "link": "https://www.jandrea.art/",
-      "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
     }
   ],
   "proyects": [

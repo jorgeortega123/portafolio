@@ -13,7 +13,6 @@ export default function NavBar() {
     { link: "/", name: t("home") },
     { link: "/#me", name: t("about") },
     { link: "/#proyectos", name: t("projects") },
-
   ];
 
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
@@ -72,19 +71,24 @@ export default function NavBar() {
             {links.map((x, index) => (
               <>
                 <Link className="my-auto group" href={x.link} key={index}>
-                  <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors duration-200" key={index}>
+                  <li
+                    className="cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                    key={index}
+                  >
                     <p className="font-medium text-[1.1rem] cursor-pointer hover:text-blue-600 transition-colors duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                       {x.name}
                     </p>
                   </li>
                 </Link>
-                {index + 1 < links.length && <div className="w-px h-6 bg-gray-300/50"></div>}
+                {index + 1 < links.length && (
+                  <div className="w-px h-6 bg-gray-300/50"></div>
+                )}
               </>
             ))}
           </ul>
           <Link
             href={"#contact"}
-            className="px-6 py-2.5 rounded-xl text-white flex items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
+            className="px-6 py-2.5 max-w-max w-max rounded-xl text-white flex items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
           >
             {t("contact")}
           </Link>

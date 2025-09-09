@@ -92,6 +92,13 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "MongoDb",
       link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
     },
+
+    {
+      type: "ba",
+      id: "HonoJs",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/efc002c1-58a4-4e38-b954-de2c2dd445c9",
+    },
+
     {
       type: "ba",
       id: "PostgreSQL",

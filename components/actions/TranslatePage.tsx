@@ -28,7 +28,7 @@ export default function TranslatePageDropDown({ dark }: { dark?: boolean }) {
         <DropdownTrigger>
           <div
             className={`${
-              dark ? "bg-zinc-700" : "bg-zinc-50"
+              dark ? "bg-zinc-800" : "bg-zinc-50"
             } cursor-pointer flex items-center justify-center gap-2 rounded-lg py-1.5 px-3`}
           >
             <Icons

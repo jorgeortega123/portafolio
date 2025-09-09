@@ -34,12 +34,12 @@ function Header() {
               </H2>
               <P
                 size="medium"
-                className="text-sm lg:text-[1.5rem] ml-[5.5%] shrink-0 text-[#9ba7b1]"
+                className="text-sm lg:text-[1.5rem] ml-[5.5%] shrink-0 text-zinc-400"
               >
                 {t("subInfo")}
               </P>
             </div>
-            <TranslatePageDropDown/>
+            <TranslatePageDropDown />
 
             <Link
               href={"#contact"}

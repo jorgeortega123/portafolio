@@ -8,6 +8,24 @@ import P from "../html/P";
 import { Alert, Button, Tooltip } from "@heroui/react";
 import { Icons } from "@llampukaq/icons";
 
+const rgbBorderStyle = `
+  @keyframes rgb-border {
+    0% { border-color: #ff0000; }
+    8.33% { border-color: #ff8000; }
+    16.66% { border-color: #ffff00; }
+    25% { border-color: #80ff00; }
+    33.33% { border-color: #00ff00; }
+    41.66% { border-color: #00ff80; }
+    50% { border-color: #00ffff; }
+    58.33% { border-color: #0080ff; }
+    66.66% { border-color: #0000ff; }
+    75% { border-color: #8000ff; }
+    83.33% { border-color: #ff00ff; }
+    91.66% { border-color: #ff0080; }
+    100% { border-color: #ff0000; }
+  }
+`;
+
 export default function ContainerComponent({
   item,
   index,
@@ -36,10 +54,12 @@ export default function ContainerComponent({
     //   setfullScreen(!fullScreen);
   };
   return (
-    <main
-      id={`container-pr-${index}`}
-      className="relative z-[8] w-full mt-8 md:flex md:items-center xl:mt-12"
-    >
+    <>
+      <style jsx >{rgbBorderStyle}</style>
+      <main
+        id={`container-pr-${index}`}
+        className="relative z-[8] w-full mt-8 md:flex md:items-center xl:mt-12"
+      >
       <div
         className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
       ></div>
@@ -76,22 +96,26 @@ export default function ContainerComponent({
 
             {/* {item?.update && <Alert variant="flat" description={item.update} />} */}
             <div className="flex flex-wrap gap-3 py-2">
-              {item.tags.map((tag) => {
+              {item.tags.map((tag, tagIndex) => {
                 const skill = skills.find(
                   (skill) => skill.id.toLowerCase() == tag.toLowerCase()
                 );
                 return (
                   <>
                     {skill && (
-                      <div className="flex  gap-2 pr-3 items-center justify-center bg-zinc-800/60 border border-zinc-800 text-zinc-50 px-2 rounded-full">
+                      <div 
+                        key={`${skill.id}-${tagIndex}`}
+                        className="group relative flex gap-2 items-center justify-center bg-zinc-800/40 border border-zinc-700/30 text-zinc-200 px-2.5 py-1.5 rounded-lg transition-all duration-300 hover:bg-zinc-700/50"
+                      >
+                        <div className="absolute inset-0 rounded-lg border-2 border-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[rgb-border_2s_linear_infinite] transition-opacity duration-300"></div>
                         <Img
-                          className="max-w-[26px] w-full p-1"
+                          className="max-w-[22px] w-full p-0.5 transition-transform duration-200 group-hover:scale-105"
                           link
                           src={skill.link}
                           alt={skill.id}
                           q={10}
                         />
-                        <p>{skill.id}</p>
+                        <p className="text-xs font-medium group-hover:text-zinc-100 transition-colors duration-200">{skill.id}</p>
                       </div>
                     )}
                   </>
@@ -132,5 +156,6 @@ export default function ContainerComponent({
         </div>
       </div>
     </main>
+    </>
   );
 }
