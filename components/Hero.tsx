@@ -61,7 +61,7 @@ function Hero() {
         headers: {
           'Content-Type': 'application/json',
           'x-goog-api-client': 'google-genai-sdk/1.16.0 gl-node/web',
-          'x-goog-api-key': process.env.NEXT_PUBLIC_GEMINI_API_KEY
+          'x-goog-api-key': process.env.NEXT_PUBLIC_GEMINI_API_KEY || ''
         },
         body: JSON.stringify({
           contents: [{
