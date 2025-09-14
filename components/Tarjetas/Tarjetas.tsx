@@ -37,42 +37,42 @@ export default function TarjetasNew() {
   ];
   return (
     <>
-      <section className="bg-white">
-        <div className="container px-6 py-10 max-w-[1500px] mx-auto">
-          <H2 className="text-2xl  font-semibold text-gray-800 capitalize lg:text-3xl">
+      <section className="bg-[#111827]">
+        <div className="container px-6 py-12 max-w-[1500px] mx-auto">
+          <H2 className="text-2xl  font-semibold text-white capitalize lg:text-3xl">
             {t("title")} <br />
             <span className="underline decoration-blue-500 pt-3">
               {t("title_split")}
             </span>
           </H2>
 
-          <p className="mt-4 text-gray-500 xl:mt-6 text-lg">{t("subtitle")}</p>
+          <p className="mt-4 text-gray-300 xl:mt-6 text-lg">{t("subtitle")}</p>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
             {data.map((e) => (
-              <div className="p-8 space-y-3 border-2 border-blue-400 rounded-xl">
-                <span className="inline-block text-blue-500 bg-blue-100 p-2 rounded-full">
+              <div className="p-8 space-y-3 border-2 border-gray-600 hover:border-blue-400 bg-gray-800/30 rounded-xl transition-all duration-300">
+                <span className="inline-block text-blue-400 bg-blue-400/20 p-2 rounded-full">
                   <Icons
                     stroke={2}
-                    className="stroke-blue-500"
+                    className="stroke-blue-400"
                     size={24}
                     icon={e.icon}
                   />
                 </span>
                 <div className="flex gap02 items-center justify-start">
                   {" "}
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize">
+                  <h1 className="text-xl font-semibold text-white capitalize">
                     {e.title}
                   </h1>{" "}
                   <div className=" rounded-full  p-1 w-max">
                     <Icons
-                      className="stroke-blue-500 "
+                      className="stroke-blue-400 "
                       icon="IconCheck"
                     ></Icons>
                   </div>
                 </div>
 
-                <p className="text-gray-500">{e.description}</p>
+                <p className="text-gray-300">{e.description}</p>
 
                 {/* <Marquee
                   speed={20}

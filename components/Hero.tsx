@@ -17,8 +17,11 @@ function Hero() {
   const [backgroundPrompt, setBackgroundPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [showInput, setShowInput] = useState(false);
-  const [backgroundImage, setBackgroundImage] = useState('url("https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586")');
-  const defaultBackgroundImage = 'url("https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586")';
+  const [backgroundImage, setBackgroundImage] = useState(
+    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586&output=webp&w=1950&q=90")'
+  );
+  const defaultBackgroundImage =
+    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586&output=webp&w=1950&q=90")';
   const [showInitialAnimation, setShowInitialAnimation] = useState(true);
 
   const handleOnClick = (e: string) => {
@@ -28,7 +31,8 @@ function Hero() {
   const prompts = [
     "un 'hola mundo' escrito  con con nubes en un cielo estrellado de noche con caligrafica de letra escrita",
     "Montañas nevadas con aurora boreal en el cielo nocturno",
-    "Pantallas de código flotando en un espacio digital azul"
+    "el logo de star wars remaked en graffiti en una pared urbana",
+    "Pantallas de código flotando en un espacio digital azul",
   ];
 
   useEffect(() => {
@@ -43,44 +47,58 @@ function Hero() {
     setIsGenerating(true);
     try {
       // Primero obtenemos la imagen de la URL
-      const imageResponse = await fetch('https://jandrea-backend.llampukaq.workers.dev/images/image/bb15c4d9-d12e-44a0-ae34-d30a5cd47f90');
+      const imageResponse = await fetch(
+        "https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/bb15c4d9-d12e-44a0-ae34-d30a5cd47f90&output=webp&w=1950&q=90"
+      );
       const imageBlob = await imageResponse.blob();
 
       // Convertimos a base64
       const imageBase64 = await new Promise<string>((resolve) => {
         const reader = new FileReader();
         reader.onloadend = () => {
-          const base64 = (reader.result as string).split(',')[1];
+          const base64 = (reader.result as string).split(",")[1];
           resolve(base64);
         };
         reader.readAsDataURL(imageBlob);
       });
 
-      const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-client': 'google-genai-sdk/1.16.0 gl-node/web',
-          'x-goog-api-key': process.env.NEXT_PUBLIC_GEMINI_API_KEY || ''
-        },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{
-              text: `De la imagen adjunta, mantén la relación de aspecto y quiero que "${prompt.trim()}" recubre toda la imagen adjunta. Devuelve la respuesta como una imagen`
-            }, {
-              inlineData: {
-                mimeType: imageBlob.type,
-                data: imageBase64
-              }
-            }]
-          }]
-        })
-      });
+      const response = await fetch(
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-client": "google-genai-sdk/1.16.0 gl-node/web",
+            "x-goog-api-key": process.env.NEXT_PUBLIC_GEMINI_API_KEY || "",
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `De la imagen adjunta, mantén la relación de aspecto y quiero que "${prompt.trim()}" recubre toda la imagen adjunta. Devuelve la respuesta como una imagen`,
+                  },
+                  {
+                    inlineData: {
+                      mimeType: imageBlob.type,
+                      data: imageBase64,
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }
+      );
 
       const result = await response.json();
-      console.log('Background generated:', result);
+      console.log("Background generated:", result);
 
-      if (result.candidates && result.candidates[0] && result.candidates[0].content) {
+      if (
+        result.candidates &&
+        result.candidates[0] &&
+        result.candidates[0].content
+      ) {
         const parts = result.candidates[0].content.parts;
 
         // Buscar si hay una imagen en la respuesta
@@ -92,14 +110,14 @@ function Hero() {
           setBackgroundImage(`url("${imageUrl}")`);
         } else {
           // Si solo hay texto, mostrar mensaje
-          console.log('Respuesta de Gemini:', parts[0].text);
+          console.log("Respuesta de Gemini:", parts[0].text);
           if (prompt !== prompts[0]) {
-            alert('¡Fondo generado! Descripción: ' + parts[0].text);
+            alert("¡Fondo generado! Descripción: " + parts[0].text);
           }
         }
       }
     } catch (error) {
-      console.error('Error generating background:', error);
+      console.error("Error generating background:", error);
       // Si hay error, volver al fondo por defecto
       setBackgroundImage(defaultBackgroundImage);
     } finally {
@@ -116,10 +134,10 @@ function Hero() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleGenerateBackground();
     }
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       setShowInput(false);
       setBackgroundPrompt("");
     }
@@ -217,8 +235,9 @@ function Hero() {
                 <div
                   className="absolute inset-0 animate-spin"
                   style={{
-                    background: 'conic-gradient(from 0deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000)',
-                    borderRadius: '8px'
+                    background:
+                      "conic-gradient(from 0deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000)",
+                    borderRadius: "8px",
                   }}
                 />
               )}
@@ -275,7 +294,9 @@ function Hero() {
                         disabled={isGenerating}
                         className="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white rounded-md transition-colors disabled:opacity-50"
                       >
-                        {suggestion.length > 30 ? suggestion.substring(0, 30) + "..." : suggestion}
+                        {suggestion.length > 40
+                          ? suggestion.substring(0, 40) + "..."
+                          : suggestion}
                       </button>
                     ))}
                   </div>

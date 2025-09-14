@@ -22,29 +22,26 @@ export default function ProyectosPersonales() {
     onGroup: boolean;
   }>;
   return (
-    <div
-      id="proyectos"
-      className="py-12 px-4 sm:px-auto bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900"
-    >
-      <div className="max-w-[1200px] mx-auto w-full">
-        <p className="text-xl font-medium text-blue-300">{t("subtitle")}</p>
-        <h1 className="mt-2 mb-2 text-2xl font-semibold text-blue-50 lg:text-3xl">
+    <div id="proyectos" className="py-12 px-4 sm:px-auto bg-[#111827]">
+      <div className="max-w-[1500px] mx-auto w-full">
+        <p className="text-xl font-medium text-gray-400">{t("subtitle")}</p>
+        <h1 className="mt-2 mb-2 text-2xl font-semibold text-white lg:text-3xl">
           {t("title")}
         </h1>{" "}
         <div className="max-w-[750px] mb-12">
-          <p className="mt-4 text-blue-100 text-lg xl:mt-6">
+          <p className="mt-4 text-gray-300 text-lg xl:mt-6">
             {t("description")}
           </p>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1200px] mx-auto w-full">
         {proyects.map((item, index) => (
-          <div className="text-blue-50 hover:cursor-pointer relative w-full rounded-lg border border-blue-700/60 hover:border-blue-500/80 bg-gradient-to-br from-blue-700/50 via-blue-800/60 to-indigo-700/50 backdrop-blur-sm px-2 lg:rounded-xl shadow-lg hover:shadow-blue-900/30 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 group overflow-hidden">
+          <div className="text-gray-200 hover:cursor-pointer relative w-full rounded-lg border border-gray-700/40 hover:border-gray-500/60 bg-gradient-to-br from-gray-800/30 via-gray-800/40 to-gray-900/30 backdrop-blur-sm px-2 lg:rounded-xl shadow-lg hover:shadow-gray-900/30 hover:shadow-xl hover:shadow-gray-500/20 transition-all duration-300 group overflow-hidden">
             {/* Efecto de brillo en hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-600/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
             <div className="items-center flex justify-center relative">
               <div
-                className="stroke-blue-100 text-blue-100 hover:stroke-blue-950 hover:text-blue-950 relative flex items-center mr-[-26px] gap-2 px-2 cursor-pointer text-[1.1rem] lg:text-[1.8rem] lg:my-1 container-proyects useTextColor hover:bg-blue-300/90 hover:rounded-lg transition-all duration-300 py-1"
+                className="stroke-gray-200 text-gray-200 hover:stroke-gray-100 hover:text-gray-100 relative flex items-center mr-[-26px] gap-2 px-2 cursor-pointer text-[1.1rem] lg:text-[1.8rem] lg:my-1 container-proyects useTextColor transition-all duration-300 py-1"
                 onClick={() => goToUrl(item.web)}
               >
                 <p className="font-medium">{item.title}</p>
@@ -60,7 +57,7 @@ export default function ProyectosPersonales() {
               </div>
               <div className=" normalText text-[12px] h-full lg:p-3  flex flex-col ">
                 <div
-                  className="normalText text-[13px] lg:text-[16px] leading-5 my-2 text-blue-100"
+                  className="normalText text-[13px] lg:text-[16px] leading-5 my-2 text-gray-300"
                   dangerouslySetInnerHTML={{ __html: item.about }}
                 ></div>
 
@@ -77,7 +74,7 @@ export default function ProyectosPersonales() {
                     return (
                       <>
                         {skill && (
-                          <div className="flex gap-2 pr-3 text-blue-100 items-center justify-center bg-blue-800/60 border border-blue-600/70 px-2 rounded-full hover:bg-blue-700/70 hover:border-blue-500 transition-all duration-300 backdrop-blur-sm">
+                          <div className="flex gap-2 pr-3 text-gray-300 items-center justify-center bg-gray-700/60 border border-gray-500/70 px-2 rounded-full hover:bg-gray-600/70 hover:border-gray-400 transition-all duration-300 backdrop-blur-sm">
                             {skill.link && (
                               <Img
                                 className="max-w-[22px] w-full pl-1 py-1"
@@ -99,16 +96,16 @@ export default function ProyectosPersonales() {
             <div className="bottom-0 pb-4 w-full left-0 flex space-x-3 px-3">
               <button
                 onClick={() => goToUrl(item.web)}
-                className="useTransitionDelay border border-blue-400 text-blue-400 rounded-lg px-7 py-2 hover:bg-blue-400 hover:text-blue-950 transition-all duration-300 font-medium shadow-md hover:shadow-blue-400/30"
+                className="useTransitionDelay border border-blue-500 text-blue-500 rounded-lg px-7 py-2 hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-blue-500/30"
               >
                 {t("visit")}
               </button>
               <div
                 onClick={() => goToUrl(item.repo)}
-                className="transition-button-proyect-code useTransitionDelay cursor-pointer flex flex-row-reverse border border-blue-600 text-blue-300 rounded-lg px-7 py-2 hover:border-blue-500 hover:text-blue-200 hover:bg-blue-800/50 transition-all duration-300 shadow-md hover:shadow-blue-600/20 group"
+                className="transition-button-proyect-code useTransitionDelay cursor-pointer flex flex-row-reverse border border-gray-600 text-gray-300 rounded-lg px-7 py-2 hover:border-gray-500 hover:text-gray-200 hover:bg-gray-700/50 transition-all duration-300 shadow-md hover:shadow-gray-600/20 group"
               >
                 <svg
-                  className="my-auto fill-blue-300 group-hover:fill-blue-200 p-[3px] transition-colors duration-300"
+                  className="my-auto fill-gray-300 group-hover:fill-gray-200 p-[3px] transition-colors duration-300"
                   height="24"
                   version="1.1"
                   viewBox="0 0 16 16"

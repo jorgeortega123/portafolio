@@ -153,7 +153,7 @@ const Children = ({ e, inx }: any) => {
   return (
     <div
       id="container-must"
-      className={`w-full md:w-1/3 bg-slate-800   h-auto ${
+      className={`w-full md:w-1/3 bg-[#111827]   h-auto ${
         open ? ` h-[${altura}px]` : " overflow-hidden relative"
       }  flex items-center justify-center`}
     >
@@ -188,7 +188,7 @@ const Children = ({ e, inx }: any) => {
           >
             {e.title}
           </H2>
-          <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-[#f5f5f5] ">
+          <p className=" inline-block text-[1.4rem] md:text-[1rem] lg:text-[1.4rem] max-w-[180px] text-gray-200 ">
             {e.description}
           </p>
         </div>
@@ -197,7 +197,7 @@ const Children = ({ e, inx }: any) => {
         style={{ backgroundImage: `url(${e.banner})` }}
         className={`overflow-hidden ${
           open
-            ? " w-[0%] background-inicio-delay absolute top-0 right-[50%] bg-slate-700  h-full z-[3]"
+            ? " w-[0%] background-inicio-delay absolute top-0 right-[50%] bg-gray-800  h-full z-[3]"
             : ""
         }`}
       >
@@ -221,7 +221,7 @@ const Children = ({ e, inx }: any) => {
                     onClick={() => {
                       setOpen(false);
                     }}
-                    className="z-[6] bg-black cursor-pointer absolute top-0 right-0 p-1 rounded-full "
+                    className="z-[6] bg-gray-700 hover:bg-gray-600 cursor-pointer absolute top-0 right-0 p-2 rounded-full shadow-lg border border-gray-500 "
                   >
                     <Icons className=" stroke-white  " icon="close"></Icons>
                   </div>
@@ -263,13 +263,13 @@ const Servicios_tajeta = ({ data }: { data: FrontendSkill }) => {
   return (
     <div
       className={`mb-[100px] ${
-        data.s_description[0]?.needContrast ? "rounded-[12px] bg-black/30" : ""
-      } flex flex-wrap max-w-full gap-5 text-[#f1f1f1] text-[1.8rem]`}
+        data.s_description[0]?.needContrast ? "rounded-[12px] bg-black/40 p-6" : ""
+      } flex flex-wrap max-w-full gap-5 text-white text-[1.8rem]`}
     >
-      <h1 className=" text-[3rem] font-[900] text-left w-full">{data.title}</h1>
+      <h1 className=" text-[3rem] font-[900] text-left w-full text-white">{data.title}</h1>
       <p className="w-10/12 ">{data.s_description[0].content}</p>
       <div className="flex flex-col gap-5 absolute bottom-0">
-        <p>Tecnologías en este ámbito:</p>
+        <p className="text-gray-200">Tecnologías en este ámbito:</p>
         <Marquee
           speed={20}
           gradient
@@ -282,14 +282,14 @@ const Servicios_tajeta = ({ data }: { data: FrontendSkill }) => {
             {skills.map((a, l) => {
               if (data.type === a.type) {
                 return (
-                  <div className="flex border select-none border-white/60 p-4 rounded-[5px] items-center justify-center gap-3">
+                  <div className="flex border select-none border-gray-200/80 bg-gray-700/60 p-4 rounded-[5px] items-center justify-center gap-3">
                     <img
                       key={"imagen" + l}
                       draggable={false}
                       src={a.link}
                       className=" w-[25px] h-auto "
                     ></img>
-                    <p className="cursor-default text-white/85">{a.id}</p>
+                    <p className="cursor-default text-white">{a.id}</p>
                   </div>
                 );
               }
