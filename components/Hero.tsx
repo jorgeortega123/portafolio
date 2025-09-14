@@ -29,9 +29,10 @@ function Hero() {
   };
 
   const prompts = [
-    "un 'hola mundo' escrito  con con nubes en un cielo estrellado de noche con caligrafica de letra escrita",
+    "un 'hola mundo' escrito  con con gas condesado saliendo de una avioneta en un cielo estrellado de noche con caligrafica de letra escrita",
     "Montañas nevadas con aurora boreal en el cielo nocturno",
     "el logo de star wars remaked en graffiti en una pared urbana",
+    "un gato enojado mirando la torre de pisa"
   
   ];
 
@@ -92,7 +93,7 @@ function Hero() {
       );
 
       const result = await response.json();
-      console.log("Background generated:", result);
+      //console.log("Background generated:", result);
 
       if (
         result.candidates &&
@@ -110,9 +111,9 @@ function Hero() {
           setBackgroundImage(`url("${imageUrl}")`);
         } else {
           // Si solo hay texto, mostrar mensaje
-          console.log("Respuesta de Gemini:", parts[0].text);
+          //console.log("Respuesta de Gemini:", parts[0].text);
           if (prompt !== prompts[0]) {
-            alert("¡Fondo generado! Descripción: " + parts[0].text);
+          console.log("error")
           }
         }
       }
