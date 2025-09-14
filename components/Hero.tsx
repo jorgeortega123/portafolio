@@ -32,7 +32,7 @@ function Hero() {
     "un 'hola mundo' escrito  con con nubes en un cielo estrellado de noche con caligrafica de letra escrita",
     "Montañas nevadas con aurora boreal en el cielo nocturno",
     "el logo de star wars remaked en graffiti en una pared urbana",
-    "Pantallas de código flotando en un espacio digital azul",
+  
   ];
 
   useEffect(() => {
@@ -224,7 +224,15 @@ function Hero() {
         </div>
 
         {/* AI Background Changer */}
-        <div className="absolute bottom-4 right-4 z-50">
+        <div className="absolute bottom-4 right-4 z-50 flex items-center gap-3">
+          {!showInput && (
+            <p
+              onClick={() => setShowInput(true)}
+              className="text-gray-400 cursor-pointer  text-sm font-medium  py-2 "
+            >
+              ¿Y si... cambiamos el fondo de pantalla?
+            </p>
+          )}
           {!showInput ? (
             <button
               onClick={() => setShowInput(true)}
@@ -328,7 +336,7 @@ function Hero() {
                         <span>Generando...</span>
                       </>
                     ) : (
-                      <span>Generar</span>
+                      <span>Generar nuevo fondo</span>
                     )}
                   </button>
                 </div>

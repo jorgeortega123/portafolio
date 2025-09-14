@@ -72,15 +72,64 @@ function About() {
               <H2 size="medium" className="pt-6 lg:pt-0 mb-3 lg:mb-[3rem]">
                 {t("skills")}
               </H2>
-              <div
-                className="w-full"
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-                  gap: "clamp(0.75rem, 2vw, 1.25rem)",
-                  maxWidth: "600px",
-                }}
-              >
+
+              {/* Plus Conocimiento - IA Integration Container */}
+              <div className="relative mb-8 p-6 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-blue-500/30 shadow-2xl overflow-hidden">
+                {/* Background decorative elements */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-yellow-400/10"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/20 to-transparent rounded-full blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full blur-xl"></div>
+
+                <div className="relative z-10 flex items-start gap-4">
+                  {/* Icon container */}
+                  <div className="flex-shrink-0 p-3 rounded-xl bg-gradient-to-br from-blue-500 to-yellow-500 shadow-lg">
+                    <Icons
+                      className="stroke-white"
+                      icon="IconSparkles"
+                      size={28}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-transparent bg-gradient-to-r from-blue-400 to-yellow-400 bg-clip-text mb-2">
+                      Plus Conocimiento
+                    </h3>
+                    <p className="text-gray-300 text-md leading-relaxed">
+                      Especializado en la{" "}
+                      <span className="text-blue-400 font-medium">
+                        implementación de APIs de IA
+                      </span>{" "}
+                      en aplicaciones existentes, integrando servicios de{" "}
+                      <span className="text-yellow-400 font-medium">
+                        OpenAI, Google AI, Claude
+                      </span>{" "}
+                      y otros proveedores para potenciar funcionalidades
+                      {/* mediante{" "}
+                      <span className="text-blue-400 font-medium">
+                        procesamiento de lenguaje natural
+                      </span>{" "}
+                      y
+                      <span className="text-yellow-400 font-medium">
+                        {" "}
+                        automatización inteligente
+                      </span> */}
+                      .
+                    </p>
+                  </div>
+
+                  {/* Animated pulse dot */}
+                  <div className="flex-shrink-0 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-full"></div>
+                    <div className="absolute inset-0 w-3 h-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-full animate-ping"></div>
+                  </div>
+                </div>
+
+                {/* Bottom gradient line */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-yellow-500"></div>
+              </div>
+
+              <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 max-w-full">
                 {skills.map((e, l) => {
                   if (!e.link) return;
                   return (
