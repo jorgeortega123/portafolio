@@ -50,6 +50,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     }
   };
   const skills = [
+    // Frontend
     {
       type: "fr",
       id: "HTML",
@@ -70,13 +71,6 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "React",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
     },
-
-    {
-      type: "fr",
-      id: "python",
-      link: "https://jorgeortega.vercel.app/assets/webp/python.webp",
-    },
-
     {
       type: "fr",
       id: "Typescript",
@@ -88,23 +82,17 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805670/Tailwind_CSS_Logo.svg_mch3ci.png",
     },
     {
-      type: "ba",
-      id: "MongoDb",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
+      type: "fr",
+      id: "python",
+      link: "https://jorgeortega.vercel.app/assets/webp/python.webp",
     },
-
     {
       type: "ba",
-      id: "HonoJs",
-      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/efc002c1-58a4-4e38-b954-de2c2dd445c9",
+      id: "batch",
+      link: "https://jorgeortega.vercel.app/assets/webp/batch.webp",
     },
 
-    {
-      type: "ba",
-      id: "PostgreSQL",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/postgree.png",
-    },
-
+    // Backend
     {
       type: "ba",
       id: "NodeJs",
@@ -115,17 +103,30 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "Express",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805507/6202fcdee5ee8636a145a41b_1234_xvfbkk.png",
     },
-
     {
       type: "ba",
-      id: " GraphQL",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/graphql.png",
+      id: "HonoJs",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/efc002c1-58a4-4e38-b954-de2c2dd445c9",
     },
-
     {
       type: "ba",
-      id: "Docker",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
+      id: "MongoDb",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
+    },
+    {
+      type: "ba",
+      id: "PostgreSQL",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/postgree.png",
+    },
+    {
+      type: "ba",
+      id: "SQLite",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/ad727278-3d4e-4e9e-b658-c74e36023131",
+    },
+    {
+      type: "ba",
+      id: "GraphQL",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/graphql.png",
     },
     {
       type: "ba",
@@ -134,48 +135,57 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "ba",
-      id: "SQLite",
-      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/ad727278-3d4e-4e9e-b658-c74e36023131",
+      id: "Docker",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
     },
+
+    // Herramientas
     {
-      type: "se",
+      type: "tools",
       id: "GIT",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805964/Git-Icon-1788C_ncuqfg.png",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/c3906b22-4996-4513-a85e-223becb96727",
     },
     {
-      type: "fr",
-      id: "batch",
-      link: "https://jorgeortega.vercel.app/assets/webp/batch.webp",
-    },
-    {
-      type: "se",
+      type: "tools",
       id: "GitHub",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/github.png",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/8b130dfc-2c42-4ede-9ae5-16233d742bd0",
     },
     {
-      type: "se",
+      type: "tools",
       id: "VsCode",
       link: "https://jorgeortega.vercel.app/assets/png/skills/vsCode.png",
     },
     {
-      type: "se",
-      id: "Figma",
-      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png",
-    },
-    {
-      type: "se",
+      type: "tools",
       id: "MicrosoftAzure",
       link: "https://jorgeortega.vercel.app//assets/png/skills/azure.png",
     },
     {
-      type: "se",
+      type: "tools",
       id: "Cloudflare workers pages",
       link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806235/download_oglnre.png",
     },
     {
-      type: "se",
+      type: "tools",
       id: "Firebase",
       link: "https://luisalberto.pages.dev/assets/png/skills/firebase.png",
+    },
+
+    // Diseño Gráfico
+    {
+      type: "design",
+      id: "Figma",
+      link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png",
+    },
+    {
+      type: "design",
+      id: "Canva",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/43455880-fc20-4270-a118-16898368bddf",
+    },
+    {
+      type: "design",
+      id: "CapCut",
+      link: "https://jandrea-backend.llampukaq.workers.dev/images/image/acfc7fbd-b3d1-4683-b9f2-f33f4282e495",
     },
   ];
 

@@ -7,6 +7,7 @@ import TarjetasNew from "@/components/Tarjetas/Tarjetas";
 import Testimonials from "@/components/proyectos/ProyectoContainer";
 import ProyectosPersonales from "@/components/ProyectosPersonales";
 import ContactFormNew from "@/components/contact/Contacto";
+import Timeline from "@/components/Timeline/Timeline";
 import { dataPage } from "@/context/dataPage";
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
@@ -20,6 +21,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 }
 
 export default function Home({ dataPageProps }: any) {
+
   return (
     <>
       <Head>
@@ -38,6 +40,9 @@ export default function Home({ dataPageProps }: any) {
           <div id="about">
             <Experience />
           </div>
+        </div>
+        <div id="timeline">
+          <Timeline title="Mi Trayectoria" />
         </div>
         <div id="tarjetas">
           <TarjetasNew />

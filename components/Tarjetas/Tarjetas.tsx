@@ -40,10 +40,7 @@ export default function TarjetasNew() {
       <section className="bg-[#111827]">
         <div className="container px-6 py-12 max-w-[1500px] mx-auto">
           <H2 className="text-2xl  font-semibold text-white capitalize lg:text-3xl">
-            {t("title")} <br />
-            <span className="underline decoration-blue-500 pt-3">
-              {t("title_split")}
-            </span>
+            {t("title")}
           </H2>
 
           <p className="mt-4 text-gray-300 xl:mt-6 text-lg">{t("subtitle")}</p>

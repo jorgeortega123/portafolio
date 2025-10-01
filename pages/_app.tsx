@@ -9,12 +9,14 @@ import { IconsProvider } from "@llampukaq/icons";
 import Layout from "@/components/layout/Layout";
 import { HeroUIProvider } from "@heroui/system";
 import { IntlProvider } from "next-intl";
+import { ToastProvider } from "@heroui/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider locale={pageProps.locale} messages={pageProps.messages}>
       <HeroUIProvider>
-        <IconsProvider >
+        <ToastProvider placement="bottom-right" toastOffset={20} />
+        <IconsProvider>
           <MainContextComponent>
             <Layout>
               <Component {...pageProps} />

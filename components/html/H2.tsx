@@ -14,13 +14,13 @@ export default function H2({ children, className = "", size }: PProps) {
       case "normal":
         return "text-[.9rem] lg:text-[1rem]";
       case "medium":
-        return "text-[1.4rem]  lg:text-[2rem] font-medium";
+        return "text-[1.4rem] lg:text-[2rem] font-medium";
       default:
-        return "text-[2rem] lg:text-[3rem] font-bold  ";
+        return "text-[2rem] lg:text-[3rem] font-bold";
     }
   };
 
   return (
-    <h2 className={`  text-pretty ${sizeFinal()} ${className} `}>{children}</h2>
+    <h2 className={`text-pretty border-l-4 border-blue-500 pl-3 ${sizeFinal()} ${className}`}>{children}</h2>
   );
 }
