@@ -10,6 +10,7 @@ import { dataPage } from "@/context/dataPage";
 import { ICONS, Icons } from "@llampukaq/icons";
 import { useTranslations } from "next-intl";
 import { Wand2, Loader2 } from "lucide-react";
+import { addToast } from "@heroui/react";
 
 function Hero() {
   const { isLoad, numberCharge } = useMainContext();
@@ -32,8 +33,7 @@ function Hero() {
     "un 'hola mundo' escrito  con con gas condesado saliendo de una avioneta en un cielo estrellado de noche con caligrafica de letra escrita",
     "Montañas nevadas con aurora boreal en el cielo nocturno",
     "el logo de star wars remaked en graffiti en una pared urbana",
-    "un gato enojado mirando la torre de pisa"
-  
+    "un gato enojado mirando la torre de pisa",
   ];
 
   useEffect(() => {
@@ -64,14 +64,9 @@ function Hero() {
       });
 
       const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        "https://jorge-server.llampukaq.workers.dev/gemini/generate",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-goog-api-client": "google-genai-sdk/1.16.0 gl-node/web",
-            "x-goog-api-key": process.env.NEXT_PUBLIC_GEMINI_API_KEY || "",
-          },
           body: JSON.stringify({
             contents: [
               {
@@ -91,6 +86,17 @@ function Hero() {
           }),
         }
       );
+
+      if (response.status === 429) {
+        addToast({
+          title: "Límite de solicitudes alcanzado",
+          description:
+            "Has alcanzado el límite de 2 generaciones por sesión. Por favor, intenta de nuevo en 24 horas",
+          color: "danger",
+        });
+
+        return;
+      }
 
       const result = await response.json();
       //console.log("Background generated:", result);
@@ -113,7 +119,7 @@ function Hero() {
           // Si solo hay texto, mostrar mensaje
           //console.log("Respuesta de Gemini:", parts[0].text);
           if (prompt !== prompts[0]) {
-          console.log("error")
+            console.log("error");
           }
         }
       }
