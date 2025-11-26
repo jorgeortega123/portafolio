@@ -55,76 +55,80 @@ export default function ContainerComponent({
   };
   return (
     <>
-      <style jsx >{rgbBorderStyle}</style>
+      <style jsx>{rgbBorderStyle}</style>
       <main
         id={`container-pr-${index}`}
         className="relative z-[8] w-full mt-8 md:flex md:items-center xl:mt-12"
       >
-      <div
-        className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
-      ></div>
+        <div
+          className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
+        ></div>
 
-      <div
-        className={`${
-          fullScreen ? " h-full min-h-[85vh]" : " "
-        } w-full p-6 bg-blue-600     md:items-center ${
-          index % 2 == 0 ? "md:flex md:flex-row-reverse " : "md:flex"
-        }  rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly"`}
-      >
-        <Img
-          link
-          width="500"
-          className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
-          src={item.img}
-          alt="client photo"
-        />
-        <div className="">
-          <div className="mt-2 md:mx-6 ">
-            <div className="flex gap-2 items-center ">
-              <div className="min-w-max">
-                <p className="text-[1.75rem] font-medium tracking-tight text-white">
-                  {item.title}
-                </p>
-                <p className="text-blue-200">{item.sub}</p>
+        <div
+          className={`${
+            fullScreen ? " h-full min-h-[85vh]" : " "
+          } w-full p-6 bg-blue-600     md:items-center ${
+            index % 2 == 0 ? "md:flex md:flex-row-reverse " : "md:flex"
+          }  rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly"`}
+        >
+          <Img
+            link
+            width="500"
+            className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
+            src={item.img}
+            alt="client photo"
+          />
+          <div className="">
+            <div className="mt-2 md:mx-6 ">
+              <div className="flex gap-2  items-center ">
+                <div className=" max-w-full">
+                  <p className="text-[1.75rem] font-medium tracking-tight text-white">
+                    {item.title}
+                  </p>
+                  <p className="text-blue-200  w-full max-w-[420px]">
+                    {item.sub}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <p className="my-1 text-[1.1rem] leading-relaxed text-white font-medium">
-              {item.description}
-              <strong>{item.update}</strong>
-            </p>
+              <p className="my-1 text-[1.1rem] leading-relaxed text-white font-medium">
+                {item.description}
+                <strong>{item.update}</strong>
+              </p>
 
-            {/* {item?.update && <Alert variant="flat" description={item.update} />} */}
-            <div className="flex flex-wrap gap-3 py-2">
-              {item.tags.map((tag, tagIndex) => {
-                const skill = skills.find(
-                  (skill) => skill.id.toLowerCase() == tag.toLowerCase()
-                );
-                return (
-                  <>
-                    {skill && (
-                      <div 
-                        key={`${skill.id}-${tagIndex}`}
-                        className="group relative flex gap-2 items-center justify-center bg-zinc-800/40 border border-zinc-700/30 text-zinc-200 px-2.5 py-1.5 rounded-lg transition-all duration-300 hover:bg-zinc-700/50"
-                      >
-                        <div className="absolute inset-0 rounded-lg border-2 border-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[rgb-border_2s_linear_infinite] transition-opacity duration-300"></div>
-                        <Img
-                          className="max-w-[22px] w-full p-0.5 transition-transform duration-200 group-hover:scale-105"
-                          link
-                          src={skill.link}
-                          alt={skill.id}
-                          q={10}
-                        />
-                        <p className="text-xs font-medium group-hover:text-zinc-100 transition-colors duration-200">{skill.id}</p>
-                      </div>
-                    )}
-                  </>
-                );
-              })}
-            </div>
+              {/* {item?.update && <Alert variant="flat" description={item.update} />} */}
+              <div className="flex flex-wrap gap-3 py-2">
+                {item.tags.map((tag, tagIndex) => {
+                  const skill = skills.find(
+                    (skill) => skill.id.toLowerCase() == tag.toLowerCase()
+                  );
+                  return (
+                    <>
+                      {skill && (
+                        <div
+                          key={`${skill.id}-${tagIndex}`}
+                          className="group relative flex gap-2 items-center justify-center bg-zinc-800/40 border border-zinc-700/30 text-zinc-200 px-2.5 py-1.5 rounded-lg transition-all duration-300 hover:bg-zinc-700/50"
+                        >
+                          <div className="absolute inset-0 rounded-lg border-2 border-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[rgb-border_2s_linear_infinite] transition-opacity duration-300"></div>
+                          <Img
+                            className="max-w-[22px] w-full p-0.5 transition-transform duration-200 group-hover:scale-105"
+                            link
+                            src={skill.link}
+                            alt={skill.id}
+                            q={10}
+                          />
+                          <p className="text-xs font-medium group-hover:text-zinc-100 transition-colors duration-200">
+                            {skill.id}
+                          </p>
+                        </div>
+                      )}
+                    </>
+                  );
+                })}
+              </div>
 
-            <div className="flex items-center justify-between mt-6 md:justify-start">
-              {/* <Link
+              <div className="flex items-center justify-between mt-6 md:justify-start">
+                {/* <Link
                 href={{
                   pathname: `/casos/[caso]`,
                   query: {
@@ -139,23 +143,23 @@ export default function ContainerComponent({
                 Leer más
               </Link> */}
 
-              <Link
-                href={item.link}
-                target="_blank"
-                title={item.title}
-                className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100  hover:bg-blue-400"
-              >
-                Visitar aplicación web
-                <Icons
-                  className="stroke-zinc-200"
-                  icon="IconExternalLink"
-                ></Icons>
-              </Link>
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  title={item.title}
+                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100  hover:bg-blue-400"
+                >
+                  Visitar aplicación web
+                  <Icons
+                    className="stroke-zinc-200"
+                    icon="IconExternalLink"
+                  ></Icons>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
     </>
   );
 }

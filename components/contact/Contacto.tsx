@@ -104,7 +104,7 @@ export default function ContactFormNew() {
             </div>
           </div>
 
-          <div className="mt-8 lg:w-1/2 lg:mx-6 shadow-lg px-12 py-6">
+          <div className="mt-8 lg:w-1/2 lg:mx-6 shadow-lg  lg:px-12 py-6">
             <FormularioContacto />
           </div>
         </div>

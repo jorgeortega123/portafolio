@@ -88,7 +88,7 @@ export default function NavBar() {
           </ul>
           <Link
             href={"#contact"}
-            className="px-6 py-2.5 max-w-max w-max rounded-xl text-white flex items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
+            className="hidden lg:flex px-6 py-2.5 max-w-max w-max rounded-xl text-white  items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
           >
             {t("contact")}
           </Link>

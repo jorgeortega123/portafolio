@@ -34,7 +34,7 @@ function Header() {
               </H2>
               <P
                 size="medium"
-                className="text-sm lg:text-[1.5rem] ml-[5.5%] shrink-0 text-zinc-400"
+                className="text-sm hidden lg:flex lg:text-[1.5rem] ml-[5.5%] shrink-0 text-zinc-400"
               >
                 {t("subInfo")}
               </P>
@@ -43,7 +43,7 @@ function Header() {
 
             <Link
               href={"#contact"}
-              className="transition-colors rounded-[9px] text-white duration-200 hover:bg-white hover:text-black cursor-pointer px-3 sm:px-8 py-2 border  "
+              className="text-sm hidden lg:flex  transition-colors rounded-[9px] text-white duration-200 hover:bg-white hover:text-black cursor-pointer px-3 sm:px-8 py-2 border  "
             >
               <H2 size="small">{t("contact")}</H2>
             </Link>

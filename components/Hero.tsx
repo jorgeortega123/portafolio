@@ -231,7 +231,7 @@ function Hero() {
         </div>
 
         {/* AI Background Changer */}
-        <div className="absolute bottom-4 right-4 z-50 flex items-center gap-3">
+        <div className="hidden absolute bottom-4 right-4 z-50 lg:flex items-center gap-3">
           {!showInput && (
             <p
               onClick={() => setShowInput(true)}
