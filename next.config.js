@@ -6,6 +6,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 module.exports = () => {
   const plugins = [withPWA, withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
+    turbopack: {},
     pwa: {
       dest: "public",
       register: true,
