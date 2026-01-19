@@ -19,10 +19,10 @@ function Hero() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState(
-    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586&output=webp&w=1950&q=90")'
+    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")',
   );
   const defaultBackgroundImage =
-    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/415dd9e0-3e5c-434f-8122-5cc6f0bdc586&output=webp&w=1950&q=90")';
+    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")';
   const [showInitialAnimation, setShowInitialAnimation] = useState(true);
 
   const handleOnClick = (e: string) => {
@@ -47,85 +47,70 @@ function Hero() {
   const generateBackground = async (prompt: string) => {
     setIsGenerating(true);
     try {
-      // Primero obtenemos la imagen de la URL
-      const imageResponse = await fetch(
-        "https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/bb15c4d9-d12e-44a0-ae34-d30a5cd47f90&output=webp&w=1950&q=90"
-      );
-      const imageBlob = await imageResponse.blob();
-
-      // Convertimos a base64
-      const imageBase64 = await new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64 = (reader.result as string).split(",")[1];
-          resolve(base64);
-        };
-        reader.readAsDataURL(imageBlob);
-      });
-
       const response = await fetch(
-        "https://jorge-server.llampukaq.workers.dev/gemini/generate",
+        "https://jorge-server.llampukaq.workers.dev/imagen-generator/v2/generate",
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `De la imagen adjunta, mantén la relación de aspecto y quiero que "${prompt.trim()}" recubre toda la imagen adjunta. Devuelve la respuesta como una imagen`,
-                  },
-                  {
-                    inlineData: {
-                      mimeType: imageBlob.type,
-                      data: imageBase64,
-                    },
-                  },
-                ],
-              },
-            ],
+            prompt: prompt,
+            width: 1920,
+            height: 1080,
           }),
-        }
+        },
       );
 
       if (response.status === 429) {
+        const errorData = await response.json();
+        let resetMessage = "Por favor, intenta de nuevo más tarde";
+
+        if (errorData.resetAt) {
+          const resetDate = new Date(errorData.resetAt);
+          const now = new Date();
+          const isToday = resetDate.toDateString() === now.toDateString();
+          const isTomorrow =
+            resetDate.toDateString() ===
+            new Date(now.getTime() + 86400000).toDateString();
+
+          const timeStr = resetDate.toLocaleTimeString("es", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          if (isToday) {
+            resetMessage = `Se restablece hoy a las ${timeStr}`;
+          } else if (isTomorrow) {
+            resetMessage = `Se restablece mañana a las ${timeStr}`;
+          } else {
+            const dateStr = resetDate.toLocaleDateString("es", {
+              day: "numeric",
+              month: "long",
+            });
+            resetMessage = `Se restablece el ${dateStr} a las ${timeStr}`;
+          }
+        }
+
         addToast({
           title: "Límite de solicitudes alcanzado",
-          description:
-            "Has alcanzado el límite de 2 generaciones por sesión. Por favor, intenta de nuevo en 24 horas",
+          description: resetMessage,
           color: "danger",
         });
-
         return;
       }
 
+      if (!response.ok) {
+        throw new Error("Error al generar la imagen");
+      }
+
       const result = await response.json();
-      //console.log("Background generated:", result);
 
-      if (
-        result.candidates &&
-        result.candidates[0] &&
-        result.candidates[0].content
-      ) {
-        const parts = result.candidates[0].content.parts;
-
-        // Buscar si hay una imagen en la respuesta
-        const imagePart = parts.find((part: any) => part.inlineData);
-
-        if (imagePart && imagePart.inlineData) {
-          // Si hay una imagen, convertirla a URL y establecerla como fondo
-          const imageUrl = `data:${imagePart.inlineData.mimeType};base64,${imagePart.inlineData.data}`;
-          setBackgroundImage(`url("${imageUrl}")`);
-        } else {
-          // Si solo hay texto, mostrar mensaje
-          //console.log("Respuesta de Gemini:", parts[0].text);
-          if (prompt !== prompts[0]) {
-            console.log("error");
-          }
-        }
+      if (result.image) {
+        setBackgroundImage(`url("${result.image}")`);
       }
     } catch (error) {
       console.error("Error generating background:", error);
-      // Si hay error, volver al fondo por defecto
       setBackgroundImage(defaultBackgroundImage);
     } finally {
       setIsGenerating(false);
