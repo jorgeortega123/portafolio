@@ -3,6 +3,12 @@
         "contact": "Contact",
         "subInfo": "full stack developer"
     },
+    "disclaimers": {
+        "image-generator": {
+            "title": "Request limit reached",
+            "description": "It will reset"
+        }
+    },
     "about": {
         "contact": "Contact",
         "title": "About me",
@@ -51,13 +57,14 @@
         "description": "Below, you'll find a selection of the most outstanding works I've participated in. Each project reflects my commitment to quality and innovation in software development. Specially adapted for mobile interfaces, ensuring a smooth and attractive user experience."
     },
     "services": [
-        "Web application development",
-        "ORM management",
-        "SQL and NoSQL database design and creation",
+        "Development of automated systems",
+        "Automation workflow management",
+        "Design and creation of SQL and NoSQL databases",
         "System and API integration",
-        "Cloud application deployment and management",
-        "Virtual machine platform integration",
-        "Different language connection through REST APIs",
+        "Deployment and management of cloud applications",
+        "Integration with different AI models",
+        "Integration with virtual machine platforms",
+        "Connecting different languages through REST APIs",
         "Optimization and maintenance of existing applications"
     ],
     "personalProjects": {
@@ -277,5 +284,23 @@
         "whatsapp": "Whatsapp",
         "whatsappMessage": "Hello, I come from your portfolio...",
         "copyright": "Made by"
+    },
+    "aiSegments": {
+        "image-generator": {
+            "question": "What if... we change the background?",
+            "primaryButton": "Generate image",
+            "title": "Change wallpaper with AI",
+            "label": "Describe the background you want to generate",
+            "enterKeyDisclaimer": "Press Enter to generate or Escape to cancel",
+            "cancelButton": "Cancel",
+            "enterButton": "Generate new background",
+            "defaultInputs": [
+                "a 'hello world' written with condensed gas coming out of a small plane in a starry night sky with handwritten calligraphy",
+                "Snowy mountains with aurora borealis in the night sky",
+                "the Star Wars logo remade as graffiti on an urban wall",
+                "an angry cat looking at the Leaning Tower of Pisa"
+            ],
+            "generating": "Generating..."
+        }
     }
 }

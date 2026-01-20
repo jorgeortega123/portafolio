@@ -3,6 +3,12 @@
         "contact": "联系我",
         "subInfo": "全栈开发工程师"
     },
+    "disclaimers": {
+        "image-generator": {
+            "title": "已达到请求限制",
+            "description": "将会重置"
+        }
+    },
     "about": {
         "contact": "联系我",
         "title": "关于我",
@@ -51,14 +57,15 @@
         "description": "以下是我参与的最杰出作品的精选。每个项目都体现了我对软件开发质量和创新的承诺。特别适配移动端界面，确保流畅、吸引人的用户体验。"
     },
     "services": [
-        "网页应用程序开发",
-        "ORM管理",
-        "SQL和NoSQL数据库设计与创建",
-        "系统和API集成",
-        "云应用程序部署和管理",
-        "虚拟机平台集成",
-        "通过REST API连接不同语言",
-        "现有应用程序优化和维护"
+        "自动化系统开发",
+        "自动化工作流管理",
+        "SQL 和 NoSQL 数据库的设计与创建",
+        "系统与 API 集成",
+        "云端应用的部署与管理",
+        "与不同 AI 模型的集成",
+        "与虚拟机平台的集成",
+        "通过 REST API 连接不同编程语言",
+        "现有应用的优化与维护"
     ],
     "personalProjects": {
         "title": "个人项目",
@@ -277,5 +284,23 @@
         "whatsapp": "微信",
         "whatsappMessage": "你好，我来自您的作品集...",
         "copyright": "制作者"
+    },
+    "aiSegments": {
+        "image-generator": {
+            "question": "如果……我们更换背景呢？",
+            "primaryButton": "生成图像",
+            "title": "使用 AI 更换壁纸",
+            "label": "描述你想生成的背景",
+            "enterKeyDisclaimer": "按 Enter 生成，或按 Escape 取消",
+            "cancelButton": "取消",
+            "enterButton": "生成新背景",
+            "defaultInputs": [
+                "在星空夜晚，一架小飞机喷出凝结气体写成的“你好，世界”，手写书法风格",
+                "夜空中有极光的雪山",
+                "将《星球大战》标志重新设计成城市墙面的涂鸦",
+                "一只愤怒的猫看着比萨斜塔"
+            ],
+            "generating": "Generating..."
+        }
     }
 }

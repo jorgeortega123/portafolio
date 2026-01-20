@@ -28,13 +28,15 @@ function Hero() {
   const handleOnClick = (e: string) => {
     scrollToElement(e);
   };
-
-  const prompts = [
-    "un 'hola mundo' escrito  con con gas condesado saliendo de una avioneta en un cielo estrellado de noche con caligrafica de letra escrita",
-    "Montañas nevadas con aurora boreal en el cielo nocturno",
-    "el logo de star wars remaked en graffiti en una pared urbana",
-    "un gato enojado mirando la torre de pisa",
-  ];
+  const t = useTranslations("");
+  const imageGenerator = t.raw("aiSegments.image-generator") as Record<
+    string,
+    string
+  >;
+  const disclaimer = t.raw("disclaimers.image-generator") as Record<
+    string,
+    string
+  >;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,7 +82,9 @@ function Hero() {
           });
 
           if (isToday) {
-            resetMessage = `Se restablece hoy a las ${timeStr}`;
+            // resetMessage = `Se restablece hoy a las ${timeStr}`;
+            resetMessage = `${disclaimer.description} ${timeStr}`;
+            disclaimer;
           } else if (isTomorrow) {
             resetMessage = `Se restablece mañana a las ${timeStr}`;
           } else {
@@ -93,7 +97,7 @@ function Hero() {
         }
 
         addToast({
-          title: "Límite de solicitudes alcanzado",
+          title: disclaimer.title,
           description: resetMessage,
           color: "danger",
         });
@@ -148,7 +152,10 @@ function Hero() {
     },
   ];
   const carBrands = ["Toyota", "Honda", "BMW", "Tesla", "Ford"];
-  const t = useTranslations("");
+
+  const imageGeneratorDefaultPrompt = t.raw(
+    "aiSegments.image-generator.defaultInputs",
+  ) as string[];
   const services = t.raw("services") as string[];
   return (
     <div
@@ -220,9 +227,10 @@ function Hero() {
           {!showInput && (
             <p
               onClick={() => setShowInput(true)}
-              className="text-gray-400 cursor-pointer  text-sm font-medium  py-2 "
+              className="text-gray-400 hover:underline cursor-pointer  text-sm font-medium  py-2 "
             >
-              ¿Y si... cambiamos el fondo de pantalla?
+              {imageGenerator.question}
+              {/* ¿Y si... cambiamos el fondo de pantalla? */}
             </p>
           )}
           {!showInput ? (
@@ -250,7 +258,10 @@ function Hero() {
                 ) : (
                   <Wand2 className="h-5 w-5 text-blue-400" />
                 )}
-                <span className="text-sm">Cambiar fondo con IA</span>
+                <span className="text-sm">
+                  {imageGenerator.title}
+                  {/* Cambiar fondo con IA */}
+                </span>
               </div>
             </button>
           ) : (
@@ -258,7 +269,8 @@ function Hero() {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-semibold text-gray-100 flex items-center">
                   <Wand2 className="h-4 w-4 mr-2 text-blue-400" />
-                  Cambiar fondo a través de la IA
+                  {/* Cambiar fondo a través de la IA */}
+                  {imageGenerator.label}
                 </h3>
                 <button
                   onClick={() => {
@@ -279,7 +291,7 @@ function Hero() {
                     value={backgroundPrompt}
                     onChange={(e) => setBackgroundPrompt(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Describe el fondo que quieres generar..."
+                    placeholder={imageGenerator.label}
                     className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                     autoFocus
                     disabled={isGenerating}
@@ -287,8 +299,9 @@ function Hero() {
 
                   {/* Sugerencias predefinidas */}
                   <div className="flex flex-wrap gap-1">
-                    {prompts.map((suggestion, index) => (
+                    {imageGeneratorDefaultPrompt.map((suggestion, index) => (
                       <button
+                        title={suggestion}
                         key={index}
                         onClick={() => setBackgroundPrompt(suggestion)}
                         disabled={isGenerating}
@@ -302,7 +315,8 @@ function Hero() {
                   </div>
 
                   <p className="text-xs text-gray-400">
-                    Presiona Enter para generar o Escape para cancelar
+                    {imageGenerator.enterKeyDisclaimer}
+                    {/* Presiona Enter para generar o Escape para cancelar */}
                   </p>
                 </div>
 
@@ -315,7 +329,8 @@ function Hero() {
                     disabled={isGenerating}
                     className="px-3 py-1.5 text-sm text-gray-300 hover:text-gray-100 transition-colors"
                   >
-                    Cancelar
+                    {imageGenerator.cancelButton}
+                    {/* Cancelar */}
                   </button>
                   <button
                     onClick={handleGenerateBackground}
@@ -325,10 +340,10 @@ function Hero() {
                     {isGenerating ? (
                       <>
                         <Loader2 className="h-3 w-3 animate-spin" />
-                        <span>Generando...</span>
+                        <span>{imageGenerator.generating}</span>
                       </>
                     ) : (
-                      <span>Generar nuevo fondo</span>
+                      <span>{imageGenerator.enterButton}</span>
                     )}
                   </button>
                 </div>

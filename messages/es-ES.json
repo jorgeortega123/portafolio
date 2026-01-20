@@ -3,6 +3,12 @@
     "contact": "Contactar",
     "subInfo": "desarrollador full stack"
   },
+  "disclaimers": {
+    "image-generator": {
+      "title": "Limite de solicitudes alcanzado",
+      "description": "Se restablece"
+    }
+  },
   "about": {
     "contact": "Contactar",
     "title": "Acerca de mi",
@@ -68,11 +74,12 @@
     "description": "A continuación, encontrarás una selección de los trabajos más destacados en los que he participado. Cada proyecto refleja mi compromiso con la calidad y la innovación en el desarrollo de software. Adaptados especialmente para interfaces mobiles, garantizando una experiencia de usuario fluida y atractiva."
   },
   "services": [
-    "Desarrollo de aplicaciones web",
-    "Manejo de ORM's",
+    "Desarrollo de sistemas automatizados",
+    "Manejo de flujos de automatización",
     "Diseño y creación de bases de datos SQL y noSQL",
     "Integración de sistemas y APIs",
     "Despliegue y administración de aplicaciones en la nube",
+    "Integraciones con diferentes modelos de IA",
     "Integración a plataformas de maquinas virtuales",
     "Conexión de diferentes lenguajes mediante API-REST",
     "Optimización y mantenimiento de aplicaciones existentes"
@@ -115,18 +122,32 @@
     }
   },
   "experience": {
-    "title": "Librerias",
+    "title": "Mi trayectoria",
     "subtitle": "Vestibulum diam nunc",
     "trabajos": [
       {
-        "name": "Trabajo 1",
-        "date": "2021 - 2022",
-        "info": "Descripción del Trabajo 1"
+        "name": "Supermercados D'Ley",
+        "date": "Agosto 2025 - Presente",
+        "role": "Desarrollador IUX - Marketing Digital",
+        "info": "Crear diseño para la creación de un supermercado, esto incluyen Mockups, wireframes y la disposición de productos a lo largo de la app sin que saturen la experiencia del usuario. Adicionalmente la creación de Post para redes sociales"
       },
       {
-        "name": "Trabajo 2",
-        "date": "2019 - 2020",
-        "info": "Descripción del Trabajo 2"
+        "name": "Jandrea.art",
+        "role": "Desarrollador Frontend",
+        "date": "Enero 2025 - Agosto 2025 (4 meses)",
+        "info": "Catálogo digital con opciones de editar, subir y eliminar productos, adicionalmente el cliente quería una forma fácil de emitir comprobantes de venta fácilmente entonces se diseño el sistema de facturación. También se hizo la lógica para imprimir código de cupones en las facturas que es escaneen con QR"
+      },
+      {
+        "name": "Licorería Spondylus",
+        "role": "Desarrollador Full Stack - Diseño gráfico",
+        "date": "Enero 2025 - Agosto 2025 (4 meses)",
+        "info": "Catálogo digital con opciones de editar, subir y eliminar productos, adicionalmente el cliente quería una forma fácil de emitir comprobantes de venta fácilmente entonces se diseño el sistema de facturación. También se hizo la lógica para imprimir código de cupones en las facturas que es escaneen con QR"
+      },
+      {
+        "name": "Llampukaq Technology",
+        "role": "Desarrollador Frontend",
+        "date": "Mayo 2020 - Febrero 2023 (2 años 10 meses)",
+        "info": "Mejorar interfaz del usuario a través de modelos esquemáticos de diseños. Modelar, crear componentes reutilizables tipando datos con Typescript y establecer una comunicación entre ellos; siguiendo una estructura de escalabilidad exponencial."
       }
     ],
     "estudios": [
@@ -278,5 +299,23 @@
     "whatsapp": "Whatsapp",
     "whatsappMessage": "Hola, vengo de tu portafolio...",
     "copyright": "Hecho por"
+  },
+  "aiSegments": {
+    "image-generator": {
+      "question": "¿Y si... cambiamos el fondo?",
+      "primaryButton": "Generar imagen",
+      "title": "Cambiar fondo de pantalla con IA",
+      "label": "Describe el fondo que quieres generar",
+      "enterKeyDisclaimer": "Presiona enter para generar o Escape para cancelar",
+      "cancelButton": "Cancelar",
+      "enterButton": "Generar nuevo fondo",
+      "defaultInputs": [
+        "un 'hola mundo' escrito  con con gas condesado saliendo de una avioneta en un cielo estrellado de noche con caligrafica de letra escrita",
+        "Montañas nevadas con aurora boreal en el cielo nocturno",
+        "el logo de star wars remaked en graffiti en una pared urbana",
+        "un gato enojado mirando la torre de pisa"
+      ],
+      "generating": "Generando..."
+    }
   }
 }
