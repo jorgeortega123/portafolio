@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:flowbite.com)",
-      "WebFetch(domain:swiperjs.com)"
+      "WebFetch(domain:swiperjs.com)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
