@@ -105,52 +105,32 @@
         }
     },
     "experience": {
-        "title": "Libraries",
+        "title": "My Journey",
         "subtitle": "Vestibulum diam nunc",
         "trabajos": [
             {
-                "name": "Job 1",
-                "date": "2021 - 2022",
-                "info": "Description of Job 1"
+                "name": "Supermercados D'Ley",
+                "date": "August 2025 - Present",
+                "role": "UI/UX Developer - Digital Marketing",
+                "info": "Design creation for a supermarket application, including mockups, wireframes, and product layout throughout the app without overwhelming the user experience. Additionally, creation of social media posts."
             },
             {
-                "name": "Job 2",
-                "date": "2019 - 2020",
-                "info": "Description of Job 2"
-            }
-        ],
-        "estudios": [
-            {
-                "name": "University 1",
-                "date": "2017 - 2021",
-                "info": "Degree obtained at University 1"
+                "name": "Jandrea.art",
+                "role": "Frontend Developer",
+                "date": "January 2025 - August 2025 (4 months)",
+                "info": "Digital catalog with options to edit, upload, and delete products. Additionally, a billing system was designed to easily issue sales receipts. Logic was also implemented to print coupon codes on invoices, which are scanned via QR."
             },
             {
-                "name": "Institute 2",
-                "date": "2015 - 2017",
-                "info": "Degree obtained at Institute 2"
-            }
-        ],
-        "dataProyects": [
-            {
-                "title": "Library 123",
-                "fecha": "December 2021",
-                "description": "Description of everything"
+                "name": "Licorería Spondylus",
+                "role": "Full Stack Developer - Graphic Design",
+                "date": "January 2025 - August 2025 (4 months)",
+                "info": "Digital catalog with options to edit, upload, and delete products. Additionally, a billing system was designed to easily issue sales receipts. Logic was also implemented to print coupon codes on invoices, scanned via QR."
             },
             {
-                "title": "Library 456",
-                "fecha": "January 2022",
-                "description": "Description of everything"
-            },
-            {
-                "title": "Library 789",
-                "fecha": "February 2022",
-                "description": "Description of everything"
-            },
-            {
-                "title": "Library 101",
-                "fecha": "March 2022",
-                "description": "Description of everything"
+                "name": "Llampukaq Technology",
+                "role": "Frontend Developer",
+                "date": "May 2020 - February 2023 (2 years 10 months)",
+                "info": "Improved user interface through schematic design models. Modeled and created reusable components with TypeScript typing and established communication between them, following an exponentially scalable structure."
             }
         ]
     },

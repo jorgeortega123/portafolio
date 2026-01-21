@@ -36,9 +36,9 @@ export default function Home({ dataPageProps }: any) {
           <div id="me">
             <About />
           </div>
-          <div id="about">
+          {/* <div id="about">
             <Experience />
-          </div>
+          </div> */}
         </div>
         <div id="timeline">
           <Timeline title="Mi Trayectoria" />

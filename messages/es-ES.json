@@ -149,40 +149,6 @@
         "date": "Mayo 2020 - Febrero 2023 (2 años 10 meses)",
         "info": "Mejorar interfaz del usuario a través de modelos esquemáticos de diseños. Modelar, crear componentes reutilizables tipando datos con Typescript y establecer una comunicación entre ellos; siguiendo una estructura de escalabilidad exponencial."
       }
-    ],
-    "estudios": [
-      {
-        "name": "Universidad 1",
-        "date": "2017 - 2021",
-        "info": "Título obtenido en Universidad 1"
-      },
-      {
-        "name": "Instituto 2",
-        "date": "2015 - 2017",
-        "info": "Título obtenido en Instituto 2"
-      }
-    ],
-    "dataProyects": [
-      {
-        "title": "Libreria 123",
-        "fecha": "Diciembre 2021",
-        "description": "Descripción de todo"
-      },
-      {
-        "title": "Libreria 456",
-        "fecha": "Enero 2022",
-        "description": "Descripción de todo"
-      },
-      {
-        "title": "Libreria 789",
-        "fecha": "Febrero 2022",
-        "description": "Descripción de todo"
-      },
-      {
-        "title": "Libreria 101",
-        "fecha": "Marzo 2022",
-        "description": "Descripción de todo"
-      }
     ]
   },
   "nombre": "Jorge Ortega",
