@@ -11,6 +11,7 @@ import {
   Trash2,
   Plus,
   Zap,
+  GripHorizontal,
 } from "lucide-react";
 import { useChatMemory, MemoryMessage } from "@/hooks/useChatMemory";
 import { useIntentDetection, IntentType, DetectedIntent } from "@/hooks/useIntentDetection";
@@ -52,9 +53,12 @@ export default function ChatBot() {
   const [detectedIntent, setDetectedIntent] = useState<DetectedIntent | null>(null);
   const [showSessions, setShowSessions] = useState(false);
   const [streamingContent, setStreamingContent] = useState("");
+  const [position, setPosition] = useState({ x: 16, y: window.innerHeight - 570 });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const dragRef = useRef<{ startX: number; startY: number; startPosX: number; startPosY: number } | null>(null);
+  const chatRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!currentSessionId) {
@@ -71,6 +75,40 @@ export default function ChatBot() {
       inputRef.current.focus();
     }
   }, [isOpen]);
+
+  // Drag handlers
+  const onDragStart = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    dragRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      startPosX: position.x,
+      startPosY: position.y,
+    };
+
+    const onMove = (ev: MouseEvent) => {
+      if (!dragRef.current) return;
+      const dx = ev.clientX - dragRef.current.startX;
+      const dy = ev.clientY - dragRef.current.startY;
+      const newX = dragRef.current.startPosX + dx;
+      const newY = dragRef.current.startPosY + dy;
+      const maxX = window.innerWidth - (chatRef.current?.offsetWidth || 384);
+      const maxY = window.innerHeight - (chatRef.current?.offsetHeight || 100);
+      setPosition({
+        x: Math.max(0, Math.min(newX, maxX)),
+        y: Math.max(0, Math.min(newY, maxY)),
+      });
+    };
+
+    const onUp = () => {
+      dragRef.current = null;
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  }, [position]);
 
   const generateId = () =>
     Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
@@ -128,19 +166,13 @@ export default function ChatBot() {
           if (done) break;
 
           fullText += decoder.decode(value, { stream: true });
-          // Remove closed <think...</think blocks, then if there's an unclosed <think, hide everything from it
-          let cleaned = fullText.replace(/<think[\s\S]*?<\/think>/g, "");
-          if (/<think[\s\S]*$/.test(cleaned) && !/<\/think/.test(cleaned.slice(cleaned.lastIndexOf("<think")))) {
-            cleaned = cleaned.slice(0, cleaned.lastIndexOf("<think"));
-          }
-          setStreamingContent(cleaned.trim());
+          setStreamingContent(fullText);
         }
 
-        let finalCleaned = fullText.replace(/<think[\s\S]*?<\/think>/g, "").trim();
         const assistantMessage: MemoryMessage = {
           id: assistantId,
           role: "assistant",
-          content: finalCleaned || "Sin respuesta del asistente.",
+          content: fullText || "Sin respuesta del asistente.",
           timestamp: Date.now(),
         };
 
@@ -196,6 +228,21 @@ export default function ChatBot() {
     ? ["Que tecnologias sabe?", "Como lo contacto?", "Que experiencia tiene?"]
     : ["What's his tech stack?", "How to contact him?", "What's his experience?"];
 
+  // Convert URLs in text to clickable links
+  const renderText = (text: string) => {
+    const urlRegex = /(https?:\/\/[^\s<>)"']+)/g;
+    const parts = text.split(urlRegex);
+    return parts.map((part, i) =>
+      urlRegex.test(part) ? (
+        <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">
+          {part}
+        </a>
+      ) : (
+        <span key={i}>{part}</span>
+      )
+    );
+  };
+
   if (!isOpen) {
     return (
       <button
@@ -212,10 +259,18 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 w-80 sm:w-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col max-h-[550px]">
-      {/* Header */}
-      <div className="flex items-center justify-between p-3 border-b border-gray-700">
+    <div
+      ref={chatRef}
+      className="fixed z-50 w-80 sm:w-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col max-h-[550px]"
+      style={{ left: position.x, top: position.y }}
+    >
+      {/* Header - draggable area */}
+      <div
+        onMouseDown={onDragStart}
+        className="flex items-center justify-between p-3 border-b border-gray-700 cursor-grab active:cursor-grabbing select-none"
+      >
         <div className="flex items-center gap-2">
+          <GripHorizontal className="h-4 w-4 text-gray-500" />
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           <Bot className="h-4 w-4 text-blue-400" />
           <h3 className="text-sm font-semibold text-gray-100">
@@ -371,7 +426,7 @@ export default function ChatBot() {
                   : "bg-gray-800 text-gray-100"
               }`}
             >
-              <p className="text-xs leading-relaxed whitespace-pre-wrap">{message.content}</p>
+              <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(message.content)}</p>
             </div>
 
             {message.role === "user" && (
@@ -389,7 +444,7 @@ export default function ChatBot() {
               <Bot className="h-3.5 w-3.5 text-white" />
             </div>
             <div className="max-w-[78%] bg-gray-800 text-gray-100 rounded-lg px-3 py-2">
-              <p className="text-xs leading-relaxed whitespace-pre-wrap">{streamingContent}</p>
+              <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(streamingContent)}</p>
             </div>
           </div>
         )}
