@@ -126,6 +126,18 @@
     "subtitle": "Vestibulum diam nunc",
     "trabajos": [
       {
+        "name": "Mendieta Holding",
+        "date": "Abril 2026 - Presente",
+        "role": "Gerencia de TICS",
+        "info": "Gestión integral de la infraestructura tecnológica: administración de servidores VPS (Linux), configuración de dominios, DNS y certificados SSL. Despliegue y mantenimiento de servicios web con Docker, pipelines CI/CD y backups automatizados. Desarrollo de aplicaciones web (React, Next.js, Node.js) para operación interna. Administración de Microsoft 365, redes corporativas, soporte técnico y políticas de seguridad informática."
+      },
+      {
+        "name": "Megamobilier Ecuador",
+        "date": "Febrero 2026 - Presente",
+        "role": "Director de sistemas",
+        "info": "Diseño y gestión de la arquitectura de sistemas: provisión de servidores VPS, configuración de dominios, servicios cloud y despliegue de infraestructura productiva. Desarrollo full-stack (React, Next.js, TypeScript, Node.js) de plataformas de e-commerce y herramientas de gestión interna (inventario, ERP). Liderazgo del equipo técnico, definición de estándares de código, revisiones de arquitectura y metodologías ágiles para la entrega continua de producto."
+      },
+      {
         "name": "Supermercados D'Ley",
         "date": "Agosto 2025 - Presente",
         "role": "Desarrollador IUX - Marketing Digital",
