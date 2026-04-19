@@ -1,6 +1,7 @@
 import useScrollTo from "@/hooks/useScroll";
 
 import React, { useState, useEffect } from "react";
+import { useChatAction } from "@/context/ChatActionContext";
 import Descarga from "./sub/Descarga";
 import useMainContext from "@/context/useMainContext";
 import Header from "./Header";
@@ -14,6 +15,7 @@ import { addToast } from "@heroui/react";
 
 function Hero() {
   const { isLoad, numberCharge } = useMainContext();
+  const { setGenerateBackground } = useChatAction();
   const scrollToElement = useScrollTo();
   const [backgroundPrompt, setBackgroundPrompt] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -128,6 +130,11 @@ function Hero() {
     setBackgroundPrompt("");
     setShowInput(false);
   };
+
+  // Register callback for chatbot
+  useEffect(() => {
+    setGenerateBackground(generateBackground);
+  }, [setGenerateBackground]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {

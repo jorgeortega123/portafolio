@@ -7,6 +7,8 @@ export type IntentType =
   | "skills"
   | "experience"
   | "projects"
+  | "wallpaper"
+  | "contact-form"
   | "general";
 
 export interface DetectedIntent {
@@ -137,6 +139,43 @@ const INTENT_PATTERNS: IntentPattern[] = [
     suggestedActions: [
       { es: "Ver proyectos", en: "View projects" },
       { es: "Ver portfolio", en: "View portfolio" },
+    ],
+  },
+  {
+    type: "wallpaper",
+    keywords: [
+      "fondo", "background", "wallpaper", "cambiar fondo", "change background",
+      "fondo de pantalla", "imagen de fondo", "background image",
+      "cambiar imagen", "generar fondo", "generar imagen",
+    ],
+    patterns: [
+      /cambia[r]?\s+(el\s+)?fondo/i,
+      /cambia[r]?\s+(la\s+)?(imagen|pantalla)/i,
+      /genera[r]?\s+(un\s+)?(fondo|imagen|background)/i,
+      /change\s+(the\s+)?(background|wallpaper)/i,
+      /nuevo\s+fondo/i,
+      /quiero\s+(un\s+)?(fondo|background)/i,
+    ],
+    suggestedActions: [
+      { es: "Cambiar fondo", en: "Change background" },
+    ],
+  },
+  {
+    type: "contact-form",
+    keywords: [
+      "formulario", "enviar mensaje", "form", "write message",
+      "mandar mensaje", "escribir mensaje", "contact form",
+      "formulario de contacto", "contactar por formulario",
+    ],
+    patterns: [
+      /quiero\s+(enviar|mandar|escribir)\s+(un\s+)?mensaje/i,
+      /abrir\s+(el\s+)?formulario/i,
+      /llenar\s+(el\s+)?(formulario|form)/i,
+      /i\s+want\s+to\s+(send|write)\s+(a\s+)?message/i,
+      /contact\s+form/i,
+    ],
+    suggestedActions: [
+      { es: "Abrir contacto", en: "Open contact" },
     ],
   },
 ];

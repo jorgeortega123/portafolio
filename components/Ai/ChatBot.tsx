@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useChatMemory, MemoryMessage } from "@/hooks/useChatMemory";
 import { useIntentDetection, IntentType, DetectedIntent } from "@/hooks/useIntentDetection";
+import { useChatAction } from "@/context/ChatActionContext";
 import { useRouter } from "next/router";
 
 const API_BASE = "https://jorge-server.llampukaq.workers.dev/ia";
@@ -26,6 +27,8 @@ const INTENT_LABELS: Record<IntentType, { es: string; en: string; color: string 
   skills: { es: "Skills", en: "Skills", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
   experience: { es: "Experiencia", en: "Experience", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
   projects: { es: "Proyectos", en: "Projects", color: "bg-pink-500/20 text-pink-400 border-pink-500/30" },
+  wallpaper: { es: "Fondo", en: "Background", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
+  "contact-form": { es: "Formulario", en: "Form", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
   general: { es: "General", en: "General", color: "bg-gray-500/20 text-gray-400 border-gray-500/30" },
 };
 
@@ -34,6 +37,7 @@ export default function ChatBot() {
   const locale = router.locale || "es";
   const isSpanish = locale.startsWith("es");
   const { detectIntent } = useIntentDetection();
+  const { generateBackground, scrollToContact } = useChatAction();
 
   const {
     messages,
@@ -53,6 +57,7 @@ export default function ChatBot() {
   const [detectedIntent, setDetectedIntent] = useState<DetectedIntent | null>(null);
   const [showSessions, setShowSessions] = useState(false);
   const [streamingContent, setStreamingContent] = useState("");
+  const [isChangingBg, setIsChangingBg] = useState(false);
   const [position, setPosition] = useState({ x: 16, y: window.innerHeight - 570 });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -120,6 +125,20 @@ export default function ChatBot() {
       const intent = detectIntent(content, locale);
       setDetectedIntent(intent);
 
+      // Auto-scroll based on intent
+      const scrollMap: Record<string, string> = {
+        contact: "contacto",
+        "contact-form": "contacto",
+        email: "contacto",
+        experience: "timeline",
+        skills: "tarjetas",
+        projects: "tarjetas",
+      };
+      const scrollTarget = scrollMap[intent.type];
+      if (scrollTarget) {
+        document.getElementById(scrollTarget)?.scrollIntoView({ behavior: "smooth" });
+      }
+
       const userMessage: MemoryMessage = {
         id: generateId(),
         role: "user",
@@ -178,6 +197,7 @@ export default function ChatBot() {
 
         setStreamingContent("");
         saveMessage(assistantMessage);
+        executeActions(fullText);
       } catch (err) {
         if ((err as Error).name === "AbortError") return;
         setStreamingContent("");
@@ -218,6 +238,62 @@ export default function ChatBot() {
       "Ver email": { es: "Cual es el correo de Jorge?", en: "What is Jorge's email?" },
       "Ir a contacto": { es: "Quiero enviar un mensaje a Jorge", en: "I want to send a message to Jorge" },
     };
+
+    // Real actions (execute frontend functions, not chat messages)
+    if (action === "Cambiar fondo" || action === "Change background") {
+      const defaultPrompts = [
+        "Montanas nevadas con aurora boreal",
+        "Ciudad futurista de noche con neones",
+        "Bosque encantado con luz solar",
+        "Oceano tropical con palmeras al atardecer",
+      ];
+      const prompt = defaultPrompts[Math.floor(Math.random() * defaultPrompts.length)];
+      if (generateBackground) {
+        setIsChangingBg(true);
+        const msgId = Date.now().toString(36);
+        saveMessage({
+          id: msgId + "-loading",
+          role: "assistant",
+          content: isSpanish
+            ? `Generando fondo: "${prompt}"...`
+            : `Generating background: "${prompt}"...`,
+          timestamp: Date.now(),
+        });
+        // Wait for the background generation to complete
+        setTimeout(() => {
+          generateBackground(prompt);
+          // The image gen takes a few seconds, show loading until it's done
+          setTimeout(() => {
+            setIsChangingBg(false);
+            saveMessage({
+              id: msgId,
+              role: "assistant",
+              content: isSpanish
+                ? `Fondo cambiado a: "${prompt}". Te gusta o quieres otro?`
+                : `Background changed to: "${prompt}". Do you like it or want another?`,
+              timestamp: Date.now(),
+            });
+          }, 6000);
+        }, 300);
+      }
+      return;
+    }
+
+    if (action === "Abrir contacto" || action === "Open contact") {
+      if (scrollToContact) {
+        scrollToContact();
+        saveMessage({
+          id: Date.now().toString(36),
+          role: "assistant",
+          content: isSpanish
+            ? "Te lleve a la seccion de contacto. Ahi puedes enviarle un mensaje a Jorge."
+            : "I took you to the contact section. You can send Jorge a message there.",
+          timestamp: Date.now(),
+        });
+      }
+      return;
+    }
+
     const msg = actionMessages[action];
     if (msg) {
       sendMessage(isSpanish ? msg.es : msg.en);
@@ -228,10 +304,12 @@ export default function ChatBot() {
     ? ["Que tecnologias sabe?", "Como lo contacto?", "Que experiencia tiene?"]
     : ["What's his tech stack?", "How to contact him?", "What's his experience?"];
 
-  // Convert URLs in text to clickable links
+  // Convert URLs in text to clickable links and parse action markers
   const renderText = (text: string) => {
+    // Strip [ACTION:...] markers for display
+    const cleanText = text.replace(/\[ACTION:[^\]]+\]/g, "").trim();
     const urlRegex = /(https?:\/\/[^\s<>)"']+)/g;
-    const parts = text.split(urlRegex);
+    const parts = cleanText.split(urlRegex);
     return parts.map((part, i) =>
       urlRegex.test(part) ? (
         <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">
@@ -241,6 +319,17 @@ export default function ChatBot() {
         <span key={i}>{part}</span>
       )
     );
+  };
+
+  // Execute action markers from bot response
+  const executeActions = (text: string) => {
+    const wallpaperMatch = text.match(/\[ACTION:wallpaper:([^\]]+)\]/);
+    if (wallpaperMatch && generateBackground) {
+      generateBackground(wallpaperMatch[1]);
+    }
+    if (/\[ACTION:contact\]/.test(text) && scrollToContact) {
+      scrollToContact();
+    }
   };
 
   if (!isOpen) {
@@ -445,6 +534,21 @@ export default function ChatBot() {
             </div>
             <div className="max-w-[78%] bg-gray-800 text-gray-100 rounded-lg px-3 py-2">
               <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(streamingContent)}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Background generation loading */}
+        {isChangingBg && (
+          <div className="flex gap-2 justify-start">
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-cyan-600 flex items-center justify-center">
+              <Bot className="h-3.5 w-3.5 text-white animate-pulse" />
+            </div>
+            <div className="bg-gray-800 border border-cyan-500/30 rounded-lg px-3 py-2 flex items-center gap-2">
+              <Loader2 className="h-3 w-3 text-cyan-400 animate-spin" />
+              <span className="text-xs text-cyan-300">
+                {isSpanish ? "Generando fondo con IA..." : "Generating AI background..."}
+              </span>
             </div>
           </div>
         )}

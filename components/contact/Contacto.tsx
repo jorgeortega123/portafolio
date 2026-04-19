@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import H2 from "../html/H2";
 import P from "../html/P";
@@ -7,9 +7,17 @@ import { Icons } from "@llampukaq/icons";
 import { FormularioContacto } from "../Form/FormularioContacto";
 import { dataPage } from "@/context/dataPage";
 import { useTranslations } from "next-intl";
+import { useChatAction } from "@/context/ChatActionContext";
 
 export default function ContactFormNew() {
   const t = useTranslations("contact");
+  const { setScrollToContact } = useChatAction();
+
+  useEffect(() => {
+    setScrollToContact(() => {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [setScrollToContact]);
   return (
     <section
       id="contact"

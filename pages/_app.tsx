@@ -4,6 +4,7 @@ import "../style/efectos.css";
 import "../style/font.css";
 import "../style/principal.css";
 import MainContextComponent from "@/context/MainContext";
+import { ChatActionProvider } from "@/context/ChatActionContext";
 import Footer from "@/components/layout/Footer";
 import { IconsProvider } from "@llampukaq/icons";
 import Layout from "@/components/layout/Layout";
@@ -18,10 +19,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <ToastProvider placement="bottom-right" toastOffset={20} />
         <IconsProvider>
           <MainContextComponent>
+            <ChatActionProvider>
             <Layout>
               <Component {...pageProps} />
               <Footer />
             </Layout>
+            </ChatActionProvider>
           </MainContextComponent>{" "}
         </IconsProvider>
       </HeroUIProvider>
