@@ -64,6 +64,10 @@ export default function ChatBot() {
   const abortRef = useRef<AbortController | null>(null);
   const dragRef = useRef<{ startX: number; startY: number; startPosX: number; startPosY: number } | null>(null);
   const chatRef = useRef<HTMLDivElement>(null);
+  const velocityRef = useRef({ vx: 0, vy: 0 });
+  const lastDragTimeRef = useRef(0);
+  const lastDragPosRef = useRef({ x: 0, y: 0 });
+  const momentumRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!currentSessionId) {
@@ -81,15 +85,22 @@ export default function ChatBot() {
     }
   }, [isOpen]);
 
-  // Drag handlers
+  // Drag handlers with momentum
   const onDragStart = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
+    if (momentumRef.current) {
+      cancelAnimationFrame(momentumRef.current);
+      momentumRef.current = null;
+    }
     dragRef.current = {
       startX: e.clientX,
       startY: e.clientY,
       startPosX: position.x,
       startPosY: position.y,
     };
+    velocityRef.current = { vx: 0, vy: 0 };
+    lastDragTimeRef.current = performance.now();
+    lastDragPosRef.current = { x: e.clientX, y: e.clientY };
 
     const onMove = (ev: MouseEvent) => {
       if (!dragRef.current) return;
@@ -99,16 +110,55 @@ export default function ChatBot() {
       const newY = dragRef.current.startPosY + dy;
       const maxX = window.innerWidth - (chatRef.current?.offsetWidth || 384);
       const maxY = window.innerHeight - (chatRef.current?.offsetHeight || 100);
-      setPosition({
-        x: Math.max(0, Math.min(newX, maxX)),
-        y: Math.max(0, Math.min(newY, maxY)),
-      });
+      const clampedX = Math.max(0, Math.min(newX, maxX));
+      const clampedY = Math.max(0, Math.min(newY, maxY));
+      setPosition({ x: clampedX, y: clampedY });
+
+      const now = performance.now();
+      const dt = now - lastDragTimeRef.current;
+      if (dt > 0) {
+        velocityRef.current = {
+          vx: (ev.clientX - lastDragPosRef.current.x) / dt,
+          vy: (ev.clientY - lastDragPosRef.current.y) / dt,
+        };
+      }
+      lastDragTimeRef.current = now;
+      lastDragPosRef.current = { x: ev.clientX, y: ev.clientY };
     };
 
     const onUp = () => {
       dragRef.current = null;
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onUp);
+
+      // Apply momentum
+      const FRICTION = 0.92;
+      const MIN_SPEED = 0.01;
+      let vx = velocityRef.current.vx * 16;
+      let vy = velocityRef.current.vy * 16;
+
+      if (Math.abs(vx) < MIN_SPEED && Math.abs(vy) < MIN_SPEED) return;
+
+      const animate = () => {
+        vx *= FRICTION;
+        vy *= FRICTION;
+        if (Math.abs(vx) < MIN_SPEED && Math.abs(vy) < MIN_SPEED) {
+          momentumRef.current = null;
+          return;
+        }
+        setPosition((prev) => {
+          const maxX = window.innerWidth - (chatRef.current?.offsetWidth || 384);
+          const maxY = window.innerHeight - (chatRef.current?.offsetHeight || 100);
+          const nx = Math.max(0, Math.min(prev.x + vx, maxX));
+          const ny = Math.max(0, Math.min(prev.y + vy, maxY));
+          // Bounce off edges
+          if (nx <= 0 || nx >= maxX) vx *= -0.4;
+          if (ny <= 0 || ny >= maxY) vy *= -0.4;
+          return { x: nx, y: ny };
+        });
+        momentumRef.current = requestAnimationFrame(animate);
+      };
+      momentumRef.current = requestAnimationFrame(animate);
     };
 
     window.addEventListener("mousemove", onMove);
@@ -350,7 +400,7 @@ export default function ChatBot() {
   return (
     <div
       ref={chatRef}
-      className="fixed z-50 w-80 sm:w-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col max-h-[550px]"
+      className="fixed z-50 w-80 sm:w-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col max-h-[550px] will-change-[left,top]"
       style={{ left: position.x, top: position.y }}
     >
       {/* Header - draggable area */}
