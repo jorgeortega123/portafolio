@@ -32,6 +32,15 @@ const INTENT_LABELS: Record<IntentType, { es: string; en: string; color: string 
   general: { es: "General", en: "General", color: "bg-gray-500/20 text-gray-400 border-gray-500/30" },
 };
 
+const TIPS = [
+  { es: "Preguntame sobre mis skills", en: "Ask me about my skills" },
+  { es: "Quieres ver mis proyectos?", en: "Want to see my projects?" },
+  { es: "Te cuento mi experiencia?", en: "Shall I tell you my experience?" },
+  { es: "Necesitas contactarme?", en: "Need to contact me?" },
+  { es: "Puedo cambiar el fondo con IA!", en: "I can change the background with AI!" },
+  { es: "Chatea conmigo!", en: "Chat with me!" },
+];
+
 export default function ChatBot() {
   const router = useRouter();
   const locale = router.locale || "es";
@@ -58,6 +67,8 @@ export default function ChatBot() {
   const [showSessions, setShowSessions] = useState(false);
   const [streamingContent, setStreamingContent] = useState("");
   const [isChangingBg, setIsChangingBg] = useState(false);
+  const [tipIndex, setTipIndex] = useState(0);
+  const [tipVisible, setTipVisible] = useState(true);
   const [position, setPosition] = useState({ x: 16, y: window.innerHeight - 570 });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -83,6 +94,20 @@ export default function ChatBot() {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [isOpen]);
+
+  // Rotating invitation messages
+  useEffect(() => {
+    if (isOpen) return;
+    const cycle = () => {
+      setTipVisible(false);
+      setTimeout(() => {
+        setTipIndex((prev) => (prev + 1) % TIPS.length);
+        setTipVisible(true);
+      }, 400);
+    };
+    const id = setInterval(cycle, 3500);
+    return () => clearInterval(id);
   }, [isOpen]);
 
   // Drag handlers with momentum
@@ -384,16 +409,27 @@ export default function ChatBot() {
 
   if (!isOpen) {
     return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 left-4 z-50 bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg transition-all hover:scale-105 group"
-        aria-label="Abrir chat"
-      >
-        <MessageCircle className="h-6 w-6" />
-        <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-gray-900 text-gray-100 text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-gray-700">
-          {isSpanish ? "Chatea conmigo" : "Chat with me"}
+      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        {/* Rotating tip text */}
+        <span
+          className={`text-gray-200 text-sm whitespace-nowrap bg-gray-900/70 backdrop-blur-sm px-3 py-1.5 rounded-full transition-all duration-400 cursor-pointer select-none ${
+            tipVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
+          }`}
+          onClick={() => setIsOpen(true)}
+        >
+          {TIPS[tipIndex][isSpanish ? "es" : "en"]}
         </span>
-      </button>
+
+        {/* Floating button */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className="relative bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-400 hover:to-blue-600 text-white p-4 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-110 hover:shadow-blue-500/50 active:scale-95"
+          aria-label="Abrir chat"
+        >
+          <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-20" />
+          <MessageCircle className="h-6 w-6 relative z-10" />
+        </button>
+      </div>
     );
   }
 

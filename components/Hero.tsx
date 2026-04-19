@@ -229,15 +229,14 @@ function Hero() {
           </div> */}
         </div>
 
-        {/* AI Background Changer */}
-        <div className="hidden absolute bottom-4 right-4 z-50 lg:flex items-center gap-3">
+        {/* AI Background Changer — commented out: now handled by ChatBot */}
+        {/* <div className="hidden absolute bottom-4 right-4 z-50 lg:flex items-center gap-3">
           {!showInput && (
             <p
               onClick={() => setShowInput(true)}
               className="text-gray-400 hover:underline cursor-pointer  text-sm font-medium  py-2 "
             >
               {imageGenerator.question}
-              {/* ¿Y si... cambiamos el fondo de pantalla? */}
             </p>
           )}
           {!showInput ? (
@@ -267,7 +266,6 @@ function Hero() {
                 )}
                 <span className="text-sm">
                   {imageGenerator.title}
-                  {/* Cambiar fondo con IA */}
                 </span>
               </div>
             </button>
@@ -276,7 +274,6 @@ function Hero() {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-sm font-semibold text-gray-100 flex items-center">
                   <Wand2 className="h-4 w-4 mr-2 text-blue-400" />
-                  {/* Cambiar fondo a través de la IA */}
                   {imageGenerator.label}
                 </h3>
                 <button
@@ -304,7 +301,6 @@ function Hero() {
                     disabled={isGenerating}
                   />
 
-                  {/* Sugerencias predefinidas */}
                   <div className="flex flex-wrap gap-1">
                     {imageGeneratorDefaultPrompt.map((suggestion, index) => (
                       <button
@@ -323,7 +319,6 @@ function Hero() {
 
                   <p className="text-xs text-gray-400">
                     {imageGenerator.enterKeyDisclaimer}
-                    {/* Presiona Enter para generar o Escape para cancelar */}
                   </p>
                 </div>
 
@@ -337,7 +332,6 @@ function Hero() {
                     className="px-3 py-1.5 text-sm text-gray-300 hover:text-gray-100 transition-colors"
                   >
                     {imageGenerator.cancelButton}
-                    {/* Cancelar */}
                   </button>
                   <button
                     onClick={handleGenerateBackground}
@@ -357,7 +351,7 @@ function Hero() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* <Descarga /> */}
       </div>
