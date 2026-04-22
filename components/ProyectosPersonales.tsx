@@ -6,6 +6,8 @@ import ZoomComponentWithModal from "./layout/ZoomComponentWithModal";
 import useMainContext from "@/context/useMainContext";
 import Img from "./html/Img";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { slugify } from "@/hooks/slugify";
 
 export default function ProyectosPersonales() {
   const { skills } = useMainContext();
@@ -94,6 +96,12 @@ export default function ProyectosPersonales() {
               </div>
             </div>
             <div className="bottom-0 pb-4 w-full left-0 flex space-x-3 px-3">
+              <Link
+                href={`/proyecto/${slugify(item.title)}`}
+                className="useTransitionDelay border border-emerald-500 text-emerald-500 rounded-lg px-7 py-2 hover:bg-emerald-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-emerald-500/30"
+              >
+                Ver más
+              </Link>
               <button
                 onClick={() => goToUrl(item.web)}
                 className="useTransitionDelay border border-blue-500 text-blue-500 rounded-lg px-7 py-2 hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-blue-500/30"

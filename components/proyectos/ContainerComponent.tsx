@@ -7,6 +7,7 @@ import useMainContext from "@/context/useMainContext";
 import P from "../html/P";
 import { Alert, Button, Tooltip } from "@heroui/react";
 import { Icons } from "@llampukaq/icons";
+import { slugify } from "@/hooks/slugify";
 
 const rgbBorderStyle = `
   @keyframes rgb-border {
@@ -127,21 +128,18 @@ export default function ContainerComponent({
                 })}
               </div>
 
-              <div className="flex items-center justify-between mt-6 md:justify-start">
-                {/* <Link
-                href={{
-                  pathname: `/casos/[caso]`,
-                  query: {
-                    caso: `${formatWords(item.title)}`,
-                  },
-                }}
-                target="_self"
-                onClick={handleButton}
-               
-                className="p-2 text-white transition-colors duration-300 border rounded-lg rtl:-scale-x-100 hover:bg-blue-400"
-              >
-                Leer más
-              </Link> */}
+              <div className="flex items-center gap-3 mt-6 md:justify-start">
+                <Link
+                  href={`/trabajo/${slugify(item.title)}`}
+                  title={item.title}
+                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100 hover:bg-blue-400"
+                >
+                  Ver más
+                  <Icons
+                    className="stroke-zinc-200"
+                    icon="IconArrowRight"
+                  />
+                </Link>
 
                 <Link
                   href={item.link}
