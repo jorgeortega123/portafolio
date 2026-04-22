@@ -278,6 +278,14 @@
     "whatsappMessage": "Hola, vengo de tu portafolio...",
     "copyright": "Hecho por"
   },
+  "projectDetail": {
+    "back": "Volver al inicio",
+    "backToProjects": "Volver a proyectos",
+    "about": "Sobre este proyecto",
+    "technologies": "Tecnologías utilizadas",
+    "visit": "Visitar sitio web",
+    "code": "Código fuente"
+  },
   "aiSegments": {
     "image-generator": {
       "question": "¿Y si... cambiamos el fondo?",

@@ -265,6 +265,14 @@
         "whatsappMessage": "Hello, I come from your portfolio...",
         "copyright": "Made by"
     },
+    "projectDetail": {
+        "back": "Back to home",
+        "backToProjects": "Back to projects",
+        "about": "About this project",
+        "technologies": "Technologies used",
+        "visit": "Visit website",
+        "code": "Source code"
+    },
     "aiSegments": {
         "image-generator": {
             "question": "What if... we change the background?",

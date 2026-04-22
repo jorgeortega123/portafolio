@@ -265,6 +265,14 @@
         "whatsappMessage": "你好，我来自您的作品集...",
         "copyright": "制作者"
     },
+    "projectDetail": {
+        "back": "返回首页",
+        "backToProjects": "返回项目列表",
+        "about": "关于此项目",
+        "technologies": "使用的技术",
+        "visit": "访问网站",
+        "code": "源代码"
+    },
     "aiSegments": {
         "image-generator": {
             "question": "如果……我们更换背景呢？",
