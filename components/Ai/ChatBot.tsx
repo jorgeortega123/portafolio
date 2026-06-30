@@ -122,8 +122,8 @@ export default function ChatBot() {
   const [tipIndex, setTipIndex] = useState(0);
   const [tipVisible, setTipVisible] = useState(true);
   const [position, setPosition] = useState(() => {
-    const chatW = window.innerWidth >= 640 ? 384 : 320;
-    return { x: window.innerWidth - chatW - 24, y: window.innerHeight - 570 };
+    const chatW = window.innerWidth >= 640 ? 416 : 352;
+    return { x: window.innerWidth - chatW - 24, y: window.innerHeight - 640 };
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -502,43 +502,50 @@ export default function ChatBot() {
   return (
     <div
       ref={chatRef}
-      className="fixed z-50 w-80 sm:w-96 bg-gray-900/95 backdrop-blur-xl border border-gray-700/60 rounded-2xl shadow-2xl shadow-black/50 flex flex-col max-h-[550px] will-change-[left,top] overflow-hidden"
+      className="fixed z-50 w-[22rem] sm:w-[26rem] bg-gray-900/95 backdrop-blur-xl border border-gray-700/60 rounded-3xl shadow-2xl shadow-black/60 flex flex-col max-h-[620px] will-change-[left,top] overflow-hidden ring-1 ring-white/5"
       style={{ left: position.x, top: position.y }}
     >
       {/* Header - draggable area */}
       <div
         onMouseDown={onDragStart}
-        className="flex items-center justify-between px-3 py-2.5 border-b border-gray-700/60 cursor-grab active:cursor-grabbing select-none bg-gradient-to-r from-gray-900/80 to-gray-800/40"
+        className="flex items-center justify-between px-4 py-3.5 border-b border-gray-700/60 cursor-grab active:cursor-grabbing select-none bg-gradient-to-r from-gray-900/90 via-gray-800/50 to-gray-900/90"
       >
-        <div className="flex items-center gap-2">
-          <GripHorizontal className="h-4 w-4 text-gray-500" />
+        <div className="flex items-center gap-2.5">
+          <GripHorizontal className="h-4 w-4 text-gray-600" />
           <div className="relative">
-            <div className="w-2 h-2 bg-green-400 rounded-full" />
-            <div className="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-60" />
+            <div className="w-2.5 h-2.5 bg-green-400 rounded-full" />
+            <div className="absolute inset-0 w-2.5 h-2.5 bg-green-400 rounded-full animate-ping opacity-60" />
           </div>
-          <Bot className="h-4 w-4 text-blue-400" />
-          <h3 className="text-sm font-semibold text-gray-100">
-            {isSpanish ? "Asistente de Jorge" : "Jorge's Assistant"}
-          </h3>
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/30">
+            <Bot className="h-4 w-4 text-white" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <h3 className="text-sm font-semibold text-gray-50">
+              {isSpanish ? "Asistente de Jorge" : "Jorge's Assistant"}
+            </h3>
+            <span className="text-[11px] text-green-400 font-medium">
+              {isSpanish ? "En linea" : "Online"}
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-1">
           <button
             onClick={() => setShowSessions(!showSessions)}
-            className="text-gray-400 hover:text-gray-200 p-1 transition-colors"
+            className="text-gray-400 hover:text-gray-200 hover:bg-white/5 p-1.5 rounded-lg transition-colors"
             title={isSpanish ? "Sesiones" : "Sessions"}
           >
             <MessageCircle className="h-4 w-4" />
           </button>
           <button
             onClick={clearHistory}
-            className="text-gray-400 hover:text-red-400 p-1 transition-colors"
+            className="text-gray-400 hover:text-red-400 hover:bg-red-500/10 p-1.5 rounded-lg transition-colors"
             title={isSpanish ? "Limpiar historial" : "Clear history"}
           >
             <Trash2 className="h-4 w-4" />
           </button>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-gray-200 p-1 transition-colors"
+            className="text-gray-400 hover:text-gray-200 hover:bg-white/5 p-1.5 rounded-lg transition-colors"
             aria-label="Cerrar chat"
           >
             <X className="h-4 w-4" />
@@ -548,25 +555,25 @@ export default function ChatBot() {
 
       {/* Session list */}
       {showSessions && (
-        <div className="border-b border-gray-700 max-h-32 overflow-y-auto">
+        <div className="border-b border-gray-700/60 max-h-40 overflow-y-auto bg-gray-900/40">
           <div className="p-2">
             <button
               onClick={() => {
                 createNewSession();
                 setShowSessions(false);
               }}
-              className="flex items-center gap-2 w-full text-left text-xs text-gray-300 hover:text-white hover:bg-gray-800 p-2 rounded transition-colors"
+              className="flex items-center gap-2 w-full text-left text-sm text-gray-300 hover:text-white hover:bg-white/5 p-2.5 rounded-lg transition-colors"
             >
-              <Plus className="h-3 w-3" />
+              <Plus className="h-4 w-4" />
               {isSpanish ? "Nueva sesion" : "New session"}
             </button>
             {sessions.map((s) => (
               <div
                 key={s.id}
-                className={`flex items-center justify-between text-xs p-2 rounded cursor-pointer transition-colors ${
+                className={`flex items-center justify-between text-sm p-2.5 rounded-lg cursor-pointer transition-colors ${
                   s.id === currentSessionId
                     ? "bg-blue-600/20 text-blue-300"
-                    : "text-gray-400 hover:text-white hover:bg-gray-800"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
                 <span
@@ -583,9 +590,9 @@ export default function ChatBot() {
                     e.stopPropagation();
                     deleteSession(s.id);
                   }}
-                  className="text-gray-500 hover:text-red-400 ml-2"
+                  className="text-gray-500 hover:text-red-400 ml-2 p-1"
                 >
-                  <X className="h-3 w-3" />
+                  <X className="h-3.5 w-3.5" />
                 </button>
               </div>
             ))}
@@ -595,10 +602,10 @@ export default function ChatBot() {
 
       {/* Intent indicator */}
       {detectedIntent && detectedIntent.type !== "general" && (
-        <div className="px-3 py-1.5 border-b border-gray-700/50 flex items-center gap-2">
-          <Zap className="h-3 w-3 text-yellow-400" />
+        <div className="px-4 py-2 border-b border-gray-700/50 flex items-center gap-2">
+          <Zap className="h-3.5 w-3.5 text-yellow-400" />
           <span
-            className={`text-[10px] px-2 py-0.5 rounded-full border ${
+            className={`text-xs px-2.5 py-0.5 rounded-full border ${
               INTENT_LABELS[detectedIntent.type]?.color || INTENT_LABELS.general.color
             }`}
           >
@@ -606,12 +613,12 @@ export default function ChatBot() {
               detectedIntent.type}
           </span>
           {detectedIntent.suggestedActions.length > 0 && (
-            <div className="flex gap-1 ml-auto">
+            <div className="flex gap-2 ml-auto">
               {detectedIntent.suggestedActions.slice(0, 2).map((action) => (
                 <button
                   key={action}
                   onClick={() => handleQuickAction(action)}
-                  className="text-[10px] text-blue-400 hover:text-blue-300 underline"
+                  className="text-xs text-blue-400 hover:text-blue-300 underline"
                 >
                   {action}
                 </button>
@@ -622,18 +629,18 @@ export default function ChatBot() {
       )}
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[250px]">
+      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 min-h-[280px]">
         {messages.length === 0 && !streamingContent && (
-          <div className="py-4 space-y-4">
+          <div className="py-2 space-y-5">
             {/* Welcome */}
             <div className="text-center px-2">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 mb-3 shadow-lg shadow-indigo-500/25">
-                <Bot className="h-7 w-7 text-white" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 mb-3.5 shadow-xl shadow-indigo-500/30">
+                <Bot className="h-8 w-8 text-white" />
               </div>
-              <p className="font-semibold text-gray-100 text-sm">
+              <p className="font-semibold text-gray-50 text-base">
                 {isSpanish ? "Hola! Soy el asistente de Jorge" : "Hi! I'm Jorge's assistant"}
               </p>
-              <p className="mt-1 text-gray-500 text-xs">
+              <p className="mt-1.5 text-gray-400 text-sm">
                 {isSpanish
                   ? "Puedo hacer varias cosas por ti. Prueba una:"
                   : "I can do several things for you. Try one:"}
@@ -641,7 +648,7 @@ export default function ChatBot() {
             </div>
 
             {/* Suggestion list */}
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               {SUGGESTIONS.map((s) => {
                 const Icon = s.icon;
                 const accent = ACCENT_STYLES[s.accent];
@@ -649,20 +656,20 @@ export default function ChatBot() {
                   <button
                     key={s.id}
                     onClick={() => handleSuggestion(s)}
-                    className={`group w-full flex items-center gap-3 p-2.5 rounded-xl bg-gray-800/50 border border-gray-700/50 ${accent.hoverBorder} hover:bg-gray-800 transition-all text-left`}
+                    className={`group w-full flex items-center gap-3 p-3 rounded-2xl bg-gray-800/50 border border-gray-700/50 ${accent.hoverBorder} hover:bg-gray-800 transition-all text-left`}
                   >
-                    <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center ${accent.iconBg}`}>
-                      <Icon className={`h-4 w-4 ${accent.iconColor}`} />
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${accent.iconBg}`}>
+                      <Icon className={`h-5 w-5 ${accent.iconColor}`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-gray-200 truncate">
+                      <p className="text-sm font-medium text-gray-100 truncate">
                         {isSpanish ? s.titleEs : s.titleEn}
                       </p>
-                      <p className="text-[10px] text-gray-500 truncate">
+                      <p className="text-xs text-gray-500 truncate mt-0.5">
                         {isSpanish ? s.subtitleEs : s.subtitleEn}
                       </p>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                    <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-300 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                   </button>
                 );
               })}
@@ -673,36 +680,36 @@ export default function ChatBot() {
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`flex gap-2 ${
+            className={`flex gap-2.5 ${
               message.role === "user" ? "justify-end" : "justify-start"
             }`}
           >
             {message.role === "assistant" && (
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center">
-                <Bot className="h-3.5 w-3.5 text-white" />
+              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+                <Bot className="h-4 w-4 text-white" />
               </div>
             )}
 
             <div
-              className={`max-w-[78%] rounded-lg px-3 py-2 ${
+              className={`max-w-[78%] rounded-2xl px-3.5 py-2.5 ${
                 message.role === "user"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-800 text-gray-100"
+                  ? "bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-md"
+                  : "bg-gray-800/90 text-gray-100 rounded-tl-md border border-gray-700/50"
               }`}
             >
               {message.image && (
                 <img
                   src={message.image}
                   alt="background"
-                  className="rounded-md w-full max-h-40 object-cover mb-2 border border-gray-700"
+                  className="rounded-xl w-full max-h-44 object-cover mb-2.5 border border-gray-700/50"
                 />
               )}
-              <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(message.content)}</p>
+              <p className="text-sm leading-relaxed whitespace-pre-wrap">{renderText(message.content)}</p>
             </div>
 
             {message.role === "user" && (
-              <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center">
-                <User className="h-3.5 w-3.5 text-gray-300" />
+              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gray-700 flex items-center justify-center">
+                <User className="h-4 w-4 text-gray-300" />
               </div>
             )}
           </div>
@@ -710,32 +717,32 @@ export default function ChatBot() {
 
         {/* Streaming message */}
         {streamingContent && (
-          <div className="flex gap-2 justify-start">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center">
-              <Bot className="h-3.5 w-3.5 text-white" />
+          <div className="flex gap-2.5 justify-start">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+              <Bot className="h-4 w-4 text-white" />
             </div>
-            <div className="max-w-[78%] bg-gray-800 text-gray-100 rounded-lg px-3 py-2">
-              <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(streamingContent)}</p>
+            <div className="max-w-[78%] bg-gray-800/90 text-gray-100 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-gray-700/50">
+              <p className="text-sm leading-relaxed whitespace-pre-wrap">{renderText(streamingContent)}</p>
             </div>
           </div>
         )}
 
         {/* Background generation loading */}
         {isChangingBg && (
-          <div className="flex gap-2 justify-start">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-cyan-600 flex items-center justify-center">
-              <Bot className="h-3.5 w-3.5 text-white animate-pulse" />
+          <div className="flex gap-2.5 justify-start">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20">
+              <Bot className="h-4 w-4 text-white animate-pulse" />
             </div>
-            <div className="max-w-[78%] bg-gray-800 border border-cyan-500/30 rounded-lg px-3 py-2">
-              <div className="flex items-center gap-2 mb-2">
-                <Loader2 className="h-3 w-3 text-cyan-400 animate-spin" />
-                <span className="text-xs text-cyan-300">
+            <div className="max-w-[78%] bg-gray-800/90 border border-cyan-500/30 rounded-2xl rounded-tl-md px-3.5 py-3">
+              <div className="flex items-center gap-2 mb-2.5">
+                <Loader2 className="h-4 w-4 text-cyan-400 animate-spin" />
+                <span className="text-sm text-cyan-300 font-medium">
                   {isSpanish ? "Generando imagen con IA..." : "Generating image with AI..."}
                 </span>
               </div>
               {bgPrompt && (
-                <div className="w-48 h-20 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 rounded-md animate-pulse flex items-center justify-center px-2">
-                  <span className="text-[10px] text-gray-400 italic truncate">"{bgPrompt}"</span>
+                <div className="w-56 h-24 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 rounded-xl animate-pulse flex items-center justify-center px-3">
+                  <span className="text-xs text-gray-400 italic truncate">"{bgPrompt}"</span>
                 </div>
               )}
             </div>
@@ -744,22 +751,22 @@ export default function ChatBot() {
 
         {/* Loading dots (only when no streaming content yet) */}
         {isLoading && !streamingContent && (
-          <div className="flex gap-2 justify-start">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center">
-              <Bot className="h-3.5 w-3.5 text-white" />
+          <div className="flex gap-2.5 justify-start">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+              <Bot className="h-4 w-4 text-white" />
             </div>
-            <div className="bg-gray-800 rounded-lg px-3 py-2">
-              <div className="flex gap-1">
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+            <div className="bg-gray-800/90 rounded-2xl rounded-tl-md px-4 py-3.5 border border-gray-700/50">
+              <div className="flex gap-1.5">
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           </div>
         )}
 
         {error && (
-          <div className="bg-red-900/50 border border-red-700 rounded-lg p-2 text-xs text-red-200">
+          <div className="bg-red-900/40 border border-red-700/50 rounded-2xl p-3 text-sm text-red-200">
             {error}
           </div>
         )}
@@ -768,8 +775,8 @@ export default function ChatBot() {
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="p-3 border-t border-gray-700">
-        <div className="flex gap-2">
+      <form onSubmit={handleSubmit} className="px-3 py-3 border-t border-gray-700/60 bg-gray-900/40">
+        <div className="flex gap-2 items-center">
           <input
             ref={inputRef}
             type="text"
@@ -777,19 +784,19 @@ export default function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={isSpanish ? "Escribe tu mensaje..." : "Type your message..."}
-            className="flex-1 px-3 py-2 bg-gray-800/80 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 text-xs transition-all"
+            className="flex-1 px-4 py-2.5 bg-gray-800/80 border border-gray-700/60 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 text-sm transition-all"
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2.5 bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl transition-all shadow-md shadow-blue-500/20 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
             aria-label="Enviar mensaje"
           >
             {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
+              <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
-              <Send className="h-4 w-4" />
+              <Send className="h-5 w-5" />
             )}
           </button>
         </div>
