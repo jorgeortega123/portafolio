@@ -3,9 +3,9 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
 interface ChatActionContextType {
-  generateBackground: ((prompt: string) => void) | null;
+  generateBackground: ((prompt: string) => Promise<string | null>) | null;
   scrollToContact: (() => void) | null;
-  setGenerateBackground: (fn: (prompt: string) => void) => void;
+  setGenerateBackground: (fn: (prompt: string) => Promise<string | null>) => void;
   setScrollToContact: (fn: () => void) => void;
 }
 
@@ -17,10 +17,10 @@ const ChatActionContext = createContext<ChatActionContextType>({
 });
 
 export function ChatActionProvider({ children }: { children: ReactNode }) {
-  const [generateBackground, setGenerateBackground] = useState<((prompt: string) => void) | null>(null);
+  const [generateBackground, setGenerateBackground] = useState<((prompt: string) => Promise<string | null>) | null>(null);
   const [scrollToContact, setScrollToContact] = useState<(() => void) | null>(null);
 
-  const stableSetGenerate = useCallback((fn: (prompt: string) => void) => setGenerateBackground(() => fn), []);
+  const stableSetGenerate = useCallback((fn: (prompt: string) => Promise<string | null>) => setGenerateBackground(() => fn), []);
   const stableSetScroll = useCallback((fn: () => void) => setScrollToContact(() => fn), []);
 
   return (

@@ -7,6 +7,7 @@ export interface MemoryMessage {
   role: "user" | "assistant" | "system";
   content: string;
   timestamp: number;
+  image?: string;
 }
 
 export interface ChatSession {

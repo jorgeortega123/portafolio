@@ -67,6 +67,7 @@ export default function ChatBot() {
   const [showSessions, setShowSessions] = useState(false);
   const [streamingContent, setStreamingContent] = useState("");
   const [isChangingBg, setIsChangingBg] = useState(false);
+  const [bgPrompt, setBgPrompt] = useState<string | null>(null);
   const [tipIndex, setTipIndex] = useState(0);
   const [tipVisible, setTipVisible] = useState(true);
   const [position, setPosition] = useState({ x: 16, y: window.innerHeight - 570 });
@@ -292,6 +293,43 @@ export default function ChatBot() {
     sendMessage(input);
   };
 
+  const performBackgroundGeneration = useCallback(
+    async (prompt: string) => {
+      if (!generateBackground) return;
+      setBgPrompt(prompt);
+      setIsChangingBg(true);
+      try {
+        const image = await generateBackground(prompt);
+        saveMessage({
+          id: Date.now().toString(36) + Math.random().toString(36).substring(2, 6),
+          role: "assistant",
+          content: image
+            ? isSpanish
+              ? `Listo! Cambie el fondo a: "${prompt}". Te gusta o quieres otro?`
+              : `Done! Background changed to: "${prompt}". Do you like it or want another?`
+            : isSpanish
+              ? "No pude generar el fondo esta vez. Quieres intentar de nuevo?"
+              : "Couldn't generate the background this time. Want to try again?",
+          image: image || undefined,
+          timestamp: Date.now(),
+        });
+      } catch {
+        saveMessage({
+          id: Date.now().toString(36) + Math.random().toString(36).substring(2, 6),
+          role: "assistant",
+          content: isSpanish
+            ? "Hubo un error al generar el fondo. Intenta de nuevo."
+            : "There was an error generating the background. Try again.",
+          timestamp: Date.now(),
+        });
+      } finally {
+        setIsChangingBg(false);
+        setBgPrompt(null);
+      }
+    },
+    [generateBackground, saveMessage, isSpanish]
+  );
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -323,34 +361,7 @@ export default function ChatBot() {
         "Oceano tropical con palmeras al atardecer",
       ];
       const prompt = defaultPrompts[Math.floor(Math.random() * defaultPrompts.length)];
-      if (generateBackground) {
-        setIsChangingBg(true);
-        const msgId = Date.now().toString(36);
-        saveMessage({
-          id: msgId + "-loading",
-          role: "assistant",
-          content: isSpanish
-            ? `Generando fondo: "${prompt}"...`
-            : `Generating background: "${prompt}"...`,
-          timestamp: Date.now(),
-        });
-        // Wait for the background generation to complete
-        setTimeout(() => {
-          generateBackground(prompt);
-          // The image gen takes a few seconds, show loading until it's done
-          setTimeout(() => {
-            setIsChangingBg(false);
-            saveMessage({
-              id: msgId,
-              role: "assistant",
-              content: isSpanish
-                ? `Fondo cambiado a: "${prompt}". Te gusta o quieres otro?`
-                : `Background changed to: "${prompt}". Do you like it or want another?`,
-              timestamp: Date.now(),
-            });
-          }, 6000);
-        }, 300);
-      }
+      performBackgroundGeneration(prompt);
       return;
     }
 
@@ -400,7 +411,7 @@ export default function ChatBot() {
   const executeActions = (text: string) => {
     const wallpaperMatch = text.match(/\[ACTION:wallpaper:([^\]]+)\]/);
     if (wallpaperMatch && generateBackground) {
-      generateBackground(wallpaperMatch[1]);
+      performBackgroundGeneration(wallpaperMatch[1]);
     }
     if (/\[ACTION:contact\]/.test(text) && scrollToContact) {
       scrollToContact();
@@ -601,6 +612,13 @@ export default function ChatBot() {
                   : "bg-gray-800 text-gray-100"
               }`}
             >
+              {message.image && (
+                <img
+                  src={message.image}
+                  alt="background"
+                  className="rounded-md w-full max-h-40 object-cover mb-2 border border-gray-700"
+                />
+              )}
               <p className="text-xs leading-relaxed whitespace-pre-wrap">{renderText(message.content)}</p>
             </div>
 
@@ -630,11 +648,18 @@ export default function ChatBot() {
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-cyan-600 flex items-center justify-center">
               <Bot className="h-3.5 w-3.5 text-white animate-pulse" />
             </div>
-            <div className="bg-gray-800 border border-cyan-500/30 rounded-lg px-3 py-2 flex items-center gap-2">
-              <Loader2 className="h-3 w-3 text-cyan-400 animate-spin" />
-              <span className="text-xs text-cyan-300">
-                {isSpanish ? "Generando fondo con IA..." : "Generating AI background..."}
-              </span>
+            <div className="max-w-[78%] bg-gray-800 border border-cyan-500/30 rounded-lg px-3 py-2">
+              <div className="flex items-center gap-2 mb-2">
+                <Loader2 className="h-3 w-3 text-cyan-400 animate-spin" />
+                <span className="text-xs text-cyan-300">
+                  {isSpanish ? "Generando imagen con IA..." : "Generating image with AI..."}
+                </span>
+              </div>
+              {bgPrompt && (
+                <div className="w-48 h-20 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 rounded-md animate-pulse flex items-center justify-center px-2">
+                  <span className="text-[10px] text-gray-400 italic truncate">"{bgPrompt}"</span>
+                </div>
+              )}
             </div>
           </div>
         )}
