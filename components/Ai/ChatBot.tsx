@@ -12,6 +12,11 @@ import {
   Plus,
   Zap,
   GripHorizontal,
+  Sparkles,
+  Briefcase,
+  FolderGit,
+  Mail,
+  ChevronRight,
 } from "lucide-react";
 import { useChatMemory, MemoryMessage } from "@/hooks/useChatMemory";
 import { useIntentDetection, IntentType, DetectedIntent } from "@/hooks/useIntentDetection";
@@ -39,6 +44,52 @@ const TIPS = [
   { es: "Necesitas contactarme?", en: "Need to contact me?" },
   { es: "Puedo cambiar el fondo con IA!", en: "I can change the background with AI!" },
   { es: "Chatea conmigo!", en: "Chat with me!" },
+];
+
+const ACCENT_STYLES: Record<string, { iconBg: string; iconColor: string; hoverBorder: string }> = {
+  cyan: { iconBg: "bg-cyan-500/15", iconColor: "text-cyan-400", hoverBorder: "hover:border-cyan-500/40" },
+  orange: { iconBg: "bg-orange-500/15", iconColor: "text-orange-400", hoverBorder: "hover:border-orange-500/40" },
+  pink: { iconBg: "bg-pink-500/15", iconColor: "text-pink-400", hoverBorder: "hover:border-pink-500/40" },
+  green: { iconBg: "bg-green-500/15", iconColor: "text-green-400", hoverBorder: "hover:border-green-500/40" },
+};
+
+const SUGGESTIONS = [
+  {
+    id: "wallpaper",
+    icon: Sparkles,
+    accent: "cyan",
+    titleEs: "Cambiar el fondo por un paisaje estrellado",
+    titleEn: "Change background to a starry landscape",
+    subtitleEs: "Genero una imagen con IA",
+    subtitleEn: "AI-generated image",
+  },
+  {
+    id: "experience",
+    icon: Briefcase,
+    accent: "orange",
+    titleEs: "Donde puedo ver la experiencia de Jorge?",
+    titleEn: "Where can I see Jorge's experience?",
+    subtitleEs: "Te llevo a su trayectoria",
+    subtitleEn: "Scroll to his career timeline",
+  },
+  {
+    id: "projects",
+    icon: FolderGit,
+    accent: "pink",
+    titleEs: "Mostrame los proyectos de Jorge",
+    titleEn: "Show me Jorge's projects",
+    subtitleEs: "Te llevo a su portfolio",
+    subtitleEn: "Scroll to his portfolio",
+  },
+  {
+    id: "contact",
+    icon: Mail,
+    accent: "green",
+    titleEs: "Quiero contactar a Jorge",
+    titleEn: "I want to contact Jorge",
+    subtitleEs: "Te abro el formulario",
+    subtitleEn: "Open the contact form",
+  },
 ];
 
 export default function ChatBot() {
@@ -70,7 +121,10 @@ export default function ChatBot() {
   const [bgPrompt, setBgPrompt] = useState<string | null>(null);
   const [tipIndex, setTipIndex] = useState(0);
   const [tipVisible, setTipVisible] = useState(true);
-  const [position, setPosition] = useState({ x: 16, y: window.innerHeight - 570 });
+  const [position, setPosition] = useState(() => {
+    const chatW = window.innerWidth >= 640 ? 384 : 320;
+    return { x: window.innerWidth - chatW - 24, y: window.innerHeight - 570 };
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -330,6 +384,11 @@ export default function ChatBot() {
     [generateBackground, saveMessage, isSpanish]
   );
 
+  const handleSuggestion = (s: typeof SUGGESTIONS[number]) => {
+    setInput(isSpanish ? s.titleEs : s.titleEn);
+    sendMessage(isSpanish ? s.titleEs : s.titleEn);
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -385,10 +444,6 @@ export default function ChatBot() {
       sendMessage(isSpanish ? msg.es : msg.en);
     }
   };
-
-  const quickStartActions = isSpanish
-    ? ["Que tecnologias sabe?", "Como lo contacto?", "Que experiencia tiene?"]
-    : ["What's his tech stack?", "How to contact him?", "What's his experience?"];
 
   // Convert URLs in text to clickable links and parse action markers
   const renderText = (text: string) => {
@@ -447,17 +502,20 @@ export default function ChatBot() {
   return (
     <div
       ref={chatRef}
-      className="fixed z-50 w-80 sm:w-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl flex flex-col max-h-[550px] will-change-[left,top]"
+      className="fixed z-50 w-80 sm:w-96 bg-gray-900/95 backdrop-blur-xl border border-gray-700/60 rounded-2xl shadow-2xl shadow-black/50 flex flex-col max-h-[550px] will-change-[left,top] overflow-hidden"
       style={{ left: position.x, top: position.y }}
     >
       {/* Header - draggable area */}
       <div
         onMouseDown={onDragStart}
-        className="flex items-center justify-between p-3 border-b border-gray-700 cursor-grab active:cursor-grabbing select-none"
+        className="flex items-center justify-between px-3 py-2.5 border-b border-gray-700/60 cursor-grab active:cursor-grabbing select-none bg-gradient-to-r from-gray-900/80 to-gray-800/40"
       >
         <div className="flex items-center gap-2">
           <GripHorizontal className="h-4 w-4 text-gray-500" />
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          <div className="relative">
+            <div className="w-2 h-2 bg-green-400 rounded-full" />
+            <div className="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-60" />
+          </div>
           <Bot className="h-4 w-4 text-blue-400" />
           <h3 className="text-sm font-semibold text-gray-100">
             {isSpanish ? "Asistente de Jorge" : "Jorge's Assistant"}
@@ -566,28 +624,48 @@ export default function ChatBot() {
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[250px]">
         {messages.length === 0 && !streamingContent && (
-          <div className="text-center text-gray-400 text-sm py-6">
-            <Bot className="h-10 w-10 mx-auto mb-3 text-gray-600" />
-            <p className="font-medium">
-              {isSpanish
-                ? "Hola! Soy el asistente de Jorge Ortega."
-                : "Hi! I'm Jorge Ortega's assistant."}
-            </p>
-            <p className="mt-1 text-gray-500 text-xs">
-              {isSpanish
-                ? "Puedo contarte sobre su experiencia, habilidades o ayudarte a contactarlo."
-                : "I can tell you about his experience, skills, or help you contact him."}
-            </p>
-            <div className="flex flex-wrap gap-2 justify-center mt-3">
-              {quickStartActions.map((action) => (
-                <button
-                  key={action}
-                  onClick={() => sendMessage(action)}
-                  className="text-xs px-3 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-gray-300 hover:text-white hover:border-gray-500 transition-colors"
-                >
-                  {action}
-                </button>
-              ))}
+          <div className="py-4 space-y-4">
+            {/* Welcome */}
+            <div className="text-center px-2">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 mb-3 shadow-lg shadow-indigo-500/25">
+                <Bot className="h-7 w-7 text-white" />
+              </div>
+              <p className="font-semibold text-gray-100 text-sm">
+                {isSpanish ? "Hola! Soy el asistente de Jorge" : "Hi! I'm Jorge's assistant"}
+              </p>
+              <p className="mt-1 text-gray-500 text-xs">
+                {isSpanish
+                  ? "Puedo hacer varias cosas por ti. Prueba una:"
+                  : "I can do several things for you. Try one:"}
+              </p>
+            </div>
+
+            {/* Suggestion list */}
+            <div className="space-y-2">
+              {SUGGESTIONS.map((s) => {
+                const Icon = s.icon;
+                const accent = ACCENT_STYLES[s.accent];
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => handleSuggestion(s)}
+                    className={`group w-full flex items-center gap-3 p-2.5 rounded-xl bg-gray-800/50 border border-gray-700/50 ${accent.hoverBorder} hover:bg-gray-800 transition-all text-left`}
+                  >
+                    <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center ${accent.iconBg}`}>
+                      <Icon className={`h-4 w-4 ${accent.iconColor}`} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium text-gray-200 truncate">
+                        {isSpanish ? s.titleEs : s.titleEn}
+                      </p>
+                      <p className="text-[10px] text-gray-500 truncate">
+                        {isSpanish ? s.subtitleEs : s.subtitleEn}
+                      </p>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
@@ -699,7 +777,7 @@ export default function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={isSpanish ? "Escribe tu mensaje..." : "Type your message..."}
-            className="flex-1 px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs"
+            className="flex-1 px-3 py-2 bg-gray-800/80 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 text-xs transition-all"
             disabled={isLoading}
           />
           <button
