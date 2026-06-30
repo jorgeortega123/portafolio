@@ -48,7 +48,7 @@ function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const generateBackground = async (prompt: string) => {
+  const generateBackground = async (prompt: string): Promise<string | null> => {
     setIsGenerating(true);
     try {
       const response = await fetch(
@@ -103,7 +103,7 @@ function Hero() {
           description: resetMessage,
           color: "danger",
         });
-        return;
+        return null;
       }
 
       if (!response.ok) {
@@ -114,10 +114,13 @@ function Hero() {
 
       if (result.image) {
         setBackgroundImage(`url("${result.image}")`);
+        return result.image;
       }
+      return null;
     } catch (error) {
       console.error("Error generating background:", error);
       setBackgroundImage(defaultBackgroundImage);
+      return null;
     } finally {
       setIsGenerating(false);
     }
