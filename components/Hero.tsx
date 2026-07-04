@@ -200,10 +200,13 @@ function Hero() {
         )}
         <div className="flex justify-start items-center mb-[28px] px-7 md:px-auto md:mb-[5.5%] md:ml-[8.5%] h-full md:h-auto">
           <HandwritingAnimation words={services} />
+
           <div className="absolute opacity-0 md:opacity-100 md:left-auto bot md:right-[18.7%] md:bottom-[10%]">
             <div className="mouse" />
           </div>
+       
         </div>
+           
         <div className="home-hero__socials">
           {sociaMedia.map((e, l) => (
             <div key={"social" + l} className="home-hero__social">
