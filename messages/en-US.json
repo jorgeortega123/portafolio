@@ -72,7 +72,9 @@
         "subtitle": "Learn a little more about me with these",
         "description": "Developed when I was approximately 16-18 years old, they helped me forge the logic that should be behind each solution, they are projects that I developed while I was in high school conditions",
         "visit": "Visit",
-        "code": "Code"
+        "code": "Code",
+        "seeMore": "See more",
+        "close": "Close"
     },
     "contact": {
         "title": "Let's Talk",

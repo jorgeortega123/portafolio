@@ -89,7 +89,9 @@
     "subtitle": "Conoce un poco más de mi con estos",
     "description": "Desarrollados cuando tenía aproximadamente 16 - 18 años, me ayudaron a forjar la lógica que debe haber detrás de cada solución, son proyectos que desarrollé mientras estaba en condiciones de bachillerato",
     "visit": "Visitar",
-    "code": "Código"
+    "code": "Código",
+    "seeMore": "Ver más",
+    "close": "Cerrar"
   },
   "contact": {
     "title": "Hablemos",
