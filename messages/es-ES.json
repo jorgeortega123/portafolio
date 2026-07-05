@@ -214,6 +214,15 @@
   ],
   "proyects": [
     {
+      "img": "https://placehold.co/1200x800/0f172a/34d399?text=SRI+Facturacion+API",
+      "title": "SRI Facturación API",
+      "about": "API REST de <span class=\"text-bold\">código abierto</span> para autorizar comprobantes electrónicos ante el <span class=\"text-bold\">SRI (Ecuador)</span>: genera el <span class=\"text-bold\">XML</span> según los esquemas oficiales, lo firma con <span class=\"text-bold\">XAdES</span> usando firmas digitales (.p12), y lo envía a los <span class=\"text-bold\">web services SOAP</span> del SRI en ambientes de <span class=\"text-bold\">pruebas y producción</span>. Lista para desplegar con <span class=\"text-bold\">Docker Compose</span>, incluye un payload de ejemplo y almacenamiento en <span class=\"text-bold\">Cloudflare R2</span>.",
+      "tags": ["TypeScript","NodeJs","Docker","Express"],
+      "web": "https://github.com/jorgeortega123/sri-facturacion-api",
+      "repo": "https://github.com/jorgeortega123/sri-facturacion-api",
+      "onGroup": false
+    },
+    {
       "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
       "title": "Jet Match",
       "about": "Registra tus <span class=\"text-bold\">rutinas </span> y <span class=\"text-bold\">préstamos bancarios</span> de manera visual y motivadora. Con esta aplicación, podrás <span class=\"text-bold\">pintar</span> un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible.",

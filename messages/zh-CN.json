@@ -200,6 +200,15 @@
         }
     ],
     "proyects": [
+          {
+            "img": "https://placehold.co/1200x800/0f172a/34d399?text=SRI+Facturacion+API",
+            "title": "SRI Facturación API",
+            "about": "用于向<span class=\"text-bold\">厄瓜多尔SRI</span>授权电子票据的<span class=\"text-bold\">开源</span>REST API：按官方架构生成<span class=\"text-bold\">XML</span>，使用<span class=\"text-bold\">XAdES</span>数字签名（.p12）签署，并发送至SRI的<span class=\"text-bold\">SOAP Web服务</span>（<span class=\"text-bold\">测试与生产</span>环境）。可通过<span class=\"text-bold\">Docker Compose</span>开箱部署，附带示例payload及<span class=\"text-bold\">Cloudflare R2</span>存储。",
+            "tags": ["TypeScript","NodeJs","Docker","Express"],
+            "web": "https://github.com/jorgeortega123/sri-facturacion-api",
+            "repo": "https://github.com/jorgeortega123/sri-facturacion-api",
+            "onGroup": false
+          },
         {
             "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
             "title": "Jet Match",

@@ -200,6 +200,15 @@
         }
     ],
     "proyects": [
+          {
+            "img": "https://placehold.co/1200x800/0f172a/34d399?text=SRI+Facturacion+API",
+            "title": "SRI Facturación API",
+            "about": "Open-source <span class=\"text-bold\">REST API</span> to authorize electronic receipts with the <span class=\"text-bold\">SRI (Ecuador)</span>: generates the <span class=\"text-bold\">XML</span> per the official schemas, signs it with <span class=\"text-bold\">XAdES</span> using digital signatures (.p12), and submits it to the SRI's <span class=\"text-bold\">SOAP web services</span> in <span class=\"text-bold\">test and production</span> environments. Ready to deploy with <span class=\"text-bold\">Docker Compose</span>, ships with a sample payload and <span class=\"text-bold\">Cloudflare R2</span> storage.",
+            "tags": ["TypeScript","NodeJs","Docker","Express"],
+            "web": "https://github.com/jorgeortega123/sri-facturacion-api",
+            "repo": "https://github.com/jorgeortega123/sri-facturacion-api",
+            "onGroup": false
+          },
         {
             "img": "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
             "title": "Jet Match",

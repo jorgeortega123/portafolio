@@ -35,11 +35,14 @@ export default function ProyectosPersonales() {
   const proyects = (tProjects.raw("proyects") || []) as Project[];
 
   return (
-    <div id="proyectos" className="py-14 px-4 sm:px-6 lg:px-8 bg-[#111827]">
+    <div
+      id="proyectos"
+      className="thin-texto antialiased py-14 px-4 sm:px-6 lg:px-8 bg-[#111827]"
+    >
       <div className="max-w-[1400px] mx-auto w-full">
         {/* Header */}
         <div className="mb-10 lg:mb-12">
-          <p className="text-sm font-medium tracking-[0.18em] uppercase text-emerald-400/80">
+          <p className="text-sm font-normal tracking-wide text-emerald-400/70">
             {t("subtitle")}
           </p>
           <h1 className="mt-2 text-3xl font-semibold text-white lg:text-4xl">
@@ -56,8 +59,12 @@ export default function ProyectosPersonales() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[minmax(300px,1fr)]">
           {proyects.map((item, index) => {
             const num = String(index + 1).padStart(2, "0");
-            // Las posiciones 0 (#01) y 3 (#04) son las cards anchas
-            const isWide = index === 0 || index === proyects.length - 1;
+            // Cards anchas (col-span-2) para que el bento cierre sin huecos:
+            // el primer proyecto siempre es el destacado; con 4 proyectos
+            // también la última (patrón 2 anchas + 2 normales = 6 cols).
+            const isWide =
+              index === 0 ||
+              (proyects.length === 4 && index === proyects.length - 1);
             return (
               <ProyectoCard
                 key={"proyecto-" + index}
@@ -153,7 +160,7 @@ function ProyectoCard({
       </button>
 
       {/* Número de índice */}
-      <span className="absolute top-4 left-5 z-20 text-xs font-mono tracking-widest text-emerald-400/90">
+      <span className="absolute top-4 left-5 z-20 text-xs tracking-[0.2em] text-emerald-400/80">
         #{num}
       </span>
 
@@ -190,17 +197,17 @@ function ProyectoCard({
           />
         )}
 
-        {/* Tags / tecnologías */}
+        {/* Tags / tecnologías — iconos sutiles (gris por defecto, color al hover) */}
         {matched.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {matched.map((skill) => (
               <span
                 key={skill.id}
-                className="flex items-center gap-1.5 pl-1.5 pr-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-200 text-xs backdrop-blur-sm"
+                className="group/tag flex items-center gap-1.5 pl-1.5 pr-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300/80 text-xs backdrop-blur-sm transition-colors duration-300 hover:border-white/20 hover:text-gray-100"
               >
                 {skill.link && (
                   <Img
-                    className="w-4 h-4 object-contain"
+                    className="w-4 h-4 object-contain grayscale opacity-50 transition-all duration-300 group-hover/tag:grayscale-0 group-hover/tag:opacity-100"
                     link
                     src={skill.link}
                     alt={skill.id}
@@ -217,21 +224,21 @@ function ProyectoCard({
         <div className="flex flex-wrap gap-2 pt-1">
           <Link
             href={`/proyecto/${slugify(item.title)}`}
-            className="inline-flex items-center rounded-lg border border-emerald-500 text-emerald-400 px-4 py-2 text-sm font-medium hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-emerald-500/30"
+            className="inline-flex items-center rounded-lg bg-emerald-500 text-white px-4 py-2 text-sm font-medium hover:bg-emerald-400 transition-all duration-300 shadow-sm hover:shadow-emerald-500/40"
           >
             {labels.seeMore}
           </Link>
           <button
             type="button"
             onClick={() => goToUrl(item.web)}
-            className="inline-flex items-center rounded-lg border border-blue-500 text-blue-400 px-4 py-2 text-sm font-medium hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-blue-500/30"
+            className="inline-flex items-center rounded-lg border border-white/15 text-gray-100 px-4 py-2 text-sm font-medium hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm"
           >
             {labels.visit}
           </button>
           <button
             type="button"
             onClick={() => goToUrl(item.repo)}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-600 text-gray-300 px-4 py-2 text-sm font-medium hover:border-gray-400 hover:text-gray-100 hover:bg-gray-700/50 transition-all duration-300 shadow-sm"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 text-gray-100 px-4 py-2 text-sm font-medium hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm"
           >
             <svg
               className="fill-current"
