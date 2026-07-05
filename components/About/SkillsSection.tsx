@@ -17,6 +17,7 @@ const SkillsSection = () => {
   const groupedSkills = {
     frontend: skills.filter((skill) => skill.type === "fr"),
     backend: skills.filter((skill) => skill.type === "ba"),
+    ai: skills.filter((skill) => skill.type === "ai"),
     tools: skills.filter((skill) => skill.type === "tools"),
     design: skills.filter((skill) => skill.type === "design"),
   };
@@ -34,8 +35,13 @@ const SkillsSection = () => {
       skills: groupedSkills.backend,
     },
     {
+      key: "ai",
+      title: "Herramientas de IA",
+      skills: groupedSkills.ai,
+    },
+    {
       key: "tools",
-      title: "Herramientas y servicios",
+      title: "Plataforma y herramientas",
       skills: groupedSkills.tools,
     },
     {

@@ -139,6 +139,33 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
     },
 
+    // Herramientas de IA
+    {
+      type: "ai",
+      id: "Claude",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/claude.png",
+    },
+    {
+      type: "ai",
+      id: "Z.ai",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/zai.png",
+    },
+    {
+      type: "ai",
+      id: "Crush OpenCode skills",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/crush-opencode.png",
+    },
+    {
+      type: "ai",
+      id: "Vertex",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/vertex.png",
+    },
+    {
+      type: "ai",
+      id: "Cloudflare AI",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/cloudflare-ai.png",
+    },
+
     // Herramientas
     {
       type: "tools",
@@ -169,6 +196,46 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       type: "tools",
       id: "Firebase",
       link: "https://luisalberto.pages.dev/assets/png/skills/firebase.png",
+    },
+    {
+      type: "tools",
+      id: "Docker Hub",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/docker-hub.png",
+    },
+    {
+      type: "tools",
+      id: "n8n",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/n8n.png",
+    },
+    {
+      type: "tools",
+      id: "Chatwoot",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/chatwoot.png",
+    },
+    {
+      type: "tools",
+      id: "Erpnext",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/erpnext.png",
+    },
+    {
+      type: "tools",
+      id: "Console Cloud",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/console-cloud.png",
+    },
+    {
+      type: "tools",
+      id: "Zed",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/zed.png",
+    },
+    {
+      type: "tools",
+      id: "WordPress",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/wordpress.png",
+    },
+    {
+      type: "tools",
+      id: "Postiz",
+      link: "https://jorgeortega.vercel.app/assets/png/skills/postiz.png",
     },
 
     // Diseño Gráfico
