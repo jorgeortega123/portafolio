@@ -111,6 +111,18 @@
         "subtitle": "Vestibulum diam nunc",
         "trabajos": [
             {
+                "name": "Mendieta Holding",
+                "date": "2026年4月 - 至今",
+                "role": "信息技术管理",
+                "info": "全面管理技术基础设施：Linux VPS 服务器管理、域名配置、DNS 和 SSL 证书。使用 Docker、CI/CD 流水线和自动化备份部署与维护 Web 服务。使用 React、Next.js、Node.js 开发内部运营的 Web 应用。负责 Microsoft 365 管理、企业网络、技术支持及信息安全策略。"
+            },
+            {
+                "name": "Megamobilier Ecuador",
+                "date": "2026年2月 - 至今",
+                "role": "系统总监",
+                "info": "设计并管理系统架构：VPS 服务器配置、域名配置、云服务及生产基础设施部署。使用 React、Next.js、TypeScript、Node.js 进行全栈开发，构建电商平台与内部管理工具（库存、ERP）。负责技术团队领导、代码标准制定、架构评审及敏捷方法，实现产品持续交付。"
+            },
+            {
                 "name": "Supermercados D'Ley",
                 "date": "2025年8月 - 至今",
                 "role": "UI/UX 开发者 - 数字营销",

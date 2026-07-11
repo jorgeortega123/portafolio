@@ -111,6 +111,18 @@
         "subtitle": "Vestibulum diam nunc",
         "trabajos": [
             {
+                "name": "Mendieta Holding",
+                "date": "April 2026 - Present",
+                "role": "IT Management",
+                "info": "Comprehensive management of the technology infrastructure: Linux VPS server administration, domain configuration, DNS and SSL certificates. Deployment and maintenance of web services with Docker, CI/CD pipelines and automated backups. Web application development (React, Next.js, Node.js) for internal operations. Microsoft 365 administration, corporate networks, technical support and information security policies."
+            },
+            {
+                "name": "Megamobilier Ecuador",
+                "date": "February 2026 - Present",
+                "role": "Systems Director",
+                "info": "Design and management of the systems architecture: VPS server provisioning, domain configuration, cloud services and production infrastructure deployment. Full-stack development (React, Next.js, TypeScript, Node.js) of e-commerce platforms and internal management tools (inventory, ERP). Technical team leadership, code standard definition, architecture reviews and agile methodologies for continuous product delivery."
+            },
+            {
                 "name": "Supermercados D'Ley",
                 "date": "August 2025 - Present",
                 "role": "UI/UX Developer - Digital Marketing",
