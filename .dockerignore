@@ -1,0 +1,32 @@
+# Dependencias y build local
+node_modules
+.next
+.out
+.open-next
+
+# Git y metadatos
+.git
+.gitignore
+.gitattributes
+
+# Docker (no se necesitan dentro de la imagen)
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Variables de entorno (se inyectan vía build args desde .env, no deben entrar al contexto)
+.env
+.env.*
+.dev.vars
+
+# Logs y temporales
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+
+# Docs / no relevantes para el build
+README.md
+CHATBOT-FRONTEND.md
+*.md
+.vercel
