@@ -52,7 +52,7 @@ function Hero() {
     setIsGenerating(true);
     try {
       const response = await fetch(
-        "https://jorge-server.llampukaq.workers.dev/imagen-generator/v2/generate",
+        "https://ai.jorge.it.com/imagen-generator/v2/generate",
         {
           method: "POST",
           headers: {

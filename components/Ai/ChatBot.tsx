@@ -23,7 +23,7 @@ import { useIntentDetection, IntentType, DetectedIntent } from "@/hooks/useInten
 import { useChatAction } from "@/context/ChatActionContext";
 import { useRouter } from "next/router";
 
-const API_BASE = "https://jorge-server.llampukaq.workers.dev/ia";
+const API_BASE = "https://ai.jorge.it.com/ia";
 
 const INTENT_LABELS: Record<IntentType, { es: string; en: string; color: string }> = {
   contact: { es: "Contacto", en: "Contact", color: "bg-green-500/20 text-green-400 border-green-500/30" },

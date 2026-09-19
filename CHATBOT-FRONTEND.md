@@ -15,7 +15,7 @@ Este documento explica cómo funciona el chatbot **solo desde el lado del fronte
 
 El API base con la que habla el frontend es:
 ```
-https://jorge-server.llampukaq.workers.dev/ia
+https://ai.jorge.it.com/ia
 ```
 
 ---

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const API_BASE = "https://jorge-server.llampukaq.workers.dev/ia";
+const API_BASE = "https://ai.jorge.it.com/ia";
 
 export interface MemoryMessage {
   id: string;
