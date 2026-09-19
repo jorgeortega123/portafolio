@@ -13,7 +13,8 @@
       "Bash(netstat -ano)",
       "Bash(tasklist)",
       "Bash(taskkill //PID 33836 //F)",
-      "Bash(taskkill //IM node.exe //F)"
+      "Bash(taskkill //IM node.exe //F)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

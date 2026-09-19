@@ -14,6 +14,9 @@ module.exports = () => {
     reactStrictMode: true,
     transpilePackages: ["@llampukaq/icons"],
     swcMinify: true,
+    // Solo se activa en el build de Docker (Dockerfile setea NEXT_DOCKER_STANDALONE=true).
+    // Esto NO afecta al despliegue en Cloudflare con OpenNext.
+    output: process.env.NEXT_DOCKER_STANDALONE === "true" ? "standalone" : undefined,
     reactStrictMode: false,
     eslint: {
       ignoreDuringBuilds: true,
