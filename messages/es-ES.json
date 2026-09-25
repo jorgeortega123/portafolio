@@ -189,7 +189,7 @@
         "Firebase"
       ],
       "link": "https://www.jandrea.art/",
-      "img": "/assets/cases/casoJandrea.jpg"
+      "img": "https://www.jorge.it.com/assets/cases/casoJandrea.jpg"
     },
     {
       "title": "Licoreria Spondylus",
@@ -209,7 +209,7 @@
         "PedidoYaEnvios-Api"
       ],
       "link": "https://spondylus.pages.dev/",
-      "img": "/assets/cases/casoLicoreria.jpg"
+      "img": "https://www.jorge.it.com/assets/cases/casoLicoreria.jpg"
     }
   ],
   "proyects": [
