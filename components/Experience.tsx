@@ -40,7 +40,7 @@ export default function Experience() {
                   <div className="absolute right-0 top-1 flex gap-[0px] items-center">
                     <img
                       className="main-footer__icon brightness-75 "
-                      src="./assets/png/github-ico.png"
+                      src="/assets/png/github-ico.png"
                       alt="icon"
                     />
                     <p className=""></p>

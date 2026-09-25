@@ -191,7 +191,7 @@
                 "PedidoYaEnvios-Api"
             ],
             "link": "https://spondylus.pages.dev/",
-            "img": "https://jorgeortega.vercel.app/assets/cases/casoLicoreria.jpg"
+            "img": "/assets/cases/casoLicoreria.jpg"
         },
         {
             "title": "Jandrea",
@@ -208,7 +208,7 @@
                 "Firebase"
             ],
             "link": "https://www.jandrea.art/",
-            "img": "https://jorgeortega.vercel.app/assets/cases/casoJandrea.jpg"
+            "img": "/assets/cases/casoJandrea.jpg"
         }
     ],
     "proyects": [

@@ -20,7 +20,7 @@ const ContactFormNew = () => {
         <div className="w-full lg:w-1/2 h-full flex flex-col justify-start items-center">
           <img
             className=" mb-4 max-w-[250px]"
-            src="./assets/svg/rocket.svg"
+            src="/assets/svg/rocket.svg"
             alt="Rocket"
           />
           <h2 className="text-[3rem] font-semibold">Contacto</h2>

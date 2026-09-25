@@ -26,7 +26,7 @@ function Footer() {
               >
                 <img
                   className="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
+                  src="/assets/png/linkedin-ico.png"
                   alt="icon"
                 />
               </a>
@@ -37,14 +37,14 @@ function Footer() {
               >
                 <img
                   className="main-footer__icon"
-                  src="./assets/png/github-ico.png"
+                  src="/assets/png/github-ico.png"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href={dataPage.social.github}>
                 <img
                   className="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
+                  src="/assets/png/insta-ico.png"
                   alt="icon"
                 />
               </a>

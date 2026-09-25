@@ -54,12 +54,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "HTML",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/html.png",
+      link: "/assets/png/skills/html.png",
     },
     {
       type: "fr",
       id: "CSS",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/css.png",
+      link: "/assets/png/skills/css.png",
     },
     {
       type: "fr",
@@ -84,12 +84,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "python",
-      link: "https://jorgeortega.vercel.app/assets/webp/python.webp",
+      link: "/assets/webp/python.webp",
     },
     {
       type: "ba",
       id: "batch",
-      link: "https://jorgeortega.vercel.app/assets/webp/batch.webp",
+      link: "/assets/webp/batch.webp",
     },
 
     // Backend
@@ -111,12 +111,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "MongoDb",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/mongodb.png",
+      link: "/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
       id: "PostgreSQL",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/postgree.png",
+      link: "/assets/png/skills/postgree.png",
     },
     {
       type: "ba",
@@ -126,7 +126,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "GraphQL",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/graphql.png",
+      link: "/assets/png/skills/graphql.png",
     },
     {
       type: "ba",
@@ -136,34 +136,59 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "Docker",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/docker.png",
+      link: "/assets/png/skills/docker.png",
+    },
+    {
+      type: "ba",
+      id: "RabbitMQ",
+      link: "/assets/png/skills/rabbitmq.png",
+    },
+    {
+      type: "ba",
+      id: "Redis",
+      link: "/assets/png/skills/redis.png",
     },
 
     // Herramientas de IA
     {
       type: "ai",
       id: "Claude",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/claude.png",
+      link: "/assets/png/skills/claude.png",
     },
     {
       type: "ai",
       id: "Z.ai",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/zai.png",
+      link: "/assets/png/skills/zai.png",
     },
     {
       type: "ai",
       id: "Crush OpenCode skills",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/crush-opencode.png",
+      link: "/assets/png/skills/crush-opencode.png",
     },
     {
       type: "ai",
       id: "Vertex",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/vertex.png",
+      link: "/assets/png/skills/vertex.png",
     },
     {
       type: "ai",
       id: "Cloudflare AI",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/cloudflare-ai.png",
+      link: "/assets/png/skills/cloudflare-ai-gateway.png",
+    },
+    {
+      type: "ai",
+      id: "OpenRouter",
+      link: "/assets/png/skills/openrouter.png",
+    },
+    {
+      type: "ai",
+      id: "Hermes",
+      link: "/assets/png/skills/hermes.png",
+    },
+    {
+      type: "ai",
+      id: "OMP",
+      link: "/assets/png/skills/omp.png",
     },
 
     // Herramientas
@@ -180,12 +205,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "tools",
       id: "VsCode",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/vsCode.png",
+      link: "/assets/png/skills/vsCode.png",
     },
     {
       type: "tools",
       id: "MicrosoftAzure",
-      link: "https://jorgeortega.vercel.app//assets/png/skills/azure.png",
+      link: "/assets/png/skills/azure.png",
     },
     {
       type: "tools",
@@ -195,47 +220,47 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "tools",
       id: "Firebase",
-      link: "https://luisalberto.pages.dev/assets/png/skills/firebase.png",
+      link: "/assets/png/skills/firebase.png",
     },
     {
       type: "tools",
       id: "Docker Hub",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/docker-hub.png",
+      link: "/assets/png/skills/dockerhub.png",
     },
     {
       type: "tools",
       id: "n8n",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/n8n.png",
+      link: "/assets/png/skills/n8n.png",
     },
     {
       type: "tools",
       id: "Chatwoot",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/chatwoot.png",
+      link: "/assets/png/skills/chatwoot.png",
     },
     {
       type: "tools",
       id: "Erpnext",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/erpnext.png",
+      link: "/assets/png/skills/erpnext.png",
     },
     {
       type: "tools",
       id: "Console Cloud",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/console-cloud.png",
+      link: "/assets/png/skills/console-cloud.png",
     },
     {
       type: "tools",
       id: "Zed",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/zed.png",
+      link: "/assets/png/skills/zed.png",
     },
     {
       type: "tools",
       id: "WordPress",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/wordpress.png",
+      link: "/assets/png/skills/wordpress.png",
     },
     {
       type: "tools",
       id: "Postiz",
-      link: "https://jorgeortega.vercel.app/assets/png/skills/postiz.png",
+      link: "/assets/png/skills/postiz.png",
     },
 
     // Diseño Gráfico
