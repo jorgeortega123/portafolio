@@ -2,7 +2,7 @@ import React, { ReactNode, createContext, useEffect, useState } from "react";
 import { cargarFuentes } from "./Loads/FontsLoader";
 export const MainContext = createContext({});
 
-const data = [{ id: "hero", link: "/assets/png/backgrounds/hexagonal.png" }];
+const data = [{ id: "hero", link: "https://www.jorge.it.com/assets/png/backgrounds/hexagonal.png" }];
 
 function MainContextComponent({ children }: { children: ReactNode }) {
   const [imageMap, setImageMap] = useState({});
@@ -54,12 +54,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "HTML",
-      link: "/assets/png/skills/html.png",
+      link: "https://www.jorge.it.com/assets/png/skills/html.png",
     },
     {
       type: "fr",
       id: "CSS",
-      link: "/assets/png/skills/css.png",
+      link: "https://www.jorge.it.com/assets/png/skills/css.png",
     },
     {
       type: "fr",
@@ -84,12 +84,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "fr",
       id: "python",
-      link: "/assets/webp/python.webp",
+      link: "https://www.jorge.it.com/assets/webp/python.webp",
     },
     {
       type: "ba",
       id: "batch",
-      link: "/assets/webp/batch.webp",
+      link: "https://www.jorge.it.com/assets/webp/batch.webp",
     },
 
     // Backend
@@ -111,12 +111,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "MongoDb",
-      link: "/assets/png/skills/mongodb.png",
+      link: "https://www.jorge.it.com/assets/png/skills/mongodb.png",
     },
     {
       type: "ba",
       id: "PostgreSQL",
-      link: "/assets/png/skills/postgree.png",
+      link: "https://www.jorge.it.com/assets/png/skills/postgree.png",
     },
     {
       type: "ba",
@@ -126,7 +126,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "GraphQL",
-      link: "/assets/png/skills/graphql.png",
+      link: "https://www.jorge.it.com/assets/png/skills/graphql.png",
     },
     {
       type: "ba",
@@ -136,59 +136,59 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "ba",
       id: "Docker",
-      link: "/assets/png/skills/docker.png",
+      link: "https://www.jorge.it.com/assets/png/skills/docker.png",
     },
     {
       type: "ba",
       id: "RabbitMQ",
-      link: "/assets/png/skills/rabbitmq.png",
+      link: "https://www.jorge.it.com/assets/png/skills/rabbitmq.png",
     },
     {
       type: "ba",
       id: "Redis",
-      link: "/assets/png/skills/redis.png",
+      link: "https://www.jorge.it.com/assets/png/skills/redis.png",
     },
 
     // Herramientas de IA
     {
       type: "ai",
       id: "Claude",
-      link: "/assets/png/skills/claude.png",
+      link: "https://www.jorge.it.com/assets/png/skills/claude.png",
     },
     {
       type: "ai",
       id: "Z.ai",
-      link: "/assets/png/skills/zai.png",
+      link: "https://www.jorge.it.com/assets/png/skills/zai.png",
     },
     {
       type: "ai",
       id: "Crush OpenCode skills",
-      link: "/assets/png/skills/crush-opencode.png",
+      link: "https://www.jorge.it.com/assets/png/skills/crush-opencode.png",
     },
     {
       type: "ai",
       id: "Vertex",
-      link: "/assets/png/skills/vertex.png",
+      link: "https://www.jorge.it.com/assets/png/skills/vertex.png",
     },
     {
       type: "ai",
       id: "Cloudflare AI",
-      link: "/assets/png/skills/cloudflare-ai-gateway.png",
+      link: "https://www.jorge.it.com/assets/png/skills/cloudflare-ai-gateway.png",
     },
     {
       type: "ai",
       id: "OpenRouter",
-      link: "/assets/png/skills/openrouter.png",
+      link: "https://www.jorge.it.com/assets/png/skills/openrouter.png",
     },
     {
       type: "ai",
       id: "Hermes",
-      link: "/assets/png/skills/hermes.png",
+      link: "https://www.jorge.it.com/assets/png/skills/hermes.png",
     },
     {
       type: "ai",
       id: "OMP",
-      link: "/assets/png/skills/omp.png",
+      link: "https://www.jorge.it.com/assets/png/skills/omp.png",
     },
 
     // Herramientas
@@ -205,12 +205,12 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "tools",
       id: "VsCode",
-      link: "/assets/png/skills/vsCode.png",
+      link: "https://www.jorge.it.com/assets/png/skills/vsCode.png",
     },
     {
       type: "tools",
       id: "MicrosoftAzure",
-      link: "/assets/png/skills/azure.png",
+      link: "https://www.jorge.it.com/assets/png/skills/azure.png",
     },
     {
       type: "tools",
@@ -220,47 +220,47 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "tools",
       id: "Firebase",
-      link: "/assets/png/skills/firebase.png",
+      link: "https://www.jorge.it.com/assets/png/skills/firebase.png",
     },
     {
       type: "tools",
       id: "Docker Hub",
-      link: "/assets/png/skills/dockerhub.png",
+      link: "https://www.jorge.it.com/assets/png/skills/dockerhub.png",
     },
     {
       type: "tools",
       id: "n8n",
-      link: "/assets/png/skills/n8n.png",
+      link: "https://www.jorge.it.com/assets/png/skills/n8n.png",
     },
     {
       type: "tools",
       id: "Chatwoot",
-      link: "/assets/png/skills/chatwoot.png",
+      link: "https://www.jorge.it.com/assets/png/skills/chatwoot.png",
     },
     {
       type: "tools",
       id: "Erpnext",
-      link: "/assets/png/skills/erpnext.png",
+      link: "https://www.jorge.it.com/assets/png/skills/erpnext.png",
     },
     {
       type: "tools",
       id: "Console Cloud",
-      link: "/assets/png/skills/console-cloud.png",
+      link: "https://www.jorge.it.com/assets/png/skills/console-cloud.png",
     },
     {
       type: "tools",
       id: "Zed",
-      link: "/assets/png/skills/zed.png",
+      link: "https://www.jorge.it.com/assets/png/skills/zed.png",
     },
     {
       type: "tools",
       id: "WordPress",
-      link: "/assets/png/skills/wordpress.png",
+      link: "https://www.jorge.it.com/assets/png/skills/wordpress.png",
     },
     {
       type: "tools",
       id: "Postiz",
-      link: "/assets/png/skills/postiz.png",
+      link: "https://www.jorge.it.com/assets/png/skills/postiz.png",
     },
 
     // Diseño Gráfico
@@ -286,7 +286,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       title: "Llampukaq Technology",
       about: `En el marco de este proyecto, la gestión del frontend y el backend fue encomendada en gran parte a mi persona. Se emplearon diversas tecnologías con la finalidad de mejorar el rendimiento, adoptando una estrategia específica. Respecto al frontend, se optó por la utilización de React y Next.js, eligiendo SSG (Generación de Sitios Estáticos) para optimizar el rendimiento. En lo que respecta al backend, se seleccionó un servicio Backend-as-a-Service (BaaS), siendo Mongo Realm la elección para nuestro caso. Además, se llevó a cabo el desarrollo y la liberación de una porción de nuestro código como open source, respondiendo de manera efectiva a las solicitudes de la empresa. Estas tareas se llevaron a cabo en el contexto de un proyecto con un enfoque centrado en la experiencia.`,
       tags: ["NextJs", "React", "TypeScript", "Workers"],
-      img: "/assets/cases/llam.png",
+      img: "https://www.jorge.it.com/assets/cases/llam.png",
       web: "https://www.llampukaq.com/",
       repo: "https://github.com/orgs/Llampukaq-Labs/dashboard",
       moreDetails: "/proyect-1",
