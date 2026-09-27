@@ -787,3 +787,9 @@ textarea {
     top: 27px;
   }
 }
+
+/* Skills carousel: icono en 1ra posición (slide activo) a color completo */
+.skills-swiper .swiper-slide-active img {
+  -webkit-filter: none;
+  filter: none;
+}

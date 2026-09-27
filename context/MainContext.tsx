@@ -162,8 +162,8 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     },
     {
       type: "ai",
-      id: "Crush OpenCode skills",
-      link: "https://www.jorge.it.com/assets/png/skills/crush-opencode.png",
+      id: "OpenCode",
+      link: "https://www.jorge.it.com/assets/png/skills/opencode.png",
     },
     {
       type: "ai",
@@ -245,7 +245,7 @@ function MainContextComponent({ children }: { children: ReactNode }) {
     {
       type: "tools",
       id: "Console Cloud",
-      link: "https://www.jorge.it.com/assets/png/skills/console-cloud.png",
+      link: "https://www.jorge.it.com/assets/webp/console-cloud.webp",
     },
     {
       type: "tools",
