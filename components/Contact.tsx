@@ -165,10 +165,9 @@ function Contact() {
                         <span className="block">
                           Email:{" "}
                           <span className="underline">
-                            luisgarrido0987@gmail.com
+                            contacto@jorge.it.com
                           </span>{" "}
                         </span>
-                        <span>Whatsapp: (+593) 095 985 9877</span>
                       </p>
                     </>
                   )}

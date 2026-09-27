@@ -27,21 +27,12 @@ const ContactFormNew = () => {
           <p className="text-[1.5rem]">
             <span className="flex gap-2 items-center">
               <Icons icon="mail"></Icons>
-              <a href="mailto:luisgarrido0987@gmail.com" className="underline">
-                luisgarrido0987@gmail.com
+              <a href="mailto:contacto@jorge.it.com" className="underline">
+                contacto@jorge.it.com
               </a>
             </span>
-
-            <a
-              href="tel:+593959859877"
-              className="justify-center mt-1 text-center flex gap-2"
-            >
-              <Icons icon="phone"></Icons>
-              <span>
-                (+593) <span className="underline"> 095 985 9877</span>
-              </span>
-            </a>
           </p>
+
         </div>
 
         {/* Right Side */}
