@@ -9,6 +9,12 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
+interface Skill {
+  id: string;
+  link: string;
+  type: string;
+}
+
 const SkillsSection = () => {
   const t = useTranslations("about");
   const { skills } = useMainContext();
@@ -51,7 +57,7 @@ const SkillsSection = () => {
     },
   ];
 
-  const renderSkillCard = (skill: any, index: number) => (
+  const renderSkillCard = (skill: Skill, index: number) => (
     <div
       key={`skill-${skill.type}-${index}`}
       className="group relative flex flex-col items-center justify-center p-2 transition-all duration-300 hover:scale-110 cursor-pointer"
@@ -62,12 +68,12 @@ const SkillsSection = () => {
           link
           loading="lazy"
           width="40"
-          className="w-8 h-8 transition-all duration-300 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
+          className="w-8 transition-all duration-300 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
           src={skill.link}
           alt={skill.id}
           style={{
             width: "clamp(2rem, 3vw, 2.5rem)",
-            height: "clamp(2rem, 3vw, 2.5rem)",
+            height: "auto",
           }}
         />
       </div>
