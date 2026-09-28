@@ -24,7 +24,7 @@ function About() {
     <>
       <section
         id="about"
-        className="bg-white z-[3]  min-h-[90vh] flex items-center justify-center"
+        className="z-[3] min-h-[90vh] flex items-center justify-center"
       >
         <div className="max-w-[1500px] w-full px-6">
           <div className="flex flex-col lg:flex-row lg:gap-6 h-full items-start justify-center w-full">
