@@ -32,16 +32,18 @@ export default function Home({ dataPageProps }: any) {
       </Head>
       <div className="bg-white">
         <Hero />
-        <div className="px-0 pt-5 lg:px-12 lg:py-12 2xl:px-0">
-          <div id="me">
-            <About />
+        <div className="relative">
+          <div className="relative z-10 px-0 pt-5 lg:px-12 lg:py-12 2xl:px-0">
+            <div id="me">
+              <About />
+            </div>
+            {/* <div id="about">
+              <Experience />
+            </div> */}
           </div>
-          {/* <div id="about">
-            <Experience />
-          </div> */}
-        </div>
-        <div id="timeline">
-          <Timeline title="Mi Trayectoria" />
+          <div id="timeline" className="relative z-10">
+            <Timeline title="Mi Trayectoria" />
+          </div>
         </div>
         <div id="tarjetas">
           <TarjetasNew />

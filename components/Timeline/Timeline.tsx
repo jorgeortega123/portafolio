@@ -105,14 +105,22 @@ export default function Timeline({ className = "", title }: TimelineProps) {
 
   return (
     <div
-      className={`thin-texto antialiased relative py-16 sm:py-20 lg:py-24 2xl:py-32 ${className}`}
+      className={`thin-texto antialiased relative py-16 sm:py-20 lg:py-0 ${className}`}
     >
       <div className="mx-auto w-full max-w-[850px] px-4 sm:px-6 lg:max-w-[1200px] lg:px-8 2xl:max-w-[1500px]">
-        <div className="flex flex-col lg:flex-row lg:items-stretch lg:gap-14 2xl:gap-24">
-          {/* Panel izquierdo — calibrado sobre la curva navy de ExperienceShape */}
+        <div className="relative flex flex-col lg:flex-row lg:items-stretch lg:gap-14 2xl:gap-24">
+          {/* Mitad izquierda: bloque navy que cubre la columna y sangra hasta el
+              borde del viewport (left calc contra el row = ancho real del contenedor) */}
+          {title && (
+            <div
+              aria-hidden
+              className="absolute bottom-0 top-0 hidden bg-[#17175a] lg:block lg:left-[calc(50%-50vw)] lg:right-[62%]"
+            />
+          )}
+          {/* Panel izquierdo — título sticky mientras se recorre la experiencia */}
           {title && (
             <div className="relative mb-12 lg:mb-0 lg:flex lg:w-[38%] lg:shrink-0">
-              <div className="relative flex w-full flex-col justify-center px-6 py-10 lg:py-16 lg:pl-12 2xl:pl-16">
+              <div className="relative flex w-full flex-col justify-center px-6 py-10 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:pl-12 lg:pr-12 2xl:pl-16 2xl:pr-16">
                 {/* Contador fantasma: número real de posiciones */}
                 <span
                   aria-hidden
@@ -140,7 +148,7 @@ export default function Timeline({ className = "", title }: TimelineProps) {
           )}
 
           {/* Timeline */}
-          <div className="relative min-w-0 flex-1">
+          <div className="relative min-w-0 flex-1 lg:py-24 2xl:py-32">
             <div ref={listRef} className="relative">
               {/* Raíl base + línea de progreso */}
               <div

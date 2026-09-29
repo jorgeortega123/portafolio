@@ -244,7 +244,7 @@ textarea {
 }
 
 .about {
-  background: #fafafa;
+  background: transparent;
 }
 .about__content {
   display: grid;
@@ -792,4 +792,28 @@ textarea {
 .skills-swiper .swiper-slide-active img {
   -webkit-filter: none;
   filter: none;
+}
+
+/* Timeline: reveal al hacer scroll (controlado por IntersectionObserver) */
+[data-tl-item] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-tl-item].tl-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-tl-item] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.tl-pretty {
+  text-wrap: pretty;
 }
