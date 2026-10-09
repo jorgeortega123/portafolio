@@ -108,6 +108,7 @@
     },
     "experience": {
         "title": "我的经历",
+        "eyebrow": "工作经历",
         "subtitle": "Vestibulum diam nunc",
         "trabajos": [
             {
