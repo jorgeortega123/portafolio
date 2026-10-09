@@ -43,7 +43,7 @@ export default function NavBar() {
     <div
       className={`anim-delay-nav w-full flex justify-center items-center transition-all duration-300 ${
         showNavbar
-          ? "z-[21] fixed top-0 opacity-100 bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-200/30"
+          ? "z-[21] fixed top-0 opacity-100 bg-white/95 backdrop-blur-md shadow-lg border-b border-primary-600/20"
           : "opacity-0 fixed top-[-110px]"
       }`}
     >
@@ -59,7 +59,7 @@ export default function NavBar() {
           <Link href={"/"}>
             <H2
               size="small"
-              className="shrink-0 font-bold text-blue-700 hover:text-blue-800 transition-colors duration-300"
+              className="shrink-0 font-bold text-primary-700 hover:text-primary-600 transition-colors duration-300"
             >
               {dataPage.nombre}
             </H2>
@@ -72,10 +72,10 @@ export default function NavBar() {
               <>
                 <Link className="my-auto group" href={x.link} key={index}>
                   <li
-                    className="cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                    className="cursor-pointer px-3 py-2 rounded-lg hover:bg-primary-50 transition-colors duration-200"
                     key={index}
                   >
-                    <p className="font-medium text-[1.1rem] cursor-pointer hover:text-blue-600 transition-colors duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
+                    <p className="font-medium text-[1.1rem] cursor-pointer hover:text-primary-600 transition-colors duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 group-hover:after:w-full">
                       {x.name}
                     </p>
                   </li>
@@ -88,7 +88,7 @@ export default function NavBar() {
           </ul>
           <Link
             href={"#contact"}
-            className="hidden lg:flex px-6 py-2.5 max-w-max w-max rounded-xl text-white  items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
+            className="hidden lg:flex px-6 py-2.5 max-w-max w-max rounded-xl text-white  items-center justify-center font-medium tracking-wide transition-all duration-300 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 shadow-md hover:shadow-lg hover:scale-105 cursor-pointer"
           >
             {t("contact")}
           </Link>

@@ -183,7 +183,7 @@ function Hero() {
         <Header />
         {!isLoad && (
           <div
-            className={`fixed transition-all duration-300 top-0 z-[3] h-[5px] opacity-30  left-0 bg-blue-400 w-full max-w-[${numberCharge}%]`}
+            className={`fixed transition-all duration-300 top-0 z-[3] h-[5px] opacity-30  left-0 bg-primary-400 w-full max-w-[${numberCharge}%]`}
           >
             {/* <div className="relative flex w-full px-12 py-2 gap-2 items-center  rounded-[14px] overflow-hidden justify-center text-white/70">
               <Icons

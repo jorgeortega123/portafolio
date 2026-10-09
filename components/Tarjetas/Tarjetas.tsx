@@ -5,6 +5,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import { useTranslations } from "next-intl";
 import H2 from "../html/H2";
+import Starfield from "@/components/Background/Starfield";
 interface tarjeta {
   title: string;
   description: string;
@@ -37,8 +38,9 @@ export default function TarjetasNew() {
   ];
   return (
     <>
-      <section className="bg-[#111827]">
-        <div className="container px-6 py-12 max-w-[1500px] mx-auto">
+      <section className="relative min-h-screen overflow-hidden flex items-center bg-[linear-gradient(180deg,#17175a_0%,#111827_280px)]">
+        <Starfield className="absolute inset-0 z-0" />
+        <div className="container relative z-10 px-6 py-12 max-w-[1500px] mx-auto">
           <H2 className="text-2xl  font-semibold text-white capitalize lg:text-3xl">
             {t("title")}
           </H2>
@@ -47,11 +49,11 @@ export default function TarjetasNew() {
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
             {data.map((e) => (
-              <div className="p-8 space-y-3 border-2 border-gray-600 hover:border-blue-400 bg-gray-800/30 rounded-xl transition-all duration-300">
-                <span className="inline-block text-blue-400 bg-blue-400/20 p-2 rounded-full">
+              <div key={e.type} className="group relative p-8 space-y-3 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-300/50 hover:shadow-[0_8px_40px_-12px_rgba(119,119,198,0.45)]">
+                <span className="inline-block text-primary-200 bg-primary-400/15 ring-1 ring-inset ring-white/10 p-2 rounded-full transition-colors duration-300 group-hover:bg-primary-400/30">
                   <Icons
                     stroke={2}
-                    className="stroke-blue-400"
+                    className="stroke-primary-200"
                     size={24}
                     icon={e.icon}
                   />
@@ -63,7 +65,7 @@ export default function TarjetasNew() {
                   </h1>{" "}
                   <div className=" rounded-full  p-1 w-max">
                     <Icons
-                      className="stroke-blue-400 "
+                      className="stroke-primary-200 "
                       icon="IconCheck"
                     ></Icons>
                   </div>

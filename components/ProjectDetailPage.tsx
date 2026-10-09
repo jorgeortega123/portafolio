@@ -8,19 +8,12 @@ import ZoomComponentWithModal from "./layout/ZoomComponentWithModal";
 
 const rgbBorderStyle = `
   @keyframes rgb-border {
-    0% { border-color: #ff0000; }
-    8.33% { border-color: #ff8000; }
-    16.66% { border-color: #ffff00; }
-    25% { border-color: #80ff00; }
-    33.33% { border-color: #00ff00; }
-    41.66% { border-color: #00ff80; }
-    50% { border-color: #00ffff; }
-    58.33% { border-color: #0080ff; }
-    66.66% { border-color: #0000ff; }
-    75% { border-color: #8000ff; }
-    83.33% { border-color: #ff00ff; }
-    91.66% { border-color: #ff0080; }
-    100% { border-color: #ff0000; }
+    0% { border-color: #17175a; }
+    20% { border-color: #4949a9; }
+    40% { border-color: #7777c6; }
+    60% { border-color: #4949a9; }
+    80% { border-color: #1f1f74; }
+    100% { border-color: #17175a; }
   }
 `;
 
@@ -59,7 +52,7 @@ export default function ProjectDetailPage({
       <div className="min-h-screen bg-[#111827]">
         {/* Hero banner con imagen de fondo */}
         <div className="relative w-full h-[50vh] min-h-[400px] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-[#111827]/60 to-[#111827] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-900/40 via-[#111827]/60 to-[#111827] z-10" />
           <Img
             link
             src={img}
@@ -87,7 +80,7 @@ export default function ProjectDetailPage({
               </svg>
               {t("back")}
             </Link>
-            <p className="text-blue-400 text-sm font-medium uppercase tracking-widest mb-3">
+            <p className="text-primary-300 text-sm font-medium uppercase tracking-widest mb-3">
               Proyecto
             </p>
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-none tracking-tight">
@@ -135,7 +128,7 @@ export default function ProjectDetailPage({
             {/* Columna derecha — sidebar */}
             <div className="space-y-8">
               {/* Links de acción */}
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
                 <div className="absolute -top-12 -right-12 w-40 h-40 bg-white/5 rounded-full" />
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full" />
                 <div className="relative z-10 space-y-4">
@@ -143,7 +136,7 @@ export default function ProjectDetailPage({
                     href={web}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 bg-white text-blue-700 px-6 py-3.5 rounded-xl hover:bg-blue-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full"
+                    className="flex items-center gap-3 bg-white text-primary-700 px-6 py-3.5 rounded-xl hover:bg-primary-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -171,7 +164,7 @@ export default function ProjectDetailPage({
               {/* Tecnologías */}
               <div className="bg-gradient-to-br from-gray-800/30 via-gray-800/40 to-gray-900/30 backdrop-blur-sm rounded-2xl border border-gray-700/40 p-6">
                 <h3 className="text-lg font-bold text-white mb-5 flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary-300">
                     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                   </svg>
                   {t("technologies")}

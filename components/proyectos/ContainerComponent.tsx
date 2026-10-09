@@ -11,19 +11,12 @@ import { slugify } from "@/hooks/slugify";
 
 const rgbBorderStyle = `
   @keyframes rgb-border {
-    0% { border-color: #ff0000; }
-    8.33% { border-color: #ff8000; }
-    16.66% { border-color: #ffff00; }
-    25% { border-color: #80ff00; }
-    33.33% { border-color: #00ff00; }
-    41.66% { border-color: #00ff80; }
-    50% { border-color: #00ffff; }
-    58.33% { border-color: #0080ff; }
-    66.66% { border-color: #0000ff; }
-    75% { border-color: #8000ff; }
-    83.33% { border-color: #ff00ff; }
-    91.66% { border-color: #ff0080; }
-    100% { border-color: #ff0000; }
+    0% { border-color: #17175a; }
+    20% { border-color: #4949a9; }
+    40% { border-color: #7777c6; }
+    60% { border-color: #4949a9; }
+    80% { border-color: #1f1f74; }
+    100% { border-color: #17175a; }
   }
 `;
 
@@ -62,13 +55,13 @@ export default function ContainerComponent({
         className="relative z-[8] w-full mt-8 md:flex md:items-center xl:mt-12"
       >
         <div
-          className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-blue-600 -z-10  rounded-2xl`}
+          className={`absolute z-1 w-full md:h-96  transition-all duration-300 ease-linear  bg-primary-600 -z-10  rounded-2xl`}
         ></div>
 
         <div
           className={`${
             fullScreen ? " h-full min-h-[85vh]" : " "
-          } w-full p-6 bg-blue-600     md:items-center ${
+          } w-full p-6 bg-primary-600     md:items-center ${
             index % 2 == 0 ? "md:flex md:flex-row-reverse " : "md:flex"
           }  rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly"`}
         >
@@ -86,7 +79,7 @@ export default function ContainerComponent({
                   <p className="text-[1.75rem] font-medium tracking-tight text-white">
                     {item.title}
                   </p>
-                  <p className="text-blue-200  w-full max-w-[420px]">
+                  <p className="text-primary-100  w-full max-w-[420px]">
                     {item.sub}
                   </p>
                 </div>
@@ -123,7 +116,7 @@ export default function ContainerComponent({
                           </p>
                         </div>
                       )}
-                    </>
+                  </>
                   );
                 })}
               </div>
@@ -132,7 +125,7 @@ export default function ContainerComponent({
                 <Link
                   href={`/trabajo/${slugify(item.title)}`}
                   title={item.title}
-                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100 hover:bg-blue-400"
+                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100 hover:bg-primary-500"
                 >
                   Ver más
                   <Icons
@@ -145,7 +138,7 @@ export default function ContainerComponent({
                   href={item.link}
                   target="_blank"
                   title={item.title}
-                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100  hover:bg-blue-400"
+                  className="p-2 text-white flex gap-2 items-center px-1.5 transition-colors duration-300 border rounded-lg rtl:-scale-x-100  hover:bg-primary-500"
                 >
                   Visitar aplicación web
                   <Icons

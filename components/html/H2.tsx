@@ -21,6 +21,6 @@ export default function H2({ children, className = "", size }: PProps) {
   };
 
   return (
-    <h2 className={`text-pretty border-l-4 border-blue-500 pl-3 ${sizeFinal()} ${className}`}>{children}</h2>
+    <h2 className={`text-pretty border-l-4 border-primary-400 pl-3 ${sizeFinal()} ${className}`}>{children}</h2>
   );
 }

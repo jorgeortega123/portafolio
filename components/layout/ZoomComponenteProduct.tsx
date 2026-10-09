@@ -16,19 +16,19 @@ const ZoomableImage: React.FC<ZoomableImageProps> = ({ imagen }) => {
             {/* Controles de zoom */}
             <div className="absolute top-2 right-2 z-10 flex flex-col space-y-2">
               <button
-                className="bg-white text-bittersweet-900 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 px-4 hover:bg-gray-200"
+                className="bg-white text-primary-700 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 px-4 hover:bg-gray-200"
                 onClick={() => zoomIn()} // Envuelve la función
               >
                 <Icons icon="IconPlus"></Icons>+
               </button>
               <button
-                className="bg-white text-bittersweet-900 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 hover:bg-gray-200"
+                className="bg-white text-primary-700 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 hover:bg-gray-200"
                 onClick={() => zoomOut()} // Envuelve la función
               >
                 -
               </button>
               <button
-                className="bg-white text-bittersweet-900 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 hover:bg-gray-200"
+                className="bg-white text-primary-700 border min-h-[32px] border-gray-400 lg:border-none rounded p-2 hover:bg-gray-200"
                 onClick={() => resetTransform()} // Envuelve la función
               >
                 ⟳

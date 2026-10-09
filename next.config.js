@@ -10,6 +10,9 @@ module.exports = () => {
     pwa: {
       dest: "public",
       register: true,
+      // El SW en dev sirve bundles viejos tras editar archivos y causa
+      // hydration mismatches intermitentes. Solo se genera en build.
+      disable: process.env.NODE_ENV === "development",
     },
     reactStrictMode: true,
     transpilePackages: ["@llampukaq/icons"],

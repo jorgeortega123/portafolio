@@ -28,7 +28,7 @@ const Testimonials: React.FC = () => {
   return (
     <section className="bg-white pt-[72px]">
       <div className=" px-6 py-10 mx-auto max-w-[1500px] ">
-        <p className="text-xl font-medium text-blue-500">{t("title")}</p>
+        <p className="text-xl font-medium text-primary-600">{t("title")}</p>
         <h1 className="mt-2 mb-2 text-2xl font-semibold text-gray-800  lg:text-3xl">
           {t("subtitle")}
         </h1>{" "}

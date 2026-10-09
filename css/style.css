@@ -120,7 +120,7 @@ textarea {
   top: calc(100% + 1.5rem);
   height: 5px;
   width: 3rem;
-  background: #0062b9;
+  background: #17175a;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
@@ -185,13 +185,13 @@ textarea {
   font-size: 1.6rem;
 }
 .btn--theme {
-  background: #0062b9;
+  background: #17175a;
   color: #fff;
 }
 .btn--theme-inv {
-  color: #0062b9;
+  color: #17175a;
   background: #fff;
-  border: 2px solid #0062b9;
+  border: 2px solid #17175a;
   box-shadow: none;
   padding: calc(1.5rem - 2px) calc(5rem - 2px);
 }
@@ -226,8 +226,8 @@ textarea {
   color: #fff;
   background: linear-gradient(
       to right,
-      rgba(0, 98, 185, 0.8),
-      rgba(0, 98, 185, 0.8)
+      rgba(23, 23, 90, 0.8),
+      rgba(23, 23, 90, 0.8)
     ),
     url(../../assets/svg/common-bg.svg);
   background-position: center;
@@ -388,8 +388,8 @@ textarea {
 .contact {
   background: linear-gradient(
       to right,
-      rgba(0, 98, 185, 0.8),
-      rgba(0, 98, 185, 0.8)
+      rgba(23, 23, 90, 0.8),
+      rgba(23, 23, 90, 0.8)
     ),
     url(../../assets/svg/common-bg.svg);
   background-size: cover;
@@ -630,7 +630,7 @@ textarea {
   transition: color 0.3s;
 }
 .header__logo-container:hover {
-  color: #0062b9;
+  color: #17175a;
 }
 .header__logo-img-cont {
   width: 5rem;
@@ -638,7 +638,7 @@ textarea {
   border-radius: 50px;
   overflow: hidden;
   margin-right: 1.5rem;
-  background: #0062b9;
+  background: #17175a;
 }
 @media only screen and (max-width: 56.25em) {
   .header__logo-img-cont {
@@ -676,7 +676,7 @@ textarea {
   font-weight: 600;
 }
 .header__link:hover {
-  color: #0062b9;
+  color: #17175a;
 }
 @media only screen and (max-width: 56.25em) {
   .header__link {
@@ -736,7 +736,7 @@ textarea {
   transition: color 0.3s;
 }
 .header__sm-menu-link a:hover {
-  color: #0062b9;
+  color: #17175a;
 }
 .header__sm-menu-link:first-child a {
   border-top: 1px solid #eee;

@@ -36,12 +36,12 @@ function About() {
                 size="medium"
                 className="h-auto leading-7 max-w-[420px] text-black/90"
               >
-                <div className="mb-2">
+                <span className="mb-2 block">
                   {t("greeting")}
                   <strong className="mb-2">{t("name")}</strong>
                   {t("text")}
                   <span className="block my-2">{t("secondaryText")}</span>
-                </div>
+                </span>
 
                 {/* <span className="mb-3 block">
                   Hola, Soy <strong>{dataPage.nombre}</strong>, programador con
@@ -55,14 +55,14 @@ function About() {
               </P>
               <Button
                 size="lg"
-                color="success"
+                color="primary"
                 startContent={
                   <Icons
                     className="stroke-white/90"
                     icon="IconPhoneCall"
                   ></Icons>
                 }
-                className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-blue-500 flex items-center justify-center gap-3"
+                className="max-w-max w-full px-6 py-3 rounded-xl text-white/90 bg-primary-600 hover:bg-primary-500 flex items-center justify-center gap-3"
                 onClick={() => handleOnClick("contact")}
               >
                 {t("contact")}

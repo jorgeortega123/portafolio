@@ -26,15 +26,15 @@ import { useRouter } from "next/router";
 const API_BASE = "https://ai.jorge.it.com/ia";
 
 const INTENT_LABELS: Record<IntentType, { es: string; en: string; color: string }> = {
-  contact: { es: "Contacto", en: "Contact", color: "bg-green-500/20 text-green-400 border-green-500/30" },
-  email: { es: "Email", en: "Email", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
-  hire: { es: "Contratar", en: "Hire", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
-  skills: { es: "Skills", en: "Skills", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
-  experience: { es: "Experiencia", en: "Experience", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
-  projects: { es: "Proyectos", en: "Projects", color: "bg-pink-500/20 text-pink-400 border-pink-500/30" },
-  wallpaper: { es: "Fondo", en: "Background", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
-  "contact-form": { es: "Formulario", en: "Form", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
-  general: { es: "General", en: "General", color: "bg-gray-500/20 text-gray-400 border-gray-500/30" },
+  contact: { es: "Contacto", en: "Contact", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  email: { es: "Email", en: "Email", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  hire: { es: "Contratar", en: "Hire", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  skills: { es: "Skills", en: "Skills", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  experience: { es: "Experiencia", en: "Experience", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  projects: { es: "Proyectos", en: "Projects", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  wallpaper: { es: "Fondo", en: "Background", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  "contact-form": { es: "Formulario", en: "Form", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
+  general: { es: "General", en: "General", color: "bg-primary-500/20 text-primary-300 border-primary-500/30" },
 };
 
 const TIPS = [
@@ -47,10 +47,10 @@ const TIPS = [
 ];
 
 const ACCENT_STYLES: Record<string, { iconBg: string; iconColor: string; hoverBorder: string }> = {
-  cyan: { iconBg: "bg-cyan-500/15", iconColor: "text-cyan-400", hoverBorder: "hover:border-cyan-500/40" },
-  orange: { iconBg: "bg-orange-500/15", iconColor: "text-orange-400", hoverBorder: "hover:border-orange-500/40" },
-  pink: { iconBg: "bg-pink-500/15", iconColor: "text-pink-400", hoverBorder: "hover:border-pink-500/40" },
-  green: { iconBg: "bg-green-500/15", iconColor: "text-green-400", hoverBorder: "hover:border-green-500/40" },
+  cyan: { iconBg: "bg-primary-500/15", iconColor: "text-primary-300", hoverBorder: "hover:border-primary-500/40" },
+  orange: { iconBg: "bg-primary-500/15", iconColor: "text-primary-300", hoverBorder: "hover:border-primary-500/40" },
+  pink: { iconBg: "bg-primary-500/15", iconColor: "text-primary-300", hoverBorder: "hover:border-primary-500/40" },
+  green: { iconBg: "bg-primary-500/15", iconColor: "text-primary-300", hoverBorder: "hover:border-primary-500/40" },
 };
 
 const SUGGESTIONS = [
@@ -453,7 +453,7 @@ export default function ChatBot() {
     const parts = cleanText.split(urlRegex);
     return parts.map((part, i) =>
       urlRegex.test(part) ? (
-        <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">
+        <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-primary-300 underline hover:text-primary-200">
           {part}
         </a>
       ) : (
@@ -489,10 +489,10 @@ export default function ChatBot() {
         {/* Floating button */}
         <button
           onClick={() => setIsOpen(true)}
-          className="relative bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-400 hover:to-blue-600 text-white p-4 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-110 hover:shadow-blue-500/50 active:scale-95"
+          className="relative bg-gradient-to-br from-primary-500 to-primary-700 hover:from-primary-400 hover:to-primary-600 text-white p-4 rounded-full shadow-lg shadow-primary-500/30 transition-all hover:scale-110 hover:shadow-primary-500/50 active:scale-95"
           aria-label="Abrir chat"
         >
-          <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-20" />
+          <span className="absolute inset-0 rounded-full bg-primary-400 animate-ping opacity-20" />
           <MessageCircle className="h-6 w-6 relative z-10" />
         </button>
       </div>
@@ -516,7 +516,7 @@ export default function ChatBot() {
             <div className="w-2.5 h-2.5 bg-green-400 rounded-full" />
             <div className="absolute inset-0 w-2.5 h-2.5 bg-green-400 rounded-full animate-ping opacity-60" />
           </div>
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/30">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/30">
             <Bot className="h-4 w-4 text-white" />
           </div>
           <div className="flex flex-col leading-tight">
@@ -572,7 +572,7 @@ export default function ChatBot() {
                 key={s.id}
                 className={`flex items-center justify-between text-sm p-2.5 rounded-lg cursor-pointer transition-colors ${
                   s.id === currentSessionId
-                    ? "bg-blue-600/20 text-blue-300"
+                  ? "bg-primary-600/20 text-primary-300"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -603,7 +603,7 @@ export default function ChatBot() {
       {/* Intent indicator */}
       {detectedIntent && detectedIntent.type !== "general" && (
         <div className="px-4 py-2 border-b border-gray-700/50 flex items-center gap-2">
-          <Zap className="h-3.5 w-3.5 text-yellow-400" />
+          <Zap className="h-3.5 w-3.5 text-primary-300" />
           <span
             className={`text-xs px-2.5 py-0.5 rounded-full border ${
               INTENT_LABELS[detectedIntent.type]?.color || INTENT_LABELS.general.color
@@ -618,7 +618,7 @@ export default function ChatBot() {
                 <button
                   key={action}
                   onClick={() => handleQuickAction(action)}
-                  className="text-xs text-blue-400 hover:text-blue-300 underline"
+                  className="text-xs text-primary-300 hover:text-primary-200 underline"
                 >
                   {action}
                 </button>
@@ -634,7 +634,7 @@ export default function ChatBot() {
           <div className="py-2 space-y-5">
             {/* Welcome */}
             <div className="text-center px-2">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 mb-3.5 shadow-xl shadow-indigo-500/30">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 mb-3.5 shadow-xl shadow-primary-500/30">
                 <Bot className="h-8 w-8 text-white" />
               </div>
               <p className="font-semibold text-gray-50 text-base">
@@ -685,7 +685,7 @@ export default function ChatBot() {
             }`}
           >
             {message.role === "assistant" && (
-              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+              <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/20">
                 <Bot className="h-4 w-4 text-white" />
               </div>
             )}
@@ -693,7 +693,7 @@ export default function ChatBot() {
             <div
               className={`max-w-[78%] rounded-2xl px-3.5 py-2.5 ${
                 message.role === "user"
-                  ? "bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-md"
+                  ? "bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-tr-md"
                   : "bg-gray-800/90 text-gray-100 rounded-tl-md border border-gray-700/50"
               }`}
             >
@@ -718,7 +718,7 @@ export default function ChatBot() {
         {/* Streaming message */}
         {streamingContent && (
           <div className="flex gap-2.5 justify-start">
-            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/20">
               <Bot className="h-4 w-4 text-white" />
             </div>
             <div className="max-w-[78%] bg-gray-800/90 text-gray-100 rounded-2xl rounded-tl-md px-3.5 py-2.5 border border-gray-700/50">
@@ -730,13 +730,13 @@ export default function ChatBot() {
         {/* Background generation loading */}
         {isChangingBg && (
           <div className="flex gap-2.5 justify-start">
-            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-md shadow-primary-500/20">
               <Bot className="h-4 w-4 text-white animate-pulse" />
             </div>
-            <div className="max-w-[78%] bg-gray-800/90 border border-cyan-500/30 rounded-2xl rounded-tl-md px-3.5 py-3">
+            <div className="max-w-[78%] bg-gray-800/90 border border-primary-500/30 rounded-2xl rounded-tl-md px-3.5 py-3">
               <div className="flex items-center gap-2 mb-2.5">
-                <Loader2 className="h-4 w-4 text-cyan-400 animate-spin" />
-                <span className="text-sm text-cyan-300 font-medium">
+                <Loader2 className="h-4 w-4 text-primary-300 animate-spin" />
+                <span className="text-sm text-primary-200 font-medium">
                   {isSpanish ? "Generando imagen con IA..." : "Generating image with AI..."}
                 </span>
               </div>
@@ -752,14 +752,14 @@ export default function ChatBot() {
         {/* Loading dots (only when no streaming content yet) */}
         {isLoading && !streamingContent && (
           <div className="flex gap-2.5 justify-start">
-            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20">
+            <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/20">
               <Bot className="h-4 w-4 text-white" />
             </div>
             <div className="bg-gray-800/90 rounded-2xl rounded-tl-md px-4 py-3.5 border border-gray-700/50">
               <div className="flex gap-1.5">
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                <span className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           </div>
@@ -784,13 +784,13 @@ export default function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={isSpanish ? "Escribe tu mensaje..." : "Type your message..."}
-            className="flex-1 px-4 py-2.5 bg-gray-800/80 border border-gray-700/60 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 text-sm transition-all"
+            className="flex-1 px-4 py-2.5 bg-gray-800/80 border border-gray-700/60 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 text-sm transition-all"
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="p-2.5 bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl transition-all shadow-md shadow-blue-500/20 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
+            className="p-2.5 bg-gradient-to-br from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white rounded-xl transition-all shadow-md shadow-primary-500/20 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
             aria-label="Enviar mensaje"
           >
             {isLoading ? (
