@@ -190,6 +190,16 @@ function MainContextComponent({ children }: { children: ReactNode }) {
       id: "OMP",
       link: "https://www.jorge.it.com/assets/png/skills/omp.png",
     },
+    {
+      type: "ai",
+      id: "LangGraph",
+      link: "https://www.jorge.it.com/assets/png/skills/langgraph.png",
+    },
+    {
+      type: "ai",
+      id: "LangChain",
+      link: "https://www.jorge.it.com/assets/webp/langchain.webp",
+    },
 
     // Herramientas
     {
