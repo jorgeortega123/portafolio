@@ -78,7 +78,7 @@
     },
     "contact": {
         "title": "Let's Talk",
-        "subtitle": "Here are different ways to contact me:",
+        "subtitle": "Thanks for stopping by. Reach out directly or send me a message below.",
         "location": "Quito, Pichincha, Ecuador.",
         "form": {
             "name": {
@@ -99,10 +99,10 @@
                 "required": "Message is required",
                 "tooShort": "Please expand your message"
             },
-            "submit": "Send",
+            "submit": "Send message",
             "success": {
-                "title": "Message sent successfully",
-                "description": "You will receive a response as soon as possible"
+                "title": "Thanks for your message!",
+                "description": "I'll get back to you as soon as possible."
             }
         }
     },
@@ -119,13 +119,13 @@
             },
             {
                 "name": "Megamobilier Ecuador",
-                "date": "February 2026 - Present",
+                "date": "February 2026 - April 2026",
                 "role": "Systems Director",
                 "info": "Design and management of the systems architecture: VPS server provisioning, domain configuration, cloud services and production infrastructure deployment. Full-stack development (React, Next.js, TypeScript, Node.js) of e-commerce platforms and internal management tools (inventory, ERP). Technical team leadership, code standard definition, architecture reviews and agile methodologies for continuous product delivery."
             },
             {
                 "name": "Supermercados D'Ley",
-                "date": "August 2025 - Present",
+                "date": "August 2025 - November 2025",
                 "role": "UI/UX Developer - Digital Marketing",
                 "info": "Design creation for a supermarket application, including mockups, wireframes, and product layout throughout the app without overwhelming the user experience. Additionally, creation of social media posts."
             },
@@ -144,7 +144,7 @@
             {
                 "name": "Llampukaq Technology",
                 "role": "Frontend Developer",
-                "date": "May 2020 - February 2023 (2 years 10 months)",
+                "date": "July 2021 - February 2023 (1 year 8 months)",
                 "info": "Improved user interface through schematic design models. Modeled and created reusable components with TypeScript typing and established communication between them, following an exponentially scalable structure."
             }
         ]

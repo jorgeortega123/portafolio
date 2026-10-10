@@ -95,7 +95,7 @@
   },
   "contact": {
     "title": "Hablemos",
-    "subtitle": "Aqui tienes diferentes formas de contactarte conmigo:",
+    "subtitle": "Gracias por visitar mi portafolio. Escríbeme directamente o envíame un mensaje aquí abajo.",
     "location": "Quito, Pinchincha, Ecuador.",
     "form": {
       "name": {
@@ -116,10 +116,10 @@
         "required": "El mensaje es obligatorio",
         "tooShort": "Amplia tu mensaje"
       },
-      "submit": "Enviar",
+      "submit": "Enviar mensaje",
       "success": {
-        "title": "Mensaje enviado correctamente",
-        "description": "Recibirás una respuesta lo antes posible"
+        "title": "¡Gracias por tu mensaje!",
+        "description": "Te responderé lo antes posible."
       }
     }
   },
@@ -136,13 +136,13 @@
       },
       {
         "name": "Megamobilier Ecuador",
-        "date": "Febrero 2026 - Presente",
+        "date": "Febrero 2026 - Abril 2026",
         "role": "Director de sistemas",
         "info": "Diseño y gestión de la arquitectura de sistemas: provisión de servidores VPS, configuración de dominios, servicios cloud y despliegue de infraestructura productiva. Desarrollo full-stack (React, Next.js, TypeScript, Node.js) de plataformas de e-commerce y herramientas de gestión interna (inventario, ERP). Liderazgo del equipo técnico, definición de estándares de código, revisiones de arquitectura y metodologías ágiles para la entrega continua de producto."
       },
       {
         "name": "Supermercados D'Ley",
-        "date": "Agosto 2025 - Presente",
+        "date": "Agosto 2025 - Noviembre 2025",
         "role": "Desarrollador IUX - Marketing Digital",
         "info": "Crear diseño para la creación de un supermercado, esto incluyen Mockups, wireframes y la disposición de productos a lo largo de la app sin que saturen la experiencia del usuario. Adicionalmente la creación de Post para redes sociales"
       },
@@ -161,7 +161,7 @@
       {
         "name": "Llampukaq Technology",
         "role": "Desarrollador Frontend",
-        "date": "Mayo 2020 - Febrero 2023 (2 años 10 meses)",
+        "date": "Julio 2021 - Febrero 2023 (1 año 8 meses)",
         "info": "Mejorar interfaz del usuario a través de modelos esquemáticos de diseños. Modelar, crear componentes reutilizables tipando datos con Typescript y establecer una comunicación entre ellos; siguiendo una estructura de escalabilidad exponencial."
       }
     ]
