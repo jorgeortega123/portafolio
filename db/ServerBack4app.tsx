@@ -49,6 +49,20 @@ export const enviarDatosFormulario = async (
         errors,
       };
     }
+
+    const correo = await fetch("https://ai.jorge.it.com/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+    if (!correo.ok) {
+      const dataError = (await correo.json().catch(() => null)) as RespuestaFormulario | null;
+      return {
+        success: false,
+        message: dataError?.message ?? "Error al enviar el formulario",
+        errors: dataError?.errors,
+      };
+    }
     const newMessage = new Parse.Object("Mensajes");
     newMessage.set("email", email);
     newMessage.set("message", message);
