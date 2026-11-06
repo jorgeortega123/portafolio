@@ -45,7 +45,7 @@ function Img({
         className={`${props.className} relative`}
         src={
           link
-            ? `https://api.llampukaq.com/v1/images?url=${src}&output=${format}&w=${width}&q=${q}`
+            ? `https://images.llampukaq.com/v1/images?url=${src}&output=${format}&w=${width}&q=${q}`
             : src
         }
         {...props}

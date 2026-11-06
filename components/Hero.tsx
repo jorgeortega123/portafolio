@@ -21,10 +21,10 @@ function Hero() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState(
-    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")',
+    'url("https://images.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")',
   );
   const defaultBackgroundImage =
-    'url("https://api.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")';
+    'url("https://images.llampukaq.com/v1/images?url=https://jandrea-backend.llampukaq.workers.dev/images/image/050dedab-59ba-4420-8259-694163800446&output=webp&w=1950&q=90")';
   const [showInitialAnimation, setShowInitialAnimation] = useState(true);
 
   const handleOnClick = (e: string) => {
